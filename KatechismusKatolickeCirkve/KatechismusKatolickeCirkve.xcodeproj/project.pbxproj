@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		013BD2692119BC8600554086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD2682119BC8600554086 /* AppDelegate.swift */; };
+		013BD26B2119BC8600554086 /* IndexViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD26A2119BC8600554086 /* IndexViewController.swift */; };
+		013BD26E2119BC8600554086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013BD26C2119BC8600554086 /* Main.storyboard */; };
+		013BD2702119BC8700554086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013BD26F2119BC8700554086 /* Assets.xcassets */; };
+		013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013BD2712119BC8700554086 /* LaunchScreen.storyboard */; };
+		013BD27E2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD27D2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift */; };
+		013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD2882119BCD200554086 /* CatechismTableViewCell.swift */; };
+		013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD28A2119BD3A00554086 /* CatechismTableViewController.swift */; };
+		015430F9211B1ECA0029105A /* SearchForTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */; };
+		015430FB211B1EE50029105A /* SearchForTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FA211B1EE50029105A /* SearchForTableViewController.swift */; };
+		015430FD211B20190029105A /* SearchFor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015430FC211B20190029105A /* SearchFor.storyboard */; };
+		015430FF211B21700029105A /* SearchForMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FE211B21700029105A /* SearchForMenu.swift */; };
+		01780C7F211B08D2004F2E48 /* part.json in Resources */ = {isa = PBXBuildFile; fileRef = 01780C7E211B08D2004F2E48 /* part.json */; };
+		01780C81211B08EF004F2E48 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 01780C80211B08EF004F2E48 /* database.json */; };
+		017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20F3211A2902006B448C /* CatechismMenu.swift */; };
+		017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20F8211A3A03006B448C /* AboutViewController.swift */; };
+		017F20FB211A3A15006B448C /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017F20FA211A3A15006B448C /* About.storyboard */; };
+		017F20FD211A3A28006B448C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017F20FC211A3A28006B448C /* Settings.storyboard */; };
+		017F20FF211A3A43006B448C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20FE211A3A43006B448C /* SettingsViewController.swift */; };
+		017F2101211A3A52006B448C /* AboutProject.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017F2100211A3A52006B448C /* AboutProject.storyboard */; };
+		017F2103211A3A63006B448C /* AboutProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F2102211A3A63006B448C /* AboutProjectViewController.swift */; };
+		017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F2105211A3AD0006B448C /* CatechismDataService.swift */; };
+		017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F210A211A3B53006B448C /* CatechismStructure.swift */; };
+		017F210E211A3C32006B448C /* catechism.json in Resources */ = {isa = PBXBuildFile; fileRef = 017F210D211A3C32006B448C /* catechism.json */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		013BD27A2119BC8700554086 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013BD25D2119BC8600554086 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 013BD2642119BC8600554086;
+			remoteInfo = KatechismusKatolickeCirkve;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		013BD2652119BC8600554086 /* KatechismusKatolickeCirkve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KatechismusKatolickeCirkve.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		013BD2682119BC8600554086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		013BD26A2119BC8600554086 /* IndexViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexViewController.swift; sourceTree = "<group>"; };
+		013BD26D2119BC8600554086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		013BD26F2119BC8700554086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		013BD2722119BC8700554086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		013BD2742119BC8700554086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		013BD2792119BC8700554086 /* KatechismusKatolickeCirkveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatechismusKatolickeCirkveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		013BD27D2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatechismusKatolickeCirkveTests.swift; sourceTree = "<group>"; };
+		013BD27F2119BC8700554086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		013BD2882119BCD200554086 /* CatechismTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismTableViewCell.swift; sourceTree = "<group>"; };
+		013BD28A2119BD3A00554086 /* CatechismTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismTableViewController.swift; sourceTree = "<group>"; };
+		015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForTableViewCell.swift; sourceTree = "<group>"; };
+		015430FA211B1EE50029105A /* SearchForTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForTableViewController.swift; sourceTree = "<group>"; };
+		015430FC211B20190029105A /* SearchFor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchFor.storyboard; sourceTree = "<group>"; };
+		015430FE211B21700029105A /* SearchForMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForMenu.swift; sourceTree = "<group>"; };
+		01780C7E211B08D2004F2E48 /* part.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = part.json; path = ../../../../../Dropbox/MACOS/KKC/part.json; sourceTree = "<group>"; };
+		01780C80211B08EF004F2E48 /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = database.json; path = ../../../../../Dropbox/MACOS/KKC/database.json; sourceTree = "<group>"; };
+		017F20F3211A2902006B448C /* CatechismMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismMenu.swift; sourceTree = "<group>"; };
+		017F20F8211A3A03006B448C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		017F20FA211A3A15006B448C /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
+		017F20FC211A3A28006B448C /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		017F20FE211A3A43006B448C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		017F2100211A3A52006B448C /* AboutProject.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AboutProject.storyboard; sourceTree = "<group>"; };
+		017F2102211A3A63006B448C /* AboutProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutProjectViewController.swift; sourceTree = "<group>"; };
+		017F2105211A3AD0006B448C /* CatechismDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismDataService.swift; sourceTree = "<group>"; };
+		017F210A211A3B53006B448C /* CatechismStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismStructure.swift; sourceTree = "<group>"; };
+		017F210D211A3C32006B448C /* catechism.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catechism.json; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		013BD2622119BC8600554086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013BD2762119BC8700554086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		013BD25C2119BC8600554086 = {
+			isa = PBXGroup;
+			children = (
+				013BD2672119BC8600554086 /* KatechismusKatolickeCirkve */,
+				013BD27C2119BC8700554086 /* KatechismusKatolickeCirkveTests */,
+				013BD2662119BC8600554086 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		013BD2662119BC8600554086 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				013BD2652119BC8600554086 /* KatechismusKatolickeCirkve.app */,
+				013BD2792119BC8700554086 /* KatechismusKatolickeCirkveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		013BD2672119BC8600554086 /* KatechismusKatolickeCirkve */ = {
+			isa = PBXGroup;
+			children = (
+				017F210C211A3BC6006B448C /* Supporting Files */,
+				017F2107211A3B09006B448C /* Model */,
+				017F2104211A3A91006B448C /* Services */,
+				017F20F7211A39E0006B448C /* Controllers */,
+				013BD2682119BC8600554086 /* AppDelegate.swift */,
+				013BD26A2119BC8600554086 /* IndexViewController.swift */,
+				013BD26C2119BC8600554086 /* Main.storyboard */,
+				013BD28A2119BD3A00554086 /* CatechismTableViewController.swift */,
+				013BD2882119BCD200554086 /* CatechismTableViewCell.swift */,
+				013BD26F2119BC8700554086 /* Assets.xcassets */,
+				013BD2712119BC8700554086 /* LaunchScreen.storyboard */,
+				013BD2742119BC8700554086 /* Info.plist */,
+				017F20F3211A2902006B448C /* CatechismMenu.swift */,
+				015430FE211B21700029105A /* SearchForMenu.swift */,
+			);
+			path = KatechismusKatolickeCirkve;
+			sourceTree = "<group>";
+		};
+		013BD27C2119BC8700554086 /* KatechismusKatolickeCirkveTests */ = {
+			isa = PBXGroup;
+			children = (
+				013BD27D2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift */,
+				013BD27F2119BC8700554086 /* Info.plist */,
+			);
+			path = KatechismusKatolickeCirkveTests;
+			sourceTree = "<group>";
+		};
+		017F20F7211A39E0006B448C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				017F20F8211A3A03006B448C /* AboutViewController.swift */,
+				017F20FA211A3A15006B448C /* About.storyboard */,
+				017F20FC211A3A28006B448C /* Settings.storyboard */,
+				017F20FE211A3A43006B448C /* SettingsViewController.swift */,
+				017F2100211A3A52006B448C /* AboutProject.storyboard */,
+				017F2102211A3A63006B448C /* AboutProjectViewController.swift */,
+				015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */,
+				015430FA211B1EE50029105A /* SearchForTableViewController.swift */,
+				015430FC211B20190029105A /* SearchFor.storyboard */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		017F2104211A3A91006B448C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				017F2105211A3AD0006B448C /* CatechismDataService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		017F2107211A3B09006B448C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				017F210A211A3B53006B448C /* CatechismStructure.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		017F210C211A3BC6006B448C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				01780C80211B08EF004F2E48 /* database.json */,
+				01780C7E211B08D2004F2E48 /* part.json */,
+				017F210D211A3C32006B448C /* catechism.json */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		013BD2642119BC8600554086 /* KatechismusKatolickeCirkve */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 013BD2822119BC8700554086 /* Build configuration list for PBXNativeTarget "KatechismusKatolickeCirkve" */;
+			buildPhases = (
+				013BD2612119BC8600554086 /* Sources */,
+				013BD2622119BC8600554086 /* Frameworks */,
+				013BD2632119BC8600554086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KatechismusKatolickeCirkve;
+			productName = KatechismusKatolickeCirkve;
+			productReference = 013BD2652119BC8600554086 /* KatechismusKatolickeCirkve.app */;
+			productType = "com.apple.product-type.application";
+		};
+		013BD2782119BC8700554086 /* KatechismusKatolickeCirkveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 013BD2852119BC8700554086 /* Build configuration list for PBXNativeTarget "KatechismusKatolickeCirkveTests" */;
+			buildPhases = (
+				013BD2752119BC8700554086 /* Sources */,
+				013BD2762119BC8700554086 /* Frameworks */,
+				013BD2772119BC8700554086 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				013BD27B2119BC8700554086 /* PBXTargetDependency */,
+			);
+			name = KatechismusKatolickeCirkveTests;
+			productName = KatechismusKatolickeCirkveTests;
+			productReference = 013BD2792119BC8700554086 /* KatechismusKatolickeCirkveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		013BD25D2119BC8600554086 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Petr Hracek";
+				TargetAttributes = {
+					013BD2642119BC8600554086 = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					013BD2782119BC8700554086 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 013BD2642119BC8600554086;
+					};
+				};
+			};
+			buildConfigurationList = 013BD2602119BC8600554086 /* Build configuration list for PBXProject "KatechismusKatolickeCirkve" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 013BD25C2119BC8600554086;
+			productRefGroup = 013BD2662119BC8600554086 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				013BD2642119BC8600554086 /* KatechismusKatolickeCirkve */,
+				013BD2782119BC8700554086 /* KatechismusKatolickeCirkveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		013BD2632119BC8600554086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01780C7F211B08D2004F2E48 /* part.json in Resources */,
+				017F2101211A3A52006B448C /* AboutProject.storyboard in Resources */,
+				013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */,
+				013BD2702119BC8700554086 /* Assets.xcassets in Resources */,
+				015430FD211B20190029105A /* SearchFor.storyboard in Resources */,
+				017F210E211A3C32006B448C /* catechism.json in Resources */,
+				017F20FB211A3A15006B448C /* About.storyboard in Resources */,
+				013BD26E2119BC8600554086 /* Main.storyboard in Resources */,
+				01780C81211B08EF004F2E48 /* database.json in Resources */,
+				017F20FD211A3A28006B448C /* Settings.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013BD2772119BC8700554086 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		013BD2612119BC8600554086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */,
+				017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */,
+				017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */,
+				013BD26B2119BC8600554086 /* IndexViewController.swift in Sources */,
+				017F20FF211A3A43006B448C /* SettingsViewController.swift in Sources */,
+				017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */,
+				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
+				015430F9211B1ECA0029105A /* SearchForTableViewCell.swift in Sources */,
+				013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */,
+				015430FB211B1EE50029105A /* SearchForTableViewController.swift in Sources */,
+				013BD2692119BC8600554086 /* AppDelegate.swift in Sources */,
+				015430FF211B21700029105A /* SearchForMenu.swift in Sources */,
+				017F2103211A3A63006B448C /* AboutProjectViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013BD2752119BC8700554086 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				013BD27E2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		013BD27B2119BC8700554086 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 013BD2642119BC8600554086 /* KatechismusKatolickeCirkve */;
+			targetProxy = 013BD27A2119BC8700554086 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		013BD26C2119BC8600554086 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				013BD26D2119BC8600554086 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		013BD2712119BC8700554086 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				013BD2722119BC8700554086 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		013BD2802119BC8700554086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		013BD2812119BC8700554086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		013BD2832119BC8700554086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		013BD2842119BC8700554086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		013BD2862119BC8700554086 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KatechismusKatolickeCirkveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KatechismusKatolickeCirkve.app/KatechismusKatolickeCirkve";
+			};
+			name = Debug;
+		};
+		013BD2872119BC8700554086 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = KatechismusKatolickeCirkveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KatechismusKatolickeCirkve.app/KatechismusKatolickeCirkve";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		013BD2602119BC8600554086 /* Build configuration list for PBXProject "KatechismusKatolickeCirkve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013BD2802119BC8700554086 /* Debug */,
+				013BD2812119BC8700554086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		013BD2822119BC8700554086 /* Build configuration list for PBXNativeTarget "KatechismusKatolickeCirkve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013BD2832119BC8700554086 /* Debug */,
+				013BD2842119BC8700554086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		013BD2852119BC8700554086 /* Build configuration list for PBXNativeTarget "KatechismusKatolickeCirkveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013BD2862119BC8700554086 /* Debug */,
+				013BD2872119BC8700554086 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 013BD25D2119BC8600554086 /* Project object */;
+}
