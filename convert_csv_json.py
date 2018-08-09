@@ -18,14 +18,13 @@ def parse_part(row):
 
 def parse_database(row):
     fields = row.split("::")
-    print(fields)
-    return {'id': int(fields[0]), 'caption': fields[1],
-            'captionNoHTML': fields[2],
+    return {'id': int(fields[0]),
+            'caption': fields[1],
+            'caption_no_html': fields[2],
             'chapter': int(fields[3]),
-            'refsChapters': fields[4],
+            'refs': fields[4],
             'text': fields[5],
-            'textNoHTML': fields[6],
-            #'links': fields[7],
+            'text_no_html': fields[6],
             }
 
 
