@@ -11,6 +11,8 @@ import UIKit
 class CatechismTableViewController: UITableViewController {
 
     enum RowType {
+        case browse_chapter
+        case search_for_numbers
         case search_for
         case searching
         case index
@@ -67,15 +69,38 @@ class CatechismTableViewController: UITableViewController {
         return cell
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        switch(segue.identifier ?? "") {
+        case "ShowChapters":
+            guard let chaptersTableViewController = segue.destination as? ChaptersTableViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = rowData[indexPath.row]
         
         switch data.type {
+        case .browse_chapter:
+            //performSegue(withIdentifier: "ShowChapters", sender: indexPath)
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+            if mainViewController != nil {
+                let chaptersViewController = mainViewController.instantiateViewController(withIdentifier: "Chapters")
+                if  chaptersViewController != nil {
+                    navigationController?.pushViewController(chaptersViewController, animated: true)
+                }
+            }
+            
+        case .search_for_numbers:
+            print("Not implemented yet")
         case .search_for:
             if let searchForViewController = UIStoryboard(name: "SearchFor", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(searchForViewController, animated: true)
             }
-
         case .searching:
             print("Not implemented yet")
         case .index:
@@ -106,26 +131,34 @@ class CatechismTableViewController: UITableViewController {
     */
 
     private func loadCatechism () {
-        guard let search_for = CatechismMenu(name: "Vyhledávání podle", photo: nil, order: 0) else {
-            fatalError("Unable to instanciate Vyhledávání podle")
+        guard let browse_chapter = CatechismMenu(name: "Procházet kapitoly", photo: nil, order: 0) else {
+            fatalError("Unable to instanciate Procházet kapitoly")
         }
-        guard let index = CatechismMenu(name: "Rejstřík", photo: nil, order: 1) else {
+        guard let search_for_numbers = CatechismMenu(name: "Hledat podle čísel", photo: nil, order: 1) else {
+            fatalError("Unable to instanciate Hledat podle čísel")
+        }
+        guard let search_for = CatechismMenu(name: "Vyhledávání", photo: nil, order: 2) else {
+            fatalError("Unable to instanciate Vyhledávání")
+        }
+        guard let index = CatechismMenu(name: "Rejstřík", photo: nil, order: 3) else {
             fatalError("Unable to instanciate Rejstřík")
         }
-        guard let searching = CatechismMenu(name: "Vyhledávání", photo: nil, order: 2) else {
+        guard let searching = CatechismMenu(name: "Vyhledávání", photo: nil, order: 4) else {
             fatalError("Unable to instanciate Vyhledavani")
         }
-        guard let about_project = CatechismMenu(name: "O projektu", photo: nil, order: 3) else {
+        guard let about_project = CatechismMenu(name: "O projektu", photo: nil, order: 5) else {
             fatalError("Unable to instanciate O projektu")
         }
-        guard let settings = CatechismMenu(name: "Nastavení", photo: nil, order: 4) else {
+        guard let settings = CatechismMenu(name: "Nastavení", photo: nil, order: 6) else {
             fatalError("Unable to instanciate Nastaveni")
         }
-        guard let about = CatechismMenu(name: "O aplikaci", photo: nil, order: 5) else {
+        guard let about = CatechismMenu(name: "O aplikaci", photo: nil, order: 7) else {
             fatalError("Unable to instanciate O aplikaci")
         }
         
-        rowData = [RowData(type: .search_for, menu: search_for)]
+        rowData = [RowData(type: .browse_chapter, menu: browse_chapter)]
+        rowData.append(RowData(type: .search_for_numbers, menu: search_for_numbers))
+        rowData.append(RowData(type: .search_for, menu: search_for))
         rowData.append(RowData(type: .index, menu: index))
         rowData.append(RowData(type: .searching, menu: searching))
         rowData.append(RowData(type: .project, menu: about_project))

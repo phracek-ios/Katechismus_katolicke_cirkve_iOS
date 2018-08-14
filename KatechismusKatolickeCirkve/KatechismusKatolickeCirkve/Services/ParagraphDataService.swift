@@ -1,21 +1,21 @@
 //
-//  CatechismDataService.swift
+//  ParagraphDataService.swift
 //  KatechismusKatolickeCirkve
 //
-//  Created by Petr Hracek on 07/08/2018.
+//  Created by Petr Hracek on 14/08/2018.
 //  Copyright © 2018 Petr Hracek. All rights reserved.
 //
 
-
 import Foundation
 
-class CatechismDataService {
+
+class ParagraphDataService {
     
     // MARK: - Shared
-    static var shared = CatechismDataService()
+    static var shared = ParagraphDataService()
     
     // MARK: - Properties
-    var catechismStructure: CatechismStructure?
+    var paragraphStructure: ParagraphStructure?
     
     // MARK: -
     func loadData() {
@@ -23,11 +23,11 @@ class CatechismDataService {
     }
     
     private func parseJSON() {
-        if let path = Bundle.main.path(forResource: "catechism", ofType: "json") {
+        if let path = Bundle.main.path(forResource: "database", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
-                catechismStructure = try JSONDecoder().decode(CatechismStructure.self, from: data)
-                //print(catechismStructure.debugDescription)
+                paragraphStructure = try JSONDecoder().decode(ParagraphStructure.self, from: data)
+                print(paragraphStructure.debugDescription)
             } catch {
                 print(error)
             }

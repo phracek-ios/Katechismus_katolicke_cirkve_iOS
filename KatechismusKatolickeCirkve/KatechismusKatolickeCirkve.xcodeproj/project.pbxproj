@@ -15,9 +15,11 @@
 		013BD27E2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD27D2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift */; };
 		013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD2882119BCD200554086 /* CatechismTableViewCell.swift */; };
 		013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD28A2119BD3A00554086 /* CatechismTableViewController.swift */; };
+		0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */; };
+		0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DE211B91B40021058A /* ChaptersStructure.swift */; };
+		0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1E0211B91F50021058A /* ChaptersDataService.swift */; };
 		015430F9211B1ECA0029105A /* SearchForTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */; };
 		015430FB211B1EE50029105A /* SearchForTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FA211B1EE50029105A /* SearchForTableViewController.swift */; };
-		015430FD211B20190029105A /* SearchFor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 015430FC211B20190029105A /* SearchFor.storyboard */; };
 		015430FF211B21700029105A /* SearchForMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FE211B21700029105A /* SearchForMenu.swift */; };
 		01780C7F211B08D2004F2E48 /* part.json in Resources */ = {isa = PBXBuildFile; fileRef = 01780C7E211B08D2004F2E48 /* part.json */; };
 		01780C81211B08EF004F2E48 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 01780C80211B08EF004F2E48 /* database.json */; };
@@ -31,6 +33,18 @@
 		017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F2105211A3AD0006B448C /* CatechismDataService.swift */; };
 		017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F210A211A3B53006B448C /* CatechismStructure.swift */; };
 		017F210E211A3C32006B448C /* catechism.json in Resources */ = {isa = PBXBuildFile; fileRef = 017F210D211A3C32006B448C /* catechism.json */; };
+		018E43A5211D8C1F00E0237B /* SectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */; };
+		018E43A7211D8C3700E0237B /* SectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */; };
+		019048FB211C25B500C17A95 /* ChaptersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */; };
+		019048FD211C2A0E00C17A95 /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019048FC211C2A0E00C17A95 /* Chapter.swift */; };
+		019462102122208A0056EC7B /* ParagraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */; };
+		01946212212220A20056EC7B /* ParagraphTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01946211212220A20056EC7B /* ParagraphTableViewController.swift */; };
+		019C1A31212357F4005EFB7F /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A30212357F4005EFB7F /* Paragraph.swift */; };
+		019C1A3321235863005EFB7F /* ParagraphStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3221235863005EFB7F /* ParagraphStructure.swift */; };
+		019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3421235890005EFB7F /* ParagraphDataService.swift */; };
+		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
+		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
+		01DF46E1211C707B006442CD /* Numbers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DF46E0211C707B006442CD /* Numbers.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,9 +70,11 @@
 		013BD27F2119BC8700554086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013BD2882119BCD200554086 /* CatechismTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismTableViewCell.swift; sourceTree = "<group>"; };
 		013BD28A2119BD3A00554086 /* CatechismTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismTableViewController.swift; sourceTree = "<group>"; };
+		0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
+		0140F1DE211B91B40021058A /* ChaptersStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersStructure.swift; sourceTree = "<group>"; };
+		0140F1E0211B91F50021058A /* ChaptersDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersDataService.swift; sourceTree = "<group>"; };
 		015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForTableViewCell.swift; sourceTree = "<group>"; };
 		015430FA211B1EE50029105A /* SearchForTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForTableViewController.swift; sourceTree = "<group>"; };
-		015430FC211B20190029105A /* SearchFor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchFor.storyboard; sourceTree = "<group>"; };
 		015430FE211B21700029105A /* SearchForMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForMenu.swift; sourceTree = "<group>"; };
 		01780C7E211B08D2004F2E48 /* part.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = part.json; path = ../../../../../Dropbox/MACOS/KKC/part.json; sourceTree = "<group>"; };
 		01780C80211B08EF004F2E48 /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = database.json; path = ../../../../../Dropbox/MACOS/KKC/database.json; sourceTree = "<group>"; };
@@ -72,6 +88,18 @@
 		017F2105211A3AD0006B448C /* CatechismDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismDataService.swift; sourceTree = "<group>"; };
 		017F210A211A3B53006B448C /* CatechismStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismStructure.swift; sourceTree = "<group>"; };
 		017F210D211A3C32006B448C /* catechism.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catechism.json; sourceTree = "<group>"; };
+		018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewCell.swift; sourceTree = "<group>"; };
+		018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewController.swift; sourceTree = "<group>"; };
+		019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewCell.swift; sourceTree = "<group>"; };
+		019048FC211C2A0E00C17A95 /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
+		0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphTableViewCell.swift; sourceTree = "<group>"; };
+		01946211212220A20056EC7B /* ParagraphTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphTableViewController.swift; sourceTree = "<group>"; };
+		019C1A30212357F4005EFB7F /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
+		019C1A3221235863005EFB7F /* ParagraphStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphStructure.swift; sourceTree = "<group>"; };
+		019C1A3421235890005EFB7F /* ParagraphDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphDataService.swift; sourceTree = "<group>"; };
+		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
+		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
+		01DF46E0211C707B006442CD /* Numbers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Numbers.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +179,15 @@
 				017F2102211A3A63006B448C /* AboutProjectViewController.swift */,
 				015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */,
 				015430FA211B1EE50029105A /* SearchForTableViewController.swift */,
-				015430FC211B20190029105A /* SearchFor.storyboard */,
+				0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */,
+				019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */,
+				01DF46DC211C7052006442CD /* NumbersTableViewController.swift */,
+				01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */,
+				01DF46E0211C707B006442CD /* Numbers.storyboard */,
+				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
+				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
+				0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */,
+				01946211212220A20056EC7B /* ParagraphTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -160,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				017F2105211A3AD0006B448C /* CatechismDataService.swift */,
+				0140F1E0211B91F50021058A /* ChaptersDataService.swift */,
+				019C1A3421235890005EFB7F /* ParagraphDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -168,6 +206,10 @@
 			isa = PBXGroup;
 			children = (
 				017F210A211A3B53006B448C /* CatechismStructure.swift */,
+				0140F1DE211B91B40021058A /* ChaptersStructure.swift */,
+				019048FC211C2A0E00C17A95 /* Chapter.swift */,
+				019C1A30212357F4005EFB7F /* Paragraph.swift */,
+				019C1A3221235863005EFB7F /* ParagraphStructure.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,7 +309,7 @@
 				017F2101211A3A52006B448C /* AboutProject.storyboard in Resources */,
 				013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */,
 				013BD2702119BC8700554086 /* Assets.xcassets in Resources */,
-				015430FD211B20190029105A /* SearchFor.storyboard in Resources */,
+				01DF46E1211C707B006442CD /* Numbers.storyboard in Resources */,
 				017F210E211A3C32006B448C /* catechism.json in Resources */,
 				017F20FB211A3A15006B448C /* About.storyboard in Resources */,
 				013BD26E2119BC8600554086 /* Main.storyboard in Resources */,
@@ -290,19 +332,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				019462102122208A0056EC7B /* ParagraphTableViewCell.swift in Sources */,
+				0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */,
+				019C1A3321235863005EFB7F /* ParagraphStructure.swift in Sources */,
 				017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */,
+				0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */,
+				019048FD211C2A0E00C17A95 /* Chapter.swift in Sources */,
+				01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */,
 				017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */,
+				019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */,
 				017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */,
 				013BD26B2119BC8600554086 /* IndexViewController.swift in Sources */,
 				017F20FF211A3A43006B448C /* SettingsViewController.swift in Sources */,
 				017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */,
 				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
+				0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */,
+				01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */,
 				015430F9211B1ECA0029105A /* SearchForTableViewCell.swift in Sources */,
 				013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */,
+				018E43A7211D8C3700E0237B /* SectionsTableViewController.swift in Sources */,
 				015430FB211B1EE50029105A /* SearchForTableViewController.swift in Sources */,
+				01946212212220A20056EC7B /* ParagraphTableViewController.swift in Sources */,
+				019048FB211C25B500C17A95 /* ChaptersTableViewCell.swift in Sources */,
 				013BD2692119BC8600554086 /* AppDelegate.swift in Sources */,
 				015430FF211B21700029105A /* SearchForMenu.swift in Sources */,
+				019C1A31212357F4005EFB7F /* Paragraph.swift in Sources */,
 				017F2103211A3A63006B448C /* AboutProjectViewController.swift in Sources */,
+				018E43A5211D8C1F00E0237B /* SectionsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

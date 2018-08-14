@@ -58,12 +58,24 @@ class SearchForTableViewController: UITableViewController {
         }
         
         let data = rowData[indexPath.row]
-        print(data)
         cell.searchForLabel.text = data.searchFor?.name
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = rowData[indexPath.row]
+        
+        switch data.type {
+        case .by_chapters:
+            if let chaptersViewController = UIStoryboard(name: "Chapters", bundle: nil).instantiateInitialViewController() {
+                navigationController?.pushViewController(chaptersViewController, animated: true)
+            }
+            
+        case .by_numbers:
+            print("Not implemented yet")
+        }
+    }
     /*
     // MARK: - Navigation
 
@@ -84,7 +96,5 @@ class SearchForTableViewController: UITableViewController {
         
         rowData = [SearchRowData(type: .by_chapters, searchFor: browse_chapter)]
         rowData.append(SearchRowData(type: .by_numbers, searchFor: search_for_numbers))
-        print(rowData)
-
     }
 }

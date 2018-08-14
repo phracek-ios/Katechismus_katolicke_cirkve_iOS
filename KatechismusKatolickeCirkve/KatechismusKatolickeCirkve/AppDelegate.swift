@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         CatechismDataService.shared.loadData()
+        ChaptersDataService.shared.loadData()
+        ParagraphDataService.shared.loadData()
         
         return true
     }
