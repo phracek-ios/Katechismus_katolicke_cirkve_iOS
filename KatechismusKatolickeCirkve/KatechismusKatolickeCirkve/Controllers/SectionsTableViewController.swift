@@ -40,12 +40,7 @@ class SectionsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //if sectionsRowData[section].main_section == true {
-        //    return sectionsRowData[section].section.count + 1
-        //}
-        //else {
         return 1
-        //}
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -72,7 +67,9 @@ class SectionsTableViewController: UITableViewController {
             guard let indexPath = sender as? IndexPath else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            let parentNumber = sectionsRowData[indexPath.row].id
+            print(sectionsRowData[indexPath.row])
+            // TODO This needs to be fixed. Trying to select id 7, but gets 5.
+            let parentNumber = sectionsRowData[indexPath.row].id + 2
             if parentNumber != 0 {
                 paragraphTableViewController.parentID = parentNumber
             }
@@ -82,7 +79,6 @@ class SectionsTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = sectionsRowData[indexPath.row]
         performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
     }
 
@@ -101,6 +97,7 @@ class SectionsTableViewController: UITableViewController {
                 loadSubSections(section: chap.id)
             }
         }
+        print(sectionsRowData)
     }
 
 }

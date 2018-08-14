@@ -11,23 +11,22 @@ import UIKit
 class ParagraphTableViewController: UITableViewController {
     
     struct ParagraphRowData {
+        var chapter: Int
+        var caption: String
+        var refs: String
         var id: Int
-        var name: String
+        var text: String
     }
     
     fileprivate var paragraphRowData = [ParagraphRowData]()
-    fileprivate var chaptersStructure: ChaptersStructure?
+    fileprivate var paragraphStructure: ParagraphStructure?
 
     var parentID: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        paragraphStructure = ParagraphDataService.shared.paragraphStructure
+        loadParagraphs()
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,68 +37,52 @@ class ParagraphTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return paragraphRowData.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "ParagraphTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ParagraphTableViewCell else {
+            fatalError("The dequeue cell is not an entrance of ParagraphTableViewCell")
+        }
+        let data = paragraphRowData[indexPath.row]
+        var caption: String = ""
+        if data.caption != "" {
+            caption = data.caption + "<br>"
+        }
+        let htmlText = "§\(data.id)<p>" + caption + data.text + "</p>"
+        cell.paragraphLabel.textColor = UIColor.black
+        cell.paragraphLabel.attributedText = htmlText.htmlToAttributedString
         return cell
     }
-    */
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+
+    private func loadParagraphs() {
+        guard let paragraphStructure = paragraphStructure else { return }
+        for par in paragraphStructure.paragraph {
+            if par.chapter == parentID {
+                paragraphRowData.append(ParagraphRowData(chapter: par.chapter, caption: par.caption, refs: par.refs, id: par.id, text: par.text))
+            }
+        }
+        print(paragraphRowData)
+        print(paragraphRowData.count)
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+}
+extension String {
+    var htmlToAttributedString: NSAttributedString? {
+        guard let data = data(using: .utf8) else { return NSAttributedString() }
+        do {
+            return try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html, .characterEncoding:String.Encoding.utf8.rawValue], documentAttributes: nil)
+        } catch {
+            return NSAttributedString()
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    var htmlToString: String {
+        return htmlToAttributedString?.string ?? ""
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

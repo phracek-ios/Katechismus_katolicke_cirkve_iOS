@@ -10,6 +10,7 @@ import UIKit
 
 class ParagraphTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var paragraphLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

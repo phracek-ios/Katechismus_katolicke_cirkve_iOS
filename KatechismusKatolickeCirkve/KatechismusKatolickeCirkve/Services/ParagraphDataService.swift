@@ -27,7 +27,7 @@ class ParagraphDataService {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 paragraphStructure = try JSONDecoder().decode(ParagraphStructure.self, from: data)
-                print(paragraphStructure.debugDescription)
+                //print(paragraphStructure.debugDescription)
             } catch {
                 print(error)
             }
