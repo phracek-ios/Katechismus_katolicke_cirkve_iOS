@@ -27,7 +27,7 @@ class ChaptersDataService {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 chaptersStructure = try JSONDecoder().decode(ChaptersStructure.self, from: data)
-                print(chaptersStructure.debugDescription)
+                //print(chaptersStructure.debugDescription)
             } catch {
                 print(error)
             }

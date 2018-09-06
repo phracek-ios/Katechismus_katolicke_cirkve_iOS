@@ -24,7 +24,6 @@ class SectionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersStructure = ChaptersDataService.shared.chaptersStructure
-        print(parentID)
         loadSections()
     }
 
@@ -36,23 +35,22 @@ class SectionsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionsRowData.count
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
 
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return sectionsRowData.count
+    }
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if indexPath.row == 0 {
         let cellIdentifier = "SectionsTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SectionsTableViewCell else { return UITableViewCell()
         }
-        if sectionsRowData[indexPath.section].main_section == true {
+        if sectionsRowData[indexPath.row].main_section == true {
             cell.backgroundColor = UIColor.blue
             cell.sectionLabel?.textColor = UIColor.white
         }
-        cell.sectionLabel?.text = sectionsRowData[indexPath.section].name
+        cell.sectionLabel?.text = sectionsRowData[indexPath.row].name
         return cell
     }
     
@@ -67,13 +65,10 @@ class SectionsTableViewController: UITableViewController {
             guard let indexPath = sender as? IndexPath else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            print(sectionsRowData[indexPath.row])
-            // TODO This needs to be fixed. Trying to select id 7, but gets 5.
-            let parentNumber = sectionsRowData[indexPath.row].id + 2
+            let parentNumber = sectionsRowData[indexPath.row].id
             if parentNumber != 0 {
                 paragraphTableViewController.parentID = parentNumber
             }
-            
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
@@ -97,7 +92,6 @@ class SectionsTableViewController: UITableViewController {
                 loadSubSections(section: chap.id)
             }
         }
-        print(sectionsRowData)
     }
 
 }

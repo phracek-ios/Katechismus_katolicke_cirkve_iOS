@@ -50,6 +50,9 @@ class ChaptersTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ChaptersTableViewCell else {
             fatalError("The dequeue cell is not an entrance of ChaptersTableViewCell")
         }
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.gray
+        }
         cell.chapterLabel?.text = rowData[indexPath.row].name
         
         return cell
@@ -76,7 +79,6 @@ class ChaptersTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let data = rowData[indexPath.row]
         performSegue(withIdentifier: "ShowSections", sender: indexPath)
     }
 

@@ -18,11 +18,13 @@
 		0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */; };
 		0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DE211B91B40021058A /* ChaptersStructure.swift */; };
 		0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1E0211B91F50021058A /* ChaptersDataService.swift */; };
+		014BEE79212432C900B9E9D2 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 014BEE78212432C900B9E9D2 /* database.json */; };
+		014BEE7B212433B200B9E9D2 /* part.json in Resources */ = {isa = PBXBuildFile; fileRef = 014BEE7A212433B200B9E9D2 /* part.json */; };
 		015430F9211B1ECA0029105A /* SearchForTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */; };
 		015430FB211B1EE50029105A /* SearchForTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FA211B1EE50029105A /* SearchForTableViewController.swift */; };
 		015430FF211B21700029105A /* SearchForMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FE211B21700029105A /* SearchForMenu.swift */; };
-		01780C7F211B08D2004F2E48 /* part.json in Resources */ = {isa = PBXBuildFile; fileRef = 01780C7E211B08D2004F2E48 /* part.json */; };
-		01780C81211B08EF004F2E48 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 01780C80211B08EF004F2E48 /* database.json */; };
+		0161FBC2213FBF7200A4959A /* NumbersDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161FBC1213FBF7200A4959A /* NumbersDetailTableViewController.swift */; };
+		0161FBC4213FBFA400A4959A /* NumbersDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */; };
 		017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20F3211A2902006B448C /* CatechismMenu.swift */; };
 		017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20F8211A3A03006B448C /* AboutViewController.swift */; };
 		017F20FB211A3A15006B448C /* About.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 017F20FA211A3A15006B448C /* About.storyboard */; };
@@ -44,7 +46,6 @@
 		019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3421235890005EFB7F /* ParagraphDataService.swift */; };
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
-		01DF46E1211C707B006442CD /* Numbers.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01DF46E0211C707B006442CD /* Numbers.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,11 +74,13 @@
 		0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
 		0140F1DE211B91B40021058A /* ChaptersStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersStructure.swift; sourceTree = "<group>"; };
 		0140F1E0211B91F50021058A /* ChaptersDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersDataService.swift; sourceTree = "<group>"; };
+		014BEE78212432C900B9E9D2 /* database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
+		014BEE7A212433B200B9E9D2 /* part.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = part.json; sourceTree = "<group>"; };
 		015430F8211B1ECA0029105A /* SearchForTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForTableViewCell.swift; sourceTree = "<group>"; };
 		015430FA211B1EE50029105A /* SearchForTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForTableViewController.swift; sourceTree = "<group>"; };
 		015430FE211B21700029105A /* SearchForMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchForMenu.swift; sourceTree = "<group>"; };
-		01780C7E211B08D2004F2E48 /* part.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = part.json; path = ../../../../../Dropbox/MACOS/KKC/part.json; sourceTree = "<group>"; };
-		01780C80211B08EF004F2E48 /* database.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = database.json; path = ../../../../../Dropbox/MACOS/KKC/database.json; sourceTree = "<group>"; };
+		0161FBC1213FBF7200A4959A /* NumbersDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersDetailTableViewController.swift; sourceTree = "<group>"; };
+		0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersDetailTableViewCell.swift; sourceTree = "<group>"; };
 		017F20F3211A2902006B448C /* CatechismMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismMenu.swift; sourceTree = "<group>"; };
 		017F20F8211A3A03006B448C /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		017F20FA211A3A15006B448C /* About.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = About.storyboard; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		019C1A3421235890005EFB7F /* ParagraphDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphDataService.swift; sourceTree = "<group>"; };
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
-		01DF46E0211C707B006442CD /* Numbers.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Numbers.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,8 @@
 		017F20F7211A39E0006B448C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0161FBC1213FBF7200A4959A /* NumbersDetailTableViewController.swift */,
+				0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */,
 				017F20F8211A3A03006B448C /* AboutViewController.swift */,
 				017F20FA211A3A15006B448C /* About.storyboard */,
 				017F20FC211A3A28006B448C /* Settings.storyboard */,
@@ -183,7 +187,6 @@
 				019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */,
 				01DF46DC211C7052006442CD /* NumbersTableViewController.swift */,
 				01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */,
-				01DF46E0211C707B006442CD /* Numbers.storyboard */,
 				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
 				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
 				0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */,
@@ -217,8 +220,8 @@
 		017F210C211A3BC6006B448C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				01780C80211B08EF004F2E48 /* database.json */,
-				01780C7E211B08D2004F2E48 /* part.json */,
+				014BEE7A212433B200B9E9D2 /* part.json */,
+				014BEE78212432C900B9E9D2 /* database.json */,
 				017F210D211A3C32006B448C /* catechism.json */,
 			);
 			path = "Supporting Files";
@@ -305,15 +308,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01780C7F211B08D2004F2E48 /* part.json in Resources */,
+				014BEE7B212433B200B9E9D2 /* part.json in Resources */,
 				017F2101211A3A52006B448C /* AboutProject.storyboard in Resources */,
 				013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */,
 				013BD2702119BC8700554086 /* Assets.xcassets in Resources */,
-				01DF46E1211C707B006442CD /* Numbers.storyboard in Resources */,
 				017F210E211A3C32006B448C /* catechism.json in Resources */,
+				014BEE79212432C900B9E9D2 /* database.json in Resources */,
 				017F20FB211A3A15006B448C /* About.storyboard in Resources */,
 				013BD26E2119BC8600554086 /* Main.storyboard in Resources */,
-				01780C81211B08EF004F2E48 /* database.json in Resources */,
 				017F20FD211A3A28006B448C /* Settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +349,7 @@
 				017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */,
 				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
 				0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */,
+				0161FBC2213FBF7200A4959A /* NumbersDetailTableViewController.swift in Sources */,
 				01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */,
 				015430F9211B1ECA0029105A /* SearchForTableViewCell.swift in Sources */,
 				013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */,
@@ -357,6 +360,7 @@
 				013BD2692119BC8600554086 /* AppDelegate.swift in Sources */,
 				015430FF211B21700029105A /* SearchForMenu.swift in Sources */,
 				019C1A31212357F4005EFB7F /* Paragraph.swift in Sources */,
+				0161FBC4213FBFA400A4959A /* NumbersDetailTableViewCell.swift in Sources */,
 				017F2103211A3A63006B448C /* AboutProjectViewController.swift in Sources */,
 				018E43A5211D8C1F00E0237B /* SectionsTableViewCell.swift in Sources */,
 			);

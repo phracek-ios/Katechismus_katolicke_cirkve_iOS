@@ -1,19 +1,19 @@
 //
-//  NumbersTableViewCell.swift
+//  NumbersDetailTableViewCell.swift
 //  KatechismusKatolickeCirkve
 //
-//  Created by Petr Hracek on 09/08/2018.
+//  Created by Petr Hracek on 05/09/2018.
 //  Copyright © 2018 Petr Hracek. All rights reserved.
 //
 
 import UIKit
 
-class NumbersTableViewCell: UITableViewCell {
+class NumbersDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var numberDetails: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        numberLabel.layer.cornerRadius = numberLabel.frame.height / 4
+        //numberDetails.layer.cornerRadius = numberDetails.frame.height / 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

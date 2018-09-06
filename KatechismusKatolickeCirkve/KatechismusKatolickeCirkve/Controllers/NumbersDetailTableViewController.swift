@@ -1,25 +1,27 @@
 //
-//  NumbersTableViewController.swift
+//  NumbersDetailTableViewController.swift
 //  KatechismusKatolickeCirkve
 //
-//  Created by Petr Hracek on 09/08/2018.
+//  Created by Petr Hracek on 05/09/2018.
 //  Copyright © 2018 Petr Hracek. All rights reserved.
 //
 
 import UIKit
 
-class NumbersTableViewController: UITableViewController {
+class NumbersDetailTableViewController: UITableViewController {
 
-    fileprivate var diff = 500
-    fileprivate var beginNumber = 0
-    fileprivate var endNumber = 2865
-
-    struct NumbersRowData {
+    var beginNumber = 0
+    var endNumber = 499
+    
+    struct NumbersDetailRowData {
         var number : Int
+        var number_final: Int
         var text: String
     }
     
-    fileprivate var numbersRowData = [NumbersRowData]()
+    fileprivate var numbersDetailRowData = [NumbersDetailRowData]()
+    fileprivate var diff = 20
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
@@ -37,43 +39,43 @@ class NumbersTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numbersRowData.count
+        return numbersDetailRowData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NumbersTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NumbersTableViewCell else { return UITableViewCell()
+        let cellIdentifier = "NumbersDetailTableViewCell"
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NumbersDetailTableViewCell else { return UITableViewCell()
         }
-        cell.numberLabel?.text = numbersRowData[indexPath.row].text
+        cell.numberDetails?.text = numbersDetailRowData[indexPath.row].text
         return cell
-
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
         switch(segue.identifier ?? "") {
             
-        case "ShowNumbersDetail":
-            guard let numbersDetailTableViewController = segue.destination as? NumbersDetailTableViewController else {
+        case "ShowParagraph":
+            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let indexPath = sender as? IndexPath else {
                 fatalError("The selected cell is not being displayed by the table")
             }
-            let parentNumber = numbersRowData[indexPath.row].number
-            numbersDetailTableViewController.beginNumber = parentNumber
-            let endNumber = parentNumber + diff - 1
-            numbersDetailTableViewController.endNumber = endNumber
+            var parentNumber = numbersDetailRowData[indexPath.row].number
+            if parentNumber == 0 {
+                parentNumber = 1
+            }
+            paragraphTableViewController.kindOfSource = 1
+            paragraphTableViewController.parentID = parentNumber
+            paragraphTableViewController.rangeID = numbersDetailRowData[indexPath.row].number_final
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowNumbersDetail", sender: indexPath)
+        performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
     }
-    
     private func addRow() {
         if beginNumber == 2500 {
             endNumber = 2865
@@ -82,11 +84,11 @@ class NumbersTableViewController: UITableViewController {
             endNumber = beginNumber + diff - 1
         }
         let text_for_disp: String = ("\(beginNumber)-\(endNumber)")
-        numbersRowData.append(NumbersRowData(number: beginNumber, text: text_for_disp))
-
+        numbersDetailRowData.append(NumbersDetailRowData(number: beginNumber,
+                                                         number_final: endNumber, text: text_for_disp))
     }
     private func initNumbers() {
-        let count = endNumber / diff + 1
+        let count = (endNumber - beginNumber) / diff + 1
         for i in 1...count {
             addRow()
             beginNumber += diff

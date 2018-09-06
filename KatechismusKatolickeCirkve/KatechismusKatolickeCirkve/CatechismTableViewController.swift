@@ -28,6 +28,7 @@ class CatechismTableViewController: UITableViewController {
     //MARK: Properties
     fileprivate var rowData = [RowData]()
     fileprivate var darkMode: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -64,28 +65,14 @@ class CatechismTableViewController: UITableViewController {
 
         let data = rowData[indexPath.row]
         cell.catechismLabel.text = data.menu?.name
-
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        
-        switch(segue.identifier ?? "") {
-        case "ShowChapters":
-            guard let chaptersTableViewController = segue.destination as? ChaptersTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = rowData[indexPath.row]
         
         switch data.type {
         case .browse_chapter:
-            //performSegue(withIdentifier: "ShowChapters", sender: indexPath)
             let mainViewController = UIStoryboard(name: "Main", bundle: nil)
             if mainViewController != nil {
                 let chaptersViewController = mainViewController.instantiateViewController(withIdentifier: "Chapters")
@@ -95,7 +82,13 @@ class CatechismTableViewController: UITableViewController {
             }
             
         case .search_for_numbers:
-            print("Not implemented yet")
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+            if mainViewController != nil {
+                let numbersViewController = mainViewController.instantiateViewController(withIdentifier: "Numbers")
+                if  numbersViewController != nil {
+                    navigationController?.pushViewController(numbersViewController, animated: true)
+                }
+            }
         case .search_for:
             if let searchForViewController = UIStoryboard(name: "SearchFor", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(searchForViewController, animated: true)
@@ -118,16 +111,6 @@ class CatechismTableViewController: UITableViewController {
             }
         }
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     private func loadCatechism () {
         guard let browse_chapter = CatechismMenu(name: "Procházet kapitoly", photo: nil, order: 0) else {

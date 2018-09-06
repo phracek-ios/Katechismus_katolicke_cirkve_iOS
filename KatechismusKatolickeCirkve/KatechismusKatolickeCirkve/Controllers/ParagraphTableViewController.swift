@@ -22,10 +22,14 @@ class ParagraphTableViewController: UITableViewController {
     fileprivate var paragraphStructure: ParagraphStructure?
 
     var parentID: Int = 0
-    
+    var kindOfSource: Int = 0
+    var rangeID: Int = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
         loadParagraphs()
     }
 
@@ -50,29 +54,40 @@ class ParagraphTableViewController: UITableViewController {
             fatalError("The dequeue cell is not an entrance of ParagraphTableViewCell")
         }
         let data = paragraphRowData[indexPath.row]
-        var caption: String = ""
+        var caption: String = "§\(data.id)<br><p>"
         if data.caption != "" {
-            caption = data.caption + "<br>"
+            caption = data.caption + "<br>\(caption)"
         }
-        let htmlText = "§\(data.id)<p>" + caption + data.text + "</p>"
-        cell.paragraphLabel.textColor = UIColor.black
-        cell.paragraphLabel.attributedText = htmlText.htmlToAttributedString
+        let htmlText = caption + data.text + "</p>"
+        print(indexPath.row % 2)
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor.gray
+        }
+        cell.paragraphLabel?.textColor = UIColor.black
+        cell.paragraphLabel?.attributedText = htmlText.htmlToAttributedString
         return cell
     }
 
 
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
-        for par in paragraphStructure.paragraph {
-            if par.chapter == parentID {
-                paragraphRowData.append(ParagraphRowData(chapter: par.chapter, caption: par.caption, refs: par.refs, id: par.id, text: par.text))
+        if kindOfSource == 1 {
+            for par in paragraphStructure.paragraph {
+                if par.id >= parentID && par.id <= rangeID {
+                    paragraphRowData.append(ParagraphRowData(chapter: par.chapter, caption: par.caption, refs: par.refs, id: par.id, text: par.text))
+                }
             }
         }
-        print(paragraphRowData)
-        print(paragraphRowData.count)
+        else if kindOfSource == 0 {
+            for par in paragraphStructure.paragraph {
+                if par.chapter == parentID {
+                    paragraphRowData.append(ParagraphRowData(chapter: par.chapter, caption: par.caption, refs: par.refs, id: par.id, text: par.text))
+                }
+            }
+        }
     }
-
 }
+
 extension String {
     var htmlToAttributedString: NSAttributedString? {
         guard let data = data(using: .utf8) else { return NSAttributedString() }

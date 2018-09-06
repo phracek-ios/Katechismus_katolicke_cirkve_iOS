@@ -9,20 +9,18 @@
 import UIKit
 
 class CatechismTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var catechismImage: UIImageView!
-    @IBOutlet weak var catechismLabel: UILabel!
     
+    @IBOutlet weak var catechismLabel: UILabel!
     //MARK: Properties
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        catechismLabel.layer.cornerRadius = catechismLabel.frame.height / 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+        catechismLabel.layer.cornerRadius = catechismLabel.frame.height / 4
     }
 
 }
