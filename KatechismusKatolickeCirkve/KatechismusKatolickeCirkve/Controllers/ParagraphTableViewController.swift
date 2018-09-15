@@ -59,15 +59,12 @@ class ParagraphTableViewController: UITableViewController {
             caption = data.caption + "<br>\(caption)"
         }
         let htmlText = caption + data.text + "</p>"
-        print(indexPath.row % 2)
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.gray
-        }
         cell.paragraphLabel?.textColor = UIColor.black
         cell.paragraphLabel?.attributedText = htmlText.htmlToAttributedString
+        cell.paragraphLabel?.font = cell.paragraphLabel?.font.withSize(20)
+        cell.selectionStyle = .none
         return cell
     }
-
 
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }

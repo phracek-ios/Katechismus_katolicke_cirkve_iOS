@@ -10,6 +10,7 @@ import UIKit
 
 class SearchForTableViewController: UITableViewController {
 
+    @IBOutlet weak var searchButton: UIButton!
     enum RowType {
         case by_chapters
         case by_numbers

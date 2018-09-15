@@ -59,7 +59,7 @@ class SectionsTableViewController: UITableViewController {
         switch(segue.identifier ?? "") {
             
         case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
+            guard let paragraphViewController = segue.destination as? ParagraphViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let indexPath = sender as? IndexPath else {
@@ -67,7 +67,7 @@ class SectionsTableViewController: UITableViewController {
             }
             let parentNumber = sectionsRowData[indexPath.row].id
             if parentNumber != 0 {
-                paragraphTableViewController.parentID = parentNumber
+                paragraphViewController.parentID = parentNumber
             }
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

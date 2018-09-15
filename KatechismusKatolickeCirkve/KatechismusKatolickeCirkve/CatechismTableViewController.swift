@@ -13,8 +13,7 @@ class CatechismTableViewController: UITableViewController {
     enum RowType {
         case browse_chapter
         case search_for_numbers
-        case search_for
-        case searching
+        case find_word
         case index
         case settings
         case project
@@ -89,12 +88,14 @@ class CatechismTableViewController: UITableViewController {
                     navigationController?.pushViewController(numbersViewController, animated: true)
                 }
             }
-        case .search_for:
-            if let searchForViewController = UIStoryboard(name: "SearchFor", bundle: nil).instantiateInitialViewController() {
-                navigationController?.pushViewController(searchForViewController, animated: true)
+        case .find_word:
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+            if mainViewController != nil {
+                let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindWord")
+                if findWordViewController != nil {
+                   navigationController?.pushViewController(findWordViewController, animated: true)
+                }
             }
-        case .searching:
-            print("Not implemented yet")
         case .index:
             print("Not Implemented yet")
         case .project:
@@ -113,36 +114,32 @@ class CatechismTableViewController: UITableViewController {
     }
 
     private func loadCatechism () {
-        guard let browse_chapter = CatechismMenu(name: "Procházet kapitoly", photo: nil, order: 0) else {
+        guard let browse_chapter = CatechismMenu(name: " Procházet kapitoly", photo: nil, order: 0) else {
             fatalError("Unable to instanciate Procházet kapitoly")
         }
-        guard let search_for_numbers = CatechismMenu(name: "Hledat podle čísel", photo: nil, order: 1) else {
+        guard let search_for_numbers = CatechismMenu(name: " Hledat podle čísel", photo: nil, order: 1) else {
             fatalError("Unable to instanciate Hledat podle čísel")
         }
-        guard let search_for = CatechismMenu(name: "Vyhledávání", photo: nil, order: 2) else {
+        guard let find_word = CatechismMenu(name: " Vyhledávání", photo: nil, order: 2) else {
             fatalError("Unable to instanciate Vyhledávání")
         }
-        guard let index = CatechismMenu(name: "Rejstřík", photo: nil, order: 3) else {
+        guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
             fatalError("Unable to instanciate Rejstřík")
         }
-        guard let searching = CatechismMenu(name: "Vyhledávání", photo: nil, order: 4) else {
-            fatalError("Unable to instanciate Vyhledavani")
-        }
-        guard let about_project = CatechismMenu(name: "O projektu", photo: nil, order: 5) else {
+        guard let about_project = CatechismMenu(name: " O projektu", photo: nil, order: 4) else {
             fatalError("Unable to instanciate O projektu")
         }
-        guard let settings = CatechismMenu(name: "Nastavení", photo: nil, order: 6) else {
+        guard let settings = CatechismMenu(name: " Nastavení", photo: nil, order: 5) else {
             fatalError("Unable to instanciate Nastaveni")
         }
-        guard let about = CatechismMenu(name: "O aplikaci", photo: nil, order: 7) else {
+        guard let about = CatechismMenu(name: " O aplikaci", photo: nil, order: 6) else {
             fatalError("Unable to instanciate O aplikaci")
         }
         
         rowData = [RowData(type: .browse_chapter, menu: browse_chapter)]
         rowData.append(RowData(type: .search_for_numbers, menu: search_for_numbers))
-        rowData.append(RowData(type: .search_for, menu: search_for))
+        rowData.append(RowData(type: .find_word, menu: find_word))
         rowData.append(RowData(type: .index, menu: index))
-        rowData.append(RowData(type: .searching, menu: searching))
         rowData.append(RowData(type: .project, menu: about_project))
         rowData.append(RowData(type: .settings, menu: settings))
         rowData.append(RowData(type: .about, menu: about))

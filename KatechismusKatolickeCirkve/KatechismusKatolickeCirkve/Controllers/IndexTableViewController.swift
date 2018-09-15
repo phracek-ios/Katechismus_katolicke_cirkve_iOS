@@ -1,5 +1,5 @@
 //
-//  IndexViewController.swift
+//  IndexTableViewController.swift
 //  KatechismusKatolickeCirkve
 //
 //  Created by Petr Hracek on 07/08/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class IndexViewController: UIViewController {
+class IndexTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

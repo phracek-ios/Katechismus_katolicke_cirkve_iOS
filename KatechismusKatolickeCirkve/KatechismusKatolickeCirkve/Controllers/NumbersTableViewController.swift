@@ -23,6 +23,7 @@ class NumbersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
+        self.tableView.rowHeight = 80
     }
 
     override func didReceiveMemoryWarning() {

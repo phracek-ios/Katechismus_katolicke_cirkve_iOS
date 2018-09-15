@@ -24,7 +24,10 @@ class NumbersDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("initNumbers")
         initNumbers()
+        print("set rowheight")
+        self.tableView.rowHeight = 80
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +42,7 @@ class NumbersDetailTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numbersDetailRowData.count
+        return numbersDetailRowData.count - 1
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -55,7 +58,7 @@ class NumbersDetailTableViewController: UITableViewController {
         switch(segue.identifier ?? "") {
             
         case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
+            guard let paragraphViewController = segue.destination as? ParagraphViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let indexPath = sender as? IndexPath else {
@@ -65,9 +68,9 @@ class NumbersDetailTableViewController: UITableViewController {
             if parentNumber == 0 {
                 parentNumber = 1
             }
-            paragraphTableViewController.kindOfSource = 1
-            paragraphTableViewController.parentID = parentNumber
-            paragraphTableViewController.rangeID = numbersDetailRowData[indexPath.row].number_final
+            paragraphViewController.kindOfSource = 1
+            paragraphViewController.parentID = parentNumber
+            paragraphViewController.rangeID = numbersDetailRowData[indexPath.row].number_final
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
