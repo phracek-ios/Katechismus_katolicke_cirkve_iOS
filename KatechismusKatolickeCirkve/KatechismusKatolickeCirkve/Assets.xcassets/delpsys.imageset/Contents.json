@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "delpsys-logo-transparent.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "delpsys-logo-transparent.png",
       "scale" : "2x"
     },
     {
