@@ -7,16 +7,15 @@
 //
 
 import UIKit
+import WebKit
 
-class ParagraphTableViewController: UITableViewController {
+class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
     
     struct ParagraphRowData {
-        var chapter: Int
-        var caption: String
-        var refs: String
-        var id: Int
-        var text: String
+        var html: String
     }
+
+    var heightOfWebView: CGFloat = 0
     
     fileprivate var paragraphRowData = [ParagraphRowData]()
     fileprivate var paragraphStructure: ParagraphStructure?
@@ -24,13 +23,19 @@ class ParagraphTableViewController: UITableViewController {
     var parentID: Int = 0
     var kindOfSource: Int = 0
     var rangeID: Int = 0
-
+    var boolSouhrn: Bool = false
+    var findWordData = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 140
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 150
         loadParagraphs()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.tableView.alpha = 0
+ 
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +44,10 @@ class ParagraphTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.alpha = 1
+    }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -54,33 +62,76 @@ class ParagraphTableViewController: UITableViewController {
             fatalError("The dequeue cell is not an entrance of ParagraphTableViewCell")
         }
         let data = paragraphRowData[indexPath.row]
-        var caption: String = "§\(data.id)<br><p>"
-        if data.caption != "" {
-            caption = data.caption + "<br>\(caption)"
-        }
-        let htmlText = caption + data.text + "</p>"
-        cell.paragraphLabel?.textColor = UIColor.black
-        cell.paragraphLabel?.attributedText = htmlText.htmlToAttributedString
-        cell.paragraphLabel?.font = cell.paragraphLabel?.font.withSize(20)
-        cell.selectionStyle = .none
+        
+        cell.paragraphWebView.tag = indexPath.row
+        cell.paragraphWebView.loadHTMLString("<font size=20>" + data.html, baseURL: nil)
+
         return cell
     }
 
+    private func webViewDidFinishLoad(_ webView: WKWebView) {
+        var frame: CGRect = webView.frame
+        frame.size.height = 1
+        webView.frame = frame
+        let fittingSize = webView.sizeThatFits(CGSize.zero)
+        frame.size = fittingSize
+        webView.frame = frame
+        heightOfWebView = fittingSize.height
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        print("Calling webViewDidFinishLoad. Cell size value: \(heightOfWebView)")
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return heightOfWebView
+    }
+    
+    
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
+        
         if kindOfSource == 1 {
             for par in paragraphStructure.paragraph {
                 if par.id >= parentID && par.id <= rangeID {
-                    paragraphRowData.append(ParagraphRowData(chapter: par.chapter, caption: par.caption, refs: par.refs, id: par.id, text: par.text))
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par)))
                 }
             }
         }
         else if kindOfSource == 0 {
             for par in paragraphStructure.paragraph {
                 if par.chapter == parentID {
-                    paragraphRowData.append(ParagraphRowData(chapter: par.chapter, caption: par.caption, refs: par.refs, id: par.id, text: par.text))
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par)))
                 }
             }
+        }
+        else if kindOfSource == 2 {
+            for par in paragraphStructure.paragraph {
+                if findWordData.contains(par.id) {
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par)))
+                    
+                }
+            }
+        }
+    }
+    private func get_html_text(par: Paragraph) -> String {
+        var references: String = "<br>"
+        if parentID != 1 && parentID != 2 {
+            references = "<br><br>§" + String(par.id) + " "
+        }
+        if par.refs != "" {
+            references = references + " Odkazy:" + par.refs
+        }
+        if boolSouhrn {
+            
+        }
+        else {
+            
+        }
+        if par.caption.range(of: "Souhrn") != nil {
+            boolSouhrn = true
+            return "<br><div style=\"background-color:green;\">" + par.caption + references + par.text + "</div>"
+        }
+        else {
+            return "<br>" + par.caption + references + par.text
         }
     }
 }

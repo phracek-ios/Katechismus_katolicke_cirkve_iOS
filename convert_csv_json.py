@@ -18,7 +18,15 @@ def parse_part(row):
 
 def parse_database(row):
     fields = row.split("::")
-    return {'id': int(fields[0]), 'caption': fields[1], 'chapter': int(fields[2]), 'refs': fields[3], 'text': fields[4]}
+    print(fields)
+    return {'id': int(fields[0]), 'caption': fields[1],
+            'captionNoHTML': fields[2],
+            'chapter': int(fields[3]),
+            'refsChapters': fields[4],
+            'text': fields[5],
+            'textNoHTML': fields[6],
+            #'links': fields[7],
+            }
 
 
 #Read CSV File

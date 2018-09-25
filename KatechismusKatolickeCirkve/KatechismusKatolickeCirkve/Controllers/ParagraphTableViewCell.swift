@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Foundation
+import WebKit
 
 class ParagraphTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var paragraphLabel: UILabel!
+    @IBOutlet weak var paragraphWebView: WKWebView!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        //paragraphWebView.uiDelegate = self as? WKUIDelegate
+        //paragraphWebView.scrollView.isScrollEnabled = false
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
