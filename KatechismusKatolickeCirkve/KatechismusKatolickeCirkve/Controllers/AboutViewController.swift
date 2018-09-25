@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 
 
-class AboutViewController: UIViewController {
+class AboutViewController: UIViewController, UITextViewDelegate {
 
     //MARK: Properties
     fileprivate var catechismStructure: CatechismStructure?
@@ -24,10 +24,15 @@ class AboutViewController: UIViewController {
         aboutMainTextView.dataDetectorTypes = .link
         aboutMainTextView.isEditable = false
         aboutMainTextView.isSelectable = false
-        let delpsysHtml: String = "<a href=\"www.deplsys.cz\">DelpSys</a>"
+
         let attributedNewLine = NSMutableAttributedString(string: "\n")
         let attributedAboutFirst = NSMutableAttributedString(string: catechismStructure.about_appl_1)
-        attributedAboutFirst.append(delpsysHtml.htmlToAttributedString!)
+        
+        let delphsysMutAttrString = NSMutableAttributedString(string: "DelpSys")
+        let delpsysURL: String = "https://www.delpsys.cz"
+        delphsysMutAttrString.addAttribute(.link, value: delpsysURL, range: NSRange(location: 0, length: delphsysMutAttrString.length))
+        attributedAboutFirst.append(delphsysMutAttrString)
+
         attributedAboutFirst.append(attributedNewLine)
         let delpsys = UIImage(named: "delpsys")
         let imageAttachment = NSTextAttachment()
@@ -37,7 +42,6 @@ class AboutViewController: UIViewController {
         imageAttachment.bounds = CGRect.init(x: 0, y: 0, width: newImageWidth, height: newImageHeight)
 
         imageAttachment.image = delpsys
-        let imageString = NSAttributedString(attachment: imageAttachment)
 
         let attrStringWithImage = NSAttributedString(attachment: imageAttachment)
         attributedAboutFirst.append(attrStringWithImage)
@@ -45,8 +49,12 @@ class AboutViewController: UIViewController {
         let email: String = "<a href=\"phracek@gmail.com\">phracek@gmail.com</a>"
         attributedAboutFirst.append(email.htmlToAttributedString!)
         attributedAboutFirst.append(NSAttributedString(string: catechismStructure.about_appl_2a))
-        let issues: String = "<a href=\"https://github.com/phracek/Katechismus_katolicke_cirkve_iOS/issues\">zde.</a>"
-        attributedAboutFirst.append(issues.htmlToAttributedString!)
+
+        let issuesMutAttrString = NSMutableAttributedString(string: "zde.")
+        let issuesURL: String = "https://github.com/phracek/Katechismus_katolicke_cirkve_iOS/issues"
+        issuesMutAttrString.addAttribute(.link, value: issuesURL, range: NSRange(location: 0, length: issuesMutAttrString.length))
+        attributedAboutFirst.append(issuesMutAttrString)
+
         aboutMainTextView.attributedText = attributedAboutFirst
     }
 
@@ -54,6 +62,9 @@ class AboutViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        UIApplication.shared.open(URL, options: [:])
+        return false
+    }
 }
 

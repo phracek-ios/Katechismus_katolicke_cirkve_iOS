@@ -58,7 +58,7 @@
                             <outlet property="delegate" destination="mAO-HM-I7Z" id="St6-dh-rlq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Katechismus katolické církve" id="ap6-9I-rfb"/>
+                    <navigationItem key="navigationItem" title="Katechismus katolické církve" id="ap6-9I-rfb" colorLabel="IBBuiltInLabel-Blue"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGG-Pa-42f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,6 +104,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="2j8-pM-sQD" kind="show" identifier="ShowSections" id="nca-ir-XEj"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="Aqg-cf-waX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbl-9H-bKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,7 +178,7 @@
                         <barButtonItem key="backBarButtonItem" title="Zpět" id="u3C-rb-XPJ"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="xDp-mX-SxH"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="ePE-Hf-vpC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRP-YG-ekW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -216,7 +217,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnN-9P-ewb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2548" y="515.8920539730135"/>
+            <point key="canvasLocation" x="3409" y="-14"/>
         </scene>
         <!--Numbers Table View Controller-->
         <scene sceneID="909-Sx-z2R">
@@ -318,7 +319,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="DFU-EU-obY"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="bZY-Dk-6Tb"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOX-Pe-l50" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -362,7 +363,7 @@
                     <connections>
                         <outlet property="findButton" destination="so4-3U-Wle" id="3Yz-ew-gKU"/>
                         <outlet property="wordTextField" destination="kBc-Cb-Vbf" id="QYi-gS-aOL"/>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="sRt-G1-5Dh"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="zUh-ay-yMr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -425,7 +426,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="sRt-G1-5Dh"/>
+        <segue reference="bZY-Dk-6Tb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41009405409999999" green="0.7701846752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

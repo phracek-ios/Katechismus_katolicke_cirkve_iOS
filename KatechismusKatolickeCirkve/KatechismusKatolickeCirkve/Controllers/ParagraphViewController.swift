@@ -15,6 +15,8 @@ class ParagraphViewController: UIViewController, WKNavigationDelegate {
     var parentID: Int = 0
     var rangeID: Int = 0
     var htmlContent: String = ""
+    var boolSouhrn: Bool = false
+    var currentID: Int = 0
     
     var findWordData = [Int]()
     
@@ -71,13 +73,25 @@ class ParagraphViewController: UIViewController, WKNavigationDelegate {
         }
     }
     private func get_html_text(par: Paragraph) -> String {
-        var references: String = ""
+        var references: String = "<br>"
+        if parentID != 1 && parentID != 2 {
+            references = "<br><br>§" + String(par.id) + " "
+        }
         if par.refs != "" {
-            references = "<br><br>§" + String(par.id) + " Odkazy:" + par.refs
+            references = references + " Odkazy:" + par.refs
+        }
+        if boolSouhrn {
+            
         }
         else {
-            references = "<br>§" + String(par.id)
+            
         }
-        return "<br><br>" + par.caption + references + "<br>" + par.text
+        if par.caption.range(of: "Souhrn") != nil {
+            boolSouhrn = true
+            return "<br><div style=\"background-color:green;\">" + par.caption + references + par.text + "</div>"
+        }
+        else {
+            return "<br>" + par.caption + references + par.text
+        }
     }
 }

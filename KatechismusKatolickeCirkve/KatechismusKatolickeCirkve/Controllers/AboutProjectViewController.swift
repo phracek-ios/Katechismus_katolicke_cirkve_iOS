@@ -21,30 +21,40 @@ class AboutProjectViewController: UIViewController, UITextViewDelegate{
         guard let catechismStructure = catechismStructure else { return }
         
         aboutPrjTextView.dataDetectorTypes = .link
-        aboutPrjTextView.isEditable = false
-        aboutPrjTextView.isSelectable = false
-        let carmelPublishing: String = "<a href=\"www.ikarmel.cz\">Karmelitánské nakladatelství</a>"
-        let donumPublishing: String = "<a href=\"www.donum.cz\">Donum</a>"
-        let paulinPublishing: String = "<a href=\"www.paulinky.cz\">Paulínek</a>"
-        let cbkPublishing: String = "<a href=\"www.cbk.cz\">České biskupstké konference</a>"
+        aboutPrjTextView.isSelectable = true
+
         let attributedPrjFirst = NSMutableAttributedString(string: catechismStructure.about_project_1)
-        let carmelNSMutableAttributeString = NSMutableAttributedString(string: "Karmelitánské nakladatelství")
-        carmelNSMutableAttributeString.addAttribute(.link, value: "https://www.ikarmel.cz", range: NSRange(location: 9, length: carmelNSMutableAttributeString.length))
-        attributedPrjFirst.append(carmelNSMutableAttributeString)
+        let carmelPublishingMutAttrString = NSMutableAttributedString(string: "Karmelitánské nakladatelství")
+        let paulinPublishingMutAttrString = NSMutableAttributedString(string: "Paulínek")
+        let donumPublishingMutAttrString = NSMutableAttributedString(string: "Donum")
+        let cbkPublishingMutAttrString = NSMutableAttributedString(string: "České biskupstké konference")
+        let carmelURL: String = "https://www.ikarmel.cz"
+        let paulinURL: String = "https://www.paulinky.cz"
+        let donumURL: String = "http://www.donum.cz"
+        let cbkURL: String = "https://www.cirkev.cz"
+        
+        carmelPublishingMutAttrString.addAttribute(.link, value: carmelURL, range: NSRange(location: 0, length: carmelPublishingMutAttrString.length))
+        attributedPrjFirst.append(carmelPublishingMutAttrString)
         attributedPrjFirst.append(NSAttributedString(string: catechismStructure.about_project_1a))
-        attributedPrjFirst.append(donumPublishing.htmlToAttributedString!)
+
+        donumPublishingMutAttrString.addAttribute(.link, value: donumURL, range: NSRange(location: 0, length: donumPublishingMutAttrString.length))
+        attributedPrjFirst.append(donumPublishingMutAttrString)
         attributedPrjFirst.append(NSAttributedString(string: " nebo u "))
-        attributedPrjFirst.append(paulinPublishing.htmlToAttributedString!)
+
+        paulinPublishingMutAttrString.addAttribute(.link, value: paulinURL, range: NSRange(location: 0, length: paulinPublishingMutAttrString.length))
+        attributedPrjFirst.append(paulinPublishingMutAttrString)
         attributedPrjFirst.append(NSAttributedString(string: ".\n\n"))
  
         attributedPrjFirst.append(NSAttributedString(string: catechismStructure.about_project_1b))
-        attributedPrjFirst.append(cbkPublishing.htmlToAttributedString!)
+
+        cbkPublishingMutAttrString.addAttribute(.link, value: cbkURL, range: NSRange(location: 0, length: cbkPublishingMutAttrString.length))
+        attributedPrjFirst.append(cbkPublishingMutAttrString)
         attributedPrjFirst.append(NSAttributedString(string: catechismStructure.about_project_1c))
 
         attributedPrjFirst.append(NSAttributedString(string: catechismStructure.about_project_2))
 
         attributedPrjFirst.append(NSAttributedString(string: catechismStructure.about_project_3))
-        attributedPrjFirst.append(carmelPublishing.htmlToAttributedString!)
+        attributedPrjFirst.append(carmelPublishingMutAttrString)
         attributedPrjFirst.append(NSAttributedString(string: catechismStructure.about_project_3a))
        
         aboutPrjTextView.attributedText = attributedPrjFirst
@@ -59,14 +69,5 @@ class AboutProjectViewController: UIViewController, UITextViewDelegate{
         UIApplication.shared.open(URL, options: [:])
         return false
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

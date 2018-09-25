@@ -27,7 +27,7 @@ class CatechismDataService {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path))
                 catechismStructure = try JSONDecoder().decode(CatechismStructure.self, from: data)
-                print(catechismStructure.debugDescription)
+                //print(catechismStructure.debugDescription)
             } catch {
                 print(error)
             }

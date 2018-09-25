@@ -79,7 +79,12 @@ class ChaptersTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowSections", sender: indexPath)
+        print(rowData[indexPath.row])
+        if rowData[indexPath.row].order != 1 && rowData[indexPath.row].order != 2 && rowData[indexPath.row].order != 3 {
+            performSegue(withIdentifier: "ShowSections", sender: indexPath)
+        } else {
+            performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
+        }
     }
 
     private func loadChapters() {
