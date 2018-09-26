@@ -75,14 +75,14 @@ class ChaptersTableViewController: UITableViewController {
             }
         
         case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
+            guard let paragraphViewController = segue.destination as? ParagraphViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let indexPath = sender as? IndexPath else {
                 fatalError("The selected cell is not being displayed by the table")
             }
             let parentNumber = rowData[indexPath.row].order
-            paragraphTableViewController.parentID = parentNumber
+            paragraphViewController.parentID = parentNumber
 
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

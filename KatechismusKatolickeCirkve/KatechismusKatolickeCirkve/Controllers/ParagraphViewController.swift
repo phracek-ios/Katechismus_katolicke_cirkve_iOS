@@ -73,25 +73,29 @@ class ParagraphViewController: UIViewController, WKNavigationDelegate {
         }
     }
     private func get_html_text(par: Paragraph) -> String {
-        var references: String = "<br>"
+        var start: String = ""
+        var refs: String = ""
+        var header: String = ""
         if parentID != 1 && parentID != 2 {
-            references = "<br><br>§" + String(par.id) + " "
+            start = "§" + String(par.id) + "<br>"
+        }
+        if par.caption != "" {
+            header = par.caption + "<br><br>" + start
+        }
+        else {
+            header = start
         }
         if par.refs != "" {
-            references = references + " Odkazy:" + par.refs
-        }
-        if boolSouhrn {
-            
+            refs = "<br><br>Odkazy na katechismus:<br>" + par.refs + "<br>"
         }
         else {
-            
+            refs = "<br>"
         }
         if par.caption.range(of: "Souhrn") != nil {
-            boolSouhrn = true
-            return "<br><div style=\"background-color:green;\">" + par.caption + references + par.text + "</div>"
+            return "<br><div style=\"background-color:green;\">" + header + par.text + refs + "</div>"
         }
         else {
-            return "<br>" + par.caption + references + par.text
+            return "<br>" + header + par.text + refs
         }
     }
 }
