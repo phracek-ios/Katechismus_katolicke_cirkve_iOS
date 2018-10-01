@@ -24,9 +24,7 @@ class NumbersDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("initNumbers")
         initNumbers()
-        print("set rowheight")
         self.tableView.rowHeight = 80
     }
 
@@ -58,7 +56,7 @@ class NumbersDetailTableViewController: UITableViewController {
         switch(segue.identifier ?? "") {
             
         case "ShowParagraph":
-            guard let paragraphViewController = segue.destination as? ParagraphViewController else {
+            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let indexPath = sender as? IndexPath else {
@@ -68,9 +66,9 @@ class NumbersDetailTableViewController: UITableViewController {
             if parentNumber == 0 {
                 parentNumber = 1
             }
-            paragraphViewController.kindOfSource = 1
-            paragraphViewController.parentID = parentNumber
-            paragraphViewController.rangeID = numbersDetailRowData[indexPath.row].number_final
+            paragraphTableViewController.kindOfSource = 1
+            paragraphTableViewController.parentID = parentNumber
+            paragraphTableViewController.rangeID = numbersDetailRowData[indexPath.row].number_final
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
@@ -92,7 +90,7 @@ class NumbersDetailTableViewController: UITableViewController {
     }
     private func initNumbers() {
         let count = (endNumber - beginNumber) / diff + 1
-        for i in 1...count {
+        for _ in 1...count {
             addRow()
             beginNumber += diff
         }

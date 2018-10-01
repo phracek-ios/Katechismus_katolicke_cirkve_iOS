@@ -13,7 +13,7 @@ class ChaptersTableViewCell: UITableViewCell {
     @IBOutlet weak var chapterLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        chapterLabel.layer.cornerRadius = chapterLabel.frame.height / 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

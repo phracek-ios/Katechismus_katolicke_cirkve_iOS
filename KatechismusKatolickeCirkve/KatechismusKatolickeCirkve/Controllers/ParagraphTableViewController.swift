@@ -9,14 +9,13 @@
 import UIKit
 import WebKit
 
-class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
+class ParagraphTableViewController: UITableViewController{
     
     struct ParagraphRowData {
         var html: String
     }
 
     var heightOfWebView: CGFloat = 0
-    
     fileprivate var paragraphRowData = [ParagraphRowData]()
     fileprivate var paragraphStructure: ParagraphStructure?
 
@@ -26,16 +25,17 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
     var boolSouhrn: Bool = false
     var findWordData = [Int]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = UITableViewAutomaticDimension
         loadParagraphs()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
-        self.tableView.alpha = 0
- 
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.alpha = 0
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,7 +46,7 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
     // MARK: - Table view data source
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.alpha = 1
+        tableView.alpha = 1
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -63,13 +63,14 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
         }
         let data = paragraphRowData[indexPath.row]
         
-        cell.paragraphWebView.tag = indexPath.row
+        cell.paragraphWebView.scrollView.isScrollEnabled = false
         cell.paragraphWebView.loadHTMLString("<font size=20>" + data.html, baseURL: nil)
+        //cell.paragraphHeightConstraint.constant = heightOfWebView
 
         return cell
     }
 
-    private func webViewDidFinishLoad(_ webView: WKWebView) {
+    /*func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         var frame: CGRect = webView.frame
         frame.size.height = 1
         webView.frame = frame
@@ -80,11 +81,14 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
         tableView.beginUpdates()
         tableView.endUpdates()
         print("Calling webViewDidFinishLoad. Cell size value: \(heightOfWebView)")
+        
     }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return heightOfWebView
-    }
+ */
     
+    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        print(heightOfWebView)
+        return heightOfWebView
+    }*/
     
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
