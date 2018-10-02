@@ -26,9 +26,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-Xy-yUW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-Xy-yUW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="199" id="KQz-KP-3XG"/>
+                                            </constraints>
                                             <wkWebViewConfiguration key="configuration">
                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                 <wkPreferences key="preferences"/>
@@ -36,13 +39,8 @@
                                         </wkWebView>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="LLP-Xy-yUW" secondAttribute="bottom" id="BGL-Tq-biG"/>
-                                    <constraint firstItem="LLP-Xy-yUW" firstAttribute="top" secondItem="yDI-TW-HOB" secondAttribute="top" id="IP5-f9-UYD"/>
-                                    <constraint firstItem="LLP-Xy-yUW" firstAttribute="leading" secondItem="yDI-TW-HOB" secondAttribute="leading" id="khW-lZ-IVg"/>
-                                    <constraint firstAttribute="trailing" secondItem="LLP-Xy-yUW" secondAttribute="trailing" id="zUE-6s-bgT"/>
-                                </constraints>
                                 <connections>
+                                    <outlet property="paragraphHeightConstraint" destination="KQz-KP-3XG" id="glu-pK-Mh1"/>
                                     <outlet property="paragraphWebView" destination="LLP-Xy-yUW" id="iQ9-4S-siP"/>
                                 </connections>
                             </tableViewCell>
@@ -52,10 +50,13 @@
                             <outlet property="delegate" destination="KGP-LY-N57" id="X3D-Ze-Lgs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tableView" destination="ZZh-LW-0f0" id="oXL-ai-0pX"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxS-6P-27B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4279" y="-73"/>
+            <point key="canvasLocation" x="3376.8000000000002" y="483.50824587706148"/>
         </scene>
         <!--Katechismus katolické církve-->
         <scene sceneID="qCZ-XO-yb2">
@@ -151,7 +152,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="2j8-pM-sQD" kind="show" identifier="ShowSections" id="nca-ir-XEj"/>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="FOp-rf-i6l"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="6yJ-Ct-nHL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbl-9H-bKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -203,7 +204,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kje-fo-q3v">
-                                            <rect key="frame" x="16" y="11" width="343" height="39"/>
+                                            <rect key="frame" x="16" y="13" width="343" height="39"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -225,7 +226,7 @@
                         <barButtonItem key="backBarButtonItem" title="Zpět" id="u3C-rb-XPJ"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="Pn0-zk-Cxq"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="cfh-yR-bc5"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRP-YG-ekW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -241,7 +242,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRD-tf-OtW">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -282,8 +283,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-f4-I5F">
-                                            <rect key="frame" x="5" y="7" width="365" height="69.5"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-f4-I5F">
+                                            <rect key="frame" x="5" y="5" width="365" height="69.5"/>
                                             <color key="backgroundColor" red="0.0" green="0.53350182049999995" blue="0.70515950520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <color key="textColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -336,8 +337,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-43-xGY">
-                                            <rect key="frame" x="5" y="7" width="365" height="69.5"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQd-43-xGY">
+                                            <rect key="frame" x="5" y="5" width="365" height="69.5"/>
                                             <color key="backgroundColor" red="0.0" green="0.53350182049999995" blue="0.70515950520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
@@ -366,7 +367,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="rk4-Q5-Jfe"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="0tL-kw-8zh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOX-Pe-l50" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -396,7 +397,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so4-3U-Wle">
-                                <rect key="frame" x="287" y="121" width="72" height="30"/>
+                                <rect key="frame" x="287" y="124" width="72" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Najít"/>
                                 <connections>
@@ -473,7 +474,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FOp-rf-i6l"/>
+        <segue reference="cfh-yR-bc5"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41009405409999999" green="0.7701846752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
