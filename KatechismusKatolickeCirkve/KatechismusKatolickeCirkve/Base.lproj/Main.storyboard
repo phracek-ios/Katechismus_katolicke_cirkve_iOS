@@ -19,19 +19,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParagraphTableViewCell" rowHeight="200" id="yDI-TW-HOB" customClass="ParagraphTableViewCell" customModule="KatechismusKatolickeCirkve" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="200"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ParagraphTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParagraphTableViewCell" id="yDI-TW-HOB" customClass="ParagraphTableViewCell" customModule="KatechismusKatolickeCirkve" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yDI-TW-HOB" id="fjU-bD-pNe">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <wkWebView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-Xy-yUW">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                        <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-Xy-yUW">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="199" id="KQz-KP-3XG"/>
-                                            </constraints>
                                             <wkWebViewConfiguration key="configuration">
                                                 <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                                 <wkPreferences key="preferences"/>
@@ -40,7 +38,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="paragraphHeightConstraint" destination="KQz-KP-3XG" id="glu-pK-Mh1"/>
                                     <outlet property="paragraphWebView" destination="LLP-Xy-yUW" id="iQ9-4S-siP"/>
                                 </connections>
                             </tableViewCell>
@@ -446,6 +443,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HiM-AD-aBT">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="tgx-Im-Gu4" kind="relationship" relationship="rootViewController" id="PuR-s5-ueV"/>
                     </connections>

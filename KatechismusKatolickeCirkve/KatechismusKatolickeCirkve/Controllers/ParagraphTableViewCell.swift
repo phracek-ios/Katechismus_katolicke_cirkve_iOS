@@ -12,13 +12,12 @@ import WebKit
 
 class ParagraphTableViewCell: UITableViewCell {
 
-    weak var viewController: UITableViewController? = nil
     @IBOutlet weak var paragraphWebView: WKWebView!
     @IBOutlet weak var paragraphHeightConstraint: NSLayoutConstraint!
     override func awakeFromNib() {
         super.awakeFromNib()
-        paragraphWebView.scrollView.isScrollEnabled = false
-        paragraphWebView.uiDelegate = self as! WKUIDelegate
+        //paragraphWebView.scrollView.isScrollEnabled = false
+        //paragraphWebView.navigationDelegate = self
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -26,12 +25,14 @@ class ParagraphTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-}
-extension ParagraphTableViewCell: WKUIDelegate {
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+    
+    /*func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("DidFinshLoad")
+        print(webView.scrollView.contentSize.height)
         paragraphHeightConstraint.constant = webView.scrollView.contentSize.height
-        viewController?.tableView.beginUpdates()
-        viewController?.tableView.endUpdates()
+        //tableViewController?.tableView.beginUpdates()
+        //tableViewController?.tableView.endUpdates()
     }
+ */
+
 }

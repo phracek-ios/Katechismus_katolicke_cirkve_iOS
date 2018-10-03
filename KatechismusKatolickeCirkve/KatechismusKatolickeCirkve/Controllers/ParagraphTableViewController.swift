@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class ParagraphTableViewController: UITableViewController{
+class ParagraphTableViewController: UITableViewController, WKNavigationDelegate, WKUIDelegate {
     
     struct ParagraphRowData {
         var html: String
@@ -29,11 +29,9 @@ class ParagraphTableViewController: UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 300
         loadParagraphs()
-        tableView.delegate = self
-        tableView.dataSource = self
         tableView.alpha = 0
 
     }
@@ -62,34 +60,36 @@ class ParagraphTableViewController: UITableViewController{
             fatalError("The dequeue cell is not an entrance of ParagraphTableViewCell")
         }
         let data = paragraphRowData[indexPath.row]
-        
-        cell.paragraphWebView.scrollView.isScrollEnabled = false
-        cell.paragraphWebView.loadHTMLString("<font size=20>" + data.html, baseURL: nil)
-        //cell.paragraphHeightConstraint.constant = heightOfWebView
 
+        print(data)
+        print(heightOfWebView)
+        cell.paragraphWebView.scrollView.isScrollEnabled = false
+        cell.paragraphWebView.navigationDelegate = self
+        cell.paragraphWebView.uiDelegate = self
+        cell.paragraphWebView.loadHTMLString("<font size=20>" + data.html, baseURL: nil)
+        //cell.sizeToFit()//.constant = self.heightOfWebView
+        
         return cell
     }
-
-    /*func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        var frame: CGRect = webView.frame
-        frame.size.height = 1
-        webView.frame = frame
-        let fittingSize = webView.sizeThatFits(CGSize.zero)
-        frame.size = fittingSize
-        webView.frame = frame
-        heightOfWebView = fittingSize.height
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        print("Calling webViewDidFinishLoad. Cell size value: \(heightOfWebView)")
-        
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return self.heightOfWebView
     }
- */
-    
-    /*func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print(heightOfWebView)
-        return heightOfWebView
-    }*/
-    
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.evaluateJavaScript("document.readyState", completionHandler: { (complete, error) in
+            if complete != nil {
+                webView.evaluateJavaScript("document.body.scrollHeight", completionHandler: { (height, error) in
+                    self.heightOfWebView = webView.scrollView.contentSize.height
+                    self.tableView.beginUpdates()
+                    self.tableView.endUpdates()
+                    print("Calling webViewDidFinishLoad. Cell size value: \(self.heightOfWebView)")
+                })
+            }
+        })
+    }
+
+
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
         
