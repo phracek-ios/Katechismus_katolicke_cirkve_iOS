@@ -21,6 +21,8 @@ class ChaptersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersStructure = ChaptersDataService.shared.chaptersStructure
+        //self.title = "Procházet kapitoly"
+        self.navigationItem.title = "Procházet kapitoly"
 
         loadChapters()
         // Uncomment the following line to preserve selection between presentations
@@ -50,9 +52,6 @@ class ChaptersTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ChaptersTableViewCell else {
             fatalError("The dequeue cell is not an entrance of ChaptersTableViewCell")
         }
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = UIColor.gray
-        }
         cell.chapterLabel?.text = rowData[indexPath.row].name
         
         return cell
@@ -72,6 +71,7 @@ class ChaptersTableViewController: UITableViewController {
             let parentNumber = rowData[indexPath.row].order
             if parentNumber != 0 {
                 sectionsTableViewController.parentID = parentNumber
+                sectionsTableViewController.navigationItem.title = rowData[indexPath.row].name
             }
         
         case "ShowParagraph":

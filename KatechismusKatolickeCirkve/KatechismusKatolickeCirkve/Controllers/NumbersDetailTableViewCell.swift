@@ -13,7 +13,7 @@ class NumbersDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var numberDetails: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        numberDetails.layer.cornerRadius = numberDetails.frame.height / 5
+        //numberDetails.layer.cornerRadius = numberDetails.frame.height / 5
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

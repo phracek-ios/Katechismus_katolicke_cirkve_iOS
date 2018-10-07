@@ -24,9 +24,7 @@ class NumbersDetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("initNumbers")
         initNumbers()
-        print("set rowheight")
         self.tableView.rowHeight = 80
     }
 
@@ -92,7 +90,7 @@ class NumbersDetailTableViewController: UITableViewController {
     }
     private func initNumbers() {
         let count = (endNumber - beginNumber) / diff + 1
-        for i in 1...count {
+        for _ in 1...count {
             addRow()
             beginNumber += diff
         }

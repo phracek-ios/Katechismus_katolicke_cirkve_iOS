@@ -24,6 +24,8 @@ class NumbersTableViewController: UITableViewController {
         super.viewDidLoad()
         initNumbers()
         self.tableView.rowHeight = 80
+        self.navigationItem.title = "Vyhledávat podle čísel"
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +90,7 @@ class NumbersTableViewController: UITableViewController {
     }
     private func initNumbers() {
         let count = endNumber / diff + 1
-        for i in 1...count {
+        for _ in 1...count {
             addRow()
             beginNumber += diff
         }

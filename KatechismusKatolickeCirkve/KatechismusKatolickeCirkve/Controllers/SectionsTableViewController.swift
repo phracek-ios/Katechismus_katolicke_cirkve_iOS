@@ -24,6 +24,7 @@ class SectionsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersStructure = ChaptersDataService.shared.chaptersStructure
+        self.tableView.rowHeight = 80
         loadSections()
     }
 
@@ -47,7 +48,8 @@ class SectionsTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SectionsTableViewCell else { return UITableViewCell()
         }
         if sectionsRowData[indexPath.row].main_section == true {
-            cell.backgroundColor = UIColor.blue
+            cell.backgroundColor = KKCMainColor
+            cell.sectionLabel.backgroundColor = KKCMainColor
             cell.sectionLabel?.textColor = UIColor.white
         }
         cell.sectionLabel?.text = sectionsRowData[indexPath.row].name

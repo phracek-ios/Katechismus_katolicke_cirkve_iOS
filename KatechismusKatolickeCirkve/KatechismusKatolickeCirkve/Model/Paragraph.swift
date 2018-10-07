@@ -12,7 +12,9 @@ import Foundation
 struct Paragraph: Decodable {
     var chapter: Int
     var caption: String
+    var caption_no_html: String
     var refs: String
     var id: Int
     var text: String
+    var text_no_html: String
 }

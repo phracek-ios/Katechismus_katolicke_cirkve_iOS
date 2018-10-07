@@ -45,7 +45,10 @@ class FindWordViewController: UIViewController {
         guard let paragraphStructure = paragraphStructure else { return }
         let text2find: String = wordTextField.text!
         for par in paragraphStructure.paragraph {
-            if par.text.range(of: text2find) != nil {
+            if par.text_no_html.range(of: text2find) != nil {
+                findWordData.append(par.id)
+            }
+            if par.caption_no_html.range(of: text2find) != nil {
                 findWordData.append(par.id)
             }
         }

@@ -14,7 +14,7 @@ class CatechismTableViewController: UITableViewController {
         case browse_chapter
         case search_for_numbers
         case find_word
-        case index
+        //case index
         case settings
         case project
         case about
@@ -39,6 +39,7 @@ class CatechismTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationController?.navigationBar.barTintColor = KKCMainColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,8 +97,8 @@ class CatechismTableViewController: UITableViewController {
                    navigationController?.pushViewController(findWordViewController, animated: true)
                 }
             }
-        case .index:
-            print("Not Implemented yet")
+        //case .index:
+        //    print("Not Implemented yet")
         case .project:
             if let aboutProjectViewController = UIStoryboard(name: "AboutProject", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(aboutProjectViewController, animated: true)
@@ -123,9 +124,9 @@ class CatechismTableViewController: UITableViewController {
         guard let find_word = CatechismMenu(name: " Vyhledávání", photo: nil, order: 2) else {
             fatalError("Unable to instanciate Vyhledávání")
         }
-        guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
-            fatalError("Unable to instanciate Rejstřík")
-        }
+        //guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
+        //    fatalError("Unable to instanciate Rejstřík")
+        //}
         guard let about_project = CatechismMenu(name: " O projektu", photo: nil, order: 4) else {
             fatalError("Unable to instanciate O projektu")
         }
@@ -139,7 +140,7 @@ class CatechismTableViewController: UITableViewController {
         rowData = [RowData(type: .browse_chapter, menu: browse_chapter)]
         rowData.append(RowData(type: .search_for_numbers, menu: search_for_numbers))
         rowData.append(RowData(type: .find_word, menu: find_word))
-        rowData.append(RowData(type: .index, menu: index))
+        //rowData.append(RowData(type: .index, menu: index))
         rowData.append(RowData(type: .project, menu: about_project))
         rowData.append(RowData(type: .settings, menu: settings))
         rowData.append(RowData(type: .about, menu: about))

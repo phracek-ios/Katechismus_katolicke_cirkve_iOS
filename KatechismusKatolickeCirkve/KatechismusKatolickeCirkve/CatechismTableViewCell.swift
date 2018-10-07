@@ -14,13 +14,13 @@ class CatechismTableViewCell: UITableViewCell {
     //MARK: Properties
     override func awakeFromNib() {
         super.awakeFromNib()
-        catechismLabel.layer.cornerRadius = catechismLabel.frame.height / 4
+        //catechismLabel.layer.cornerRadius = catechismLabel.frame.height / 4
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        catechismLabel.layer.cornerRadius = catechismLabel.frame.height / 4
+        //catechismLabel.layer.cornerRadius = catechismLabel.frame.height / 4
     }
 
 }
