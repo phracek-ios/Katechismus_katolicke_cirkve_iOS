@@ -17,4 +17,5 @@ struct Paragraph: Decodable {
     var id: Int
     var text: String
     var text_no_html: String
+    var recap: Int
 }

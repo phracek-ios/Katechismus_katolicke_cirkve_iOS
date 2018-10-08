@@ -12,11 +12,10 @@ import WebKit
 
 class ParagraphTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var paragraphWebView: WKWebView!
+    @IBOutlet weak var labelParagraph: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        //paragraphWebView.uiDelegate = self as? WKUIDelegate
-        //paragraphWebView.scrollView.isScrollEnabled = false
+        labelParagraph.numberOfLines = 0
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

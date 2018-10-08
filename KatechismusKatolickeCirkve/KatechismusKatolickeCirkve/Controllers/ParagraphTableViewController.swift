@@ -9,10 +9,11 @@
 import UIKit
 import WebKit
 
-class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
+class ParagraphTableViewController: UITableViewController {
     
     struct ParagraphRowData {
         var html: String
+        var recap: Int
     }
 
     var heightOfWebView: CGFloat = 0
@@ -20,21 +21,20 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
     fileprivate var paragraphRowData = [ParagraphRowData]()
     fileprivate var paragraphStructure: ParagraphStructure?
 
+    var boolSouhrn: Bool = false
     var parentID: Int = 0
     var kindOfSource: Int = 0
     var rangeID: Int = 0
-    var boolSouhrn: Bool = false
     var findWordData = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 150
+        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         loadParagraphs()
-        self.tableView.delegate = self
-        self.tableView.dataSource = self
         self.tableView.alpha = 0
+        //self.tableView.reloadData()
  
     }
 
@@ -63,28 +63,16 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
         }
         let data = paragraphRowData[indexPath.row]
         
-        cell.paragraphWebView.tag = indexPath.row
-        cell.paragraphWebView.loadHTMLString("<font size=20>" + data.html, baseURL: nil)
+        if data.recap == 1 {
+            cell.backgroundColor = UIColor.darkGray
+        }
+        cell.labelParagraph?.numberOfLines = 0
+        cell.labelParagraph?.attributedText = data.html.htmlToAttributedString
+        cell.labelParagraph?.font = UIFont(name: cell.labelParagraph.font.fontName, size: 18)
 
         return cell
     }
 
-    private func webViewDidFinishLoad(_ webView: WKWebView) {
-        var frame: CGRect = webView.frame
-        frame.size.height = 1
-        webView.frame = frame
-        let fittingSize = webView.sizeThatFits(CGSize.zero)
-        frame.size = fittingSize
-        webView.frame = frame
-        heightOfWebView = fittingSize.height
-        tableView.beginUpdates()
-        tableView.endUpdates()
-        print("Calling webViewDidFinishLoad. Cell size value: \(heightOfWebView)")
-    }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return heightOfWebView
-    }
-    
     
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
@@ -92,47 +80,43 @@ class ParagraphTableViewController: UITableViewController, UIWebViewDelegate {
         if kindOfSource == 1 {
             for par in paragraphStructure.paragraph {
                 if par.id >= parentID && par.id <= rangeID {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par)))
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
+                                                             recap: par.recap))
                 }
             }
         }
         else if kindOfSource == 0 {
             for par in paragraphStructure.paragraph {
                 if par.chapter == parentID {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par)))
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
+                                                             recap: par.recap))
                 }
             }
         }
         else if kindOfSource == 2 {
             for par in paragraphStructure.paragraph {
                 if findWordData.contains(par.id) {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par)))
-                    
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
+                                                             recap: par.recap))
                 }
             }
         }
     }
     private func get_html_text(par: Paragraph) -> String {
-        var references: String = "<br>"
+        var references: String = ""
+        var caption: String = ""
+        var text: String = ""
         if parentID != 1 && parentID != 2 {
-            references = "<br><br>§" + String(par.id) + " "
+            references = "§" + String(par.id) + "<br>"
         }
         if par.refs != "" {
-            references = references + " Odkazy:" + par.refs
+            text = par.text + "<br>Odkazy:" + par.refs
         }
-        if boolSouhrn {
-            
+        if par.caption != "" {
+            caption = par.caption + "<br>"
         }
-        else {
-            
-        }
-        if par.caption.range(of: "Souhrn") != nil {
-            boolSouhrn = true
-            return "<br><div style=\"background-color:green;\">" + par.caption + references + par.text + "</div>"
-        }
-        else {
-            return "<br>" + par.caption + references + par.text
-        }
+        
+        return caption + references + text
     }
 }
 
