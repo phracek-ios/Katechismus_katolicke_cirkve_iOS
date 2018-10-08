@@ -3,6 +3,9 @@
 import sys, getopt
 import csv
 import json
+import io
+
+recap = False
 
 
 #Get Command Line Arguments
@@ -18,6 +21,11 @@ def parse_part(row):
 
 def parse_database(row):
     fields = row.split("::")
+    if "souhrn" in fields[2].lower():
+        recap = True
+    else:
+        if fields[2] != "":
+            recap = False
     return {'id': int(fields[0]),
             'caption': fields[1],
             'caption_no_html': fields[2],
@@ -25,6 +33,7 @@ def parse_database(row):
             'refs': fields[4],
             'text': fields[5],
             'text_no_html': fields[6],
+            'recap': recap,
             }
 
 
@@ -35,7 +44,7 @@ def read_csv(input_file, output_file, fnc):
         csv_dict['chapters'] = []
     else:
         csv_dict['paragraph'] = []
-    with open(input_file) as csvfile:
+    with open(input_file, 'r') as csvfile:
         for row in csvfile.readlines():
             if fnc:
                 csv_dict['chapters'].append(parse_part(row))
@@ -47,8 +56,10 @@ def read_csv(input_file, output_file, fnc):
 #Convert csv data into json and write it
 def write_json(data, json_file):
     with open(json_file, "w") as f:
-        f.write(json.dumps(data, sort_keys=False, indent=4, encoding="utf-8",ensure_ascii=False))
+        f.write(json.dumps(data, sort_keys=False,
+                           indent=4, encoding="utf-8",
+                           ensure_ascii=False))
 
 
 if __name__ == "__main__":
-   main()
+    main()
