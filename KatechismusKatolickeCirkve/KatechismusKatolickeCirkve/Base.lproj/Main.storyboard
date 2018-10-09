@@ -161,7 +161,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="2j8-pM-sQD" kind="show" identifier="ShowSections" id="nca-ir-XEj"/>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="FOp-rf-i6l"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="0PX-m5-V7d"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dbl-9H-bKr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -247,40 +247,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nRP-YG-ekW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1207" y="767"/>
-        </scene>
-        <!--Paragraph View Controller-->
-        <scene sceneID="oRM-qV-VQb">
-            <objects>
-                <viewController storyboardIdentifier="Paragraphs" id="iBe-JB-2eT" customClass="ParagraphViewController" customModule="KatechismusKatolickeCirkve" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="7Hy-Iy-eaz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRD-tf-OtW">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="IRD-tf-OtW" firstAttribute="leading" secondItem="DI3-bZ-afi" secondAttribute="leading" id="0Cm-jG-Hdt"/>
-                            <constraint firstItem="IRD-tf-OtW" firstAttribute="top" secondItem="DI3-bZ-afi" secondAttribute="top" id="hm0-DB-S3C"/>
-                            <constraint firstItem="DI3-bZ-afi" firstAttribute="bottom" secondItem="IRD-tf-OtW" secondAttribute="bottom" id="vBA-y1-21X"/>
-                            <constraint firstItem="DI3-bZ-afi" firstAttribute="trailing" secondItem="IRD-tf-OtW" secondAttribute="trailing" id="xTT-8d-ufI"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="DI3-bZ-afi"/>
-                    </view>
-                    <connections>
-                        <outlet property="paragraphWebView" destination="IRD-tf-OtW" id="HuU-2O-tqq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jnN-9P-ewb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2438" y="421"/>
         </scene>
         <!--Numbers Table View Controller-->
         <scene sceneID="909-Sx-z2R">
@@ -378,7 +344,7 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="rk4-Q5-Jfe"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="59f-ew-4Zz"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iOX-Pe-l50" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -422,7 +388,7 @@
                     <connections>
                         <outlet property="findButton" destination="so4-3U-Wle" id="3Yz-ew-gKU"/>
                         <outlet property="wordTextField" destination="kBc-Cb-Vbf" id="QYi-gS-aOL"/>
-                        <segue destination="iBe-JB-2eT" kind="show" identifier="ShowParagraph" id="CJr-2b-TgP"/>
+                        <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="d2t-NR-3t9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -485,7 +451,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="CJr-2b-TgP"/>
+        <segue reference="0PX-m5-V7d"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.41009405409999999" green="0.7701846752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

@@ -18,7 +18,6 @@
 		0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */; };
 		0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DE211B91B40021058A /* ChaptersStructure.swift */; };
 		0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1E0211B91F50021058A /* ChaptersDataService.swift */; };
-		014A1FF32146FFDB00636093 /* ParagraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014A1FF22146FFDB00636093 /* ParagraphViewController.swift */; };
 		014BEE79212432C900B9E9D2 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 014BEE78212432C900B9E9D2 /* database.json */; };
 		014BEE7B212433B200B9E9D2 /* part.json in Resources */ = {isa = PBXBuildFile; fileRef = 014BEE7A212433B200B9E9D2 /* part.json */; };
 		0152223821518A5E00CA5933 /* HtmlToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152223721518A5E00CA5933 /* HtmlToStringExtension.swift */; };
@@ -76,7 +75,6 @@
 		0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
 		0140F1DE211B91B40021058A /* ChaptersStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersStructure.swift; sourceTree = "<group>"; };
 		0140F1E0211B91F50021058A /* ChaptersDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersDataService.swift; sourceTree = "<group>"; };
-		014A1FF22146FFDB00636093 /* ParagraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphViewController.swift; sourceTree = "<group>"; };
 		014BEE78212432C900B9E9D2 /* database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		014BEE7A212433B200B9E9D2 /* part.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = part.json; sourceTree = "<group>"; };
 		0152223721518A5E00CA5933 /* HtmlToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToStringExtension.swift; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
 				0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */,
 				01946211212220A20056EC7B /* ParagraphTableViewController.swift */,
-				014A1FF22146FFDB00636093 /* ParagraphViewController.swift */,
 				01E864F22149BAC300566660 /* FindWordViewController.swift */,
 			);
 			path = Controllers;
@@ -363,7 +360,6 @@
 				017F20FF211A3A43006B448C /* SettingsViewController.swift in Sources */,
 				017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */,
 				01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */,
-				014A1FF32146FFDB00636093 /* ParagraphViewController.swift in Sources */,
 				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
 				0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */,
 				0161FBC2213FBF7200A4959A /* NumbersDetailTableViewController.swift in Sources */,

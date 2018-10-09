@@ -31,11 +31,11 @@ class FindWordViewController: UIViewController {
         switch(segue.identifier ?? "") {
             
         case "ShowParagraph":
-            guard let paragraphViewController = segue.destination as? ParagraphViewController else {
+            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            paragraphViewController.kindOfSource = 2
-            paragraphViewController.findWordData = findWordData
+            paragraphTableViewController.kindOfSource = 2
+            paragraphTableViewController.findWordData = findWordData
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
