@@ -65,7 +65,13 @@ class NumbersTableViewController: UITableViewController {
             }
             let parentNumber = numbersRowData[indexPath.row].number
             numbersDetailTableViewController.beginNumber = parentNumber
-            let endNumber = parentNumber + diff - 1
+            var endNumber: Int = 0
+            if parentNumber == 2500 {
+                endNumber = 2865
+            }
+            else {
+                endNumber = parentNumber + diff - 1
+            }
             numbersDetailTableViewController.endNumber = endNumber
             
         default:

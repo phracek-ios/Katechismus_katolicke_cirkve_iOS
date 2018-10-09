@@ -20,7 +20,7 @@ class NumbersDetailTableViewController: UITableViewController {
     }
     
     fileprivate var numbersDetailRowData = [NumbersDetailRowData]()
-    fileprivate var diff = 20
+    fileprivate var diff = 30
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +78,7 @@ class NumbersDetailTableViewController: UITableViewController {
         performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
     }
     private func addRow() {
-        if beginNumber == 2500 {
+        if beginNumber == 2830 {
             endNumber = 2865
         }
         else {
