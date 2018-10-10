@@ -10,7 +10,7 @@ import UIKit
 
 class NumbersDetailTableViewController: UITableViewController {
 
-    var beginNumber = 0
+    var beginNumber = 1
     var endNumber = 499
     
     struct NumbersDetailRowData {
@@ -63,6 +63,7 @@ class NumbersDetailTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             var parentNumber = numbersDetailRowData[indexPath.row].number
+            print(parentNumber)
             if parentNumber == 0 {
                 parentNumber = 1
             }

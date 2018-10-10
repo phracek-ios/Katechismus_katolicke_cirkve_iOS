@@ -106,7 +106,10 @@ class ParagraphTableViewController: UITableViewController {
         var references: String = ""
         var caption: String = ""
         var text: String = ""
-        if parentID != 1 && parentID != 2 {
+        if kindOfSource == 0 && parentID != 1 && parentID != 2 {
+            references = "§" + String(par.id) + "<br>"
+        }
+        else if kindOfSource == 1 || kindOfSource == 2 {
             references = "§" + String(par.id) + "<br>"
         }
         text = par.text

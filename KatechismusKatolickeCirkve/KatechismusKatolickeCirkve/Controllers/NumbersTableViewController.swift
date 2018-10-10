@@ -11,7 +11,7 @@ import UIKit
 class NumbersTableViewController: UITableViewController {
 
     fileprivate var diff = 500
-    fileprivate var beginNumber = 0
+    fileprivate var beginNumber = 1
     fileprivate var endNumber = 2865
 
     struct NumbersRowData {
