@@ -26,19 +26,14 @@ class CatechismTableViewController: UITableViewController {
     }
     //MARK: Properties
     fileprivate var rowData = [RowData]()
-    fileprivate var darkMode: Bool = false
+    //fileprivate var darkMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadCatechism()
-        let userDefaults = UserDefaults.standard
-        darkMode = userDefaults.bool(forKey: "NightSwitch")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //let userDefaults = UserDefaults.standard
+        //darkMode = userDefaults.bool(forKey: "NightSwitch")
         navigationController?.navigationBar.barTintColor = KKCMainColor
     }
 
@@ -104,8 +99,8 @@ class CatechismTableViewController: UITableViewController {
                 navigationController?.pushViewController(aboutProjectViewController, animated: true)
             }
         case .settings:
-            if let settingsViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
-                navigationController?.pushViewController(settingsViewController, animated: true)
+            if let settingsTableViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
+                navigationController?.pushViewController(settingsTableViewController, animated: true)
             }
         case .about:
             if let aboutViewController = UIStoryboard(name: "About", bundle: nil).instantiateInitialViewController() {

@@ -63,12 +63,17 @@ class ParagraphTableViewController: UITableViewController {
         }
         let data = paragraphRowData[indexPath.row]
         
-        if data.recap == 1 {
-            cell.backgroundColor = UIColor.darkGray
-        }
         cell.labelParagraph?.numberOfLines = 0
         cell.labelParagraph?.attributedText = data.html.htmlToAttributedString
         cell.labelParagraph?.font = UIFont(name: cell.labelParagraph.font.fontName, size: 18)
+        if data.recap == 1 {
+            cell.backgroundColor = KKCMainColor
+            cell.labelParagraph?.textColor = UIColor.white
+        }
+        else {
+            cell.backgroundColor = UIColor.white
+            cell.labelParagraph?.textColor = UIColor.black
+        }
 
         return cell
     }
@@ -107,17 +112,21 @@ class ParagraphTableViewController: UITableViewController {
         var caption: String = ""
         var text: String = ""
         if kindOfSource == 0 && parentID != 1 && parentID != 2 {
-            references = "§" + String(par.id) + "<br>"
+            if par.id < 10000 {
+                references = "§" + String(par.id) + "<br>"
+            }
         }
         else if kindOfSource == 1 || kindOfSource == 2 {
-            references = "§" + String(par.id) + "<br>"
+            if par.id < 10000 {
+                references = "§" + String(par.id) + "<br>"
+            }
         }
         text = par.text
         if par.refs != "" {
-            text += "<br>Odkazy:" + par.refs
+            text += "<br><br>Odkazy:" + par.refs
         }
         if par.caption != "" {
-            caption = par.caption + "<br>"
+            caption = par.caption + "<br><br>"
         }
         
         return caption + references + text

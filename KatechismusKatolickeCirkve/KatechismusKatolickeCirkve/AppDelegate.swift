@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CatechismDataService.shared.loadData()
         ChaptersDataService.shared.loadData()
         ParagraphDataService.shared.loadData()
-        
+        UINavigationBar.appearance().barTintColor = KKCMainColor
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().isTranslucent = false
         return true
     }
 

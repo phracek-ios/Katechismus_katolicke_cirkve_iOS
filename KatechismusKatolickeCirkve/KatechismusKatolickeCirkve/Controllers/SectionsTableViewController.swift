@@ -70,6 +70,7 @@ class SectionsTableViewController: UITableViewController {
             let parentNumber = sectionsRowData[indexPath.row].id
             if parentNumber != 0 {
                 paragraphTableViewController.parentID = parentNumber
+                paragraphTableViewController.navigationItem.title = sectionsRowData[indexPath.row].name
             }
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
