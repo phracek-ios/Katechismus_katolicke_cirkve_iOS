@@ -47,6 +47,7 @@
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
 		01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E864F22149BAC300566660 /* FindWordViewController.swift */; };
+		BE151992DE8B302EA5AA9CA3 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0890DFBBD9BAFF0AE8E95B1A /* Pods_KatechismusKatolickeCirkve.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +105,9 @@
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
 		01E864F22149BAC300566660 /* FindWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWordViewController.swift; sourceTree = "<group>"; };
+		0890DFBBD9BAFF0AE8E95B1A /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KatechismusKatolickeCirkve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		384A4383C7CB61FF7CEF518D /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.debug.xcconfig"; sourceTree = "<group>"; };
+		3AA5A02179799A0FA3F46FD1 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.release.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE151992DE8B302EA5AA9CA3 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +135,8 @@
 				013BD2672119BC8600554086 /* KatechismusKatolickeCirkve */,
 				013BD27C2119BC8700554086 /* KatechismusKatolickeCirkveTests */,
 				013BD2662119BC8600554086 /* Products */,
+				F669E6768804B48B9B64AC69 /* Pods */,
+				D213E2C33888EAEA813592B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -238,6 +245,23 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D213E2C33888EAEA813592B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0890DFBBD9BAFF0AE8E95B1A /* Pods_KatechismusKatolickeCirkve.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F669E6768804B48B9B64AC69 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				384A4383C7CB61FF7CEF518D /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */,
+				3AA5A02179799A0FA3F46FD1 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 013BD2822119BC8700554086 /* Build configuration list for PBXNativeTarget "KatechismusKatolickeCirkve" */;
 			buildPhases = (
+				EC15F21AE5F68B72A081B008 /* [CP] Check Pods Manifest.lock */,
 				013BD2612119BC8600554086 /* Sources */,
 				013BD2622119BC8600554086 /* Frameworks */,
 				013BD2632119BC8600554086 /* Resources */,
+				AC90E7C0A124DB55A6D5AF87 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,6 +365,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AC90E7C0A124DB55A6D5AF87 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC15F21AE5F68B72A081B008 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-KatechismusKatolickeCirkve-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		013BD2612119BC8600554086 /* Sources */ = {
@@ -532,6 +605,7 @@
 		};
 		013BD2832119BC8700554086 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 384A4383C7CB61FF7CEF518D /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -550,6 +624,7 @@
 		};
 		013BD2842119BC8700554086 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3AA5A02179799A0FA3F46FD1 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

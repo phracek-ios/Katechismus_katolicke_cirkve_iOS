@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BonMot
 
 class ParagraphTableViewController: UITableViewController {
     
@@ -26,6 +27,19 @@ class ParagraphTableViewController: UITableViewController {
     var rangeID: Int = 0
     var findWordData = [Int]()
     
+    var isStatusBarHidden = false {
+        didSet {
+            UIView.animate(withDuration: 0.25) { () -> Void in
+                self.setNeedsStatusBarAppearanceUpdate()
+}        }
+    }
+    
+    override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
+        return .slide
+    }
+    override var prefersStatusBarHidden: Bool {
+        return isStatusBarHidden || UIDevice.current.orientation.isLandscape && UIDevice.current.userInterfaceIdiom == .phone
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
@@ -33,7 +47,6 @@ class ParagraphTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         loadParagraphs()
         self.tableView.alpha = 0
-        //self.tableView.reloadData()
  
     }
 
@@ -45,6 +58,8 @@ class ParagraphTableViewController: UITableViewController {
     // MARK: - Table view data source
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as! UIGestureRecognizerDelegate
         self.tableView.alpha = 1
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,7 +78,7 @@ class ParagraphTableViewController: UITableViewController {
         let data = paragraphRowData[indexPath.row]
         
         cell.labelParagraph?.numberOfLines = 0
-        cell.labelParagraph?.attributedText = data.html.htmlToAttributedString
+        cell.labelParagraph?.attributedText = generateContent(text: data.html)
         cell.labelParagraph?.font = UIFont(name: cell.labelParagraph.font.fontName, size: 18)
         if data.recap == 1 {
             cell.backgroundColor = KKCMainColor
@@ -77,7 +92,27 @@ class ParagraphTableViewController: UITableViewController {
         return cell
     }
 
-    
+    private func generateContent(text: String) -> NSAttributedString {
+        let strong = StringStyle()
+        let emphasized = StringStyle()
+        let small = StringStyle()
+        let paragraph = StringStyle()
+        
+        let rules: [XMLStyleRule] = [
+            .style("em", emphasized),
+            .style("b", strong),
+            .style("small", small),
+            .style("p", paragraph)
+        ]
+        let font = R.font.ubuntuMedium(size: 18)
+        let content = StringStyle(
+            .font(font),
+            .color(UIColor.white),
+            .lineHeightMultiple(1),
+            .xmlRules(rules)
+        )
+        return text.styled(with: content)
+    }
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
         
