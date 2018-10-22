@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import BonMot
 
 extension String {
     var htmlToAttributedString: NSAttributedString? {

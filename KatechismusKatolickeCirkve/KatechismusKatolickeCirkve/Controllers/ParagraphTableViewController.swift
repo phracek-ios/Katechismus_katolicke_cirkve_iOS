@@ -12,7 +12,7 @@ import BonMot
 class ParagraphTableViewController: UITableViewController {
     
     struct ParagraphRowData {
-        var html: String
+        var html: NSAttributedString
         var recap: Int
     }
 
@@ -26,6 +26,7 @@ class ParagraphTableViewController: UITableViewController {
     var kindOfSource: Int = 0
     var rangeID: Int = 0
     var findWordData = [Int]()
+    var findWordString: String = ""
     
     var isStatusBarHidden = false {
         didSet {
@@ -59,7 +60,7 @@ class ParagraphTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
-        navigationController?.interactivePopGestureRecognizer?.delegate = self as! UIGestureRecognizerDelegate
+        navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
         self.tableView.alpha = 1
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -78,8 +79,7 @@ class ParagraphTableViewController: UITableViewController {
         let data = paragraphRowData[indexPath.row]
         
         cell.labelParagraph?.numberOfLines = 0
-        cell.labelParagraph?.attributedText = generateContent(text: data.html)
-        cell.labelParagraph?.font = UIFont(name: cell.labelParagraph.font.fontName, size: 18)
+        cell.labelParagraph?.attributedText = data.html
         if data.recap == 1 {
             cell.backgroundColor = KKCMainColor
             cell.labelParagraph?.textColor = UIColor.white
@@ -93,25 +93,53 @@ class ParagraphTableViewController: UITableViewController {
     }
 
     private func generateContent(text: String) -> NSAttributedString {
-        let strong = StringStyle()
-        let emphasized = StringStyle()
-        let small = StringStyle()
-        let paragraph = StringStyle()
         
+        let baseStyle = StringStyle(
+            .font(UIFont.systemFont(ofSize: 16)),
+            .lineHeightMultiple(1)
+        )
+        let strong = baseStyle.byAdding(
+            .font(UIFont.boldSystemFont(ofSize: 16))
+        )
+        
+        let emphasized = baseStyle.byAdding(
+            .font(UIFont.italicSystemFont(ofSize: 16))
+        )
+        
+        let small = baseStyle.byAdding(
+            .font(UIFont.systemFont(ofSize: 12))
+        )
+        
+        let paragraph = baseStyle.byAdding(
+            .paragraphSpacingBefore(20)
+        )
+        
+        let redStyle = StringStyle(
+            .color(.red)
+        )
+
         let rules: [XMLStyleRule] = [
             .style("em", emphasized),
             .style("b", strong),
             .style("small", small),
-            .style("p", paragraph)
+            .style("p", paragraph),
+            .style("br", paragraph),
+            .style("red", redStyle)
         ]
-        let font = R.font.ubuntuMedium(size: 18)
-        let content = StringStyle(
-            .font(font),
-            .color(UIColor.white),
-            .lineHeightMultiple(1),
+        
+        let content = baseStyle.byAdding(
+            .color(UIColor.darkGray),
             .xmlRules(rules)
         )
-        return text.styled(with: content)
+        var generated_text = text
+        generated_text = generated_text.replacingOccurrences(of: "<p>\n", with: "<p>")
+        generated_text = generated_text.replacingOccurrences(of: "\n</p>", with: "</p>")
+        generated_text = generated_text.replacingOccurrences(of: "[\\t\\n\\r][\\t\\n\\r]+", with: "\n", options: .regularExpression)
+        generated_text = generated_text.replacingOccurrences(of: "<p>", with: "")
+        generated_text = generated_text.replacingOccurrences(of: "</p>", with: "\n\n")
+        generated_text = generated_text.replacingOccurrences(of: "<br>", with: "\n")
+        generated_text = generated_text.trimmingCharacters(in: .whitespacesAndNewlines)
+        return generated_text.styled(with: content)
     }
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
@@ -135,35 +163,37 @@ class ParagraphTableViewController: UITableViewController {
         else if kindOfSource == 2 {
             for par in paragraphStructure.paragraph {
                 if findWordData.contains(par.id) {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
-                                                             recap: par.recap))
+                    var new_par = par
+                    //new_par.caption = new_par.caption.replacingOccurrences(of: self.findWordString, with: "<red>\(self.findWordString)</red>")
+                    new_par.text = new_par.text.replacingOccurrences(of: self.findWordString, with: "<red>\(self.findWordString)</red>")
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: new_par),
+                                                             recap: new_par.recap))
                 }
             }
         }
     }
-    private func get_html_text(par: Paragraph) -> String {
+    private func get_html_text(par: Paragraph) -> NSAttributedString {
         var references: String = ""
         var caption: String = ""
-        var text: String = ""
+        var text_refs: String = ""
         if kindOfSource == 0 && parentID != 1 && parentID != 2 {
             if par.id < 10000 {
-                references = "§" + String(par.id) + "<br>"
+                references = "§" + String(par.id) + "\n"
             }
         }
         else if kindOfSource == 1 || kindOfSource == 2 {
             if par.id < 10000 {
-                references = "§" + String(par.id) + "<br>"
+                references = "§" + String(par.id) + "\n"
             }
         }
-        text = par.text
         if par.refs != "" {
-            text += "<br><br>Odkazy:" + par.refs
+            text_refs = "\n\nOdkazy:" + par.refs
         }
         if par.caption != "" {
             caption = par.caption + "<br><br>"
         }
-        
-        return caption + references + text
+        let main_text = "\(caption)\(references)\(par.text)\(text_refs)"
+        return generateContent(text: main_text)
     }
 }
 

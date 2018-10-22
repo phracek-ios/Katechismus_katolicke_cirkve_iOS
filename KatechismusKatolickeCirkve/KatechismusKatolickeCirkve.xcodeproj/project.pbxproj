@@ -44,10 +44,11 @@
 		019C1A3321235863005EFB7F /* ParagraphStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3221235863005EFB7F /* ParagraphStructure.swift */; };
 		019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3421235890005EFB7F /* ParagraphDataService.swift */; };
 		019E7B00216784AB00FE51EC /* CatechismColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E7AFF216784AB00FE51EC /* CatechismColors.swift */; };
+		01A8CF0A21777A660023FC74 /* UIFontCatechism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A8CF0921777A660023FC74 /* UIFontCatechism.swift */; };
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
 		01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E864F22149BAC300566660 /* FindWordViewController.swift */; };
-		BE151992DE8B302EA5AA9CA3 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0890DFBBD9BAFF0AE8E95B1A /* Pods_KatechismusKatolickeCirkve.framework */; };
+		771078843AD2C06DB2F80215 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,12 +103,13 @@
 		019C1A3221235863005EFB7F /* ParagraphStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphStructure.swift; sourceTree = "<group>"; };
 		019C1A3421235890005EFB7F /* ParagraphDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphDataService.swift; sourceTree = "<group>"; };
 		019E7AFF216784AB00FE51EC /* CatechismColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismColors.swift; sourceTree = "<group>"; };
+		01A8CF0921777A660023FC74 /* UIFontCatechism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCatechism.swift; sourceTree = "<group>"; };
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
 		01E864F22149BAC300566660 /* FindWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWordViewController.swift; sourceTree = "<group>"; };
-		0890DFBBD9BAFF0AE8E95B1A /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KatechismusKatolickeCirkve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		384A4383C7CB61FF7CEF518D /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.debug.xcconfig"; sourceTree = "<group>"; };
-		3AA5A02179799A0FA3F46FD1 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.release.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.release.xcconfig"; sourceTree = "<group>"; };
+		D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KatechismusKatolickeCirkve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECCF67792DA5DF6D22A47050 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.debug.xcconfig"; sourceTree = "<group>"; };
+		F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.release.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE151992DE8B302EA5AA9CA3 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */,
+				771078843AD2C06DB2F80215 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +137,8 @@
 				013BD2672119BC8600554086 /* KatechismusKatolickeCirkve */,
 				013BD27C2119BC8700554086 /* KatechismusKatolickeCirkveTests */,
 				013BD2662119BC8600554086 /* Products */,
-				F669E6768804B48B9B64AC69 /* Pods */,
-				D213E2C33888EAEA813592B4 /* Frameworks */,
+				0FD3D968F8588F243FC81564 /* Pods */,
+				5931327C52821BC78130497B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,6 +186,7 @@
 			children = (
 				0152223721518A5E00CA5933 /* HtmlToStringExtension.swift */,
 				019E7AFF216784AB00FE51EC /* CatechismColors.swift */,
+				01A8CF0921777A660023FC74 /* UIFontCatechism.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -191,24 +194,24 @@
 		017F20F7211A39E0006B448C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				013BD26A2119BC8600554086 /* IndexTableViewController.swift */,
 				017F20FA211A3A15006B448C /* About.storyboard */,
 				017F20F8211A3A03006B448C /* AboutViewController.swift */,
-				017F20FC211A3A28006B448C /* Settings.storyboard */,
-				017F20FE211A3A43006B448C /* SettingsTableViewController.swift */,
 				017F2100211A3A52006B448C /* AboutProject.storyboard */,
 				017F2102211A3A63006B448C /* AboutProjectViewController.swift */,
+				01E864F22149BAC300566660 /* FindWordViewController.swift */,
+				013BD26A2119BC8600554086 /* IndexTableViewController.swift */,
 				0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */,
 				019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */,
 				01DF46DC211C7052006442CD /* NumbersTableViewController.swift */,
 				01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */,
 				0161FBC1213FBF7200A4959A /* NumbersDetailTableViewController.swift */,
 				0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */,
-				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
-				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
 				0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */,
 				01946211212220A20056EC7B /* ParagraphTableViewController.swift */,
-				01E864F22149BAC300566660 /* FindWordViewController.swift */,
+				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
+				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
+				017F20FC211A3A28006B448C /* Settings.storyboard */,
+				017F20FE211A3A43006B448C /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -245,21 +248,21 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D213E2C33888EAEA813592B4 /* Frameworks */ = {
+		0FD3D968F8588F243FC81564 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0890DFBBD9BAFF0AE8E95B1A /* Pods_KatechismusKatolickeCirkve.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F669E6768804B48B9B64AC69 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				384A4383C7CB61FF7CEF518D /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */,
-				3AA5A02179799A0FA3F46FD1 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */,
+				ECCF67792DA5DF6D22A47050 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */,
+				F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5931327C52821BC78130497B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,11 +272,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 013BD2822119BC8700554086 /* Build configuration list for PBXNativeTarget "KatechismusKatolickeCirkve" */;
 			buildPhases = (
-				EC15F21AE5F68B72A081B008 /* [CP] Check Pods Manifest.lock */,
+				463B90BFE4F1508E06276CC8 /* [CP] Check Pods Manifest.lock */,
 				013BD2612119BC8600554086 /* Sources */,
 				013BD2622119BC8600554086 /* Frameworks */,
 				013BD2632119BC8600554086 /* Resources */,
-				AC90E7C0A124DB55A6D5AF87 /* [CP] Embed Pods Frameworks */,
+				FC2C5AC099E0E46681B465C6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -367,29 +370,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AC90E7C0A124DB55A6D5AF87 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EC15F21AE5F68B72A081B008 /* [CP] Check Pods Manifest.lock */ = {
+		463B90BFE4F1508E06276CC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -409,6 +390,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2C5AC099E0E46681B465C6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -432,6 +435,7 @@
 				013BD26B2119BC8600554086 /* IndexTableViewController.swift in Sources */,
 				017F20FF211A3A43006B448C /* SettingsTableViewController.swift in Sources */,
 				017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */,
+				01A8CF0A21777A660023FC74 /* UIFontCatechism.swift in Sources */,
 				01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */,
 				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
 				0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */,
@@ -605,18 +609,21 @@
 		};
 		013BD2832119BC8700554086 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 384A4383C7CB61FF7CEF518D /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */;
+			baseConfigurationReference = ECCF67792DA5DF6D22A47050 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Petr Hracek (TZRV254CLC)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 32253C46P7;
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatolickeCirkveDevelopmentProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -624,18 +631,21 @@
 		};
 		013BD2842119BC8700554086 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AA5A02179799A0FA3F46FD1 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
+			baseConfigurationReference = F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Petr Hracek (32253C46P7)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 32253C46P7;
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatoslickeCirkveDistributionProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
