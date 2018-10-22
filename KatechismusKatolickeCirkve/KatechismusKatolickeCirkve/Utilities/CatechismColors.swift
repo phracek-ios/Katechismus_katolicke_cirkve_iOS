@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 let KKCMainColor = UIColor(red: 47/255.0, green: 90/255.0, blue: 159/255.0, alpha: 1.0)
+let KKCMainTextColor = UIColor.white
 
 let KKCTextLightMode = UIColor.black
 let KKCTextNightMode = UIColor.white

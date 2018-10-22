@@ -63,39 +63,38 @@
         <scene sceneID="qCZ-XO-yb2">
             <objects>
                 <tableViewController id="mAO-HM-I7Z" customClass="CatechismTableViewController" customModule="KatechismusKatolickeCirkve" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hVK-wF-vM2">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" id="hVK-wF-vM2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="separatorColor" red="0.41009405409999999" green="0.7701846752" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="sectionIndexBackgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationLevel="10" indentationWidth="10" reuseIdentifier="CatechismTableViewCell" rowHeight="80" id="Mu6-f3-QnU" customClass="CatechismTableViewCell" customModule="KatechismusKatolickeCirkve">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="CatechismTableViewCell" rowHeight="80" id="Mu6-f3-QnU" customClass="CatechismTableViewCell" customModule="KatechismusKatolickeCirkve">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mu6-f3-QnU" id="EWT-2i-6hl">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Mu6-f3-QnU" id="EWT-2i-6hl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyr-pC-3Mw">
-                                            <rect key="frame" x="5" y="5" width="365" height="69.5"/>
-                                            <color key="backgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="15" y="5" width="355" height="69.5"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                     </subviews>
-                                    <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="zyr-pC-3Mw" firstAttribute="leading" secondItem="EWT-2i-6hl" secondAttribute="leading" constant="5" id="Dph-TI-C7j"/>
+                                        <constraint firstItem="zyr-pC-3Mw" firstAttribute="leading" secondItem="EWT-2i-6hl" secondAttribute="leading" constant="15" id="Dph-TI-C7j"/>
                                         <constraint firstAttribute="trailing" secondItem="zyr-pC-3Mw" secondAttribute="trailing" constant="5" id="huM-IS-wNe"/>
                                         <constraint firstAttribute="bottom" secondItem="zyr-pC-3Mw" secondAttribute="bottom" constant="5" id="nYG-4O-qSH"/>
                                         <constraint firstItem="zyr-pC-3Mw" firstAttribute="top" secondItem="EWT-2i-6hl" secondAttribute="top" constant="5" id="thA-8e-m4I"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="catechismLabel" destination="zyr-pC-3Mw" id="qwP-nU-gey"/>
                                 </connections>
@@ -129,23 +128,22 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFj-om-sTe">
-                                            <rect key="frame" x="5" y="5" width="365" height="69.5"/>
-                                            <color key="backgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="15" y="5" width="355" height="69.5"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                     </subviews>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="MFj-om-sTe" firstAttribute="leading" secondItem="2t9-iz-PIn" secondAttribute="leading" constant="5" id="P9N-Zp-0p6"/>
+                                        <constraint firstItem="MFj-om-sTe" firstAttribute="leading" secondItem="2t9-iz-PIn" secondAttribute="leading" constant="15" id="P9N-Zp-0p6"/>
                                         <constraint firstItem="MFj-om-sTe" firstAttribute="top" secondItem="2t9-iz-PIn" secondAttribute="top" constant="5" id="Sur-cM-KCg"/>
                                         <constraint firstAttribute="bottom" secondItem="MFj-om-sTe" secondAttribute="bottom" constant="5" id="gmk-G1-tuZ"/>
                                         <constraint firstAttribute="trailing" secondItem="MFj-om-sTe" secondAttribute="trailing" constant="5" id="p6A-NR-kv8"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="chapterLabel" destination="MFj-om-sTe" id="vfz-yf-VBR"/>
                                 </connections>
@@ -213,16 +211,15 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kje-fo-q3v">
-                                            <rect key="frame" x="5" y="5" width="365" height="69.5"/>
-                                            <color key="backgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <rect key="frame" x="15" y="5" width="355" height="69.5"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="kje-fo-q3v" firstAttribute="top" secondItem="gr5-Gf-8H0" secondAttribute="top" constant="5" id="3Wh-Lf-vQR"/>
-                                        <constraint firstItem="kje-fo-q3v" firstAttribute="leading" secondItem="gr5-Gf-8H0" secondAttribute="leading" constant="5" id="SlL-QN-78s"/>
+                                        <constraint firstItem="kje-fo-q3v" firstAttribute="leading" secondItem="gr5-Gf-8H0" secondAttribute="leading" constant="15" id="SlL-QN-78s"/>
                                         <constraint firstAttribute="trailing" secondItem="kje-fo-q3v" secondAttribute="trailing" constant="5" id="aHi-5I-yer"/>
                                         <constraint firstAttribute="bottom" secondItem="kje-fo-q3v" secondAttribute="bottom" constant="5" id="gQx-Hf-bTv"/>
                                     </constraints>
@@ -266,12 +263,13 @@
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DVg-f4-I5F">
                                             <rect key="frame" x="5" y="5" width="365" height="69.5"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="highlightedColor"/>
                                             <size key="shadowOffset" width="1" height="-1"/>
                                         </label>
                                     </subviews>
-                                    <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="DVg-f4-I5F" firstAttribute="top" secondItem="6pn-u3-ZYz" secondAttribute="top" constant="5" id="1W2-Mi-hsr"/>
                                         <constraint firstAttribute="bottom" secondItem="DVg-f4-I5F" secondAttribute="bottom" constant="5" id="SLS-Ur-hDm"/>
@@ -279,8 +277,7 @@
                                         <constraint firstItem="DVg-f4-I5F" firstAttribute="leading" secondItem="6pn-u3-ZYz" secondAttribute="leading" constant="5" id="TbQ-kk-mfG"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.96588335299999994" green="1" blue="0.98823707189999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="numberLabel" destination="DVg-f4-I5F" id="aIg-j6-Wc0"/>
                                 </connections>
@@ -393,6 +390,7 @@
                     </view>
                     <connections>
                         <outlet property="labelForNoneResults" destination="KYx-W5-yRe" id="9he-W9-yk4"/>
+                        <outlet property="staticLabel" destination="BIk-6a-eZT" id="WiG-bu-EvB"/>
                         <outlet property="wordTextField" destination="kBc-Cb-Vbf" id="zJz-K3-hk3"/>
                         <segue destination="KGP-LY-N57" kind="show" identifier="ShowParagraph" id="d2t-NR-3t9"/>
                     </connections>

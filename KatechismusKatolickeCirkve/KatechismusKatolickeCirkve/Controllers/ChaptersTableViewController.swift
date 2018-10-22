@@ -16,20 +16,25 @@ class ChaptersTableViewController: UITableViewController {
     }
     fileprivate var rowData = [ChapterRowData]()
     fileprivate var chaptersStructure: ChaptersStructure?
+    var darkMode: Bool = false
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersStructure = ChaptersDataService.shared.chaptersStructure
-        //self.title = "Procházet kapitoly"
         self.navigationItem.title = "Procházet kapitoly"
-
         loadChapters()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.tableView.tableFooterView = UIView()
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +58,15 @@ class ChaptersTableViewController: UITableViewController {
             fatalError("The dequeue cell is not an entrance of ChaptersTableViewCell")
         }
         cell.chapterLabel?.text = rowData[indexPath.row].name
-        
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+            cell.chapterLabel.textColor = KKCTextNightMode
+        }
+        else {
+            cell.backgroundColor = KKCBackgroundLightMode
+            cell.chapterLabel.textColor = KKCTextLightMode
+        }
+
         return cell
     }
 
@@ -89,7 +102,6 @@ class ChaptersTableViewController: UITableViewController {
         }
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(rowData[indexPath.row])
         if rowData[indexPath.row].order != 1 && rowData[indexPath.row].order != 2 && rowData[indexPath.row].order != 3 {
             performSegue(withIdentifier: "ShowSections", sender: indexPath)
         } else {
@@ -104,6 +116,13 @@ class ChaptersTableViewController: UITableViewController {
                 rowData.append(ChapterRowData(order: chap.id, name: chap.name))
             }
         }
+    }
+    func enabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+    }
+    
+    func disabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundLightMode
     }
 
 }

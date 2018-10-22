@@ -20,13 +20,26 @@ class NumbersTableViewController: UITableViewController {
     }
     
     fileprivate var numbersRowData = [NumbersRowData]()
+    var darkMode: Bool = false
+    let maxParagraph: Int = 2865
+    let lastSection: Int = 2501
+
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
         self.tableView.rowHeight = 80
         self.navigationItem.title = "Vyhledávat podle čísel"
-
-    }
+        self.tableView.tableFooterView = UIView()
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
+  }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -48,6 +61,14 @@ class NumbersTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NumbersTableViewCell else { return UITableViewCell()
         }
         cell.numberLabel?.text = numbersRowData[indexPath.row].text
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+            cell.numberLabel.textColor = KKCTextNightMode
+        }
+        else {
+            cell.backgroundColor = KKCBackgroundLightMode
+            cell.numberLabel.textColor = KKCTextLightMode
+        }
         return cell
 
     }
@@ -66,8 +87,8 @@ class NumbersTableViewController: UITableViewController {
             let parentNumber = numbersRowData[indexPath.row].number
             numbersDetailTableViewController.beginNumber = parentNumber
             var endNumber: Int = 0
-            if parentNumber == 2500 {
-                endNumber = 2865
+            if parentNumber == lastSection {
+                endNumber = maxParagraph
             }
             else {
                 endNumber = parentNumber + diff - 1
@@ -84,8 +105,8 @@ class NumbersTableViewController: UITableViewController {
     }
     
     private func addRow() {
-        if beginNumber == 2500 {
-            endNumber = 2865
+        if beginNumber == lastSection {
+            endNumber = maxParagraph
         }
         else {
             endNumber = beginNumber + diff - 1
@@ -101,4 +122,12 @@ class NumbersTableViewController: UITableViewController {
             beginNumber += diff
         }
     }
+    func enabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+    }
+    
+    func disabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundLightMode
+    }
+
 }

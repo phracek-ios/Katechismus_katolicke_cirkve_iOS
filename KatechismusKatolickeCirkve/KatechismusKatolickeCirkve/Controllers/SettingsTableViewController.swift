@@ -16,6 +16,7 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var dimOffSwitch: UISwitch!
     @IBOutlet weak var nightSwitchCell: UITableViewCell!
     @IBOutlet weak var dimOffSwitchCell: UITableViewCell!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,7 +29,7 @@ class SettingsTableViewController: UITableViewController {
             disabledDark()
         }
         dimOffSwitch.isOn = userDefaults.bool(forKey: "DimmScreen")
-        
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
     }
 
     override func didReceiveMemoryWarning() {

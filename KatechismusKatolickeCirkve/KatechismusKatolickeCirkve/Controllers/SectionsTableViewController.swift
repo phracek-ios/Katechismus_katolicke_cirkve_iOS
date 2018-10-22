@@ -20,12 +20,24 @@ class SectionsTableViewController: UITableViewController {
     fileprivate var chaptersStructure: ChaptersStructure?
 
     var parentID: Int = 0
+    var darkMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersStructure = ChaptersDataService.shared.chaptersStructure
         self.tableView.rowHeight = 80
         loadSections()
+        self.tableView.tableFooterView = UIView()
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +65,15 @@ class SectionsTableViewController: UITableViewController {
             cell.sectionLabel?.textColor = UIColor.white
         }
         cell.sectionLabel?.text = sectionsRowData[indexPath.row].name
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+            cell.sectionLabel.textColor = KKCTextNightMode
+        }
+        else {
+            cell.backgroundColor = KKCBackgroundLightMode
+            cell.sectionLabel.textColor = KKCTextLightMode
+        }
+
         return cell
     }
     
@@ -96,5 +117,11 @@ class SectionsTableViewController: UITableViewController {
             }
         }
     }
-
+    func enabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+    }
+    
+    func disabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundLightMode
+    }
 }

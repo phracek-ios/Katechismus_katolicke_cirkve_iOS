@@ -11,7 +11,7 @@ import UIKit
 class NumbersDetailTableViewController: UITableViewController {
 
     var beginNumber = 1
-    var endNumber = 499
+    var endNumber = 500
     
     struct NumbersDetailRowData {
         var number : Int
@@ -21,12 +21,24 @@ class NumbersDetailTableViewController: UITableViewController {
     
     fileprivate var numbersDetailRowData = [NumbersDetailRowData]()
     fileprivate var diff = 30
+    var darkMode: Bool = false
+    let lastSection: Int = 2861
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
         self.tableView.rowHeight = 80
-    }
+        self.tableView.tableFooterView = UIView()
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
+   }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -40,7 +52,7 @@ class NumbersDetailTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numbersDetailRowData.count - 1
+        return numbersDetailRowData.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +60,15 @@ class NumbersDetailTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NumbersDetailTableViewCell else { return UITableViewCell()
         }
         cell.numberDetails?.text = numbersDetailRowData[indexPath.row].text
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+            cell.numberDetails.textColor = KKCTextNightMode
+        }
+        else {
+            cell.backgroundColor = KKCBackgroundLightMode
+            cell.numberDetails.textColor = KKCTextLightMode
+        }
+
         return cell
     }
 
@@ -63,7 +84,6 @@ class NumbersDetailTableViewController: UITableViewController {
                 fatalError("The selected cell is not being displayed by the table")
             }
             var parentNumber = numbersDetailRowData[indexPath.row].number
-            print(parentNumber)
             if parentNumber == 0 {
                 parentNumber = 1
             }
@@ -79,21 +99,32 @@ class NumbersDetailTableViewController: UITableViewController {
         performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
     }
     private func addRow() {
-        if beginNumber == 2830 {
-            endNumber = 2865
+        var finalNumber: Int = 0
+        if beginNumber + diff >= endNumber {
+            finalNumber = endNumber
         }
         else {
-            endNumber = beginNumber + diff - 1
+            finalNumber = beginNumber + diff
         }
-        let text_for_disp: String = ("\(beginNumber)-\(endNumber)")
+        let text_for_disp: String = ("\(beginNumber)-\(finalNumber)")
         numbersDetailRowData.append(NumbersDetailRowData(number: beginNumber,
-                                                         number_final: endNumber, text: text_for_disp))
+                                                         number_final: finalNumber, text: text_for_disp))
     }
     private func initNumbers() {
         let count = (endNumber - beginNumber) / diff + 1
         for _ in 1...count {
-            addRow()
-            beginNumber += diff
+            if beginNumber <= lastSection {
+                addRow()
+                beginNumber += diff
+            }
         }
     }
+    func enabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+    }
+    
+    func disabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundLightMode
+    }
+
 }

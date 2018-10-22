@@ -26,17 +26,32 @@ class CatechismTableViewController: UITableViewController {
     }
     //MARK: Properties
     fileprivate var rowData = [RowData]()
-    //fileprivate var darkMode: Bool = false
+    fileprivate var darkMode: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         loadCatechism()
-        //let userDefaults = UserDefaults.standard
-        //darkMode = userDefaults.bool(forKey: "NightSwitch")
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
+        self.tableView.tableFooterView = UIView()
         navigationController?.navigationBar.barTintColor = KKCMainColor
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: KKCMainTextColor]
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+        self.tableView.layoutMargins = UIEdgeInsets.zero
+        self.tableView.separatorInset = UIEdgeInsets.zero
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.default
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,6 +75,14 @@ class CatechismTableViewController: UITableViewController {
 
         let data = rowData[indexPath.row]
         cell.catechismLabel.text = data.menu?.name
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+            cell.catechismLabel.textColor = KKCTextNightMode
+        }
+        else {
+            cell.backgroundColor = KKCBackgroundLightMode
+            cell.catechismLabel.textColor = KKCTextLightMode
+        }
         return cell
     }
     
@@ -110,25 +133,25 @@ class CatechismTableViewController: UITableViewController {
     }
 
     private func loadCatechism () {
-        guard let browse_chapter = CatechismMenu(name: " Procházet kapitoly", photo: nil, order: 0) else {
+        guard let browse_chapter = CatechismMenu(name: "Procházet kapitoly", photo: nil, order: 0) else {
             fatalError("Unable to instanciate Procházet kapitoly")
         }
-        guard let search_for_numbers = CatechismMenu(name: " Hledat podle čísel", photo: nil, order: 1) else {
+        guard let search_for_numbers = CatechismMenu(name: "Hledat podle čísel", photo: nil, order: 1) else {
             fatalError("Unable to instanciate Hledat podle čísel")
         }
-        guard let find_word = CatechismMenu(name: " Vyhledávání", photo: nil, order: 2) else {
+        guard let find_word = CatechismMenu(name: "Vyhledávání", photo: nil, order: 2) else {
             fatalError("Unable to instanciate Vyhledávání")
         }
         //guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
         //    fatalError("Unable to instanciate Rejstřík")
         //}
-        guard let about_project = CatechismMenu(name: " O projektu", photo: nil, order: 4) else {
+        guard let about_project = CatechismMenu(name: "O projektu", photo: nil, order: 4) else {
             fatalError("Unable to instanciate O projektu")
         }
-        guard let settings = CatechismMenu(name: " Nastavení", photo: nil, order: 5) else {
+        guard let settings = CatechismMenu(name: "Nastavení", photo: nil, order: 5) else {
             fatalError("Unable to instanciate Nastaveni")
         }
-        guard let about = CatechismMenu(name: " O aplikaci", photo: nil, order: 6) else {
+        guard let about = CatechismMenu(name: "O aplikaci", photo: nil, order: 6) else {
             fatalError("Unable to instanciate O aplikaci")
         }
         
@@ -139,5 +162,13 @@ class CatechismTableViewController: UITableViewController {
         rowData.append(RowData(type: .project, menu: about_project))
         rowData.append(RowData(type: .settings, menu: settings))
         rowData.append(RowData(type: .about, menu: about))
+    }
+    
+    func enabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+    }
+    
+    func disabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundLightMode
     }
 }

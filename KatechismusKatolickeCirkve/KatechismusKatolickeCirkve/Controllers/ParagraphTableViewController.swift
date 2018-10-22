@@ -27,7 +27,7 @@ class ParagraphTableViewController: UITableViewController {
     var rangeID: Int = 0
     var findWordData = [Int]()
     var findWordString: String = ""
-    
+    var darkMode: Bool = false
     var isStatusBarHidden = false {
         didSet {
             UIView.animate(withDuration: 0.25) { () -> Void in
@@ -47,8 +47,18 @@ class ParagraphTableViewController: UITableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         loadParagraphs()
+        self.tableView.tableFooterView = UIView()
         self.tableView.alpha = 0
- 
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,16 +90,28 @@ class ParagraphTableViewController: UITableViewController {
         
         cell.labelParagraph?.numberOfLines = 0
         cell.labelParagraph?.attributedText = data.html
+        cell.labelParagraph.textColor = KKCTextNightMode
         if data.recap == 1 {
             cell.backgroundColor = KKCMainColor
-            cell.labelParagraph?.textColor = UIColor.white
         }
         else {
-            cell.backgroundColor = UIColor.white
-            cell.labelParagraph?.textColor = UIColor.black
+            if self.darkMode == true {
+                cell.backgroundColor = KKCBackgroundNightMode
+            }
+            else {
+                cell.backgroundColor = KKCBackgroundLightMode
+                cell.labelParagraph.textColor = KKCTextLightMode
+            }
         }
-
         return cell
+    }
+    
+    func enabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+    }
+    
+    func disabledDark() {
+        self.tableView.backgroundColor = KKCBackgroundLightMode
     }
 
     private func generateContent(text: String) -> NSAttributedString {
@@ -133,6 +155,7 @@ class ParagraphTableViewController: UITableViewController {
         )
         var generated_text = text
         generated_text = generated_text.replacingOccurrences(of: "<p>\n", with: "<p>")
+        generated_text = generated_text.replacingOccurrences(of: "<smaal>", with: "<small>")
         generated_text = generated_text.replacingOccurrences(of: "\n</p>", with: "</p>")
         generated_text = generated_text.replacingOccurrences(of: "[\\t\\n\\r][\\t\\n\\r]+", with: "\n", options: .regularExpression)
         generated_text = generated_text.replacingOccurrences(of: "<p>", with: "")

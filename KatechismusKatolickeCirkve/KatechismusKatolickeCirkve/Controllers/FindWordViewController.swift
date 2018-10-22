@@ -12,9 +12,11 @@ import Foundation
 class FindWordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var wordTextField: UITextField!
+    @IBOutlet weak var staticLabel: UILabel!
     @IBOutlet weak var labelForNoneResults: UILabel!
     var findWordData = [Int]()
     var findWordString: String = ""
+    var darkMode: Bool = false
     fileprivate var paragraphStructure: ParagraphStructure?
     
     override func viewDidLoad() {
@@ -24,6 +26,16 @@ class FindWordViewController: UIViewController, UITextFieldDelegate {
         wordTextField.returnKeyType = .done
         labelForNoneResults.isEnabled = false
         labelForNoneResults.text = ""
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+        if self.darkMode == true {
+            enabledDark()
+        }
+        else {
+            disabledDark()
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,5 +80,19 @@ class FindWordViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-
+    func enabledDark() {
+        self.view.backgroundColor = KKCBackgroundNightMode
+        self.labelForNoneResults.backgroundColor = KKCBackgroundNightMode
+        self.labelForNoneResults.textColor = KKCTextNightMode
+        self.staticLabel.backgroundColor = KKCBackgroundNightMode
+        self.staticLabel.textColor = KKCTextNightMode
+    }
+    
+    func disabledDark() {
+        self.view.backgroundColor = KKCBackgroundLightMode
+        self.labelForNoneResults.backgroundColor = KKCBackgroundLightMode
+        self.labelForNoneResults.textColor = KKCTextLightMode
+        self.staticLabel.backgroundColor = KKCBackgroundLightMode
+        self.staticLabel.textColor = KKCTextLightMode
+    }
 }
