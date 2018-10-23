@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		013273FF217F0E86008411EC /* NotificationsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013273FE217F0E86008411EC /* NotificationsName.swift */; };
 		013BD2692119BC8600554086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD2682119BC8600554086 /* AppDelegate.swift */; };
 		013BD26B2119BC8600554086 /* IndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD26A2119BC8600554086 /* IndexTableViewController.swift */; };
 		013BD26E2119BC8600554086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013BD26C2119BC8600554086 /* Main.storyboard */; };
@@ -62,6 +63,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		013273FE217F0E86008411EC /* NotificationsName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsName.swift; sourceTree = "<group>"; };
 		013BD2652119BC8600554086 /* KatechismusKatolickeCirkve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KatechismusKatolickeCirkve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013BD2682119BC8600554086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013BD26A2119BC8600554086 /* IndexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				0152223721518A5E00CA5933 /* HtmlToStringExtension.swift */,
 				019E7AFF216784AB00FE51EC /* CatechismColors.swift */,
 				01A8CF0921777A660023FC74 /* UIFontCatechism.swift */,
+				013273FE217F0E86008411EC /* NotificationsName.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 				017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */,
 				019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */,
 				017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */,
+				013273FF217F0E86008411EC /* NotificationsName.swift in Sources */,
 				0152223821518A5E00CA5933 /* HtmlToStringExtension.swift in Sources */,
 				013BD26B2119BC8600554086 /* IndexTableViewController.swift in Sources */,
 				017F20FF211A3A43006B448C /* SettingsTableViewController.swift in Sources */,
@@ -612,18 +616,18 @@
 			baseConfigurationReference = ECCF67792DA5DF6D22A47050 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Petr Hracek (TZRV254CLC)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32253C46P7;
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatolickeCirkveDevelopmentProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -634,18 +638,18 @@
 			baseConfigurationReference = F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Petr Hracek (32253C46P7)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32253C46P7;
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatoslickeCirkveDistributionProfile;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

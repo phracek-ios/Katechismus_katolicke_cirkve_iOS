@@ -27,19 +27,22 @@ class NumbersTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
-        self.tableView.rowHeight = 80
-        self.navigationItem.title = "Vyhledávat podle čísel"
         self.tableView.tableFooterView = UIView()
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        if self.darkMode {
+            self.tableView.backgroundColor = KKCBackgroundNightMode
+        } else {
+            self.tableView.backgroundColor = KKCBackgroundLightMode
+        }
+        self.tableView.rowHeight = 80
+        self.navigationItem.title = "Vyhledávat podle čísel"
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
-        if self.darkMode == true {
-            enabledDark()
-        }
-        else {
-            disabledDark()
-        }
-  }
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -122,12 +125,15 @@ class NumbersTableViewController: UITableViewController {
             beginNumber += diff
         }
     }
-    func enabledDark() {
+    @objc private func darkModeEnabled(_ notification: Notification) {
+        self.darkMode = true
         self.tableView.backgroundColor = KKCBackgroundNightMode
+        self.tableView.reloadData()
     }
     
-    func disabledDark() {
+    @objc private func darkModeDisabled(_ notification: Notification) {
+        self.darkMode = false
         self.tableView.backgroundColor = KKCBackgroundLightMode
+        self.tableView.reloadData()
     }
-
 }

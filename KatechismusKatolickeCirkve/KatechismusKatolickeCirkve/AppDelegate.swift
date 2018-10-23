@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         ChaptersDataService.shared.loadData()
         ParagraphDataService.shared.loadData()
         UINavigationBar.appearance().barTintColor = KKCMainColor
-        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().tintColor = KKCTextNightMode
         UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: KKCMainTextColor]
+        //UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: KKCMainTextColor]
         return true
     }
 

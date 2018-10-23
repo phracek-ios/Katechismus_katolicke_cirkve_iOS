@@ -30,14 +30,17 @@ class SectionsTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        if self.darkMode == true {
-            enabledDark()
-        }
-        else {
-            disabledDark()
+        if self.darkMode {
+            self.tableView.backgroundColor = KKCBackgroundNightMode
+        } else {
+            self.tableView.backgroundColor = KKCBackgroundLightMode
         }
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
 
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,19 +62,20 @@ class SectionsTableViewController: UITableViewController {
         let cellIdentifier = "SectionsTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SectionsTableViewCell else { return UITableViewCell()
         }
+        cell.sectionLabel?.text = sectionsRowData[indexPath.row].name
         if sectionsRowData[indexPath.row].main_section == true {
             cell.backgroundColor = KKCMainColor
             cell.sectionLabel.backgroundColor = KKCMainColor
-            cell.sectionLabel?.textColor = UIColor.white
-        }
-        cell.sectionLabel?.text = sectionsRowData[indexPath.row].name
-        if self.darkMode == true {
-            cell.backgroundColor = KKCBackgroundNightMode
-            cell.sectionLabel.textColor = KKCTextNightMode
-        }
-        else {
-            cell.backgroundColor = KKCBackgroundLightMode
-            cell.sectionLabel.textColor = KKCTextLightMode
+            cell.sectionLabel?.textColor = KKCTextNightMode
+        } else {
+            if self.darkMode == true {
+                cell.backgroundColor = KKCBackgroundNightMode
+                cell.sectionLabel.textColor = KKCTextNightMode
+            }
+            else {
+                cell.backgroundColor = KKCBackgroundLightMode
+                cell.sectionLabel.textColor = KKCTextLightMode
+            }
         }
 
         return cell
@@ -117,11 +121,15 @@ class SectionsTableViewController: UITableViewController {
             }
         }
     }
-    func enabledDark() {
+    @objc private func darkModeEnabled(_ notification: Notification) {
+        self.darkMode = true
         self.tableView.backgroundColor = KKCBackgroundNightMode
+        self.tableView.reloadData()
     }
     
-    func disabledDark() {
+    @objc private func darkModeDisabled(_ notification: Notification) {
+        self.darkMode = false
         self.tableView.backgroundColor = KKCBackgroundLightMode
+        self.tableView.reloadData()
     }
 }

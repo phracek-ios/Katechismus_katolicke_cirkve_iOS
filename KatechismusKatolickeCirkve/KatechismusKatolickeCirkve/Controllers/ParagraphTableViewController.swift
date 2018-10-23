@@ -51,14 +51,17 @@ class ParagraphTableViewController: UITableViewController {
         self.tableView.alpha = 0
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        if self.darkMode == true {
-            enabledDark()
-        }
-        else {
-            disabledDark()
+        if self.darkMode {
+            self.tableView.backgroundColor = KKCBackgroundNightMode
+        } else {
+            self.tableView.backgroundColor = KKCBackgroundLightMode
         }
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
 
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,14 +107,6 @@ class ParagraphTableViewController: UITableViewController {
             }
         }
         return cell
-    }
-    
-    func enabledDark() {
-        self.tableView.backgroundColor = KKCBackgroundNightMode
-    }
-    
-    func disabledDark() {
-        self.tableView.backgroundColor = KKCBackgroundLightMode
     }
 
     private func generateContent(text: String) -> NSAttributedString {
@@ -217,6 +212,17 @@ class ParagraphTableViewController: UITableViewController {
         }
         let main_text = "\(caption)\(references)\(par.text)\(text_refs)"
         return generateContent(text: main_text)
+    }
+    @objc private func darkModeEnabled(_ notification: Notification) {
+        self.darkMode = true
+        self.tableView.backgroundColor = KKCBackgroundNightMode
+        self.tableView.reloadData()
+    }
+    
+    @objc private func darkModeDisabled(_ notification: Notification) {
+        self.darkMode = false
+        self.tableView.backgroundColor = KKCBackgroundLightMode
+        self.tableView.reloadData()
     }
 }
 

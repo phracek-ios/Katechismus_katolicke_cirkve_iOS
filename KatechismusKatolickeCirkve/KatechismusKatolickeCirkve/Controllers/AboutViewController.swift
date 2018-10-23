@@ -35,6 +35,10 @@ class AboutViewController: UIViewController, UITextViewDelegate {
             catechismStructure.about_appl_2a + "<a href=\"https://github.com/phracek/Katechismus_katolicke_cirkve_iOS/issues\">zde.</a>"
         aboutMainWebView.loadHTMLString("<html><body><font size=18" + htmlStringPart1 + "<br><br>" + htmlImage + htmlStringPart2 + "</body></html>", baseURL: nil)
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

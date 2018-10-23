@@ -24,6 +24,10 @@ class AboutProjectViewController: UIViewController, UITextViewDelegate{
         aboutPrjWebView.loadHTMLString("<html><body><font size=18" + htmlString + "</body></html>", baseURL: nil)
         
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

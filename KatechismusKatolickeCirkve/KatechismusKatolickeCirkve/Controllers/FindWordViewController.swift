@@ -29,13 +29,12 @@ class FindWordViewController: UIViewController, UITextFieldDelegate {
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
-        if self.darkMode == true {
-            enabledDark()
-        }
-        else {
-            disabledDark()
-        }
 
+
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -80,7 +79,7 @@ class FindWordViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
-    func enabledDark() {
+    @objc private func darkModeEnabled(_ notification: Notification) {
         self.view.backgroundColor = KKCBackgroundNightMode
         self.labelForNoneResults.backgroundColor = KKCBackgroundNightMode
         self.labelForNoneResults.textColor = KKCTextNightMode
@@ -88,7 +87,7 @@ class FindWordViewController: UIViewController, UITextFieldDelegate {
         self.staticLabel.textColor = KKCTextNightMode
     }
     
-    func disabledDark() {
+    @objc private func darkModeDisabled(_ notification: Notification) {
         self.view.backgroundColor = KKCBackgroundLightMode
         self.labelForNoneResults.backgroundColor = KKCBackgroundLightMode
         self.labelForNoneResults.textColor = KKCTextLightMode

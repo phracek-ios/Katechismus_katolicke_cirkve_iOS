@@ -31,6 +31,10 @@ class SettingsTableViewController: UITableViewController {
         dimOffSwitch.isOn = userDefaults.bool(forKey: "DimmScreen")
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
     }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,10 +56,12 @@ class SettingsTableViewController: UITableViewController {
         if nightSwitch.isOn == true {
             userDefaults.set(true, forKey: "NightSwitch")
             enabledDark()
+            NotificationCenter.default.post(name: .darkModeEnabled, object:nil)
         }
         else {
             userDefaults.set(false, forKey: "NightSwitch")
             disabledDark()
+            NotificationCenter.default.post(name: .darkModeDisabled, object: nil)
         }
     }
     @IBAction func funcDisableDisplay(_ sender: Any) {
