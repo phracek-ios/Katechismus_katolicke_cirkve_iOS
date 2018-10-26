@@ -67,17 +67,22 @@ class SectionsTableViewController: UITableViewController {
             cell.backgroundColor = KKCMainColor
             cell.sectionLabel.backgroundColor = KKCMainColor
             cell.sectionLabel?.textColor = KKCTextNightMode
+            cell.accessoryType = .none
+            cell.isUserInteractionEnabled = false
         } else {
+            cell.isUserInteractionEnabled = true
+            cell.accessoryType = .disclosureIndicator
             if self.darkMode == true {
                 cell.backgroundColor = KKCBackgroundNightMode
+                cell.sectionLabel.backgroundColor = KKCBackgroundNightMode
                 cell.sectionLabel.textColor = KKCTextNightMode
             }
             else {
                 cell.backgroundColor = KKCBackgroundLightMode
+                cell.sectionLabel.backgroundColor = KKCBackgroundLightMode
                 cell.sectionLabel.textColor = KKCTextLightMode
             }
         }
-
         return cell
     }
     

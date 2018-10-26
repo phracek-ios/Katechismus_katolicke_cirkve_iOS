@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,28 +17,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O projektu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-tr-nqx">
-                                <rect key="frame" x="16" y="60" width="343" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="O projektu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8cn-tr-nqx">
+                                <rect key="frame" x="10" y="40" width="355" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uHH-xd-vYv">
-                                <rect key="frame" x="16" y="110" width="343" height="537"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-M1-blZ">
+                                <rect key="frame" x="10" y="70" width="355" height="587"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8cn-tr-nqx" firstAttribute="leading" secondItem="McG-WW-DF2" secondAttribute="leading" constant="10" id="0xv-EQ-HTd"/>
+                            <constraint firstItem="DIO-M1-blZ" firstAttribute="top" secondItem="8cn-tr-nqx" secondAttribute="top" constant="30" id="0zh-xE-Mpk"/>
+                            <constraint firstItem="McG-WW-DF2" firstAttribute="trailing" secondItem="8cn-tr-nqx" secondAttribute="trailing" constant="10" id="QQg-LP-Kzx"/>
+                            <constraint firstItem="McG-WW-DF2" firstAttribute="bottom" secondItem="DIO-M1-blZ" secondAttribute="bottom" constant="10" id="UWp-j5-Bei"/>
+                            <constraint firstItem="8cn-tr-nqx" firstAttribute="top" secondItem="McG-WW-DF2" secondAttribute="top" constant="20" id="nDj-lN-ngT"/>
+                            <constraint firstItem="DIO-M1-blZ" firstAttribute="leading" secondItem="McG-WW-DF2" secondAttribute="leading" constant="10" id="uCt-KV-04r"/>
+                            <constraint firstItem="McG-WW-DF2" firstAttribute="trailing" secondItem="DIO-M1-blZ" secondAttribute="trailing" constant="10" id="vgJ-vM-suN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="McG-WW-DF2"/>
                     </view>
                     <connections>
-                        <outlet property="aboutPrjWebView" destination="uHH-xd-vYv" id="okJ-Wr-Fzq"/>
+                        <outlet property="contentTextView" destination="DIO-M1-blZ" id="UaY-Tt-si8"/>
+                        <outlet property="titleLabel" destination="8cn-tr-nqx" id="VwU-kW-oEp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoT-rP-Myo" userLabel="First Responder" sceneMemberID="firstResponder"/>
