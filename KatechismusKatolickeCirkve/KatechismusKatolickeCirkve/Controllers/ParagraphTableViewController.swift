@@ -9,7 +9,7 @@
 import UIKit
 import BonMot
 
-class ParagraphTableViewController: UITableViewController {
+class ParagraphTableViewController: BaseTableViewController {
     
     struct ParagraphRowData {
         var html: NSAttributedString

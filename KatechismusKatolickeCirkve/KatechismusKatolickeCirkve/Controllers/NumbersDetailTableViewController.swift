@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NumbersDetailTableViewController: UITableViewController {
+class NumbersDetailTableViewController: BaseTableViewController {
 
     var beginNumber = 1
     var endNumber = 500

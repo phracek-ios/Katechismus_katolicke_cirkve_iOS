@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class AboutProjectViewController: UIViewController, UITextViewDelegate{
+class AboutProjectViewController: BaseViewController, UITextViewDelegate{
 
     fileprivate var catechismStructure: CatechismStructure?
     @IBOutlet weak var titleLabel: UILabel!

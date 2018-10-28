@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NumbersTableViewController: UITableViewController {
+class NumbersTableViewController: BaseTableViewController {
 
     fileprivate var diff = 500
     fileprivate var beginNumber = 1

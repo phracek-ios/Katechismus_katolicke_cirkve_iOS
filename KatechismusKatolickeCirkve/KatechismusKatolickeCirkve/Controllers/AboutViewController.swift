@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import WebKit
 
-class AboutViewController: UIViewController, UITextViewDelegate {
+class AboutViewController: BaseViewController, UITextViewDelegate {
 
     //MARK: Properties
     fileprivate var catechismStructure: CatechismStructure?
