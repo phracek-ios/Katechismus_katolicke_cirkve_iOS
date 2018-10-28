@@ -19,6 +19,7 @@ class SettingsTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Nastavení"
 
         let userDefaults = UserDefaults.standard
         nightSwitch.isOn = userDefaults.bool(forKey: "NightSwitch")
