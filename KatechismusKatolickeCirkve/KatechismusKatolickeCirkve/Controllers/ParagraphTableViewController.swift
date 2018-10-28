@@ -48,7 +48,6 @@ class ParagraphTableViewController: UITableViewController {
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         loadParagraphs()
         self.tableView.tableFooterView = UIView()
-        self.tableView.alpha = 0
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         if self.darkMode {
@@ -74,7 +73,6 @@ class ParagraphTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
-        self.tableView.alpha = 1
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
