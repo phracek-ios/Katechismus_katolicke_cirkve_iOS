@@ -30,9 +30,25 @@ class AboutProjectViewController: BaseViewController, TTTAttributedLabelDelegate
         let cbkText = "České biskupské konference"
         let donumText = "Donum"
         let text = "\(catechismStructure.about_project_1)\(karmelText)\(catechismStructure.about_project_1a)\(donumText) nebo u \(paulinText).\n\n\(catechismStructure.about_project_1b)\(cbkText)\(catechismStructure.about_project_1c)\(catechismStructure.about_project_2)\(catechismStructure.about_project_3)\(karmelText)\(catechismStructure.about_project_3a)"
-        
-        //contentLabel.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 15, right: 10)
-        contentLabel.setText(text)
+
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        var attributedText: NSAttributedString
+        if self.darkMode {
+            self.view.backgroundColor = KKCBackgroundNightMode
+            contentLabel.backgroundColor = KKCBackgroundNightMode
+            attributedText = NSAttributedString(string: text, attributes: [
+                NSAttributedStringKey.foregroundColor: KKCTextNightMode,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+        } else {
+            self.view.backgroundColor = KKCBackgroundLightMode
+            contentLabel.backgroundColor = KKCBackgroundLightMode
+            attributedText = NSAttributedString(string: text, attributes: [
+                NSAttributedStringKey.foregroundColor: KKCTextLightMode,
+                NSAttributedStringKey.font: UIFont.systemFont(ofSize: 16)])
+        }
+        contentLabel.textInsets = UIEdgeInsets(top: 10, left: 10, bottom: 15, right: 10)
+        contentLabel.setText(attributedText)
         var numberWords = 0
         contentLabel.addLink(to: URL(string: Constants.Link.karmelCz)!,
                              with: NSRange(location:catechismStructure.about_project_1.count, length: karmelText.count))
@@ -48,19 +64,6 @@ class AboutProjectViewController: BaseViewController, TTTAttributedLabelDelegate
         numberWords += catechismStructure.about_project_1c.count + catechismStructure.about_project_2.count + catechismStructure.about_project_3.count + 27
         contentLabel.addLink(to: URL(string: Constants.Link.karmelCz)!,
                              with: NSRange(location: numberWords, length: karmelText.count))
-
-
-        let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        if self.darkMode {
-            self.view.backgroundColor = KKCBackgroundNightMode
-            contentLabel.backgroundColor = KKCBackgroundNightMode
-            contentLabel.textColor = KKCTextNightMode
-        } else {
-            self.view.backgroundColor = KKCBackgroundLightMode
-            contentLabel.backgroundColor = KKCBackgroundLightMode
-            contentLabel.textColor = KKCTextLightMode
-        }
         contentLabel.delegate = self
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
         NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
