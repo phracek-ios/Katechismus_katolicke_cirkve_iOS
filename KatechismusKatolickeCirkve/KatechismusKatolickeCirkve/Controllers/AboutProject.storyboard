@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,25 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DIO-M1-blZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znh-79-x5Y" customClass="TTTAttributedLabel">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="McG-WW-DF2" firstAttribute="bottom" secondItem="DIO-M1-blZ" secondAttribute="bottom" id="UWp-j5-Bei"/>
-                            <constraint firstItem="DIO-M1-blZ" firstAttribute="leading" secondItem="McG-WW-DF2" secondAttribute="leading" id="uCt-KV-04r"/>
-                            <constraint firstItem="McG-WW-DF2" firstAttribute="trailing" secondItem="DIO-M1-blZ" secondAttribute="trailing" id="vgJ-vM-suN"/>
-                            <constraint firstItem="DIO-M1-blZ" firstAttribute="top" secondItem="McG-WW-DF2" secondAttribute="top" id="wbY-PR-hwT"/>
+                            <constraint firstItem="McG-WW-DF2" firstAttribute="bottom" secondItem="Znh-79-x5Y" secondAttribute="bottom" id="5ao-EW-Vke"/>
+                            <constraint firstItem="Znh-79-x5Y" firstAttribute="leading" secondItem="McG-WW-DF2" secondAttribute="leading" id="85J-bo-DdJ"/>
+                            <constraint firstItem="Znh-79-x5Y" firstAttribute="top" secondItem="McG-WW-DF2" secondAttribute="top" id="pZc-U3-zvA"/>
+                            <constraint firstItem="McG-WW-DF2" firstAttribute="trailing" secondItem="Znh-79-x5Y" secondAttribute="trailing" id="qTL-Mo-Tis"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="McG-WW-DF2"/>
                     </view>
                     <connections>
-                        <outlet property="contentTextView" destination="DIO-M1-blZ" id="UaY-Tt-si8"/>
+                        <outlet property="contentLabel" destination="Znh-79-x5Y" id="BeP-Kr-wst"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OoT-rP-Myo" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -46,6 +46,7 @@
 		019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3421235890005EFB7F /* ParagraphDataService.swift */; };
 		019E7B00216784AB00FE51EC /* CatechismColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E7AFF216784AB00FE51EC /* CatechismColors.swift */; };
 		01A8CF0A21777A660023FC74 /* UIFontCatechism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A8CF0921777A660023FC74 /* UIFontCatechism.swift */; };
+		01B7520321874189007081D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7520221874189007081D1 /* Constants.swift */; };
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
 		01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E864F22149BAC300566660 /* FindWordViewController.swift */; };
@@ -108,6 +109,7 @@
 		019C1A3421235890005EFB7F /* ParagraphDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphDataService.swift; sourceTree = "<group>"; };
 		019E7AFF216784AB00FE51EC /* CatechismColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismColors.swift; sourceTree = "<group>"; };
 		01A8CF0921777A660023FC74 /* UIFontCatechism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCatechism.swift; sourceTree = "<group>"; };
+		01B7520221874189007081D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
 		01E864F22149BAC300566660 /* FindWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWordViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				019E7AFF216784AB00FE51EC /* CatechismColors.swift */,
 				01A8CF0921777A660023FC74 /* UIFontCatechism.swift */,
 				013273FE217F0E86008411EC /* NotificationsName.swift */,
+				01B7520221874189007081D1 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				013BD2622119BC8600554086 /* Frameworks */,
 				013BD2632119BC8600554086 /* Resources */,
 				FC2C5AC099E0E46681B465C6 /* [CP] Embed Pods Frameworks */,
+				01B7520521874728007081D1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -387,6 +391,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		01B7520521874728007081D1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 618ac37da9d685bd43e9a9ae9555c763b2f073d4 531a1c751e9d1ed63e253f06021f47afc0fab5d6ec4ad0dbce4618ff6fee2406\n";
+		};
 		463B90BFE4F1508E06276CC8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,12 +440,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
+				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BonMot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTTAttributedLabel.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -463,6 +486,7 @@
 				01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */,
 				013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */,
 				018E43A7211D8C3700E0237B /* SectionsTableViewController.swift in Sources */,
+				01B7520321874189007081D1 /* Constants.swift in Sources */,
 				01946212212220A20056EC7B /* ParagraphTableViewController.swift in Sources */,
 				019048FB211C25B500C17A95 /* ChaptersTableViewCell.swift in Sources */,
 				013BD2692119BC8600554086 /* AppDelegate.swift in Sources */,

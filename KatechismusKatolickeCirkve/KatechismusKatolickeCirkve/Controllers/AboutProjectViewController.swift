@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import WebKit
+import TTTAttributedLabel
 
-class AboutProjectViewController: BaseViewController, UITextViewDelegate{
+class AboutProjectViewController: BaseViewController, TTTAttributedLabelDelegate {
 
     fileprivate var catechismStructure: CatechismStructure?
-    @IBOutlet weak var contentTextView: UITextView!
+    @IBOutlet weak var contentLabel: TTTAttributedLabel!
     var darkMode: Bool = true
     var text_dark: String = ""
     var text_light: String = ""
@@ -25,23 +25,43 @@ class AboutProjectViewController: BaseViewController, UITextViewDelegate{
         // Do any additional setup after loading the view.
         guard let catechismStructure = catechismStructure else { return }
         //let htmlString = catechismStructure.about_project_1 + "<a href=\"https://www.ikarmel.cz\">Karmelitánské nakladatelství</a>" + catechismStructure.about_project_1a + "<a href=\"http://www.donum.cz\">Donum</a> nebo u <a href=\"https://www.paulinky.cz\">Paulínek</a>.<br><br>" + catechismStructure.about_project_1b + "<a href=\"https://www.cirkev.cz\">České biskupské konference</a>" + catechismStructure.about_project_1c + catechismStructure.about_project_2 + catechismStructure.about_project_3 + "<a href=\"https://www.ikarmel.cz\">Karmelitánské nakladatelství</a>" + catechismStructure.about_project_3a
-        let text = "\(catechismStructure.about_project_1)Karmelitánské nakladatelství\(catechismStructure.about_project_1a) nebo u Paulínek.\n\n\(catechismStructure.about_project_1b)České biskupské konference\(catechismStructure.about_project_1c)\(catechismStructure.about_project_2)\(catechismStructure.about_project_3)Karmelitánské nakladatelství\(catechismStructure.about_project_3a)"
+        let karmelText = "Karmelitánské nakladatelství"
+        let paulinText = "Paulínek"
+        let cbkText = "České biskupské konference"
+        let donumText = "Donum"
+        let text = "\(catechismStructure.about_project_1)\(karmelText)\(catechismStructure.about_project_1a)\(donumText) nebo u \(paulinText).\n\n\(catechismStructure.about_project_1b)\(cbkText)\(catechismStructure.about_project_1c)\(catechismStructure.about_project_2)\(catechismStructure.about_project_3)\(karmelText)\(catechismStructure.about_project_3a)"
         
-        contentTextView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 15, right: 10)
-        contentTextView.text = text
-        
+        //contentLabel.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 15, right: 10)
+        contentLabel.setText(text)
+        var numberWords = 0
+        contentLabel.addLink(to: URL(string: Constants.Link.karmelCz)!,
+                             with: NSRange(location:catechismStructure.about_project_1.count, length: karmelText.count))
+        numberWords += catechismStructure.about_project_1.count + cbkText.count + catechismStructure.about_project_1a.count + 2
+        contentLabel.addLink(to: URL(string: Constants.Link.donumCz)!,
+                             with: NSRange(location:numberWords, length: donumText.count))
+        numberWords += donumText.count + 8
+        contentLabel.addLink(to: URL(string: Constants.Link.paulinkyCz)!,
+                             with: NSRange(location: numberWords, length: paulinText.count))
+        numberWords += catechismStructure.about_project_1b.count + 10
+        contentLabel.addLink(to: URL(string: Constants.Link.cbkCz)!,
+                             with: NSRange(location:numberWords, length: cbkText.count + 1))
+        numberWords += catechismStructure.about_project_1c.count + catechismStructure.about_project_2.count + catechismStructure.about_project_3.count + 27
+        contentLabel.addLink(to: URL(string: Constants.Link.karmelCz)!,
+                             with: NSRange(location: numberWords, length: karmelText.count))
+
+
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         if self.darkMode {
             self.view.backgroundColor = KKCBackgroundNightMode
-            contentTextView.backgroundColor = KKCBackgroundNightMode
-            contentTextView.textColor = KKCTextNightMode
+            contentLabel.backgroundColor = KKCBackgroundNightMode
+            contentLabel.textColor = KKCTextNightMode
         } else {
             self.view.backgroundColor = KKCBackgroundLightMode
-            contentTextView.backgroundColor = KKCBackgroundLightMode
-            contentTextView.textColor = KKCTextLightMode
+            contentLabel.backgroundColor = KKCBackgroundLightMode
+            contentLabel.textColor = KKCTextLightMode
         }
-        
+        contentLabel.delegate = self
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
         NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
@@ -64,14 +84,17 @@ class AboutProjectViewController: BaseViewController, UITextViewDelegate{
     @objc private func darkModeEnabled(_ notification: Notification) {
         self.darkMode = true
         self.view.backgroundColor = KKCBackgroundNightMode
-        contentTextView.textColor = KKCTextNightMode
-        contentTextView.backgroundColor = KKCBackgroundNightMode
+        contentLabel.textColor = KKCTextNightMode
+        contentLabel.backgroundColor = KKCBackgroundNightMode
     }
     
     @objc private func darkModeDisabled(_ notification: Notification) {
         self.darkMode = false
         self.view.backgroundColor = KKCBackgroundLightMode
-        contentTextView.textColor = KKCTextLightMode
-        contentTextView.backgroundColor = KKCBackgroundLightMode
+        contentLabel.textColor = KKCTextLightMode
+        contentLabel.backgroundColor = KKCBackgroundLightMode
+    }
+    func attributedLabel(_ label: TTTAttributedLabel!, didSelectLinkWith url: URL!) {
+        UIApplication.shared.open(url)
     }
 }

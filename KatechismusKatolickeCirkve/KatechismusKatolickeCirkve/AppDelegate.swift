@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barTintColor = KKCMainColor
         UINavigationBar.appearance().tintColor = KKCTextNightMode
         UINavigationBar.appearance().isTranslucent = false
-        //UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: KKCMainTextColor]
+        Fabric.with([Crashlytics.self])
         return true
     }
 
