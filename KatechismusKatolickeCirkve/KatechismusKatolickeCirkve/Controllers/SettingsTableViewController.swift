@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: BaseTableViewController {
 
     @IBOutlet weak var nightSwitch: UISwitch!
     @IBOutlet weak var nightSwitchLabel: UILabel!
@@ -19,6 +19,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Nastavení"
 
         let userDefaults = UserDefaults.standard
         nightSwitch.isOn = userDefaults.bool(forKey: "NightSwitch")

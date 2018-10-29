@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -28,21 +27,21 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nocni rezim" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jh1-Zm-9sJ">
-                                                    <rect key="frame" x="5" y="5" width="91" height="33.5"/>
+                                                    <rect key="frame" x="15" y="5" width="91" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azi-3t-V2p">
-                                                    <rect key="frame" x="310" y="6" width="49" height="31"/>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Azi-3t-V2p">
+                                                    <rect key="frame" x="311" y="5" width="51" height="34"/>
                                                     <connections>
                                                         <action selector="funcNightMode:" destination="HvE-F8-oOh" eventType="valueChanged" id="CnA-J7-576"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="Azi-3t-V2p" secondAttribute="trailing" constant="5" id="ThG-bs-fKc"/>
-                                                <constraint firstItem="Jh1-Zm-9sJ" firstAttribute="leading" secondItem="A6q-oE-70X" secondAttribute="leading" constant="5" id="Wvd-2p-Ku5"/>
+                                                <constraint firstAttribute="trailing" secondItem="Azi-3t-V2p" secondAttribute="trailing" constant="15" id="ThG-bs-fKc"/>
+                                                <constraint firstItem="Jh1-Zm-9sJ" firstAttribute="leading" secondItem="A6q-oE-70X" secondAttribute="leading" constant="15" id="Wvd-2p-Ku5"/>
                                                 <constraint firstItem="Azi-3t-V2p" firstAttribute="top" secondItem="A6q-oE-70X" secondAttribute="top" constant="5" id="htQ-WR-RAQ"/>
                                                 <constraint firstItem="Jh1-Zm-9sJ" firstAttribute="top" secondItem="A6q-oE-70X" secondAttribute="top" constant="5" id="qF8-An-Exh"/>
                                                 <constraint firstAttribute="bottom" secondItem="Jh1-Zm-9sJ" secondAttribute="bottom" constant="5" id="tQk-5L-0dY"/>
@@ -58,13 +57,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hya-rt-tzp">
-                                                    <rect key="frame" x="321" y="5" width="51" height="33.5"/>
+                                                    <rect key="frame" x="311" y="5" width="51" height="34"/>
                                                     <connections>
                                                         <action selector="funcDisableDisplay:" destination="HvE-F8-oOh" eventType="valueChanged" id="Xwb-ga-0Ol"/>
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zabranit vypinani obrazovky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCW-sS-cNW">
-                                                    <rect key="frame" x="5" y="5" width="215.5" height="33.5"/>
+                                                    <rect key="frame" x="15" y="5" width="215.5" height="34"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -74,8 +73,8 @@
                                                 <constraint firstItem="NCW-sS-cNW" firstAttribute="top" secondItem="rbx-Yj-U0l" secondAttribute="top" constant="5" id="GDE-pI-h5e"/>
                                                 <constraint firstItem="Hya-rt-tzp" firstAttribute="top" secondItem="rbx-Yj-U0l" secondAttribute="top" constant="5" id="Gqk-DA-lXH"/>
                                                 <constraint firstAttribute="bottom" secondItem="Hya-rt-tzp" secondAttribute="bottom" constant="5" id="HzN-gQ-thR"/>
-                                                <constraint firstAttribute="trailing" secondItem="Hya-rt-tzp" secondAttribute="trailing" constant="5" id="NYb-BH-ynv"/>
-                                                <constraint firstItem="NCW-sS-cNW" firstAttribute="leading" secondItem="rbx-Yj-U0l" secondAttribute="leading" constant="5" id="VDN-TT-fvP"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hya-rt-tzp" secondAttribute="trailing" constant="15" id="NYb-BH-ynv"/>
+                                                <constraint firstItem="NCW-sS-cNW" firstAttribute="leading" secondItem="rbx-Yj-U0l" secondAttribute="leading" constant="15" id="VDN-TT-fvP"/>
                                                 <constraint firstAttribute="bottom" secondItem="NCW-sS-cNW" secondAttribute="bottom" constant="5" id="W3i-8G-wzq"/>
                                             </constraints>
                                         </tableViewCellContentView>

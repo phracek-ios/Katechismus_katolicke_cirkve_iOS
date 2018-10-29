@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SectionsTableViewController: UITableViewController {
+class SectionsTableViewController: BaseTableViewController {
 
     struct SectionsRowData {
         var main_section: Bool

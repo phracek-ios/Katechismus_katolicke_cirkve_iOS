@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CatechismTableViewController: UITableViewController {
+class CatechismTableViewController: BaseTableViewController {
 
     enum RowType {
         case browse_chapter

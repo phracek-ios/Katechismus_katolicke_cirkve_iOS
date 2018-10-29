@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class FindWordViewController: UIViewController, UITextFieldDelegate {
+class FindWordViewController: BaseViewController, UITextFieldDelegate {
 
     @IBOutlet weak var wordTextField: UITextField!
     @IBOutlet weak var staticLabel: UILabel!

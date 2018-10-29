@@ -10,18 +10,18 @@ import UIKit
 import Foundation
 import WebKit
 
-class AboutViewController: UIViewController, UITextViewDelegate {
+class AboutViewController: BaseViewController, UITextViewDelegate {
 
     //MARK: Properties
     fileprivate var catechismStructure: CatechismStructure?
     @IBOutlet weak var aboutMainWebView: WKWebView!
-    @IBOutlet weak var titleLabel: UILabel!
     
     var darkMode: Bool = false
     var text_dark: String = ""
     var text_light: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "O aplikaci"
         catechismStructure = CatechismDataService.shared.catechismStructure
         // Do any additional setup after loading the view.
         guard let catechismStructure = catechismStructure else { return }
@@ -44,20 +44,19 @@ class AboutViewController: UIViewController, UITextViewDelegate {
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         self.aboutMainWebView.isOpaque = false
+        let html = "<html><body style='margin: 40px'>"
         if self.darkMode {
             self.view.backgroundColor = KKCBackgroundNightMode
             aboutMainWebView.backgroundColor = KKCBackgroundNightMode
             aboutMainWebView.tintColor = KKCTextNightMode
-            titleLabel.textColor = KKCTextNightMode
             
-            aboutMainWebView.loadHTMLString("<html><body>" + self.text_dark, baseURL: nil)
+            aboutMainWebView.loadHTMLString(html + self.text_dark, baseURL: nil)
         } else {
             self.view.backgroundColor = KKCBackgroundLightMode
             aboutMainWebView.backgroundColor = KKCBackgroundLightMode
             aboutMainWebView.tintColor = KKCTextLightMode
-            titleLabel.textColor = KKCTextLightMode
             
-            aboutMainWebView.loadHTMLString("<html><body>" + self.text_light, baseURL: nil)
+            aboutMainWebView.loadHTMLString(html + self.text_light, baseURL: nil)
         }
         
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
@@ -83,7 +82,6 @@ class AboutViewController: UIViewController, UITextViewDelegate {
         self.view.backgroundColor = KKCBackgroundNightMode
         self.aboutMainWebView.backgroundColor = KKCBackgroundNightMode
         aboutMainWebView.loadHTMLString("<html><body>" + self.text_dark, baseURL: nil)
-        titleLabel.textColor = KKCTextNightMode
     }
     
     @objc private func darkModeDisabled(_ notification: Notification) {
@@ -91,7 +89,6 @@ class AboutViewController: UIViewController, UITextViewDelegate {
         self.view.backgroundColor = KKCBackgroundLightMode
         self.aboutMainWebView.backgroundColor = KKCBackgroundLightMode
         aboutMainWebView.loadHTMLString("<html><body>" + self.text_light, baseURL: nil)
-        titleLabel.textColor = KKCTextLightMode
     }
 }
 

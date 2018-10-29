@@ -49,6 +49,8 @@
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
 		01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E864F22149BAC300566660 /* FindWordViewController.swift */; };
+		4B29D3152186797C0082EFEA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D3142186797C0082EFEA /* BaseViewController.swift */; };
+		4B29D317218679980082EFEA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D316218679980082EFEA /* BaseTableViewController.swift */; };
 		771078843AD2C06DB2F80215 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +111,8 @@
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
 		01E864F22149BAC300566660 /* FindWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWordViewController.swift; sourceTree = "<group>"; };
+		4B29D3142186797C0082EFEA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		4B29D316218679980082EFEA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KatechismusKatolickeCirkve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ECCF67792DA5DF6D22A47050 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.debug.xcconfig"; sourceTree = "<group>"; };
 		F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KatechismusKatolickeCirkve.release.xcconfig"; path = "Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.release.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +201,7 @@
 		017F20F7211A39E0006B448C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4B29D3132186796E0082EFEA /* Base */,
 				017F20FA211A3A15006B448C /* About.storyboard */,
 				017F20F8211A3A03006B448C /* AboutViewController.swift */,
 				017F2100211A3A52006B448C /* AboutProject.storyboard */,
@@ -258,6 +263,15 @@
 				F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		4B29D3132186796E0082EFEA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4B29D3142186797C0082EFEA /* BaseViewController.swift */,
+				4B29D316218679980082EFEA /* BaseTableViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		5931327C52821BC78130497B /* Frameworks */ = {
@@ -426,7 +440,9 @@
 			files = (
 				019462102122208A0056EC7B /* ParagraphTableViewCell.swift in Sources */,
 				0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */,
+				4B29D3152186797C0082EFEA /* BaseViewController.swift in Sources */,
 				019C1A3321235863005EFB7F /* ParagraphStructure.swift in Sources */,
+				4B29D317218679980082EFEA /* BaseTableViewController.swift in Sources */,
 				017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */,
 				0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */,
 				019048FD211C2A0E00C17A95 /* Chapter.swift in Sources */,

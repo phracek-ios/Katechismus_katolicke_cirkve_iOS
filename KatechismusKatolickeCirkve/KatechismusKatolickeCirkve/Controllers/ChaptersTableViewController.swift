@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChaptersTableViewController: UITableViewController {
+class ChaptersTableViewController: BaseTableViewController {
 
     struct ChapterRowData {
         var order = Int()
