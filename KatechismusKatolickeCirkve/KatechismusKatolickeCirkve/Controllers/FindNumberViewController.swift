@@ -1,29 +1,31 @@
 //
-//  FindWordViewController.swift
+//  FindNumberViewController.swift
 //  KatechismusKatolickeCirkve
 //
-//  Created by Petr Hracek on 12/09/2018.
+//  Created by Petr Hracek on 29/10/2018.
 //  Copyright © 2018 Petr Hracek. All rights reserved.
 //
 
 import UIKit
 import Foundation
 
-class FindWordViewController: BaseViewController, UITextFieldDelegate {
+class FindNumberViewController: BaseViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var wordTextField: UITextField!
-    @IBOutlet weak var staticLabel: UILabel!
-    @IBOutlet weak var labelForNoneResults: UILabel!
-    var findData = [Int]()
-    var findString: String = ""
-    var darkMode: Bool = false
     fileprivate var paragraphStructure: ParagraphStructure?
+    var darkMode: Bool = false
+    var findString: String = ""
+    var findData = [Int]()
+    
+    @IBOutlet weak var staticLabel: UILabel!
+    @IBOutlet weak var numberTextField: UITextField!
+    @IBOutlet weak var labelForNoneResults: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
-        wordTextField.delegate = self
-        wordTextField.returnKeyType = .done
+        numberTextField.delegate = self
+        numberTextField.returnKeyType = .done
+        numberTextField.keyboardType = .decimalPad
         labelForNoneResults.isEnabled = false
         labelForNoneResults.text = ""
         let userDefaults = UserDefaults.standard
@@ -44,7 +46,7 @@ class FindWordViewController: BaseViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
         NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -57,7 +59,7 @@ class FindWordViewController: BaseViewController, UITextFieldDelegate {
             guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            paragraphTableViewController.kindOfSource = 2
+            paragraphTableViewController.kindOfSource = 3
             paragraphTableViewController.findString = self.findString
             paragraphTableViewController.findData = findData
             
@@ -65,28 +67,27 @@ class FindWordViewController: BaseViewController, UITextFieldDelegate {
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
         }
     }
-    
+
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         guard let paragraphStructure = paragraphStructure else { return false }
-        self.findString = wordTextField.text!
+        self.findString = numberTextField.text!
         for par in paragraphStructure.paragraph {
-            if par.text_no_html.range(of: findString) != nil {
-                findData.append(par.id)
-            }
-            if par.caption_no_html.range(of: findString) != nil {
+            if String(par.id).range(of: self.findString) != nil {
                 findData.append(par.id)
             }
         }
         if findData.count != 0 {
             performSegue(withIdentifier: "ShowParagraph", sender: self)
-            wordTextField.resignFirstResponder()
+            numberTextField.resignFirstResponder()
         }
         else {
             labelForNoneResults.isEnabled = true
-            labelForNoneResults.text = "Hledaný výraz nebyl nalezen"
+            labelForNoneResults.text = "Hledaný paragraph nebyl nalezen"
         }
         return true
     }
+
+    
     func darkModeEnable() {
         self.view.backgroundColor = KKCBackgroundNightMode
         self.labelForNoneResults.backgroundColor = KKCBackgroundNightMode
@@ -104,12 +105,12 @@ class FindWordViewController: BaseViewController, UITextFieldDelegate {
     @objc private func darkModeEnabled(_ notification: Notification) {
         self.darkMode = true
         self.darkModeEnable()
-
+        
     }
     
     @objc private func darkModeDisabled(_ notification: Notification) {
         self.darkMode = false
         self.darkModeDisable()
-
+        
     }
 }

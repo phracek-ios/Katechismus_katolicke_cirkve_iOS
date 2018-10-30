@@ -25,8 +25,8 @@ class ParagraphTableViewController: BaseTableViewController {
     var parentID: Int = 0
     var kindOfSource: Int = 0
     var rangeID: Int = 0
-    var findWordData = [Int]()
-    var findWordString: String = ""
+    var findData = [Int]()
+    var findString: String = ""
     var darkMode: Bool = false
     var isStatusBarHidden = false {
         didSet {
@@ -178,12 +178,19 @@ class ParagraphTableViewController: BaseTableViewController {
         }
         else if kindOfSource == 2 {
             for par in paragraphStructure.paragraph {
-                if findWordData.contains(par.id) {
+                if findData.contains(par.id) {
                     var new_par = par
-                    //new_par.caption = new_par.caption.replacingOccurrences(of: self.findWordString, with: "<red>\(self.findWordString)</red>")
-                    new_par.text = new_par.text.replacingOccurrences(of: self.findWordString, with: "<red>\(self.findWordString)</red>")
+                    new_par.text = new_par.text.replacingOccurrences(of: self.findString, with: "<red>\(self.findString)</red>")
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: new_par),
                                                              recap: new_par.recap))
+                }
+            }
+        }
+        else if kindOfSource == 3 {
+            for par in paragraphStructure.paragraph {
+                if findData.contains(par.id) {
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
+                                                             recap: par.recap))
                 }
             }
         }
@@ -197,7 +204,7 @@ class ParagraphTableViewController: BaseTableViewController {
                 references = "§" + String(par.id) + "\n"
             }
         }
-        else if kindOfSource == 1 || kindOfSource == 2 {
+        else if kindOfSource == 1 || kindOfSource == 2 || kindOfSource == 3 {
             if par.id < 10000 {
                 references = "§" + String(par.id) + "\n"
             }

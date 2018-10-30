@@ -14,6 +14,7 @@ class CatechismTableViewController: BaseTableViewController {
         case browse_chapter
         case search_for_numbers
         case find_word
+        case find_number
         //case index
         case settings
         case project
@@ -116,7 +117,15 @@ class CatechismTableViewController: BaseTableViewController {
             if mainViewController != nil {
                 let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindWord")
                 if findWordViewController != nil {
-                   navigationController?.pushViewController(findWordViewController, animated: true)
+                    navigationController?.pushViewController(findWordViewController, animated: true)
+                }
+            }
+        case .find_number:
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+            if mainViewController != nil {
+                let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindNumber")
+                if findWordViewController != nil {
+                    navigationController?.pushViewController(findWordViewController, animated: true)
                 }
             }
         //case .index:
@@ -140,11 +149,14 @@ class CatechismTableViewController: BaseTableViewController {
         guard let browse_chapter = CatechismMenu(name: "Procházet kapitoly", photo: nil, order: 0) else {
             fatalError("Unable to instanciate Procházet kapitoly")
         }
-        guard let search_for_numbers = CatechismMenu(name: "Hledat podle čísel", photo: nil, order: 1) else {
+        guard let search_for_numbers = CatechismMenu(name: "Číselný seznam", photo: nil, order: 1) else {
             fatalError("Unable to instanciate Hledat podle čísel")
         }
         guard let find_word = CatechismMenu(name: "Vyhledávání", photo: nil, order: 2) else {
             fatalError("Unable to instanciate Vyhledávání")
+        }
+        guard let find_number = CatechismMenu(name: "Vyhledat paragraf", photo: nil, order: 3) else {
+            fatalError("Unable to instanciate Hledat podle čísel")
         }
         //guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
         //    fatalError("Unable to instanciate Rejstřík")
@@ -162,6 +174,7 @@ class CatechismTableViewController: BaseTableViewController {
         rowData = [RowData(type: .browse_chapter, menu: browse_chapter)]
         rowData.append(RowData(type: .search_for_numbers, menu: search_for_numbers))
         rowData.append(RowData(type: .find_word, menu: find_word))
+        rowData.append(RowData(type: .find_number, menu: find_number))
         //rowData.append(RowData(type: .index, menu: index))
         rowData.append(RowData(type: .project, menu: about_project))
         rowData.append(RowData(type: .settings, menu: settings))

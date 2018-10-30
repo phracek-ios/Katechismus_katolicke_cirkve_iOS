@@ -46,6 +46,7 @@
 		019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3421235890005EFB7F /* ParagraphDataService.swift */; };
 		019E7B00216784AB00FE51EC /* CatechismColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E7AFF216784AB00FE51EC /* CatechismColors.swift */; };
 		01A8CF0A21777A660023FC74 /* UIFontCatechism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A8CF0921777A660023FC74 /* UIFontCatechism.swift */; };
+		01B59D8D2187A4470052AD96 /* FindNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B59D8C2187A4470052AD96 /* FindNumberViewController.swift */; };
 		01B7520321874189007081D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7520221874189007081D1 /* Constants.swift */; };
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
@@ -109,6 +110,7 @@
 		019C1A3421235890005EFB7F /* ParagraphDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphDataService.swift; sourceTree = "<group>"; };
 		019E7AFF216784AB00FE51EC /* CatechismColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismColors.swift; sourceTree = "<group>"; };
 		01A8CF0921777A660023FC74 /* UIFontCatechism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCatechism.swift; sourceTree = "<group>"; };
+		01B59D8C2187A4470052AD96 /* FindNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNumberViewController.swift; sourceTree = "<group>"; };
 		01B7520221874189007081D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				017F2100211A3A52006B448C /* AboutProject.storyboard */,
 				017F2102211A3A63006B448C /* AboutProjectViewController.swift */,
 				01E864F22149BAC300566660 /* FindWordViewController.swift */,
+				01B59D8C2187A4470052AD96 /* FindNumberViewController.swift */,
 				013BD26A2119BC8600554086 /* IndexTableViewController.swift */,
 				0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */,
 				019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */,
@@ -463,6 +466,7 @@
 			files = (
 				019462102122208A0056EC7B /* ParagraphTableViewCell.swift in Sources */,
 				0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */,
+				01B59D8D2187A4470052AD96 /* FindNumberViewController.swift in Sources */,
 				4B29D3152186797C0082EFEA /* BaseViewController.swift in Sources */,
 				019C1A3321235863005EFB7F /* ParagraphStructure.swift in Sources */,
 				4B29D317218679980082EFEA /* BaseTableViewController.swift in Sources */,
