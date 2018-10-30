@@ -3,12 +3,14 @@ PODS:
   - Crashlytics (3.11.0):
     - Fabric (~> 1.8.0)
   - Fabric (1.8.0)
+  - NewPopMenu (2.1.1)
   - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - BonMot
   - Crashlytics
   - Fabric
+  - NewPopMenu (~> 2.0)
   - TTTAttributedLabel
 
 SPEC REPOS:
@@ -16,14 +18,16 @@ SPEC REPOS:
     - BonMot
     - Crashlytics
     - Fabric
+    - NewPopMenu
     - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   BonMot: 0104d1b4eda54f4a4b7393d6559539ef25498fbd
   Crashlytics: 1448070c1d2731ab71ea7c3faf84ac0f69657287
   Fabric: 4ac1cdfef3004ccd83ce0959b91eda8a6e37df72
+  NewPopMenu: 60d67846a401964dcaa51bffb792f04f6fe2fc76
   TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 2e949e4d150a7a12e0d78b426be5aedd5bc5d675
+PODFILE CHECKSUM: 18c9226b2fda234ff1a1dcbc48a31847f780d875
 
 COCOAPODS: 1.5.3

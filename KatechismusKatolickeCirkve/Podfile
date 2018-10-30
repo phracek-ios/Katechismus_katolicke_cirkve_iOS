@@ -8,4 +8,5 @@ target 'KatechismusKatolickeCirkve' do
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'TTTAttributedLabel'
+    pod 'NewPopMenu', '~> 2.0'
 end

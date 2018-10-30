@@ -97,37 +97,21 @@ class CatechismTableViewController: BaseTableViewController {
         switch data.type {
         case .browse_chapter:
             let mainViewController = UIStoryboard(name: "Main", bundle: nil)
-            if mainViewController != nil {
-                let chaptersViewController = mainViewController.instantiateViewController(withIdentifier: "Chapters")
-                if  chaptersViewController != nil {
-                    navigationController?.pushViewController(chaptersViewController, animated: true)
-                }
-            }
+            let chaptersViewController = mainViewController.instantiateViewController(withIdentifier: "Chapters")
+            navigationController?.pushViewController(chaptersViewController, animated: true)
             
         case .search_for_numbers:
             let mainViewController = UIStoryboard(name: "Main", bundle: nil)
-            if mainViewController != nil {
-                let numbersViewController = mainViewController.instantiateViewController(withIdentifier: "Numbers")
-                if  numbersViewController != nil {
-                    navigationController?.pushViewController(numbersViewController, animated: true)
-                }
-            }
+            let numbersViewController = mainViewController.instantiateViewController(withIdentifier: "Numbers")
+            navigationController?.pushViewController(numbersViewController, animated: true)
         case .find_word:
             let mainViewController = UIStoryboard(name: "Main", bundle: nil)
-            if mainViewController != nil {
-                let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindWord")
-                if findWordViewController != nil {
-                    navigationController?.pushViewController(findWordViewController, animated: true)
-                }
-            }
+            let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindWord")
+            navigationController?.pushViewController(findWordViewController, animated: true)
         case .find_number:
             let mainViewController = UIStoryboard(name: "Main", bundle: nil)
-            if mainViewController != nil {
-                let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindNumber")
-                if findWordViewController != nil {
-                    navigationController?.pushViewController(findWordViewController, animated: true)
-                }
-            }
+            let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindNumber")
+            navigationController?.pushViewController(findWordViewController, animated: true)
         //case .index:
         //    print("Not Implemented yet")
         case .project:

@@ -8,12 +8,14 @@
 
 import UIKit
 import BonMot
+import PopMenu
 
 class ParagraphTableViewController: BaseTableViewController {
     
     struct ParagraphRowData {
         var html: NSAttributedString
         var recap: Int
+        var paragraphs: String
     }
 
     var heightOfWebView: CGFloat = 0
@@ -47,6 +49,7 @@ class ParagraphTableViewController: BaseTableViewController {
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         loadParagraphs()
+        setupLongPressureGesture()
         self.tableView.tableFooterView = UIView()
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
@@ -157,6 +160,7 @@ class ParagraphTableViewController: BaseTableViewController {
         generated_text = generated_text.trimmingCharacters(in: .whitespacesAndNewlines)
         return generated_text.styled(with: content)
     }
+    
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
         
@@ -164,7 +168,8 @@ class ParagraphTableViewController: BaseTableViewController {
             for par in paragraphStructure.paragraph {
                 if par.id >= parentID && par.id <= rangeID {
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
-                                                             recap: par.recap))
+                                                             recap: par.recap,
+                                                             paragraphs: par.refs))
                 }
             }
         }
@@ -172,7 +177,8 @@ class ParagraphTableViewController: BaseTableViewController {
             for par in paragraphStructure.paragraph {
                 if par.chapter == parentID {
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
-                                                             recap: par.recap))
+                                                             recap: par.recap,
+                                                             paragraphs: par.refs))
                 }
             }
         }
@@ -182,7 +188,8 @@ class ParagraphTableViewController: BaseTableViewController {
                     var new_par = par
                     new_par.text = new_par.text.replacingOccurrences(of: self.findString, with: "<red>\(self.findString)</red>")
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: new_par),
-                                                             recap: new_par.recap))
+                                                             recap: new_par.recap,
+                                                             paragraphs: par.refs))
                 }
             }
         }
@@ -190,7 +197,8 @@ class ParagraphTableViewController: BaseTableViewController {
             for par in paragraphStructure.paragraph {
                 if findData.contains(par.id) {
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
-                                                             recap: par.recap))
+                                                             recap: par.recap,
+                                                             paragraphs: par.refs))
                 }
             }
         }
@@ -218,6 +226,7 @@ class ParagraphTableViewController: BaseTableViewController {
         let main_text = "\(caption)\(references)\(par.text)\(text_refs)"
         return generateContent(text: main_text)
     }
+    
     @objc private func darkModeEnabled(_ notification: Notification) {
         self.darkMode = true
         self.tableView.backgroundColor = KKCBackgroundNightMode
@@ -229,6 +238,32 @@ class ParagraphTableViewController: BaseTableViewController {
         self.tableView.backgroundColor = KKCBackgroundLightMode
         self.tableView.reloadData()
     }
+    
+    @objc private func initPopMenu() -> PopMenuViewController {
+        let menuViewController = PopMenuViewController(actions: [
+            PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených"),
+            PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy"),
+            PopMenuDefaultAction(title: "Přidat poznámku")
+            ])
+        return menuViewController
+    }
+    
+    func setupLongPressureGesture() {
+        let longPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(sender:)))
+        longPressGesture.minimumPressDuration = 1.0
+        self.tableView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
+        if sender.state == UIGestureRecognizerState.began {
+            
+            let touchPoint = sender.location(in: self.tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                print(paragraphRowData[indexPath.row])
+                print("Long pressed row: \(indexPath.row)")
+                let popMenu = initPopMenu()
+                present(popMenu, animated: true, completion: nil)
+            }
+        }
+    }
 }
-
-

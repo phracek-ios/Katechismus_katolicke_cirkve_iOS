@@ -3,163 +3,224 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0179DB7A1EE2B953DEDA4D05C31DC91C /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7160997D2F80F8EAD162075D24C563C /* Tracking.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		03ED2A507926059ABB92032493281E9A /* NSAttributedString+BonMot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BAAC88E851896F337A6DB6D8BB4742E /* NSAttributedString+BonMot.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		08A4D2E0870E7BEF201CC45D0FD537BF /* FontInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD405F8A92E76A1B6474213F21AC0E08 /* FontInspector.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		14FA97C1E73B81D7D6C7D2932D949C19 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */; };
-		177375DD6E7EDBC1881FC07F3C33A8B0 /* Pods-KatechismusKatolickeCirkve-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22A94C36F12EA1D62EA263ACD363B4 /* Pods-KatechismusKatolickeCirkve-dummy.m */; };
-		17D954FD46DD7D2DBBE7AF903B97128B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4610CE00C616BC88C31B338425AC6FC /* CoreGraphics.framework */; };
-		21A5C6F8AD060CD237E4D25113A5159A /* NamedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AD69CC7529494055761ECAB355D477 /* NamedStyles.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2616173097FE4223D01CEB3CE2367228 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0550983FFB1F1B36CF265D95D66676FA /* Platform.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		27754E20F846AE08E574FCCD3CB2B2FA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA540D984884A4F8D5071585FD9D2B7C /* Tab.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		278039F0B3815E33B1C634F88C5A2845 /* XMLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B3C6A8BC0567CB526DFED3D76D1388 /* XMLBuilder.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		27B902D2339DEEA5A8E660C34AC506E1 /* UIKit+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23F33848984E4C927188D1408EA0D82 /* UIKit+Helpers.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		29DB3CA0EAFBBB3A54E8E57E00F82577 /* AdaptiveStyleTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619AAABD3AAF943E134649AF0DB71379 /* AdaptiveStyleTransformation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		2C5A311B69542BBD2E129BE808D6B8DC /* TTTAttributedLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE18C3C4D851A9DFA4AA2C1FE504531 /* TTTAttributedLabel-dummy.m */; };
-		2CF14EDDC1C71E1923A8BD7F36F739C0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D0035517FF4EB25BC59953F5C66A24 /* CoreText.framework */; };
-		2DAF8686B9EA511FA8CC21C34720D357 /* Tracking+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3107F49A3E598B4C2DBDB5E77A2E6CFF /* Tracking+Adaptive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		31C4041E007A7FDAEF19D837A94FD4AD /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AD3BC16FF9096CDF57B1E299264632B /* Compatibility.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		373D5FC01FC94E15F1A77E464C4C8E10 /* StylisticAlternates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EDC9F19FE056948F79B38A67FBD4B4E /* StylisticAlternates.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		37F97212BCC35B0B0EA5D4F43F213A05 /* StringStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 707E91161E166BE6CC648BC08C7CA587 /* StringStyle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		403DD531C365F27AEDAC3AC435AC9A98 /* Composable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3274BB86B0D475543B3EA4DFE0BFC0B /* Composable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		505E01E89D11884FA996817A692C0145 /* AttributedStringTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9C2C4C7BF509BAB5763E4E1D9255FC /* AttributedStringTransformation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		533AEA5874E6066CC9A27CBA3D70466E /* Special.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D808263115ACA30EF947DCAF51B91A /* Special.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5AC90C71911CD8C0A3DCC202AEAE2D5B /* UIKit+AdaptableTextContainerSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1882E036191279DD33E7370BE54A654 /* UIKit+AdaptableTextContainerSupport.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		5CBB8CD6E5036621C717471C6B581F16 /* BonMot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D7BA4A13915EF2C81C0100E1736B993 /* BonMot-dummy.m */; };
-		5CF05B3E18C945554FA215F3340E86B6 /* Pods-KatechismusKatolickeCirkve-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3817185002D14B03E92CEEC74DDFCDC /* Pods-KatechismusKatolickeCirkve-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		616846F3EC7816CDE3F8D5AAF162E970 /* Image+Tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBBF30D21469F7024F147DCB8EF385B2 /* Image+Tinting.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		62B1DEB43D6783D26CDEF8619C955128 /* Ligatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5496D724FAFAA1489032E0CE4C72EFC /* Ligatures.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		726C5160421AF69C7E7ED924AF44C903 /* AccessibilityHeadingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C64B9298B930E14A57A5BA12F73E35AB /* AccessibilityHeadingLevel.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		78157F6A99601A8D56A88640EAF600BE /* TTTAttributedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = E3F374D240B1EA32247988B444BD71F2 /* TTTAttributedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		84EBE9507D8375AFEC71E9A01C59B266 /* AdaptiveStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FBA972F96E53EB39040CB776FDFFF02 /* AdaptiveStyle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		860B8BA58C02C5DD6741188795BEB697 /* StyleableUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBB53AED76144F326D2E752855341D /* StyleableUIElement.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		8A9AD210CBA864033733B1DE00B154D2 /* StringStyle+Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F846A673C5AF0CF65C56CD6198C87 /* StringStyle+Part.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		90125E1C2D7ACE7EB6902E11A2E26302 /* MutableCopying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAF68EA71F2B18EAB93E3174CE878E /* MutableCopying.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		9F63121A67D9AA2550407D54EB84FFE6 /* NSAttributedString+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD6163ED99B87541357453CF8380C42 /* NSAttributedString+Adaptive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		A8745DAD15395A7A4B7EDA7C829CBDC3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */; };
-		A91E5CA2D96E83A09AEC0220A8893CF2 /* BonMot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5647452DA7BDFB4009BE0548FD5DA26C /* BonMot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B454D8DCB6EDBCA0451E0ED960CD6A5A /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 521CC17F23FDEC9530FB7AE204E81E81 /* TTTAttributedLabel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B4E3EE250A7B062E17AD6B6DFB0C9358 /* ContextualAlternates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735AED9A71CFE8CDA999EB649E7A275F /* ContextualAlternates.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		B5912108AABA8CBB57C0C81B88B5F45B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FD0681B4F64F8A3F8B118230516BF5 /* UIKit.framework */; };
-		BE4BC13F2036F00E7B8DF37524809F93 /* Tab+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 839FDF300FF4D28C85FC3598E7FCEBE2 /* Tab+Adaptive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		C7AFDBE4A5516ED5ED40093404B5801B /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA80C84E1271C011E57B1BD8BA8B8A58 /* Transform.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CDF4E138826F8127F4A2753EFE23015F /* TextAlignmentConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B42A32FC30DDEC518E82D315A8B0F7 /* TextAlignmentConstraint.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		CF25E6E0BD225E28EB80F689E536DA19 /* FontFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3C5202FB526630687DA79BAEAE3F49 /* FontFeatures.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		D575D2BF7B227AB5A17F77EAE3BC6EB5 /* TTTAttributedLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EDE8C00AFC59F13258839D7D2A80C77 /* TTTAttributedLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DAFEAD8347160A4F2CF40FF9A7EB0AF3 /* EmbeddedTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E902C4415316DDD63B12981A853DD57F /* EmbeddedTransformation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		EC1B12F25CB5675E308809A5D02A7E46 /* AdaptableTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB70DD5932CA1B4E0A5BBF8C5BBF2C59 /* AdaptableTextContainer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0179DB7A1EE2B953DEDA4D05C31DC91C /* Tracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A723FC77111BD524BC5BA7BADBE71183 /* Tracking.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		03ED2A507926059ABB92032493281E9A /* NSAttributedString+BonMot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC3F414DE3F9D068C0F2AA9A3CB267 /* NSAttributedString+BonMot.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		06C3556220C98CE82537E60EBA7D9CD8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC87CFBDCCC6ED413F3A90082CDD93D /* QuartzCore.framework */; };
+		08A4D2E0870E7BEF201CC45D0FD537BF /* FontInspector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961F591CC3CC5C4B4815E0BDFB190CEC /* FontInspector.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		0A2D2AF68F15E6E3FF8EDCAF9F5A72AC /* Pods-KatechismusKatolickeCirkve-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C3817185002D14B03E92CEEC74DDFCDC /* Pods-KatechismusKatolickeCirkve-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21A5C6F8AD060CD237E4D25113A5159A /* NamedStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC69D101EF0C2C3AE88C9A0973B6D131 /* NamedStyles.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2273E8037841640808F9B6A41FE186D2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FD0681B4F64F8A3F8B118230516BF5 /* UIKit.framework */; };
+		2616173097FE4223D01CEB3CE2367228 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E8BD9F077DAF80FA6171B65FD834BD /* Platform.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		27754E20F846AE08E574FCCD3CB2B2FA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA0EB199C0F17B63F03DF16ED289311 /* Tab.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		278039F0B3815E33B1C634F88C5A2845 /* XMLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB9861D4DD041AB7DA9D2347CEC470A /* XMLBuilder.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		27B902D2339DEEA5A8E660C34AC506E1 /* UIKit+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F83304192D6EEDF32DD588BB842C9A3 /* UIKit+Helpers.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		29DB3CA0EAFBBB3A54E8E57E00F82577 /* AdaptiveStyleTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548DD973F8CE95BB6AD1CB1456546CA0 /* AdaptiveStyleTransformation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		2DAF8686B9EA511FA8CC21C34720D357 /* Tracking+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF1E1E8787B0C687A8D95CBC279A336 /* Tracking+Adaptive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		31C4041E007A7FDAEF19D837A94FD4AD /* Compatibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8A1ECAD56D71297756723D2EEFD787 /* Compatibility.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3247FE7C62045D5FBE5A8886DB3B9A6A /* PopMenuAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21149FCD00002689D21E4C0BA8297CA3 /* PopMenuAppearance.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		372CF962EA16293E341995E27BE815ED /* PopMenuPresentAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C878F774AABBB2E6AA64346C35F6222 /* PopMenuPresentAnimationController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		373D5FC01FC94E15F1A77E464C4C8E10 /* StylisticAlternates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DC028926EF6D0F18D355E665E3C646F /* StylisticAlternates.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		37F97212BCC35B0B0EA5D4F43F213A05 /* StringStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 269E26E5A59076FF0D6444305AD40B33 /* StringStyle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		38053CE1AFC4D2F1082880368D748DCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */; };
+		403DD531C365F27AEDAC3AC435AC9A98 /* Composable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A55F9C883C6DF4B1F22778B6C3B30BA /* Composable.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		40AE01FEEE1714E13EE6D2CBAC8176DD /* UIView+Shadows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924AD1E253D2B2B7CB6FDB8B341E6E88 /* UIView+Shadows.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		42D2EEB4FAFB3D61BEE1B9E789F00C10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4610CE00C616BC88C31B338425AC6FC /* CoreGraphics.framework */; };
+		505E01E89D11884FA996817A692C0145 /* AttributedStringTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAEAD4833E88EDE18916D0F6436B173 /* AttributedStringTransformation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		533AEA5874E6066CC9A27CBA3D70466E /* Special.swift in Sources */ = {isa = PBXBuildFile; fileRef = E596C9F819DBA55E506FB748F73E4B84 /* Special.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5AC90C71911CD8C0A3DCC202AEAE2D5B /* UIKit+AdaptableTextContainerSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72046C3AE2BC678FD1200D6AEF9A6DA7 /* UIKit+AdaptableTextContainerSupport.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		5CBB8CD6E5036621C717471C6B581F16 /* BonMot-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4684989E7B9318EB1B3B8BB3AC01E9D8 /* BonMot-dummy.m */; };
+		5F5B953D49133B06C88D1AA60F0D0CA9 /* PopMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D0BBB049C1376A8096DFC24D2A82308 /* PopMenuManager.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		616846F3EC7816CDE3F8D5AAF162E970 /* Image+Tinting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 416D78B45ACD5FA9DBDF7690ADC75CC9 /* Image+Tinting.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		62B1DEB43D6783D26CDEF8619C955128 /* Ligatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B86F87A2062C14A2FEE827F85095DA /* Ligatures.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		67A64D1F34627C1F9485E1015D0A7373 /* TTTAttributedLabel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1018FEC8EB4367D6C44DBA5895214E2B /* TTTAttributedLabel-dummy.m */; };
+		6EF6F06B177C342D81B315C0527CAFB7 /* Pods-KatechismusKatolickeCirkve-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FA22A94C36F12EA1D62EA263ACD363B4 /* Pods-KatechismusKatolickeCirkve-dummy.m */; };
+		6FB178E5F4C3AF69EA0CAAE721781A75 /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A034C3D5650D71F425149A51CC4EFF4C /* PopMenuViewController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		726C5160421AF69C7E7ED924AF44C903 /* AccessibilityHeadingLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D749666B4879E6702D6FD4DEB75B40F2 /* AccessibilityHeadingLevel.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		73FDAA0EA0EA053D0D8E23E619560874 /* NewPopMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46A63B7D19BDCDD267F7B0F0EFDDF54A /* NewPopMenu-dummy.m */; };
+		77CB432E3BC2D7A0325DE424147BE1FC /* PopMenuDismissAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C38404325D24C1B21D0ACAC4521AB6 /* PopMenuDismissAnimationController.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		798EE448290485027850DE6233A73276 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71D0035517FF4EB25BC59953F5C66A24 /* CoreText.framework */; };
+		84EBE9507D8375AFEC71E9A01C59B266 /* AdaptiveStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F00D59A7C1C6A5B5225D01B2A7211 /* AdaptiveStyle.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		860B8BA58C02C5DD6741188795BEB697 /* StyleableUIElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FECD84C7364D00BC5D9D5504EE525E /* StyleableUIElement.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8A199B2D374F227D84199A3BA6AFD89B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */; };
+		8A9AD210CBA864033733B1DE00B154D2 /* StringStyle+Part.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25D5851E0977A1ACD7BC96C690C8A96F /* StringStyle+Part.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		90125E1C2D7ACE7EB6902E11A2E26302 /* MutableCopying.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF4A0C43B682087BE668A5191061D6C /* MutableCopying.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		9F63121A67D9AA2550407D54EB84FFE6 /* NSAttributedString+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430CB7F5E599C01BED2EB4FED7F9D1B2 /* NSAttributedString+Adaptive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A7DB5338A8B66129FD9B481F7203F170 /* PopMenuAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27829DB9761EA77D285778E703CD8110 /* PopMenuAction.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		A91E5CA2D96E83A09AEC0220A8893CF2 /* BonMot-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5308C65E43BEA41C8BC058C961F1CA7 /* BonMot-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4E3EE250A7B062E17AD6B6DFB0C9358 /* ContextualAlternates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2371240551C9F94561EB0009FDC42EE4 /* ContextualAlternates.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		BE4BC13F2036F00E7B8DF37524809F93 /* Tab+Adaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60CDB5480A5EC24CFCD951E81CBD0233 /* Tab+Adaptive.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		C7AFDBE4A5516ED5ED40093404B5801B /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76A6B12936CC4EB7CAAC68DE51D2AFA /* Transform.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CDF4E138826F8127F4A2753EFE23015F /* TextAlignmentConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63E84AB60A21882B7D6320E4FF148AE /* TextAlignmentConstraint.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CF25E6E0BD225E28EB80F689E536DA19 /* FontFeatures.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B95ABEF4ACFC2B4BB218049D0552C /* FontFeatures.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		DAFEAD8347160A4F2CF40FF9A7EB0AF3 /* EmbeddedTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64AADA3133895FFDEFB6457515453BB /* EmbeddedTransformation.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E103B4118971A6D980649AFBD8745C61 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59173C7AE52602C09E494BF3974C35E6 /* Haptics.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		E35ECF7A43697EF651291A5BB1A0C059 /* TTTAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE5C2A84194EEE58335CD373BEACFC2 /* TTTAttributedLabel.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EC1B12F25CB5675E308809A5D02A7E46 /* AdaptableTextContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C1CCFDD1303DA0C51E93AF66BB47D2 /* AdaptableTextContainer.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		EEE9816C5311D1774F13ED26742CC57C /* TTTAttributedLabel-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A015474C448EAF5D28F34C4FA8CDF8A /* TTTAttributedLabel-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF363DBD085BE83D1E2264154945D6B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */; };
 		F0523CBC489C7DE0B92D4C219A145EA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */; };
-		F6BEB80931A37549C4C9FBC43E250012 /* Emphasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF76E2738AADA8B729C303790EF7804 /* Emphasis.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
-		F902EC97F18E11984941274BAEC0B4B1 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC87CFBDCCC6ED413F3A90082CDD93D /* QuartzCore.framework */; };
+		F5098D2D7EAE89F2637EB6366BC32BE0 /* TTTAttributedLabel.h in Headers */ = {isa = PBXBuildFile; fileRef = 07EE172CAE3108632E48E76ACF46A761 /* TTTAttributedLabel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F65ACE11992F9545B7E58D4570D33AB3 /* PopMenuGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77F949B56179E51ECFB4B1A5582BF37 /* PopMenuGradientView.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F6BEB80931A37549C4C9FBC43E250012 /* Emphasis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81CD66B72D0B185BC1D9A985E7A5C77A /* Emphasis.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		F75406542E27F58F3475078E27093C20 /* UIColor+Contrast.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD042513ED28E3500B70E0014994668C /* UIColor+Contrast.swift */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		FC9A4F7DCCD9305E6CFBA6CF34274EE1 /* PopMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B8F72C69C990D3E6FF9244058187BC7 /* PopMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEB6E66BF39A63149C0310B77FB3A15D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80FD0681B4F64F8A3F8B118230516BF5 /* UIKit.framework */; };
+		FF998358CF29253DF75BD67B05C9405F /* NewPopMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CA3596B20DD551704A85F27EB3690D2 /* NewPopMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0D2BA86E1DB198DB514A76D1F6136498 /* PBXContainerItemProxy */ = {
+		01ADFCEAA2312F526F08A794A6F412A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8A94805EFB8C960BBCFEF71906201165;
 			remoteInfo = BonMot;
 		};
-		AFF186A17085AEC74649EEB948033944 /* PBXContainerItemProxy */ = {
+		3E7B2413C4F24E1055F4556771035C7A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 6D629AE9060B2BA9CC0CF954CE97EE82;
+			remoteGlobalIDString = 5EE4EBD542B7DBF61484FF13382ECBD4;
 			remoteInfo = TTTAttributedLabel;
+		};
+		A059AC43E5B459214355B9FE64747F3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2984E119D425AD26A0B5DB4F342FEAF4;
+			remoteInfo = NewPopMenu;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0550983FFB1F1B36CF265D95D66676FA /* Platform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Sources/Platform.swift; sourceTree = "<group>"; };
+		03C1CCFDD1303DA0C51E93AF66BB47D2 /* AdaptableTextContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptableTextContainer.swift; path = Sources/UIKit/AdaptableTextContainer.swift; sourceTree = "<group>"; };
+		04F6C48AF0465775EABD49D26FB90DC7 /* BonMot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BonMot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		04FECD84C7364D00BC5D9D5504EE525E /* StyleableUIElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyleableUIElement.swift; path = Sources/UIKit/StyleableUIElement.swift; sourceTree = "<group>"; };
 		0681D294EC6FDA3CE373DC5310A02D9E /* Pods-KatechismusKatolickeCirkve.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KatechismusKatolickeCirkve.release.xcconfig"; sourceTree = "<group>"; };
-		0A0BE7C488B888A8E91109972C2B27E2 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
-		0D7BA4A13915EF2C81C0100E1736B993 /* BonMot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BonMot-dummy.m"; sourceTree = "<group>"; };
-		0FBA972F96E53EB39040CB776FDFFF02 /* AdaptiveStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveStyle.swift; path = Sources/UIKit/AdaptiveStyle.swift; sourceTree = "<group>"; };
-		101C943D20F6047A6979E35689A33BD8 /* BonMot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BonMot.modulemap; sourceTree = "<group>"; };
+		07EE172CAE3108632E48E76ACF46A761 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = "<group>"; };
+		08E8BD9F077DAF80FA6171B65FD834BD /* Platform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Platform.swift; path = Sources/Platform.swift; sourceTree = "<group>"; };
+		0D0BBB049C1376A8096DFC24D2A82308 /* PopMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuManager.swift; path = PopMenu/Classes/PopMenuManager.swift; sourceTree = "<group>"; };
+		1018FEC8EB4367D6C44DBA5895214E2B /* TTTAttributedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTTAttributedLabel-dummy.m"; sourceTree = "<group>"; };
+		104B9752EE6F99DCB3FC345DF231FAB0 /* NewPopMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = NewPopMenu.modulemap; sourceTree = "<group>"; };
+		1668D8AD93F448F382E4F107F0ADCECB /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
 		169F2D48FC6BD38C0E67C26E3FBE953C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		17D808263115ACA30EF947DCAF51B91A /* Special.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Special.swift; path = Sources/Special.swift; sourceTree = "<group>"; };
+		1734389B1E5D03DE731BF217DC3541A6 /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KatechismusKatolickeCirkve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AF1DA85A3C4569E9A8BD9268A772612 /* Pods-KatechismusKatolickeCirkve-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KatechismusKatolickeCirkve-resources.sh"; sourceTree = "<group>"; };
-		1AF76E2738AADA8B729C303790EF7804 /* Emphasis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Emphasis.swift; path = Sources/Emphasis.swift; sourceTree = "<group>"; };
-		22B86CEC0AE1A2816CB644344E0848EB /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
-		24D4AE006F983329D7E4FA8C3EF6C7F6 /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		1BB9861D4DD041AB7DA9D2347CEC470A /* XMLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLBuilder.swift; path = Sources/XMLBuilder.swift; sourceTree = "<group>"; };
+		1DAEAD4833E88EDE18916D0F6436B173 /* AttributedStringTransformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedStringTransformation.swift; path = Sources/UIKit/AttributedStringTransformation.swift; sourceTree = "<group>"; };
+		1EF4A0C43B682087BE668A5191061D6C /* MutableCopying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutableCopying.swift; path = Sources/MutableCopying.swift; sourceTree = "<group>"; };
+		21149FCD00002689D21E4C0BA8297CA3 /* PopMenuAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuAppearance.swift; path = PopMenu/Classes/PopMenuAppearance.swift; sourceTree = "<group>"; };
+		2371240551C9F94561EB0009FDC42EE4 /* ContextualAlternates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContextualAlternates.swift; path = Sources/ContextualAlternates.swift; sourceTree = "<group>"; };
+		25D5851E0977A1ACD7BC96C690C8A96F /* StringStyle+Part.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringStyle+Part.swift"; path = "Sources/StringStyle+Part.swift"; sourceTree = "<group>"; };
+		269E26E5A59076FF0D6444305AD40B33 /* StringStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringStyle.swift; path = Sources/StringStyle.swift; sourceTree = "<group>"; };
+		27829DB9761EA77D285778E703CD8110 /* PopMenuAction.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuAction.swift; path = "PopMenu/View Controller & Views/PopMenuAction.swift"; sourceTree = "<group>"; };
 		28F7BD5ACCE7C846D11561F0DE5F9ABE /* Pods-KatechismusKatolickeCirkve-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-KatechismusKatolickeCirkve-acknowledgements.markdown"; sourceTree = "<group>"; };
-		2DBAF68EA71F2B18EAB93E3174CE878E /* MutableCopying.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MutableCopying.swift; path = Sources/MutableCopying.swift; sourceTree = "<group>"; };
-		309CE8ECC3A01AA89080DCC2C338175B /* TTTAttributedLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTTAttributedLabel.xcconfig; sourceTree = "<group>"; };
-		3107F49A3E598B4C2DBDB5E77A2E6CFF /* Tracking+Adaptive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Tracking+Adaptive.swift"; path = "Sources/UIKit/Tracking+Adaptive.swift"; sourceTree = "<group>"; };
-		471AB80FBD389890DD4301CA52EDE365 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4D813DFA8785B3CE0CD5455A44DF80E9 /* TTTAttributedLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TTTAttributedLabel.modulemap; sourceTree = "<group>"; };
-		4EDE8C00AFC59F13258839D7D2A80C77 /* TTTAttributedLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTTAttributedLabel-umbrella.h"; sourceTree = "<group>"; };
-		4EE18C3C4D851A9DFA4AA2C1FE504531 /* TTTAttributedLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TTTAttributedLabel-dummy.m"; sourceTree = "<group>"; };
-		50AD69CC7529494055761ECAB355D477 /* NamedStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NamedStyles.swift; path = Sources/NamedStyles.swift; sourceTree = "<group>"; };
-		521CC17F23FDEC9530FB7AE204E81E81 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTTAttributedLabel.m; path = TTTAttributedLabel/TTTAttributedLabel.m; sourceTree = "<group>"; };
+		2A015474C448EAF5D28F34C4FA8CDF8A /* TTTAttributedLabel-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTTAttributedLabel-umbrella.h"; sourceTree = "<group>"; };
+		2B8F72C69C990D3E6FF9244058187BC7 /* PopMenu.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PopMenu.h; path = PopMenu/PopMenu.h; sourceTree = "<group>"; };
+		335F2055644341925B141240545981E5 /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
+		34352AF84A0104D300ABCDC4BFA6F6DE /* CLSAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSAttributes.h; path = iOS/Crashlytics.framework/Headers/CLSAttributes.h; sourceTree = "<group>"; };
+		38CEF571CCA4A4FB68F45BDD4BD16B7B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		416D78B45ACD5FA9DBDF7690ADC75CC9 /* Image+Tinting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Image+Tinting.swift"; path = "Sources/Image+Tinting.swift"; sourceTree = "<group>"; };
+		430CB7F5E599C01BED2EB4FED7F9D1B2 /* NSAttributedString+Adaptive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Adaptive.swift"; path = "Sources/UIKit/NSAttributedString+Adaptive.swift"; sourceTree = "<group>"; };
+		4514506437AF9125C82870DBD693EC04 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
+		4684989E7B9318EB1B3B8BB3AC01E9D8 /* BonMot-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BonMot-dummy.m"; sourceTree = "<group>"; };
+		46A63B7D19BDCDD267F7B0F0EFDDF54A /* NewPopMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NewPopMenu-dummy.m"; sourceTree = "<group>"; };
+		486850E6ABA3992BA70EF6217C3D8C80 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
+		4A55F9C883C6DF4B1F22778B6C3B30BA /* Composable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Composable.swift; path = Sources/Composable.swift; sourceTree = "<group>"; };
 		537AE005937C424CBD33A2CB9A847375 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		54DBB53AED76144F326D2E752855341D /* StyleableUIElement.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StyleableUIElement.swift; path = Sources/UIKit/StyleableUIElement.swift; sourceTree = "<group>"; };
-		5647452DA7BDFB4009BE0548FD5DA26C /* BonMot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BonMot-umbrella.h"; sourceTree = "<group>"; };
-		5AD3BC16FF9096CDF57B1E299264632B /* Compatibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compatibility.swift; path = Sources/Compatibility.swift; sourceTree = "<group>"; };
-		5BAAC88E851896F337A6DB6D8BB4742E /* NSAttributedString+BonMot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+BonMot.swift"; path = "Sources/NSAttributedString+BonMot.swift"; sourceTree = "<group>"; };
-		5E3C5202FB526630687DA79BAEAE3F49 /* FontFeatures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontFeatures.swift; path = Sources/FontFeatures.swift; sourceTree = "<group>"; };
-		5FD6163ED99B87541357453CF8380C42 /* NSAttributedString+Adaptive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+Adaptive.swift"; path = "Sources/UIKit/NSAttributedString+Adaptive.swift"; sourceTree = "<group>"; };
-		619AAABD3AAF943E134649AF0DB71379 /* AdaptiveStyleTransformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveStyleTransformation.swift; path = Sources/UIKit/AdaptiveStyleTransformation.swift; sourceTree = "<group>"; };
-		707E91161E166BE6CC648BC08C7CA587 /* StringStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringStyle.swift; path = Sources/StringStyle.swift; sourceTree = "<group>"; };
+		548DD973F8CE95BB6AD1CB1456546CA0 /* AdaptiveStyleTransformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveStyleTransformation.swift; path = Sources/UIKit/AdaptiveStyleTransformation.swift; sourceTree = "<group>"; };
+		59173C7AE52602C09E494BF3974C35E6 /* Haptics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Haptics.swift; path = PopMenu/Classes/Helpers/Haptics.swift; sourceTree = "<group>"; };
+		5BCC3F414DE3F9D068C0F2AA9A3CB267 /* NSAttributedString+BonMot.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSAttributedString+BonMot.swift"; path = "Sources/NSAttributedString+BonMot.swift"; sourceTree = "<group>"; };
+		5F0530B67B2587FB47B1F96C3A5D593D /* Fabric.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Fabric.h; path = iOS/Fabric.framework/Headers/Fabric.h; sourceTree = "<group>"; };
+		60CDB5480A5EC24CFCD951E81CBD0233 /* Tab+Adaptive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Tab+Adaptive.swift"; path = "Sources/UIKit/Tab+Adaptive.swift"; sourceTree = "<group>"; };
+		65047C3DF00D7BFEA30B064D24359C59 /* BonMot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BonMot.xcconfig; sourceTree = "<group>"; };
+		6E8CD594A13B433E0DDA339F64B216F9 /* BonMot.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BonMot.modulemap; sourceTree = "<group>"; };
+		6F83304192D6EEDF32DD588BB842C9A3 /* UIKit+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Helpers.swift"; path = "Sources/UIKit/UIKit+Helpers.swift"; sourceTree = "<group>"; };
+		6FD092D7052ACDF41E41044835F23D2C /* NewPopMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = NewPopMenu.xcconfig; sourceTree = "<group>"; };
 		71D0035517FF4EB25BC59953F5C66A24 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
-		735AED9A71CFE8CDA999EB649E7A275F /* ContextualAlternates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ContextualAlternates.swift; path = Sources/ContextualAlternates.swift; sourceTree = "<group>"; };
-		78B3C6A8BC0567CB526DFED3D76D1388 /* XMLBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLBuilder.swift; path = Sources/XMLBuilder.swift; sourceTree = "<group>"; };
+		72046C3AE2BC678FD1200D6AEF9A6DA7 /* UIKit+AdaptableTextContainerSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+AdaptableTextContainerSupport.swift"; path = "Sources/UIKit/UIKit+AdaptableTextContainerSupport.swift"; sourceTree = "<group>"; };
 		79DD52F5FC1841D6ABCBAAE181AC59D5 /* Pods-KatechismusKatolickeCirkve.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-KatechismusKatolickeCirkve.modulemap"; sourceTree = "<group>"; };
-		7EDC9F19FE056948F79B38A67FBD4B4E /* StylisticAlternates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StylisticAlternates.swift; path = Sources/StylisticAlternates.swift; sourceTree = "<group>"; };
-		7FBD0135A994B3BCC7D44A6CCC4294DB /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
+		7DC028926EF6D0F18D355E665E3C646F /* StylisticAlternates.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StylisticAlternates.swift; path = Sources/StylisticAlternates.swift; sourceTree = "<group>"; };
+		7E05327B6EFA7D509C781B7D88F1F68A /* FABAttributes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FABAttributes.h; path = iOS/Fabric.framework/Headers/FABAttributes.h; sourceTree = "<group>"; };
 		80FD0681B4F64F8A3F8B118230516BF5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		839FDF300FF4D28C85FC3598E7FCEBE2 /* Tab+Adaptive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Tab+Adaptive.swift"; path = "Sources/UIKit/Tab+Adaptive.swift"; sourceTree = "<group>"; };
-		84C751C0A24FFC55E3565280D6734EFA /* ANSCompatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ANSCompatibility.h; path = iOS/Crashlytics.framework/Headers/ANSCompatibility.h; sourceTree = "<group>"; };
-		8CD65E74CCF5EA84C7569E53A3C91F51 /* TTTAttributedLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTTAttributedLabel-prefix.pch"; sourceTree = "<group>"; };
-		8FD6310BEDC4DDDE360E378DCE0BCCB1 /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_KatechismusKatolickeCirkve.framework; path = "Pods-KatechismusKatolickeCirkve.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		91C9D0667B300C21103896687FF4A7CA /* Crashlytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Crashlytics.h; path = iOS/Crashlytics.framework/Headers/Crashlytics.h; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		998483B41DDEB00B6F43B0A01202C3C3 /* TTTAttributedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TTTAttributedLabel.framework; path = TTTAttributedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A1882E036191279DD33E7370BE54A654 /* UIKit+AdaptableTextContainerSupport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+AdaptableTextContainerSupport.swift"; path = "Sources/UIKit/UIKit+AdaptableTextContainerSupport.swift"; sourceTree = "<group>"; };
+		81CD66B72D0B185BC1D9A985E7A5C77A /* Emphasis.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Emphasis.swift; path = Sources/Emphasis.swift; sourceTree = "<group>"; };
+		837FBAA1FD4B40540924D9702728BA90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89E9CC9A1771F06195834615081AF4F3 /* BonMot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BonMot-prefix.pch"; sourceTree = "<group>"; };
+		8C878F774AABBB2E6AA64346C35F6222 /* PopMenuPresentAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuPresentAnimationController.swift; path = PopMenu/Transitions/PopMenuPresentAnimationController.swift; sourceTree = "<group>"; };
+		8FE5C2A84194EEE58335CD373BEACFC2 /* TTTAttributedLabel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TTTAttributedLabel.m; path = TTTAttributedLabel/TTTAttributedLabel.m; sourceTree = "<group>"; };
+		924AD1E253D2B2B7CB6FDB8B341E6E88 /* UIView+Shadows.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Shadows.swift"; path = "PopMenu/Classes/Helpers/UIView+Shadows.swift"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		961F591CC3CC5C4B4815E0BDFB190CEC /* FontInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontInspector.swift; path = Sources/FontInspector.swift; sourceTree = "<group>"; };
+		9CA3596B20DD551704A85F27EB3690D2 /* NewPopMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NewPopMenu-umbrella.h"; sourceTree = "<group>"; };
+		A034C3D5650D71F425149A51CC4EFF4C /* PopMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuViewController.swift; path = "PopMenu/View Controller & Views/PopMenuViewController.swift"; sourceTree = "<group>"; };
+		A2B86F87A2062C14A2FEE827F85095DA /* Ligatures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ligatures.swift; path = Sources/Ligatures.swift; sourceTree = "<group>"; };
 		A4610CE00C616BC88C31B338425AC6FC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		A6C8298FDB0825522E26A0C27E421B72 /* Pods-KatechismusKatolickeCirkve-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-KatechismusKatolickeCirkve-acknowledgements.plist"; sourceTree = "<group>"; };
-		A815C4168AECA282C09469F9EB6CBF9E /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
-		AA83AF1F0B6CAD20B34EEF4D13807269 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = iOS/Crashlytics.framework; sourceTree = "<group>"; };
-		AD405F8A92E76A1B6474213F21AC0E08 /* FontInspector.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontInspector.swift; path = Sources/FontInspector.swift; sourceTree = "<group>"; };
-		AF1FE8C96A3C7348B585082422F35414 /* CLSStackFrame.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSStackFrame.h; path = iOS/Crashlytics.framework/Headers/CLSStackFrame.h; sourceTree = "<group>"; };
-		B7160997D2F80F8EAD162075D24C563C /* Tracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tracking.swift; path = Sources/Tracking.swift; sourceTree = "<group>"; };
-		BD9C2C4C7BF509BAB5763E4E1D9255FC /* AttributedStringTransformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AttributedStringTransformation.swift; path = Sources/UIKit/AttributedStringTransformation.swift; sourceTree = "<group>"; };
+		A723FC77111BD524BC5BA7BADBE71183 /* Tracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tracking.swift; path = Sources/Tracking.swift; sourceTree = "<group>"; };
+		A984F0F67B61ABBABDB74A7CB25FC896 /* NewPopMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NewPopMenu-prefix.pch"; sourceTree = "<group>"; };
+		AE8EF3E885EFB92ADA2D155D9E0733B3 /* TTTAttributedLabel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TTTAttributedLabel-prefix.pch"; sourceTree = "<group>"; };
+		B04AC74C0E4A52B3A0615111508027FC /* PopMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PopMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7BD60C8B8C49F07A9E62CF4C329BE61 /* TTTAttributedLabel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TTTAttributedLabel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3817185002D14B03E92CEEC74DDFCDC /* Pods-KatechismusKatolickeCirkve-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-KatechismusKatolickeCirkve-umbrella.h"; sourceTree = "<group>"; };
-		C64B9298B930E14A57A5BA12F73E35AB /* AccessibilityHeadingLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessibilityHeadingLevel.swift; path = Sources/AccessibilityHeadingLevel.swift; sourceTree = "<group>"; };
-		C650273CDC66FF358701024E1C73B519 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
-		CA540D984884A4F8D5071585FD9D2B7C /* Tab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tab.swift; path = Sources/Tab.swift; sourceTree = "<group>"; };
-		CB70DD5932CA1B4E0A5BBF8C5BBF2C59 /* AdaptableTextContainer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptableTextContainer.swift; path = Sources/UIKit/AdaptableTextContainer.swift; sourceTree = "<group>"; };
-		CF74D2AFB93B35EEC36F0F5481E6977D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CF983CB71AF6477B0DE9AA5D26B70147 /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		CECD80A0AB4BD504E210E992F1D71CF6 /* TTTAttributedLabel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TTTAttributedLabel.xcconfig; sourceTree = "<group>"; };
 		D1EEA2F4826298A47088F705E7915F83 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-KatechismusKatolickeCirkve.debug.xcconfig"; sourceTree = "<group>"; };
-		D23F33848984E4C927188D1408EA0D82 /* UIKit+Helpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Helpers.swift"; path = "Sources/UIKit/UIKit+Helpers.swift"; sourceTree = "<group>"; };
-		D3274BB86B0D475543B3EA4DFE0BFC0B /* Composable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Composable.swift; path = Sources/Composable.swift; sourceTree = "<group>"; };
-		D5B42A32FC30DDEC518E82D315A8B0F7 /* TextAlignmentConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAlignmentConstraint.swift; path = Sources/UIKit/TextAlignmentConstraint.swift; sourceTree = "<group>"; };
-		D88F846A673C5AF0CF65C56CD6198C87 /* StringStyle+Part.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "StringStyle+Part.swift"; path = "Sources/StringStyle+Part.swift"; sourceTree = "<group>"; };
-		DBBF30D21469F7024F147DCB8EF385B2 /* Image+Tinting.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Image+Tinting.swift"; path = "Sources/Image+Tinting.swift"; sourceTree = "<group>"; };
-		E3F374D240B1EA32247988B444BD71F2 /* TTTAttributedLabel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TTTAttributedLabel.h; path = TTTAttributedLabel/TTTAttributedLabel.h; sourceTree = "<group>"; };
+		D26B6A9DA61769BD2E6AF0212C6C8821 /* TTTAttributedLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TTTAttributedLabel.modulemap; sourceTree = "<group>"; };
+		D5308C65E43BEA41C8BC058C961F1CA7 /* BonMot-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BonMot-umbrella.h"; sourceTree = "<group>"; };
+		D64AADA3133895FFDEFB6457515453BB /* EmbeddedTransformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmbeddedTransformation.swift; path = Sources/UIKit/EmbeddedTransformation.swift; sourceTree = "<group>"; };
+		D749666B4879E6702D6FD4DEB75B40F2 /* AccessibilityHeadingLevel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessibilityHeadingLevel.swift; path = Sources/AccessibilityHeadingLevel.swift; sourceTree = "<group>"; };
+		D76A6B12936CC4EB7CAAC68DE51D2AFA /* Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transform.swift; path = Sources/Transform.swift; sourceTree = "<group>"; };
+		D7C38404325D24C1B21D0ACAC4521AB6 /* PopMenuDismissAnimationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuDismissAnimationController.swift; path = PopMenu/Transitions/PopMenuDismissAnimationController.swift; sourceTree = "<group>"; };
+		DC69D101EF0C2C3AE88C9A0973B6D131 /* NamedStyles.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NamedStyles.swift; path = Sources/NamedStyles.swift; sourceTree = "<group>"; };
+		DCF1E1E8787B0C687A8D95CBC279A336 /* Tracking+Adaptive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Tracking+Adaptive.swift"; path = "Sources/UIKit/Tracking+Adaptive.swift"; sourceTree = "<group>"; };
+		DE1CF7D62067D02F801AFF4DBF2E8985 /* CLSReport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSReport.h; path = iOS/Crashlytics.framework/Headers/CLSReport.h; sourceTree = "<group>"; };
+		E596C9F819DBA55E506FB748F73E4B84 /* Special.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Special.swift; path = Sources/Special.swift; sourceTree = "<group>"; };
+		E63E84AB60A21882B7D6320E4FF148AE /* TextAlignmentConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TextAlignmentConstraint.swift; path = Sources/UIKit/TextAlignmentConstraint.swift; sourceTree = "<group>"; };
 		E8EDC4D304AC92BC4CC41DBC83CF4E13 /* Pods-KatechismusKatolickeCirkve-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-KatechismusKatolickeCirkve-frameworks.sh"; sourceTree = "<group>"; };
-		E902C4415316DDD63B12981A853DD57F /* EmbeddedTransformation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EmbeddedTransformation.swift; path = Sources/UIKit/EmbeddedTransformation.swift; sourceTree = "<group>"; };
-		EA80C84E1271C011E57B1BD8BA8B8A58 /* Transform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transform.swift; path = Sources/Transform.swift; sourceTree = "<group>"; };
-		EB444CDF85681B82A7E9EBCAFA209C22 /* BonMot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BonMot.framework; path = BonMot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED362C019AB5439974EFCC1AAC00E108 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = iOS/Fabric.framework; sourceTree = "<group>"; };
 		EDC87CFBDCCC6ED413F3A90082CDD93D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		F353ED4C4337584B669E7B4CABE8C1A4 /* BonMot-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BonMot-prefix.pch"; sourceTree = "<group>"; };
-		F5496D724FAFAA1489032E0CE4C72EFC /* Ligatures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Ligatures.swift; path = Sources/Ligatures.swift; sourceTree = "<group>"; };
-		F965E5DA22009AD65D0E7546478205CE /* BonMot.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BonMot.xcconfig; sourceTree = "<group>"; };
+		F317641B4949415F915B6EB9B2660B04 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F54F00D59A7C1C6A5B5225D01B2A7211 /* AdaptiveStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AdaptiveStyle.swift; path = Sources/UIKit/AdaptiveStyle.swift; sourceTree = "<group>"; };
+		F77F949B56179E51ECFB4B1A5582BF37 /* PopMenuGradientView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopMenuGradientView.swift; path = PopMenu/Classes/Helpers/PopMenuGradientView.swift; sourceTree = "<group>"; };
+		FA0B95ABEF4ACFC2B4BB218049D0552C /* FontFeatures.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontFeatures.swift; path = Sources/FontFeatures.swift; sourceTree = "<group>"; };
 		FA22A94C36F12EA1D62EA263ACD363B4 /* Pods-KatechismusKatolickeCirkve-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-KatechismusKatolickeCirkve-dummy.m"; sourceTree = "<group>"; };
+		FA68F9311E2B465ED440A8CB53C81DCE /* CLSLogging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CLSLogging.h; path = iOS/Crashlytics.framework/Headers/CLSLogging.h; sourceTree = "<group>"; };
+		FB13EBC156583756AB32A2C63415335F /* Answers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Answers.h; path = iOS/Crashlytics.framework/Headers/Answers.h; sourceTree = "<group>"; };
+		FD042513ED28E3500B70E0014994668C /* UIColor+Contrast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Contrast.swift"; path = "PopMenu/Classes/Helpers/UIColor+Contrast.swift"; sourceTree = "<group>"; };
+		FE8A1ECAD56D71297756723D2EEFD787 /* Compatibility.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Compatibility.swift; path = Sources/Compatibility.swift; sourceTree = "<group>"; };
+		FFA0EB199C0F17B63F03DF16ED289311 /* Tab.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tab.swift; path = Sources/Tab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		317D77203534B1155E54BACFC9B78529 /* Frameworks */ = {
+		0096E14F5DAB46FF276D8F56DFDADE52 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8745DAD15395A7A4B7EDA7C829CBDC3 /* Foundation.framework in Frameworks */,
+				42D2EEB4FAFB3D61BEE1B9E789F00C10 /* CoreGraphics.framework in Frameworks */,
+				798EE448290485027850DE6233A73276 /* CoreText.framework in Frameworks */,
+				EF363DBD085BE83D1E2264154945D6B7 /* Foundation.framework in Frameworks */,
+				06C3556220C98CE82537E60EBA7D9CD8 /* QuartzCore.framework in Frameworks */,
+				2273E8037841640808F9B6A41FE186D2 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		171CA8F3F75091DEF0D4FD8197F3A9A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38053CE1AFC4D2F1082880368D748DCA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5DFEEDC0F75F3E034A37DD56E7FAA76D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A199B2D374F227D84199A3BA6AFD89B /* Foundation.framework in Frameworks */,
+				FEB6E66BF39A63149C0310B77FB3A15D /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,29 +232,56 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D66CB0F00486F3007312FDFFE1FA65ED /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				17D954FD46DD7D2DBBE7AF903B97128B /* CoreGraphics.framework in Frameworks */,
-				2CF14EDDC1C71E1923A8BD7F36F739C0 /* CoreText.framework in Frameworks */,
-				14FA97C1E73B81D7D6C7D2932D949C19 /* Foundation.framework in Frameworks */,
-				F902EC97F18E11984941274BAEC0B4B1 /* QuartzCore.framework in Frameworks */,
-				B5912108AABA8CBB57C0C81B88B5F45B /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B77F7E3CF02C11A1A5F3BB97A93F8FF /* Products */ = {
+		008D726F8F9043C919CBA535BD80E2BD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EB444CDF85681B82A7E9EBCAFA209C22 /* BonMot.framework */,
-				8FD6310BEDC4DDDE360E378DCE0BCCB1 /* Pods_KatechismusKatolickeCirkve.framework */,
-				998483B41DDEB00B6F43B0A01202C3C3 /* TTTAttributedLabel.framework */,
+				ED362C019AB5439974EFCC1AAC00E108 /* Fabric.framework */,
 			);
-			name = Products;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1838A215444D43DE4719E4A80AC0849C /* BonMot */ = {
+			isa = PBXGroup;
+			children = (
+				D749666B4879E6702D6FD4DEB75B40F2 /* AccessibilityHeadingLevel.swift */,
+				03C1CCFDD1303DA0C51E93AF66BB47D2 /* AdaptableTextContainer.swift */,
+				F54F00D59A7C1C6A5B5225D01B2A7211 /* AdaptiveStyle.swift */,
+				548DD973F8CE95BB6AD1CB1456546CA0 /* AdaptiveStyleTransformation.swift */,
+				1DAEAD4833E88EDE18916D0F6436B173 /* AttributedStringTransformation.swift */,
+				FE8A1ECAD56D71297756723D2EEFD787 /* Compatibility.swift */,
+				4A55F9C883C6DF4B1F22778B6C3B30BA /* Composable.swift */,
+				2371240551C9F94561EB0009FDC42EE4 /* ContextualAlternates.swift */,
+				D64AADA3133895FFDEFB6457515453BB /* EmbeddedTransformation.swift */,
+				81CD66B72D0B185BC1D9A985E7A5C77A /* Emphasis.swift */,
+				FA0B95ABEF4ACFC2B4BB218049D0552C /* FontFeatures.swift */,
+				961F591CC3CC5C4B4815E0BDFB190CEC /* FontInspector.swift */,
+				416D78B45ACD5FA9DBDF7690ADC75CC9 /* Image+Tinting.swift */,
+				A2B86F87A2062C14A2FEE827F85095DA /* Ligatures.swift */,
+				1EF4A0C43B682087BE668A5191061D6C /* MutableCopying.swift */,
+				DC69D101EF0C2C3AE88C9A0973B6D131 /* NamedStyles.swift */,
+				430CB7F5E599C01BED2EB4FED7F9D1B2 /* NSAttributedString+Adaptive.swift */,
+				5BCC3F414DE3F9D068C0F2AA9A3CB267 /* NSAttributedString+BonMot.swift */,
+				08E8BD9F077DAF80FA6171B65FD834BD /* Platform.swift */,
+				E596C9F819DBA55E506FB748F73E4B84 /* Special.swift */,
+				269E26E5A59076FF0D6444305AD40B33 /* StringStyle.swift */,
+				25D5851E0977A1ACD7BC96C690C8A96F /* StringStyle+Part.swift */,
+				04FECD84C7364D00BC5D9D5504EE525E /* StyleableUIElement.swift */,
+				7DC028926EF6D0F18D355E665E3C646F /* StylisticAlternates.swift */,
+				FFA0EB199C0F17B63F03DF16ED289311 /* Tab.swift */,
+				60CDB5480A5EC24CFCD951E81CBD0233 /* Tab+Adaptive.swift */,
+				E63E84AB60A21882B7D6320E4FF148AE /* TextAlignmentConstraint.swift */,
+				A723FC77111BD524BC5BA7BADBE71183 /* Tracking.swift */,
+				DCF1E1E8787B0C687A8D95CBC279A336 /* Tracking+Adaptive.swift */,
+				D76A6B12936CC4EB7CAAC68DE51D2AFA /* Transform.swift */,
+				72046C3AE2BC678FD1200D6AEF9A6DA7 /* UIKit+AdaptableTextContainerSupport.swift */,
+				6F83304192D6EEDF32DD588BB842C9A3 /* UIKit+Helpers.swift */,
+				1BB9861D4DD041AB7DA9D2347CEC470A /* XMLBuilder.swift */,
+				6BC1A6B37CFBE5EE62EA8F776A115CBF /* Support Files */,
+			);
+			path = BonMot;
 			sourceTree = "<group>";
 		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
@@ -204,42 +292,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		288389CA204A736AE3E00304D740615B /* Crashlytics */ = {
+		315B63D491C3907321920B1D6F305262 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				84C751C0A24FFC55E3565280D6734EFA /* ANSCompatibility.h */,
-				A815C4168AECA282C09469F9EB6CBF9E /* Answers.h */,
-				24D4AE006F983329D7E4FA8C3EF6C7F6 /* CLSAttributes.h */,
-				CF983CB71AF6477B0DE9AA5D26B70147 /* CLSLogging.h */,
-				C650273CDC66FF358701024E1C73B519 /* CLSReport.h */,
-				AF1FE8C96A3C7348B585082422F35414 /* CLSStackFrame.h */,
-				91C9D0667B300C21103896687FF4A7CA /* Crashlytics.h */,
-				2DA7A758A8F588A0C890F09C6FC4EAE9 /* Frameworks */,
+				1838A215444D43DE4719E4A80AC0849C /* BonMot */,
+				D5C960F33B896484BDDA8D22D9031478 /* Crashlytics */,
+				832E8B0E5979C36D917DC55BFFC3CF94 /* Fabric */,
+				74E3914ACD855C2491A302760608727F /* NewPopMenu */,
+				B919EB4C86B3FC0A35A60AEA304E880F /* TTTAttributedLabel */,
 			);
-			name = Crashlytics;
-			path = Crashlytics;
+			name = Pods;
 			sourceTree = "<group>";
 		};
-		2DA7A758A8F588A0C890F09C6FC4EAE9 /* Frameworks */ = {
+		31F9A8386AEAFEB70BE1C323C66EAF58 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AA83AF1F0B6CAD20B34EEF4D13807269 /* Crashlytics.framework */,
+				04F6C48AF0465775EABD49D26FB90DC7 /* BonMot.framework */,
+				1734389B1E5D03DE731BF217DC3541A6 /* Pods_KatechismusKatolickeCirkve.framework */,
+				B04AC74C0E4A52B3A0615111508027FC /* PopMenu.framework */,
+				B7BD60C8B8C49F07A9E62CF4C329BE61 /* TTTAttributedLabel.framework */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		49EBA558F95AA2533E7754026DA214C5 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				CF74D2AFB93B35EEC36F0F5481E6977D /* Info.plist */,
-				4D813DFA8785B3CE0CD5455A44DF80E9 /* TTTAttributedLabel.modulemap */,
-				309CE8ECC3A01AA89080DCC2C338175B /* TTTAttributedLabel.xcconfig */,
-				4EE18C3C4D851A9DFA4AA2C1FE504531 /* TTTAttributedLabel-dummy.m */,
-				8CD65E74CCF5EA84C7569E53A3C91F51 /* TTTAttributedLabel-prefix.pch */,
-				4EDE8C00AFC59F13258839D7D2A80C77 /* TTTAttributedLabel-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/TTTAttributedLabel";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		4C4EF09AF22E09DFD7043459E50B9829 /* Pods-KatechismusKatolickeCirkve */ = {
@@ -268,57 +341,66 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		6BC1A6B37CFBE5EE62EA8F776A115CBF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E8CD594A13B433E0DDA339F64B216F9 /* BonMot.modulemap */,
+				65047C3DF00D7BFEA30B064D24359C59 /* BonMot.xcconfig */,
+				4684989E7B9318EB1B3B8BB3AC01E9D8 /* BonMot-dummy.m */,
+				89E9CC9A1771F06195834615081AF4F3 /* BonMot-prefix.pch */,
+				D5308C65E43BEA41C8BC058C961F1CA7 /* BonMot-umbrella.h */,
+				F317641B4949415F915B6EB9B2660B04 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BonMot";
+			sourceTree = "<group>";
+		};
+		74E3914ACD855C2491A302760608727F /* NewPopMenu */ = {
+			isa = PBXGroup;
+			children = (
+				59173C7AE52602C09E494BF3974C35E6 /* Haptics.swift */,
+				2B8F72C69C990D3E6FF9244058187BC7 /* PopMenu.h */,
+				27829DB9761EA77D285778E703CD8110 /* PopMenuAction.swift */,
+				21149FCD00002689D21E4C0BA8297CA3 /* PopMenuAppearance.swift */,
+				D7C38404325D24C1B21D0ACAC4521AB6 /* PopMenuDismissAnimationController.swift */,
+				F77F949B56179E51ECFB4B1A5582BF37 /* PopMenuGradientView.swift */,
+				0D0BBB049C1376A8096DFC24D2A82308 /* PopMenuManager.swift */,
+				8C878F774AABBB2E6AA64346C35F6222 /* PopMenuPresentAnimationController.swift */,
+				A034C3D5650D71F425149A51CC4EFF4C /* PopMenuViewController.swift */,
+				FD042513ED28E3500B70E0014994668C /* UIColor+Contrast.swift */,
+				924AD1E253D2B2B7CB6FDB8B341E6E88 /* UIView+Shadows.swift */,
+				C8457509F065390582F32F04B17CDB10 /* Support Files */,
+			);
+			path = NewPopMenu;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				D1402ADD56BEC0E0B2F357CD2CC611C6 /* Pods */,
-				1B77F7E3CF02C11A1A5F3BB97A93F8FF /* Products */,
+				315B63D491C3907321920B1D6F305262 /* Pods */,
+				31F9A8386AEAFEB70BE1C323C66EAF58 /* Products */,
 				6967B9E61B81834E0EDBF73318547FA8 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F1A37B8878241882170C9FE7371D86F /* BonMot */ = {
+		7EABC2C835EB11D100840BA8A59FD1BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C64B9298B930E14A57A5BA12F73E35AB /* AccessibilityHeadingLevel.swift */,
-				CB70DD5932CA1B4E0A5BBF8C5BBF2C59 /* AdaptableTextContainer.swift */,
-				0FBA972F96E53EB39040CB776FDFFF02 /* AdaptiveStyle.swift */,
-				619AAABD3AAF943E134649AF0DB71379 /* AdaptiveStyleTransformation.swift */,
-				BD9C2C4C7BF509BAB5763E4E1D9255FC /* AttributedStringTransformation.swift */,
-				5AD3BC16FF9096CDF57B1E299264632B /* Compatibility.swift */,
-				D3274BB86B0D475543B3EA4DFE0BFC0B /* Composable.swift */,
-				735AED9A71CFE8CDA999EB649E7A275F /* ContextualAlternates.swift */,
-				E902C4415316DDD63B12981A853DD57F /* EmbeddedTransformation.swift */,
-				1AF76E2738AADA8B729C303790EF7804 /* Emphasis.swift */,
-				5E3C5202FB526630687DA79BAEAE3F49 /* FontFeatures.swift */,
-				AD405F8A92E76A1B6474213F21AC0E08 /* FontInspector.swift */,
-				DBBF30D21469F7024F147DCB8EF385B2 /* Image+Tinting.swift */,
-				F5496D724FAFAA1489032E0CE4C72EFC /* Ligatures.swift */,
-				2DBAF68EA71F2B18EAB93E3174CE878E /* MutableCopying.swift */,
-				50AD69CC7529494055761ECAB355D477 /* NamedStyles.swift */,
-				5FD6163ED99B87541357453CF8380C42 /* NSAttributedString+Adaptive.swift */,
-				5BAAC88E851896F337A6DB6D8BB4742E /* NSAttributedString+BonMot.swift */,
-				0550983FFB1F1B36CF265D95D66676FA /* Platform.swift */,
-				17D808263115ACA30EF947DCAF51B91A /* Special.swift */,
-				707E91161E166BE6CC648BC08C7CA587 /* StringStyle.swift */,
-				D88F846A673C5AF0CF65C56CD6198C87 /* StringStyle+Part.swift */,
-				54DBB53AED76144F326D2E752855341D /* StyleableUIElement.swift */,
-				7EDC9F19FE056948F79B38A67FBD4B4E /* StylisticAlternates.swift */,
-				CA540D984884A4F8D5071585FD9D2B7C /* Tab.swift */,
-				839FDF300FF4D28C85FC3598E7FCEBE2 /* Tab+Adaptive.swift */,
-				D5B42A32FC30DDEC518E82D315A8B0F7 /* TextAlignmentConstraint.swift */,
-				B7160997D2F80F8EAD162075D24C563C /* Tracking.swift */,
-				3107F49A3E598B4C2DBDB5E77A2E6CFF /* Tracking+Adaptive.swift */,
-				EA80C84E1271C011E57B1BD8BA8B8A58 /* Transform.swift */,
-				A1882E036191279DD33E7370BE54A654 /* UIKit+AdaptableTextContainerSupport.swift */,
-				D23F33848984E4C927188D1408EA0D82 /* UIKit+Helpers.swift */,
-				78B3C6A8BC0567CB526DFED3D76D1388 /* XMLBuilder.swift */,
-				E50CDFCCB368C88814B3C6513708FE32 /* Support Files */,
+				486850E6ABA3992BA70EF6217C3D8C80 /* Crashlytics.framework */,
 			);
-			name = BonMot;
-			path = BonMot;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		832E8B0E5979C36D917DC55BFFC3CF94 /* Fabric */ = {
+			isa = PBXGroup;
+			children = (
+				7E05327B6EFA7D509C781B7D88F1F68A /* FABAttributes.h */,
+				5F0530B67B2587FB47B1F96C3A5D593D /* Fabric.h */,
+				008D726F8F9043C919CBA535BD80E2BD /* Frameworks */,
+			);
+			path = Fabric;
 			sourceTree = "<group>";
 		};
 		894317673A97CC5695A94E2767EFD03F /* iOS */ = {
@@ -333,78 +415,77 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		A0A06BAFE8365F0C44175FE6E4E77431 /* Frameworks */ = {
+		9B7AC293220AB57EAFCFF55FA1A32481 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				0A0BE7C488B888A8E91109972C2B27E2 /* Fabric.framework */,
+				837FBAA1FD4B40540924D9702728BA90 /* Info.plist */,
+				D26B6A9DA61769BD2E6AF0212C6C8821 /* TTTAttributedLabel.modulemap */,
+				CECD80A0AB4BD504E210E992F1D71CF6 /* TTTAttributedLabel.xcconfig */,
+				1018FEC8EB4367D6C44DBA5895214E2B /* TTTAttributedLabel-dummy.m */,
+				AE8EF3E885EFB92ADA2D155D9E0733B3 /* TTTAttributedLabel-prefix.pch */,
+				2A015474C448EAF5D28F34C4FA8CDF8A /* TTTAttributedLabel-umbrella.h */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/TTTAttributedLabel";
 			sourceTree = "<group>";
 		};
-		ADDE898912C09FAAFE4ABA43AF636131 /* TTTAttributedLabel */ = {
+		B919EB4C86B3FC0A35A60AEA304E880F /* TTTAttributedLabel */ = {
 			isa = PBXGroup;
 			children = (
-				E3F374D240B1EA32247988B444BD71F2 /* TTTAttributedLabel.h */,
-				521CC17F23FDEC9530FB7AE204E81E81 /* TTTAttributedLabel.m */,
-				49EBA558F95AA2533E7754026DA214C5 /* Support Files */,
+				07EE172CAE3108632E48E76ACF46A761 /* TTTAttributedLabel.h */,
+				8FE5C2A84194EEE58335CD373BEACFC2 /* TTTAttributedLabel.m */,
+				9B7AC293220AB57EAFCFF55FA1A32481 /* Support Files */,
 			);
-			name = TTTAttributedLabel;
 			path = TTTAttributedLabel;
 			sourceTree = "<group>";
 		};
-		D1402ADD56BEC0E0B2F357CD2CC611C6 /* Pods */ = {
+		C8457509F065390582F32F04B17CDB10 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7F1A37B8878241882170C9FE7371D86F /* BonMot */,
-				288389CA204A736AE3E00304D740615B /* Crashlytics */,
-				FA645FE922CD2C8ADC2C27F9E6846F03 /* Fabric */,
-				ADDE898912C09FAAFE4ABA43AF636131 /* TTTAttributedLabel */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		E50CDFCCB368C88814B3C6513708FE32 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				101C943D20F6047A6979E35689A33BD8 /* BonMot.modulemap */,
-				F965E5DA22009AD65D0E7546478205CE /* BonMot.xcconfig */,
-				0D7BA4A13915EF2C81C0100E1736B993 /* BonMot-dummy.m */,
-				F353ED4C4337584B669E7B4CABE8C1A4 /* BonMot-prefix.pch */,
-				5647452DA7BDFB4009BE0548FD5DA26C /* BonMot-umbrella.h */,
-				471AB80FBD389890DD4301CA52EDE365 /* Info.plist */,
+				38CEF571CCA4A4FB68F45BDD4BD16B7B /* Info.plist */,
+				104B9752EE6F99DCB3FC345DF231FAB0 /* NewPopMenu.modulemap */,
+				6FD092D7052ACDF41E41044835F23D2C /* NewPopMenu.xcconfig */,
+				46A63B7D19BDCDD267F7B0F0EFDDF54A /* NewPopMenu-dummy.m */,
+				A984F0F67B61ABBABDB74A7CB25FC896 /* NewPopMenu-prefix.pch */,
+				9CA3596B20DD551704A85F27EB3690D2 /* NewPopMenu-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/BonMot";
+			path = "../Target Support Files/NewPopMenu";
 			sourceTree = "<group>";
 		};
-		FA645FE922CD2C8ADC2C27F9E6846F03 /* Fabric */ = {
+		D5C960F33B896484BDDA8D22D9031478 /* Crashlytics */ = {
 			isa = PBXGroup;
 			children = (
-				7FBD0135A994B3BCC7D44A6CCC4294DB /* FABAttributes.h */,
-				22B86CEC0AE1A2816CB644344E0848EB /* Fabric.h */,
-				A0A06BAFE8365F0C44175FE6E4E77431 /* Frameworks */,
+				335F2055644341925B141240545981E5 /* ANSCompatibility.h */,
+				FB13EBC156583756AB32A2C63415335F /* Answers.h */,
+				34352AF84A0104D300ABCDC4BFA6F6DE /* CLSAttributes.h */,
+				FA68F9311E2B465ED440A8CB53C81DCE /* CLSLogging.h */,
+				DE1CF7D62067D02F801AFF4DBF2E8985 /* CLSReport.h */,
+				4514506437AF9125C82870DBD693EC04 /* CLSStackFrame.h */,
+				1668D8AD93F448F382E4F107F0ADCECB /* Crashlytics.h */,
+				7EABC2C835EB11D100840BA8A59FD1BF /* Frameworks */,
 			);
-			name = Fabric;
-			path = Fabric;
+			path = Crashlytics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3E7F2ADD7A105CC9EFF6DA688C437F6D /* Headers */ = {
+		4C8FC6F5029FC378F61B53122607B9E7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D575D2BF7B227AB5A17F77EAE3BC6EB5 /* TTTAttributedLabel-umbrella.h in Headers */,
-				78157F6A99601A8D56A88640EAF600BE /* TTTAttributedLabel.h in Headers */,
+				FF998358CF29253DF75BD67B05C9405F /* NewPopMenu-umbrella.h in Headers */,
+				FC9A4F7DCCD9305E6CFBA6CF34274EE1 /* PopMenu.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5C95A0836DE59643F71C4C7C1FB97F92 /* Headers */ = {
+		501D49CD584F92B8DF623F9AEA6FFE7E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CF05B3E18C945554FA215F3340E86B6 /* Pods-KatechismusKatolickeCirkve-umbrella.h in Headers */,
+				EEE9816C5311D1774F13ED26742CC57C /* TTTAttributedLabel-umbrella.h in Headers */,
+				F5098D2D7EAE89F2637EB6366BC32BE0 /* TTTAttributedLabel.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,17 +497,43 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F035B7DD7B980ECF6A2B1008C362C746 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A2D2AF68F15E6E3FF8EDCAF9F5A72AC /* Pods-KatechismusKatolickeCirkve-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		6D629AE9060B2BA9CC0CF954CE97EE82 /* TTTAttributedLabel */ = {
+		2984E119D425AD26A0B5DB4F342FEAF4 /* NewPopMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 94CD5670C91B3960D12DE69AFFA815DE /* Build configuration list for PBXNativeTarget "TTTAttributedLabel" */;
+			buildConfigurationList = 4FABC2D0A3835EE09DD5F54DB4206548 /* Build configuration list for PBXNativeTarget "NewPopMenu" */;
 			buildPhases = (
-				3E7F2ADD7A105CC9EFF6DA688C437F6D /* Headers */,
-				386393B8E58F2EF6FCE8BB3B61214C11 /* Sources */,
-				D66CB0F00486F3007312FDFFE1FA65ED /* Frameworks */,
-				7E7A180977360520BD511857EE94820B /* Resources */,
+				4C8FC6F5029FC378F61B53122607B9E7 /* Headers */,
+				D95177650580056E8272687196FEE62F /* Sources */,
+				5DFEEDC0F75F3E034A37DD56E7FAA76D /* Frameworks */,
+				70B7AD0FEA98E416865CD402075FF197 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NewPopMenu;
+			productName = NewPopMenu;
+			productReference = B04AC74C0E4A52B3A0615111508027FC /* PopMenu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5EE4EBD542B7DBF61484FF13382ECBD4 /* TTTAttributedLabel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A6490CF237DC5B6405C5323090615C0 /* Build configuration list for PBXNativeTarget "TTTAttributedLabel" */;
+			buildPhases = (
+				501D49CD584F92B8DF623F9AEA6FFE7E /* Headers */,
+				D432EC9349402B2A066714D644BA3069 /* Sources */,
+				0096E14F5DAB46FF276D8F56DFDADE52 /* Frameworks */,
+				999D8EA2F408D4697F3955FE1D032E80 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -434,7 +541,7 @@
 			);
 			name = TTTAttributedLabel;
 			productName = TTTAttributedLabel;
-			productReference = 998483B41DDEB00B6F43B0A01202C3C3 /* TTTAttributedLabel.framework */;
+			productReference = B7BD60C8B8C49F07A9E62CF4C329BE61 /* TTTAttributedLabel.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		8A94805EFB8C960BBCFEF71906201165 /* BonMot */ = {
@@ -452,27 +559,28 @@
 			);
 			name = BonMot;
 			productName = BonMot;
-			productReference = EB444CDF85681B82A7E9EBCAFA209C22 /* BonMot.framework */;
+			productReference = 04F6C48AF0465775EABD49D26FB90DC7 /* BonMot.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DBC86DEC34DE816DF15D30F988B973AE /* Pods-KatechismusKatolickeCirkve */ = {
+		CFD9883D95B416A0C027FD5B86407929 /* Pods-KatechismusKatolickeCirkve */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 26C3495DE29C0A522101329E3F4E813E /* Build configuration list for PBXNativeTarget "Pods-KatechismusKatolickeCirkve" */;
+			buildConfigurationList = EC7DD59F5128D0D40BA4C3CECA4ABFD2 /* Build configuration list for PBXNativeTarget "Pods-KatechismusKatolickeCirkve" */;
 			buildPhases = (
-				5C95A0836DE59643F71C4C7C1FB97F92 /* Headers */,
-				B03F0CA4E9D06C934D99BB91013CCF5D /* Sources */,
-				317D77203534B1155E54BACFC9B78529 /* Frameworks */,
-				C8BA5A48B6D2425C240A442A5B5EEA8A /* Resources */,
+				F035B7DD7B980ECF6A2B1008C362C746 /* Headers */,
+				FE1DE17BAB97515FC3A44B98DC5DF387 /* Sources */,
+				171CA8F3F75091DEF0D4FD8197F3A9A7 /* Frameworks */,
+				8F113C9F2E3EA579490CD2CCCA263048 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6017B2FAB6A2DBB3F3E7EF896319104E /* PBXTargetDependency */,
-				A866D449A7FBC55616F35E20A653655A /* PBXTargetDependency */,
+				3CDD9994E3A34C1FE5BA015DC32C8A5A /* PBXTargetDependency */,
+				22D3227E33B51E76E359C21D31980651 /* PBXTargetDependency */,
+				B8FCD93F3CC6945132C1483FF9436E19 /* PBXTargetDependency */,
 			);
 			name = "Pods-KatechismusKatolickeCirkve";
 			productName = "Pods-KatechismusKatolickeCirkve";
-			productReference = 8FD6310BEDC4DDDE360E378DCE0BCCB1 /* Pods_KatechismusKatolickeCirkve.framework */;
+			productReference = 1734389B1E5D03DE731BF217DC3541A6 /* Pods_KatechismusKatolickeCirkve.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -482,7 +590,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1000;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -492,19 +600,34 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1B77F7E3CF02C11A1A5F3BB97A93F8FF /* Products */;
+			productRefGroup = 31F9A8386AEAFEB70BE1C323C66EAF58 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8A94805EFB8C960BBCFEF71906201165 /* BonMot */,
-				DBC86DEC34DE816DF15D30F988B973AE /* Pods-KatechismusKatolickeCirkve */,
-				6D629AE9060B2BA9CC0CF954CE97EE82 /* TTTAttributedLabel */,
+				2984E119D425AD26A0B5DB4F342FEAF4 /* NewPopMenu */,
+				CFD9883D95B416A0C027FD5B86407929 /* Pods-KatechismusKatolickeCirkve */,
+				5EE4EBD542B7DBF61484FF13382ECBD4 /* TTTAttributedLabel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7E7A180977360520BD511857EE94820B /* Resources */ = {
+		70B7AD0FEA98E416865CD402075FF197 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F113C9F2E3EA579490CD2CCCA263048 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		999D8EA2F408D4697F3955FE1D032E80 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,33 +641,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8BA5A48B6D2425C240A442A5B5EEA8A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		386393B8E58F2EF6FCE8BB3B61214C11 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2C5A311B69542BBD2E129BE808D6B8DC /* TTTAttributedLabel-dummy.m in Sources */,
-				B454D8DCB6EDBCA0451E0ED960CD6A5A /* TTTAttributedLabel.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B03F0CA4E9D06C934D99BB91013CCF5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				177375DD6E7EDBC1881FC07F3C33A8B0 /* Pods-KatechismusKatolickeCirkve-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BBD71803BAF0150DAF45C3F63AAF9DCE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,104 +685,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D432EC9349402B2A066714D644BA3069 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67A64D1F34627C1F9485E1015D0A7373 /* TTTAttributedLabel-dummy.m in Sources */,
+				E35ECF7A43697EF651291A5BB1A0C059 /* TTTAttributedLabel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D95177650580056E8272687196FEE62F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E103B4118971A6D980649AFBD8745C61 /* Haptics.swift in Sources */,
+				73FDAA0EA0EA053D0D8E23E619560874 /* NewPopMenu-dummy.m in Sources */,
+				A7DB5338A8B66129FD9B481F7203F170 /* PopMenuAction.swift in Sources */,
+				3247FE7C62045D5FBE5A8886DB3B9A6A /* PopMenuAppearance.swift in Sources */,
+				77CB432E3BC2D7A0325DE424147BE1FC /* PopMenuDismissAnimationController.swift in Sources */,
+				F65ACE11992F9545B7E58D4570D33AB3 /* PopMenuGradientView.swift in Sources */,
+				5F5B953D49133B06C88D1AA60F0D0CA9 /* PopMenuManager.swift in Sources */,
+				372CF962EA16293E341995E27BE815ED /* PopMenuPresentAnimationController.swift in Sources */,
+				6FB178E5F4C3AF69EA0CAAE721781A75 /* PopMenuViewController.swift in Sources */,
+				F75406542E27F58F3475078E27093C20 /* UIColor+Contrast.swift in Sources */,
+				40AE01FEEE1714E13EE6D2CBAC8176DD /* UIView+Shadows.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE1DE17BAB97515FC3A44B98DC5DF387 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EF6F06B177C342D81B315C0527CAFB7 /* Pods-KatechismusKatolickeCirkve-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6017B2FAB6A2DBB3F3E7EF896319104E /* PBXTargetDependency */ = {
+		22D3227E33B51E76E359C21D31980651 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = NewPopMenu;
+			target = 2984E119D425AD26A0B5DB4F342FEAF4 /* NewPopMenu */;
+			targetProxy = A059AC43E5B459214355B9FE64747F3A /* PBXContainerItemProxy */;
+		};
+		3CDD9994E3A34C1FE5BA015DC32C8A5A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = BonMot;
 			target = 8A94805EFB8C960BBCFEF71906201165 /* BonMot */;
-			targetProxy = 0D2BA86E1DB198DB514A76D1F6136498 /* PBXContainerItemProxy */;
+			targetProxy = 01ADFCEAA2312F526F08A794A6F412A6 /* PBXContainerItemProxy */;
 		};
-		A866D449A7FBC55616F35E20A653655A /* PBXTargetDependency */ = {
+		B8FCD93F3CC6945132C1483FF9436E19 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = TTTAttributedLabel;
-			target = 6D629AE9060B2BA9CC0CF954CE97EE82 /* TTTAttributedLabel */;
-			targetProxy = AFF186A17085AEC74649EEB948033944 /* PBXContainerItemProxy */;
+			target = 5EE4EBD542B7DBF61484FF13382ECBD4 /* TTTAttributedLabel */;
+			targetProxy = 3E7B2413C4F24E1055F4556771035C7A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		2E1EA6FF8927316517BA5DCD10A7BE0F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F965E5DA22009AD65D0E7546478205CE /* BonMot.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BonMot/BonMot-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BonMot/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/BonMot/BonMot.modulemap";
-				PRODUCT_MODULE_NAME = BonMot;
-				PRODUCT_NAME = BonMot;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3815CC2F97886005CFB58E86B96F8C69 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0681D294EC6FDA3CE373DC5310A02D9E /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-KatechismusKatolickeCirkve/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		742773315430C7195152FF101B81C6BC /* Debug */ = {
+		27AF9042427638BFD02AD91B4DE493BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D1EEA2F4826298A47088F705E7915F83 /* Pods-KatechismusKatolickeCirkve.debug.xcconfig */;
 			buildSettings = {
@@ -701,11 +762,7 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-KatechismusKatolickeCirkve/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.modulemap";
 				OTHER_LDFLAGS = "";
@@ -723,9 +780,74 @@
 			};
 			name = Debug;
 		};
-		8A7CFC7316597F0FEFE740675D29F6AA /* Debug */ = {
+		2E1EA6FF8927316517BA5DCD10A7BE0F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 309CE8ECC3A01AA89080DCC2C338175B /* TTTAttributedLabel.xcconfig */;
+			baseConfigurationReference = 65047C3DF00D7BFEA30B064D24359C59 /* BonMot.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/BonMot/BonMot-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/BonMot/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/BonMot/BonMot.modulemap";
+				PRODUCT_MODULE_NAME = BonMot;
+				PRODUCT_NAME = BonMot;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5B56703E07F1B791C817FB45BE7B2C90 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FD092D7052ACDF41E41044835F23D2C /* NewPopMenu.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NewPopMenu/NewPopMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NewPopMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NewPopMenu/NewPopMenu.modulemap";
+				PRODUCT_MODULE_NAME = PopMenu;
+				PRODUCT_NAME = PopMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7700A2D7516B503A059C1FA319ADD2E9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CECD80A0AB4BD504E210E992F1D71CF6 /* TTTAttributedLabel.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -740,11 +862,7 @@
 				INFOPLIST_FILE = "Target Support Files/TTTAttributedLabel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TTTAttributedLabel/TTTAttributedLabel.modulemap";
 				PRODUCT_MODULE_NAME = TTTAttributedLabel;
 				PRODUCT_NAME = TTTAttributedLabel;
@@ -758,9 +876,9 @@
 			};
 			name = Debug;
 		};
-		99F7A4E137A4766DFB9A3392B0176C01 /* Release */ = {
+		8AAFE23EE491A78B3DF94FE0A18C6DDB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 309CE8ECC3A01AA89080DCC2C338175B /* TTTAttributedLabel.xcconfig */;
+			baseConfigurationReference = CECD80A0AB4BD504E210E992F1D71CF6 /* TTTAttributedLabel.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -775,11 +893,7 @@
 				INFOPLIST_FILE = "Target Support Files/TTTAttributedLabel/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/TTTAttributedLabel/TTTAttributedLabel.modulemap";
 				PRODUCT_MODULE_NAME = TTTAttributedLabel;
 				PRODUCT_NAME = TTTAttributedLabel;
@@ -796,7 +910,7 @@
 		};
 		C83B6D84926E23348355057D8CED35E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F965E5DA22009AD65D0E7546478205CE /* BonMot.xcconfig */;
+			baseConfigurationReference = 65047C3DF00D7BFEA30B064D24359C59 /* BonMot.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -811,11 +925,7 @@
 				INFOPLIST_FILE = "Target Support Files/BonMot/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/BonMot/BonMot.modulemap";
 				PRODUCT_MODULE_NAME = BonMot;
 				PRODUCT_NAME = BonMot;
@@ -894,6 +1004,39 @@
 			};
 			name = Debug;
 		};
+		E4E5654523D255BA9E94D741E7E9CE00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FD092D7052ACDF41E41044835F23D2C /* NewPopMenu.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/NewPopMenu/NewPopMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/NewPopMenu/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/NewPopMenu/NewPopMenu.modulemap";
+				PRODUCT_MODULE_NAME = PopMenu;
+				PRODUCT_NAME = PopMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		EA8C7AF90938697605468604B2A17B9F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -949,7 +1092,44 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		ED4D5A5B0C7D0A874314C86A75FD655F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0681D294EC6FDA3CE373DC5310A02D9E /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-KatechismusKatolickeCirkve/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -965,15 +1145,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		26C3495DE29C0A522101329E3F4E813E /* Build configuration list for PBXNativeTarget "Pods-KatechismusKatolickeCirkve" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				742773315430C7195152FF101B81C6BC /* Debug */,
-				3815CC2F97886005CFB58E86B96F8C69 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -983,11 +1154,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		94CD5670C91B3960D12DE69AFFA815DE /* Build configuration list for PBXNativeTarget "TTTAttributedLabel" */ = {
+		4FABC2D0A3835EE09DD5F54DB4206548 /* Build configuration list for PBXNativeTarget "NewPopMenu" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8A7CFC7316597F0FEFE740675D29F6AA /* Debug */,
-				99F7A4E137A4766DFB9A3392B0176C01 /* Release */,
+				5B56703E07F1B791C817FB45BE7B2C90 /* Debug */,
+				E4E5654523D255BA9E94D741E7E9CE00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A6490CF237DC5B6405C5323090615C0 /* Build configuration list for PBXNativeTarget "TTTAttributedLabel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7700A2D7516B503A059C1FA319ADD2E9 /* Debug */,
+				8AAFE23EE491A78B3DF94FE0A18C6DDB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EC7DD59F5128D0D40BA4C3CECA4ABFD2 /* Build configuration list for PBXNativeTarget "Pods-KatechismusKatolickeCirkve" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27AF9042427638BFD02AD91B4DE493BF /* Debug */,
+				ED4D5A5B0C7D0A874314C86A75FD655F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
