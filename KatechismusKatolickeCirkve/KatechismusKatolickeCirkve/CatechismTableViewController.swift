@@ -16,6 +16,7 @@ class CatechismTableViewController: BaseTableViewController {
         case find_word
         case find_number
         //case index
+        case favorites
         case settings
         case project
         case about
@@ -118,6 +119,11 @@ class CatechismTableViewController: BaseTableViewController {
             if let aboutProjectViewController = UIStoryboard(name: "AboutProject", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(aboutProjectViewController, animated: true)
             }
+        case .favorites:
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+            let favoritesViewController = mainViewController.instantiateViewController(withIdentifier: "ShowParagraphs") as? ParagraphTableViewController
+            favoritesViewController?.kindOfSource = 4
+            navigationController?.pushViewController(favoritesViewController!, animated: true)
         case .settings:
             if let settingsTableViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(settingsTableViewController, animated: true)
@@ -145,13 +151,16 @@ class CatechismTableViewController: BaseTableViewController {
         //guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
         //    fatalError("Unable to instanciate Rejstřík")
         //}
-        guard let about_project = CatechismMenu(name: "O projektu", photo: nil, order: 4) else {
+        guard let favorites = CatechismMenu(name: "Oblíbené", photo: nil, order: 4) else {
+            fatalError("Unable to instanciate Oblíbené")
+        }
+        guard let about_project = CatechismMenu(name: "O projektu", photo: nil, order: 5) else {
             fatalError("Unable to instanciate O projektu")
         }
-        guard let settings = CatechismMenu(name: "Nastavení", photo: nil, order: 5) else {
+        guard let settings = CatechismMenu(name: "Nastavení", photo: nil, order: 6) else {
             fatalError("Unable to instanciate Nastaveni")
         }
-        guard let about = CatechismMenu(name: "O aplikaci", photo: nil, order: 6) else {
+        guard let about = CatechismMenu(name: "O aplikaci", photo: nil, order: 7) else {
             fatalError("Unable to instanciate O aplikaci")
         }
         
@@ -160,7 +169,9 @@ class CatechismTableViewController: BaseTableViewController {
         rowData.append(RowData(type: .find_word, menu: find_word))
         rowData.append(RowData(type: .find_number, menu: find_number))
         //rowData.append(RowData(type: .index, menu: index))
+        rowData.append(RowData(type: .favorites, menu: favorites))
         rowData.append(RowData(type: .project, menu: about_project))
+
         rowData.append(RowData(type: .settings, menu: settings))
         rowData.append(RowData(type: .about, menu: about))
     }

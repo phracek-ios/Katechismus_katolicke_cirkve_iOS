@@ -19,6 +19,19 @@ class Convert2Json(object):
         fields = row.split("::")
         return {'id': int(fields[0]), 'parent': int(fields[1]), 'name': fields[2]}
 
+    def parse_refs(self, refs):
+        if '-' in refs:
+            list_refs = []
+            for r in refs.split(','):
+                if '-' in r:
+                    begin, end = r.split('-')
+                    list_refs.extend(map(str, range(int(begin), int(end)+1)))
+                else:
+                    list_refs.append(r)
+            return ','.join(list_refs)
+        else:
+            return refs
+
     def parse_database(self, row):
         fields = row.split("::")
         if "souhrn" in fields[2].lower():
@@ -27,13 +40,12 @@ class Convert2Json(object):
         else:
             if self.chapter != int(fields[3]) or fields[2] != "":
                 self.recap = False
-        if int(fields[0]) < 100:
-            print(int(fields[0]), self.recap)
+        refs = self.parse_refs(fields[4])
         return {'id': int(fields[0]),
                 'caption': fields[1],
                 'caption_no_html': fields[2],
                 'chapter': int(fields[3]),
-                'refs': fields[4],
+                'refs': refs,
                 'text': fields[5],
                 'text_no_html': fields[6],
                 'recap': int(self.recap),

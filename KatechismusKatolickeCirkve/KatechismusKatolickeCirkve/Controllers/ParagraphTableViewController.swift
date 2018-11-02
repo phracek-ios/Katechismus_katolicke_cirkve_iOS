@@ -10,12 +10,14 @@ import UIKit
 import BonMot
 import PopMenu
 
-class ParagraphTableViewController: BaseTableViewController {
+class ParagraphTableViewController: BaseTableViewController, PopMenuViewControllerDelegate {
     
     struct ParagraphRowData {
         var html: NSAttributedString
         var recap: Int
         var paragraphs: String
+        var id: Int
+        var fav: Bool
     }
 
     var heightOfWebView: CGFloat = 0
@@ -30,36 +32,41 @@ class ParagraphTableViewController: BaseTableViewController {
     var findData = [Int]()
     var findString: String = ""
     var darkMode: Bool = false
+    var favorites = [Int]()
     var isStatusBarHidden = false {
         didSet {
             UIView.animate(withDuration: 0.25) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
 }        }
     }
-    
+    let star_on_img = UIImage(named: "star_on")
+    let star_off_img = UIImage(named: "star_off")
+    var userDefaults = UserDefaults.standard
+
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
+
     override var prefersStatusBarHidden: Bool {
         return isStatusBarHidden || UIDevice.current.orientation.isLandscape && UIDevice.current.userInterfaceIdiom == .phone
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
         loadParagraphs()
         setupLongPressureGesture()
         self.tableView.tableFooterView = UIView()
-        let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
             self.tableView.backgroundColor = KKCBackgroundLightMode
         }
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
-
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
@@ -76,6 +83,8 @@ class ParagraphTableViewController: BaseTableViewController {
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
+        print("viewDidAppera")
+        self.tableView.reloadData()
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -107,6 +116,13 @@ class ParagraphTableViewController: BaseTableViewController {
                 cell.labelParagraph.textColor = KKCTextLightMode
             }
         }
+        if data.fav == false {
+            cell.starImage.image = star_off_img
+        }
+        else {
+            cell.starImage.image = star_on_img
+        }
+        print("cellForRowAt")
         return cell
     }
 
@@ -169,7 +185,9 @@ class ParagraphTableViewController: BaseTableViewController {
                 if par.id >= parentID && par.id <= rangeID {
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
                                                              recap: par.recap,
-                                                             paragraphs: par.refs))
+                                                             paragraphs: par.refs,
+                                                             id: par.id,
+                                                             fav: get_favorites(id: par.id)))
                 }
             }
         }
@@ -178,7 +196,9 @@ class ParagraphTableViewController: BaseTableViewController {
                 if par.chapter == parentID {
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
                                                              recap: par.recap,
-                                                             paragraphs: par.refs))
+                                                             paragraphs: par.refs,
+                                                             id: par.id,
+                                                             fav: get_favorites(id: par.id)))
                 }
             }
         }
@@ -189,7 +209,9 @@ class ParagraphTableViewController: BaseTableViewController {
                     new_par.text = new_par.text.replacingOccurrences(of: self.findString, with: "<red>\(self.findString)</red>")
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: new_par),
                                                              recap: new_par.recap,
-                                                             paragraphs: par.refs))
+                                                             paragraphs: par.refs,
+                                                             id: par.id,
+                                                             fav: get_favorites(id: par.id)))
                 }
             }
         }
@@ -198,9 +220,32 @@ class ParagraphTableViewController: BaseTableViewController {
                 if findData.contains(par.id) {
                     paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
                                                              recap: par.recap,
-                                                             paragraphs: par.refs))
+                                                             paragraphs: par.refs,
+                                                             id: par.id,
+                                                             fav: get_favorites(id: par.id)))
                 }
             }
+        }
+        else if kindOfSource == 4 {
+            for par in paragraphStructure.paragraph {
+                if favorites.contains(par.id) {
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par),
+                    recap: par.recap,
+                    paragraphs: par.refs,
+                    id: par.id,
+                    fav: get_favorites(id: par.id)))
+                }
+            }
+        }
+    }
+    
+    private func get_favorites(id: Int) -> Bool {
+        if self.favorites.contains(where: { $0 == id }) {
+            return true
+        }
+        else
+        {
+            return false
         }
     }
     private func get_html_text(par: Paragraph) -> NSAttributedString {
@@ -212,7 +257,7 @@ class ParagraphTableViewController: BaseTableViewController {
                 references = "§" + String(par.id) + "\n"
             }
         }
-        else if kindOfSource == 1 || kindOfSource == 2 || kindOfSource == 3 {
+        else if kindOfSource == 1 || kindOfSource == 2 || kindOfSource == 3 || kindOfSource == 4 {
             if par.id < 10000 {
                 references = "§" + String(par.id) + "\n"
             }
@@ -239,15 +284,7 @@ class ParagraphTableViewController: BaseTableViewController {
         self.tableView.reloadData()
     }
     
-    @objc private func initPopMenu() -> PopMenuViewController {
-        let menuViewController = PopMenuViewController(actions: [
-            PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených"),
-            PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy"),
-            PopMenuDefaultAction(title: "Přidat poznámku")
-            ])
-        return menuViewController
-    }
-    
+
     func setupLongPressureGesture() {
         let longPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(sender:)))
         longPressGesture.minimumPressDuration = 1.0
@@ -259,10 +296,23 @@ class ParagraphTableViewController: BaseTableViewController {
             
             let touchPoint = sender.location(in: self.tableView)
             if let indexPath = tableView.indexPathForRow(at: touchPoint) {
-                print(paragraphRowData[indexPath.row])
-                print("Long pressed row: \(indexPath.row)")
-                let popMenu = initPopMenu()
-                present(popMenu, animated: true, completion: nil)
+                let action1 = PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených", didSelect: {action in
+                    if self.get_favorites(id: self.paragraphRowData[indexPath.row].id) == false {
+                        self.favorites.append(self.paragraphRowData[indexPath.row].id)
+                        self.userDefaults.set(self.favorites, forKey: "Favorites")
+                    }
+                    else
+                    {
+                        print("remove")
+                    }
+                })
+                let action2 = PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy", didSelect: {action in
+                    print("PARAGRAFY")
+                })
+                let manager = PopMenuManager.default
+                manager.addAction(action1)
+                manager.addAction(action2)
+                manager.present(on: self)
             }
         }
     }

@@ -12,6 +12,7 @@ import Foundation
 class ParagraphTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelParagraph: UILabel!
+    @IBOutlet weak var starImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         labelParagraph.numberOfLines = 0

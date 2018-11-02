@@ -24,7 +24,6 @@ class AboutProjectViewController: BaseViewController, TTTAttributedLabelDelegate
         catechismStructure = CatechismDataService.shared.catechismStructure
         // Do any additional setup after loading the view.
         guard let catechismStructure = catechismStructure else { return }
-        //let htmlString = catechismStructure.about_project_1 + "<a href=\"https://www.ikarmel.cz\">Karmelitánské nakladatelství</a>" + catechismStructure.about_project_1a + "<a href=\"http://www.donum.cz\">Donum</a> nebo u <a href=\"https://www.paulinky.cz\">Paulínek</a>.<br><br>" + catechismStructure.about_project_1b + "<a href=\"https://www.cirkev.cz\">České biskupské konference</a>" + catechismStructure.about_project_1c + catechismStructure.about_project_2 + catechismStructure.about_project_3 + "<a href=\"https://www.ikarmel.cz\">Karmelitánské nakladatelství</a>" + catechismStructure.about_project_3a
         let karmelText = "Karmelitánské nakladatelství"
         let paulinText = "Paulínek"
         let cbkText = "České biskupské konference"
