@@ -83,8 +83,10 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         super.viewDidAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.interactivePopGestureRecognizer?.delegate = self as? UIGestureRecognizerDelegate
-        print("viewDidAppera")
+        self.tableView.beginUpdates()
         self.tableView.reloadData()
+        self.tableView.endUpdates()
+        print("viewDidAppear")
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -286,26 +288,41 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
     
 
     func setupLongPressureGesture() {
-        let longPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress(sender:)))
+        let longPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        longPressGesture.delegate = self as? UIGestureRecognizerDelegate
         longPressGesture.minimumPressDuration = 1.0
         self.tableView.addGestureRecognizer(longPressGesture)
     }
     
-    @objc func handleLongPress(sender: UILongPressGestureRecognizer){
-        if sender.state == UIGestureRecognizerState.began {
-            
-            let touchPoint = sender.location(in: self.tableView)
-            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
+        if gestureRecognizer.state == .began {
+            let touchPoint = gestureRecognizer.location(in: self.tableView)
+            print(touchPoint)
+            if let indexPath = self.tableView.indexPathForRow(at: touchPoint) {
+                print(indexPath)
+                print(indexPath.row)
                 let action1 = PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených", didSelect: {action in
-                    if self.get_favorites(id: self.paragraphRowData[indexPath.row].id) == false {
-                        self.favorites.append(self.paragraphRowData[indexPath.row].id)
-                        self.userDefaults.set(self.favorites, forKey: "Favorites")
-                    }
+                    let row_id = self.paragraphRowData[indexPath.row].id
+                    print(row_id)
+                    if self.get_favorites(id: row_id) == false {
+                        print("Add to favorites")
+                        self.paragraphRowData[indexPath.row].fav = true
+                        self.favorites.append(row_id)
+                     }
                     else
                     {
                         print("remove")
+                        self.paragraphRowData[indexPath.row].fav = false
+                        if let index = self.favorites.firstIndex(of: row_id) {
+                            self.favorites.remove(at: index)
+                        }
                     }
-                })
+                    print(self.favorites)
+                    self.userDefaults.set(self.favorites, forKey: "Favorites")
+                    self.tableView.beginUpdates()
+                    self.tableView.reloadData()
+                    self.tableView.endUpdates()
+               })
                 let action2 = PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy", didSelect: {action in
                     print("PARAGRAFY")
                 })
