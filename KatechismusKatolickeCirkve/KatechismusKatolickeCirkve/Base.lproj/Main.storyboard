@@ -60,10 +60,58 @@
                             <outlet property="delegate" destination="KGP-LY-N57" id="X3D-Ze-Lgs"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="tWb-ty-uLz" kind="show" identifier="ShowParagraphRefs" id="3yb-ij-HfI"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qxS-6P-27B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3127.5" y="419.36619718309862"/>
+            <point key="canvasLocation" x="3266" y="417"/>
+        </scene>
+        <!--Paragraph Refs Table View Controller-->
+        <scene sceneID="7ye-GA-c10">
+            <objects>
+                <tableViewController id="tWb-ty-uLz" customClass="ParagraphRefsTableViewController" customModule="KatechismusKatolickeCirkve" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="OP0-oC-jVU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ParagraphRefsTableViewCell" id="iGI-Sv-ffu" customClass="ParagraphRefsTableViewCell" customModule="KatechismusKatolickeCirkve" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iGI-Sv-ffu" id="D83-e4-zTw">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eJP-FA-HNN">
+                                            <rect key="frame" x="5" y="5" width="310" height="33.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eJP-FA-HNN" firstAttribute="top" secondItem="D83-e4-zTw" secondAttribute="top" constant="5" id="0Jr-UM-etY"/>
+                                        <constraint firstAttribute="trailing" secondItem="eJP-FA-HNN" secondAttribute="trailing" constant="5" id="Gay-xw-Yox"/>
+                                        <constraint firstAttribute="bottom" secondItem="eJP-FA-HNN" secondAttribute="bottom" constant="5" id="VSx-Rd-dqu"/>
+                                        <constraint firstItem="eJP-FA-HNN" firstAttribute="leading" secondItem="D83-e4-zTw" secondAttribute="leading" constant="5" id="aZ0-tb-FAk"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="labelParagraph" destination="eJP-FA-HNN" id="OVm-WJ-jbW"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tWb-ty-uLz" id="IHE-C0-IxQ"/>
+                            <outlet property="delegate" destination="tWb-ty-uLz" id="5dS-4e-KbX"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="07Q-pb-KeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3993.75" y="417.25352112676057"/>
         </scene>
         <!--Katechismus katolické církve-->
         <scene sceneID="qCZ-XO-yb2">

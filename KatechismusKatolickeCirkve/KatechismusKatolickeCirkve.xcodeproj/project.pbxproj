@@ -51,6 +51,9 @@
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
 		01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E864F22149BAC300566660 /* FindWordViewController.swift */; };
+		01F73D4321920CD10023FF18 /* ParagraphRefsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */; };
+		01F73D4521920D040023FF18 /* ParagraphRefsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */; };
+		01F73D4721920EB70023FF18 /* GeneratorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4621920EB70023FF18 /* GeneratorText.swift */; };
 		4B29D3152186797C0082EFEA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D3142186797C0082EFEA /* BaseViewController.swift */; };
 		4B29D317218679980082EFEA /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B29D316218679980082EFEA /* BaseTableViewController.swift */; };
 		771078843AD2C06DB2F80215 /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */; };
@@ -115,6 +118,9 @@
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
 		01E864F22149BAC300566660 /* FindWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWordViewController.swift; sourceTree = "<group>"; };
+		01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphRefsTableViewCell.swift; sourceTree = "<group>"; };
+		01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphRefsTableViewController.swift; sourceTree = "<group>"; };
+		01F73D4621920EB70023FF18 /* GeneratorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorText.swift; sourceTree = "<group>"; };
 		4B29D3142186797C0082EFEA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4B29D316218679980082EFEA /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		D79BC4257EE7163E3E7071EA /* Pods_KatechismusKatolickeCirkve.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KatechismusKatolickeCirkve.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +205,7 @@
 				01A8CF0921777A660023FC74 /* UIFontCatechism.swift */,
 				013273FE217F0E86008411EC /* NotificationsName.swift */,
 				01B7520221874189007081D1 /* Constants.swift */,
+				01F73D4621920EB70023FF18 /* GeneratorText.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -222,6 +229,8 @@
 				0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */,
 				0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */,
 				01946211212220A20056EC7B /* ParagraphTableViewController.swift */,
+				01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */,
+				01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */,
 				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
 				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
 				017F20FC211A3A28006B448C /* Settings.storyboard */,
@@ -488,10 +497,13 @@
 				01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */,
 				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
 				0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */,
+				01F73D4521920D040023FF18 /* ParagraphRefsTableViewController.swift in Sources */,
 				0161FBC2213FBF7200A4959A /* NumbersDetailTableViewController.swift in Sources */,
+				01F73D4321920CD10023FF18 /* ParagraphRefsTableViewCell.swift in Sources */,
 				01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */,
 				013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */,
 				018E43A7211D8C3700E0237B /* SectionsTableViewController.swift in Sources */,
+				01F73D4721920EB70023FF18 /* GeneratorText.swift in Sources */,
 				01B7520321874189007081D1 /* Constants.swift in Sources */,
 				01946212212220A20056EC7B /* ParagraphTableViewController.swift in Sources */,
 				019048FB211C25B500C17A95 /* ChaptersTableViewCell.swift in Sources */,
