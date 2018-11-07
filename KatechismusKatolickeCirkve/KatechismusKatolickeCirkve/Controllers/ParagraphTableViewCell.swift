@@ -13,15 +13,19 @@ class ParagraphTableViewCell: UITableViewCell {
 
     @IBOutlet weak var labelParagraph: UILabel!
     @IBOutlet weak var starImage: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupUI()
+    }
+}
+
+// MARK: - Private
+private extension ParagraphTableViewCell {
+    
+    func setupUI() {
+        selectionStyle = .none
         labelParagraph.numberOfLines = 0
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }
+

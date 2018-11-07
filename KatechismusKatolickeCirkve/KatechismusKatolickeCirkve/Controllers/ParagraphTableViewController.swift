@@ -59,7 +59,6 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
         loadParagraphs()
-        setupLongPressureGesture()
         self.tableView.tableFooterView = UIView()
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
@@ -126,6 +125,40 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         }
         print("cellForRowAt")
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
+        print(indexPath.row)
+        let action1 = PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených", didSelect: {action in
+            let row_id = self.paragraphRowData[indexPath.row].id
+            print(row_id)
+            if self.get_favorites(id: row_id) == false {
+                print("Add to favorites")
+                self.paragraphRowData[indexPath.row].fav = true
+                self.favorites.append(row_id)
+            }
+            else
+            {
+                print("remove")
+                self.paragraphRowData[indexPath.row].fav = false
+                if let index = self.favorites.firstIndex(of: row_id) {
+                    self.favorites.remove(at: index)
+                }
+            }
+            print(self.favorites)
+            self.userDefaults.set(self.favorites, forKey: "Favorites")
+            self.tableView.beginUpdates()
+            self.tableView.reloadData()
+            self.tableView.endUpdates()
+        })
+        let action2 = PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy", didSelect: {action in
+            print("PARAGRAFY")
+        })
+        let manager = PopMenuManager.default
+        manager.addAction(action1)
+        manager.addAction(action2)
+        manager.present(on: self)
     }
 
     private func generateContent(text: String) -> NSAttributedString {
@@ -284,53 +317,5 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         self.darkMode = false
         self.tableView.backgroundColor = KKCBackgroundLightMode
         self.tableView.reloadData()
-    }
-    
-
-    func setupLongPressureGesture() {
-        let longPressGesture: UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
-        longPressGesture.delegate = self as? UIGestureRecognizerDelegate
-        longPressGesture.minimumPressDuration = 1.0
-        self.tableView.addGestureRecognizer(longPressGesture)
-    }
-    
-    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
-        if gestureRecognizer.state == .began {
-            let touchPoint = gestureRecognizer.location(in: self.tableView)
-            print(touchPoint)
-            if let indexPath = self.tableView.indexPathForRow(at: touchPoint) {
-                print(indexPath)
-                print(indexPath.row)
-                let action1 = PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených", didSelect: {action in
-                    let row_id = self.paragraphRowData[indexPath.row].id
-                    print(row_id)
-                    if self.get_favorites(id: row_id) == false {
-                        print("Add to favorites")
-                        self.paragraphRowData[indexPath.row].fav = true
-                        self.favorites.append(row_id)
-                     }
-                    else
-                    {
-                        print("remove")
-                        self.paragraphRowData[indexPath.row].fav = false
-                        if let index = self.favorites.firstIndex(of: row_id) {
-                            self.favorites.remove(at: index)
-                        }
-                    }
-                    print(self.favorites)
-                    self.userDefaults.set(self.favorites, forKey: "Favorites")
-                    self.tableView.beginUpdates()
-                    self.tableView.reloadData()
-                    self.tableView.endUpdates()
-               })
-                let action2 = PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy", didSelect: {action in
-                    print("PARAGRAFY")
-                })
-                let manager = PopMenuManager.default
-                manager.addAction(action1)
-                manager.addAction(action2)
-                manager.present(on: self)
-            }
-        }
     }
 }
