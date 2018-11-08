@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/phracek/work/programming/Apple/Katechismus_katolicke_cirkve_iOS/KatechismusKatolickeCirkve/KatechismusKatolickeCirkve/Controllers/ParagraphRefsTableViewController.swift">
-   </FileRef>
-   <FileRef
       location = "group:KatechismusKatolickeCirkve.xcodeproj">
    </FileRef>
    <FileRef

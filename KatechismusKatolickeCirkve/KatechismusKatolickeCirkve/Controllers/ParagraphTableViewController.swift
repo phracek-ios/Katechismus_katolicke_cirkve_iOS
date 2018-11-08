@@ -85,7 +85,6 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         self.tableView.beginUpdates()
         self.tableView.reloadData()
         self.tableView.endUpdates()
-        print("viewDidAppear")
     }
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -123,24 +122,64 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         else {
             cell.starImage.image = star_on_img
         }
-        print("cellForRowAt")
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
-        print(indexPath.row)
-        let action1 = PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených", didSelect: {action in
-            let row_id = self.paragraphRowData[indexPath.row].id
-            print(row_id)
-            if self.get_favorites(id: row_id) == false {
+        let row_id = self.paragraphRowData[indexPath.row].id
+        let valid_favorites = self.get_favorites(id: row_id)
+        print(row_id)
+        print(valid_favorites)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Přidat do / Odebrat z oblíbených", style: .default, handler: { (action) in
+            print(action)
+            if valid_favorites == false {
                 print("Add to favorites")
+                print(row_id)
                 self.paragraphRowData[indexPath.row].fav = true
                 self.favorites.append(row_id)
             }
             else
             {
-                print("remove")
+                print("Remove from favorites")
+                print(row_id)
+                self.paragraphRowData[indexPath.row].fav = false
+                if let index = self.favorites.firstIndex(of: row_id) {
+                    self.favorites.remove(at: index)
+                }
+            }
+            print(self.favorites)
+            self.userDefaults.set(self.favorites, forKey: "Favorites")
+            self.tableView.beginUpdates()
+            self.tableView.reloadData()
+            self.tableView.endUpdates()
+            }))
+        alert.addAction(UIAlertAction(title: "Zobrazit odkazované paragrafy", style: .default, handler: { (action) in
+            let refs = self.paragraphRowData[indexPath.row].paragraphs
+            if refs != "" {
+                self.performSegue(withIdentifier: "ShowParagraphRefs", sender: indexPath)
+            }
+            else {
+                let noRefsAlert = UIAlertController(title: "Neobsahuje žádné odkazy", message: nil, preferredStyle: .alert)
+                noRefsAlert.addAction(UIAlertAction(title: "Zavřít", style: .default, handler: nil))
+                self.present(noRefsAlert, animated: true, completion: nil)
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Zavřít", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+ 
+        /*let action1 = PopMenuDefaultAction(title: "Přidat do / Odebrat z oblíbených", didSelect: {action in
+            print(action)
+            if valid_favorites == false {
+                print("Add to favorites")
+                print(row_id)
+                self.paragraphRowData[indexPath.row].fav = true
+                self.favorites.append(row_id)
+            }
+            else
+            {
+                print("Remove from favorites")
+                print(row_id)
                 self.paragraphRowData[indexPath.row].fav = false
                 if let index = self.favorites.firstIndex(of: row_id) {
                     self.favorites.remove(at: index)
@@ -153,12 +192,14 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
             self.tableView.endUpdates()
         })
         let action2 = PopMenuDefaultAction(title: "Zobrazit odkazované paragrafy", didSelect: {action in
-            print("PARAGRAFY")
+            self.performSegue(withIdentifier: "ShowParagraphRefs", sender: indexPath)
         })
         let manager = PopMenuManager.default
         manager.addAction(action1)
         manager.addAction(action2)
         manager.present(on: self)
+        //manager.popMenuShouldDismissOnSelection = true
+*/
     }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
