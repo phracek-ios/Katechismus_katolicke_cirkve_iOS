@@ -29,6 +29,7 @@ class CatechismTableViewController: BaseTableViewController {
     //MARK: Properties
     fileprivate var rowData = [RowData]()
     fileprivate var darkMode: Bool = false
+    var favorites = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class CatechismTableViewController: BaseTableViewController {
         loadCatechism()
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
@@ -120,10 +122,18 @@ class CatechismTableViewController: BaseTableViewController {
                 navigationController?.pushViewController(aboutProjectViewController, animated: true)
             }
         case .favorites:
-            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
-            let favoritesViewController = mainViewController.instantiateViewController(withIdentifier: "ShowParagraphs") as? ParagraphTableViewController
-            favoritesViewController?.kindOfSource = 4
-            navigationController?.pushViewController(favoritesViewController!, animated: true)
+            if self.favorites.count != 0 {
+                let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+                let favoritesViewController = mainViewController.instantiateViewController(withIdentifier: "ShowParagraphs") as? ParagraphTableViewController
+                favoritesViewController?.kindOfSource = 4
+                navigationController?.pushViewController(favoritesViewController!, animated: true)
+            }
+            else {
+                let alert = UIAlertController(title: "Dosud nebyly označeny žádné paragrafy jako oblíbené.", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Zavřít", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+
+            }
         case .settings:
             if let settingsTableViewController = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(settingsTableViewController, animated: true)

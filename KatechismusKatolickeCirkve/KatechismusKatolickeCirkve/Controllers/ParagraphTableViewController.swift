@@ -127,31 +127,25 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row_id = self.paragraphRowData[indexPath.row].id
+        print(indexPath.row)
         let valid_favorites = self.get_favorites(id: row_id)
-        print(row_id)
-        print(valid_favorites)
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Přidat do / Odebrat z oblíbených", style: .default, handler: { (action) in
-            print(action)
             if valid_favorites == false {
-                print("Add to favorites")
-                print(row_id)
                 self.paragraphRowData[indexPath.row].fav = true
                 self.favorites.append(row_id)
             }
             else
             {
-                print("Remove from favorites")
-                print(row_id)
                 self.paragraphRowData[indexPath.row].fav = false
                 if let index = self.favorites.firstIndex(of: row_id) {
                     self.favorites.remove(at: index)
                 }
             }
-            print(self.favorites)
             self.userDefaults.set(self.favorites, forKey: "Favorites")
             self.tableView.beginUpdates()
             self.tableView.reloadData()
+            self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
             self.tableView.endUpdates()
             }))
         alert.addAction(UIAlertAction(title: "Zobrazit odkazované paragrafy", style: .default, handler: { (action) in
