@@ -37,7 +37,6 @@ class CatechismTableViewController: BaseTableViewController {
         loadCatechism()
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
@@ -65,6 +64,11 @@ class CatechismTableViewController: BaseTableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let userDefaults = UserDefaults.standard
+        self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
