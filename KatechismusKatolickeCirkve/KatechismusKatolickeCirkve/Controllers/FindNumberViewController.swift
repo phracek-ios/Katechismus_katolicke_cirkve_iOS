@@ -24,6 +24,7 @@ class FindNumberViewController: BaseViewController, UITextFieldDelegate {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         numberTextField.delegate = self
+        numberTextField.text = ""
         numberTextField.returnKeyType = .done
         numberTextField.keyboardType = .numberPad
         labelForNoneResults.isEnabled = false
