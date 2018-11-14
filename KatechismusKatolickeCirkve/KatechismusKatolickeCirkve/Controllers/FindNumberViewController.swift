@@ -25,7 +25,7 @@ class FindNumberViewController: BaseViewController, UITextFieldDelegate {
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         numberTextField.delegate = self
         numberTextField.returnKeyType = .done
-        numberTextField.keyboardType = .decimalPad
+        numberTextField.keyboardType = .numberPad
         labelForNoneResults.isEnabled = false
         labelForNoneResults.text = ""
         let userDefaults = UserDefaults.standard
@@ -68,8 +68,8 @@ class FindNumberViewController: BaseViewController, UITextFieldDelegate {
         }
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let paragraphStructure = paragraphStructure else { return false }
+    @IBAction func OKButton(_ sender: UIButton) {
+        guard let paragraphStructure = paragraphStructure else { return }
         self.findString = numberTextField.text!
         for par in paragraphStructure.paragraph {
             if String(par.id).range(of: self.findString) != nil {
@@ -79,15 +79,13 @@ class FindNumberViewController: BaseViewController, UITextFieldDelegate {
         if findData.count != 0 {
             performSegue(withIdentifier: "ShowParagraph", sender: self)
             numberTextField.resignFirstResponder()
-        }
+            labelForNoneResults.text = ""
+            labelForNoneResults.isEnabled = false        }
         else {
             labelForNoneResults.isEnabled = true
             labelForNoneResults.text = "Hledaný paragraph nebyl nalezen"
         }
-        return true
     }
-
-    
     func darkModeEnable() {
         self.view.backgroundColor = KKCBackgroundNightMode
         self.labelForNoneResults.backgroundColor = KKCBackgroundNightMode
