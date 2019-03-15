@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CatechismDataService.shared.loadData()
         ChaptersDataService.shared.loadData()
         ParagraphDataService.shared.loadData()
+        IndexDataService.shared.loadData()
         UINavigationBar.appearance().barTintColor = KKCMainColor
         UINavigationBar.appearance().tintColor = KKCTextNightMode
         UINavigationBar.appearance().isTranslucent = false
