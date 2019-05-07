@@ -21,7 +21,7 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
     }
 
     var heightOfWebView: CGFloat = 0
-    
+    var indexes: String = ""
     fileprivate var paragraphRowData = [ParagraphRowData]()
     fileprivate var paragraphStructure: ParagraphStructure?
 
@@ -37,12 +37,14 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         didSet {
             UIView.animate(withDuration: 0.25) { () -> Void in
                 self.setNeedsStatusBarAppearanceUpdate()
-}        }
+            }
+        }
     }
     let star_on_img = UIImage(named: "star_on")
     let star_off_img = UIImage(named: "star_off")
     var userDefaults = UserDefaults.standard
-
+    var refsInt = [Int]()
+    
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
     }
@@ -127,7 +129,6 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row_id = self.paragraphRowData[indexPath.row].id
-        print(indexPath.row)
         let valid_favorites = self.get_favorites(id: row_id)
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Přidat do / Odebrat z oblíbených", style: .default, handler: { (action) in
@@ -277,6 +278,19 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
                     paragraphs: par.refs,
                     id: par.id,
                     fav: get_favorites(id: par.id)))
+                }
+            }
+        }
+        else if kindOfSource == 5 {
+            let refArr = indexes.components(separatedBy: ",")
+            self.refsInt = refArr.map { Int($0)! }
+            for par in paragraphStructure.paragraph {
+                if refsInt.contains(par.id) {
+                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID),
+                                                             recap: par.recap,
+                                                             paragraphs: par.refs,
+                                                             id: par.id,
+                                                             fav: get_favorites(id: par.id)))
                 }
             }
         }

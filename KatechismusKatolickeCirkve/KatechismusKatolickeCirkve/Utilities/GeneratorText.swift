@@ -69,7 +69,7 @@ func get_html_text(par: Paragraph, kindOfSource: Int, parentID: Int) -> NSAttrib
             references = "§" + String(par.id) + "\n"
         }
     }
-    else if kindOfSource == 1 || kindOfSource == 2 || kindOfSource == 3 || kindOfSource == 4 {
+    else if kindOfSource == 1 || kindOfSource == 2 || kindOfSource == 3 || kindOfSource == 4 || kindOfSource == 5 {
         if par.id < 10000 {
             references = "§" + String(par.id) + "\n"
         }

@@ -30,9 +30,7 @@ class ParagraphRefsTableViewController: BaseTableViewController {
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         let refArr = refs.components(separatedBy: ",")
-        print(refArr)
         self.refsInt = refArr.map { Int($0)! }
-        print(refsInt)
         loadRefs()
         self.tableView.tableFooterView = UIView()
         if self.darkMode {

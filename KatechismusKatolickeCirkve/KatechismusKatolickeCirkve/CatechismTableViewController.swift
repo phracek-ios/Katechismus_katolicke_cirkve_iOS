@@ -15,7 +15,7 @@ class CatechismTableViewController: BaseTableViewController {
         case search_for_numbers
         case find_word
         case find_number
-        //case index
+        case index
         case favorites
         case settings
         case project
@@ -119,8 +119,10 @@ class CatechismTableViewController: BaseTableViewController {
             let mainViewController = UIStoryboard(name: "Main", bundle: nil)
             let findWordViewController = mainViewController.instantiateViewController(withIdentifier: "FindNumber")
             navigationController?.pushViewController(findWordViewController, animated: true)
-        //case .index:
-        //    print("Not Implemented yet")
+        case .index:
+            let mainViewController = UIStoryboard(name: "Main", bundle: nil)
+            let indexViewController = mainViewController.instantiateViewController(withIdentifier: "Index")
+            navigationController?.pushViewController(indexViewController, animated: true)
         case .project:
             if let aboutProjectViewController = UIStoryboard(name: "AboutProject", bundle: nil).instantiateInitialViewController() {
                 navigationController?.pushViewController(aboutProjectViewController, animated: true)
@@ -162,9 +164,9 @@ class CatechismTableViewController: BaseTableViewController {
         guard let find_number = CatechismMenu(name: "Vyhledat paragraf", photo: nil, order: 3) else {
             fatalError("Unable to instanciate Hledat podle čísel")
         }
-        //guard let index = CatechismMenu(name: " Rejstřík", photo: nil, order: 3) else {
-        //    fatalError("Unable to instanciate Rejstřík")
-        //}
+        guard let index = CatechismMenu(name: "Rejstřík", photo: nil, order: 3) else {
+            fatalError("Unable to instanciate Rejstřík")
+        }
         guard let favorites = CatechismMenu(name: "Oblíbené", photo: nil, order: 4) else {
             fatalError("Unable to instanciate Oblíbené")
         }
@@ -182,7 +184,7 @@ class CatechismTableViewController: BaseTableViewController {
         rowData.append(RowData(type: .search_for_numbers, menu: search_for_numbers))
         rowData.append(RowData(type: .find_word, menu: find_word))
         rowData.append(RowData(type: .find_number, menu: find_number))
-        //rowData.append(RowData(type: .index, menu: index))
+        rowData.append(RowData(type: .index, menu: index))
         rowData.append(RowData(type: .favorites, menu: favorites))
         rowData.append(RowData(type: .project, menu: about_project))
 

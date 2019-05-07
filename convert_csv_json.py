@@ -1,23 +1,38 @@
-#!/usr/bin/python
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
 
-import sys, getopt
-import csv
 import json
-import io
 
 
 class Convert2Json(object):
     recap = False
     chapter = 0
-
     #Get Command Line Arguments
     def run(self):
-        self.read_csv("part.csv", "part.json", True)
-        self.read_csv("database.csv", "database.json", False)
+        self.read_csv("part.csv", "part.json", 0)
+        self.read_csv("database.csv", "database.json", 1)
+        self.read_csv("index.csv", "index.json", 2)
 
     def parse_part(self, row):
         fields = row.split("::")
         return {'id': int(fields[0]), 'parent': int(fields[1]), 'name': fields[2]}
+
+    def parse_index(self, row):
+        fields = row.split("::")
+        key_dict = {'Á': 'A', 'Ú': 'U',
+                    'Ď': 'D', 'ú': 'u', 'ď': 'd'}
+        name = fields[2].strip()
+        if name.startswith("<b>"):
+            if name.startswith("<b>ch"):
+                key = "ch"
+            else:
+                key = name[3]
+        else:
+            key = name[0]
+        if key in key_dict.keys():
+            key = key_dict[key]
+        refs = self.parse_refs(fields[1])
+        return {'see': fields[0], 'refs': refs, 'key': key.upper(), 'name': fields[2].strip()}
 
     def parse_refs(self, refs):
         if '-' in refs:
@@ -54,25 +69,26 @@ class Convert2Json(object):
     #Read CSV File
     def read_csv(self, input_file, output_file, fnc):
         csv_dict = {}
-        if fnc:
+        if fnc == 0:
             csv_dict['chapters'] = []
-        else:
+        elif fnc == 1:
             csv_dict['paragraph'] = []
+        else:
+            csv_dict['index'] = []
         with open(input_file, 'r') as csvfile:
             for row in csvfile.readlines():
-                if fnc:
+                if fnc == 0:
                     csv_dict['chapters'].append(self.parse_part(row))
-                else:
+                elif fnc == 1:
                     csv_dict['paragraph'].append(self.parse_database(row))
+                else:
+                    csv_dict['index'].append(self.parse_index(row))
             self.write_json(csv_dict, output_file)
-
 
     #Convert csv data into json and write it
     def write_json(self, data, json_file):
         with open(json_file, "w") as f:
-            f.write(json.dumps(data, sort_keys=False,
-                               indent=4, encoding="utf-8",
-                               ensure_ascii=False))
+            json.dump(data, f, indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":

@@ -19,6 +19,9 @@
 		0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */; };
 		0140F1DF211B91B40021058A /* ChaptersStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1DE211B91B40021058A /* ChaptersStructure.swift */; };
 		0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140F1E0211B91F50021058A /* ChaptersDataService.swift */; };
+		014753C6222EA59200967B64 /* Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014753C5222EA59200967B64 /* Index.swift */; };
+		014753C8222EA5F900967B64 /* IndexStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014753C7222EA5F900967B64 /* IndexStructure.swift */; };
+		014753CA222EA63000967B64 /* IndexDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014753C9222EA63000967B64 /* IndexDataService.swift */; };
 		014BEE79212432C900B9E9D2 /* database.json in Resources */ = {isa = PBXBuildFile; fileRef = 014BEE78212432C900B9E9D2 /* database.json */; };
 		014BEE7B212433B200B9E9D2 /* part.json in Resources */ = {isa = PBXBuildFile; fileRef = 014BEE7A212433B200B9E9D2 /* part.json */; };
 		0152223821518A5E00CA5933 /* HtmlToStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0152223721518A5E00CA5933 /* HtmlToStringExtension.swift */; };
@@ -45,12 +48,14 @@
 		019C1A3321235863005EFB7F /* ParagraphStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3221235863005EFB7F /* ParagraphStructure.swift */; };
 		019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019C1A3421235890005EFB7F /* ParagraphDataService.swift */; };
 		019E7B00216784AB00FE51EC /* CatechismColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019E7AFF216784AB00FE51EC /* CatechismColors.swift */; };
+		01A1BEDD2232B45D00D36165 /* IndexTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A1BEDC2232B45D00D36165 /* IndexTableViewCell.swift */; };
 		01A8CF0A21777A660023FC74 /* UIFontCatechism.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A8CF0921777A660023FC74 /* UIFontCatechism.swift */; };
 		01B59D8D2187A4470052AD96 /* FindNumberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B59D8C2187A4470052AD96 /* FindNumberViewController.swift */; };
 		01B7520321874189007081D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7520221874189007081D1 /* Constants.swift */; };
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
 		01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E864F22149BAC300566660 /* FindWordViewController.swift */; };
+		01EE3458223FD15000982CE9 /* index.json in Resources */ = {isa = PBXBuildFile; fileRef = 01EE3457223FD15000982CE9 /* index.json */; };
 		01F73D4321920CD10023FF18 /* ParagraphRefsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */; };
 		01F73D4521920D040023FF18 /* ParagraphRefsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */; };
 		01F73D4721920EB70023FF18 /* GeneratorText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4621920EB70023FF18 /* GeneratorText.swift */; };
@@ -86,6 +91,9 @@
 		0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewController.swift; sourceTree = "<group>"; };
 		0140F1DE211B91B40021058A /* ChaptersStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersStructure.swift; sourceTree = "<group>"; };
 		0140F1E0211B91F50021058A /* ChaptersDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersDataService.swift; sourceTree = "<group>"; };
+		014753C5222EA59200967B64 /* Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Index.swift; sourceTree = "<group>"; };
+		014753C7222EA5F900967B64 /* IndexStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexStructure.swift; sourceTree = "<group>"; };
+		014753C9222EA63000967B64 /* IndexDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexDataService.swift; sourceTree = "<group>"; };
 		014BEE78212432C900B9E9D2 /* database.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = database.json; sourceTree = "<group>"; };
 		014BEE7A212433B200B9E9D2 /* part.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = part.json; sourceTree = "<group>"; };
 		0152223721518A5E00CA5933 /* HtmlToStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlToStringExtension.swift; sourceTree = "<group>"; };
@@ -112,12 +120,14 @@
 		019C1A3221235863005EFB7F /* ParagraphStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphStructure.swift; sourceTree = "<group>"; };
 		019C1A3421235890005EFB7F /* ParagraphDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphDataService.swift; sourceTree = "<group>"; };
 		019E7AFF216784AB00FE51EC /* CatechismColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismColors.swift; sourceTree = "<group>"; };
+		01A1BEDC2232B45D00D36165 /* IndexTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewCell.swift; sourceTree = "<group>"; };
 		01A8CF0921777A660023FC74 /* UIFontCatechism.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontCatechism.swift; sourceTree = "<group>"; };
 		01B59D8C2187A4470052AD96 /* FindNumberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindNumberViewController.swift; sourceTree = "<group>"; };
 		01B7520221874189007081D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
 		01E864F22149BAC300566660 /* FindWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWordViewController.swift; sourceTree = "<group>"; };
+		01EE3457223FD15000982CE9 /* index.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphRefsTableViewCell.swift; sourceTree = "<group>"; };
 		01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphRefsTableViewController.swift; sourceTree = "<group>"; };
 		01F73D4621920EB70023FF18 /* GeneratorText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneratorText.swift; sourceTree = "<group>"; };
@@ -221,6 +231,7 @@
 				01E864F22149BAC300566660 /* FindWordViewController.swift */,
 				01B59D8C2187A4470052AD96 /* FindNumberViewController.swift */,
 				013BD26A2119BC8600554086 /* IndexTableViewController.swift */,
+				01A1BEDC2232B45D00D36165 /* IndexTableViewCell.swift */,
 				0140F1DC211B8F950021058A /* ChaptersTableViewController.swift */,
 				019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */,
 				01DF46DC211C7052006442CD /* NumbersTableViewController.swift */,
@@ -245,6 +256,7 @@
 				017F2105211A3AD0006B448C /* CatechismDataService.swift */,
 				0140F1E0211B91F50021058A /* ChaptersDataService.swift */,
 				019C1A3421235890005EFB7F /* ParagraphDataService.swift */,
+				014753C9222EA63000967B64 /* IndexDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -254,7 +266,9 @@
 			children = (
 				017F210A211A3B53006B448C /* CatechismStructure.swift */,
 				0140F1DE211B91B40021058A /* ChaptersStructure.swift */,
+				014753C7222EA5F900967B64 /* IndexStructure.swift */,
 				019048FC211C2A0E00C17A95 /* Chapter.swift */,
+				014753C5222EA59200967B64 /* Index.swift */,
 				019C1A30212357F4005EFB7F /* Paragraph.swift */,
 				019C1A3221235863005EFB7F /* ParagraphStructure.swift */,
 			);
@@ -264,6 +278,7 @@
 		017F210C211A3BC6006B448C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				01EE3457223FD15000982CE9 /* index.json */,
 				014BEE7A212433B200B9E9D2 /* part.json */,
 				014BEE78212432C900B9E9D2 /* database.json */,
 				017F210D211A3C32006B448C /* catechism.json */,
@@ -381,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01EE3458223FD15000982CE9 /* index.json in Resources */,
 				014BEE7B212433B200B9E9D2 /* part.json in Resources */,
 				017F2101211A3A52006B448C /* AboutProject.storyboard in Resources */,
 				013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */,
@@ -484,11 +500,13 @@
 				017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */,
 				0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */,
 				019048FD211C2A0E00C17A95 /* Chapter.swift in Sources */,
+				014753C8222EA5F900967B64 /* IndexStructure.swift in Sources */,
 				01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */,
 				017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */,
 				019C1A3521235890005EFB7F /* ParagraphDataService.swift in Sources */,
 				017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */,
 				013273FF217F0E86008411EC /* NotificationsName.swift in Sources */,
+				014753C6222EA59200967B64 /* Index.swift in Sources */,
 				0152223821518A5E00CA5933 /* HtmlToStringExtension.swift in Sources */,
 				013BD26B2119BC8600554086 /* IndexTableViewController.swift in Sources */,
 				017F20FF211A3A43006B448C /* SettingsTableViewController.swift in Sources */,
@@ -496,9 +514,11 @@
 				01A8CF0A21777A660023FC74 /* UIFontCatechism.swift in Sources */,
 				01E864F32149BAC300566660 /* FindWordViewController.swift in Sources */,
 				013BD28B2119BD3A00554086 /* CatechismTableViewController.swift in Sources */,
+				01A1BEDD2232B45D00D36165 /* IndexTableViewCell.swift in Sources */,
 				0140F1E1211B91F50021058A /* ChaptersDataService.swift in Sources */,
 				01F73D4521920D040023FF18 /* ParagraphRefsTableViewController.swift in Sources */,
 				0161FBC2213FBF7200A4959A /* NumbersDetailTableViewController.swift in Sources */,
+				014753CA222EA63000967B64 /* IndexDataService.swift in Sources */,
 				01F73D4321920CD10023FF18 /* ParagraphRefsTableViewCell.swift in Sources */,
 				01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */,
 				013BD2892119BCD200554086 /* CatechismTableViewCell.swift in Sources */,
