@@ -16,10 +16,12 @@ class SettingsTableViewController: BaseTableViewController {
     @IBOutlet weak var dimOffSwitch: UISwitch!
     @IBOutlet weak var nightSwitchCell: UITableViewCell!
     @IBOutlet weak var dimOffSwitchCell: UITableViewCell!
-
+    @IBOutlet weak var fontCell: UITableViewCell!
+    @IBOutlet weak var fontName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Nastavení"
+        title = "Nastavení   "
 
         let userDefaults = UserDefaults.standard
         nightSwitch.isOn = userDefaults.bool(forKey: "NightSwitch")
@@ -30,6 +32,7 @@ class SettingsTableViewController: BaseTableViewController {
             disabledDark()
         }
         dimOffSwitch.isOn = userDefaults.bool(forKey: "DimmScreen")
+        set_font_text()
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
     }
     deinit {
@@ -37,21 +40,31 @@ class SettingsTableViewController: BaseTableViewController {
         NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        set_font_text()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        switch(segue.identifier ?? "") {
+            
+        case "FontSettings":
+            guard let fontController = segue.destination as? FontViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            fontController.navigationItem.title = "Nastavení písma pro paragrafy"
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+        
     }
-    */
+    
     @IBAction func funcNightMode(_ sender: Any) {
         let userDefaults = UserDefaults.standard
         if nightSwitch.isOn == true {
@@ -77,6 +90,19 @@ class SettingsTableViewController: BaseTableViewController {
         }
     }
     
+    private func set_font_text() {
+        let userDefaults = UserDefaults.standard
+        var fontName = userDefaults.string(forKey: "FontName")
+        var fontSize = userDefaults.string(forKey: "FontSize")
+        
+        if fontName == nil {
+            fontName = "Helvetica"
+        }
+        if fontSize == nil {
+            fontSize = "14"
+        }
+        self.fontName.text = "\(String(fontName!)), \(String(fontSize!))px"
+    }
     func enabledDark() {
         self.view.backgroundColor = KKCBackgroundNightMode
         self.nightSwitch.backgroundColor = KKCBackgroundNightMode
@@ -85,6 +111,9 @@ class SettingsTableViewController: BaseTableViewController {
         self.dimOffSwitchLabel.textColor = KKCTextNightMode
         self.dimOffSwitch.backgroundColor = KKCBackgroundNightMode
         self.dimOffSwitchCell.backgroundColor = KKCBackgroundNightMode
+        self.fontCell.backgroundColor = KKCBackgroundNightMode
+        self.fontName.backgroundColor = KKCBackgroundNightMode
+        self.fontName.textColor = KKCTextNightMode
         //self.FullScreenLabel.textColor = UIColor.white
     }
     
@@ -96,6 +125,9 @@ class SettingsTableViewController: BaseTableViewController {
         self.dimOffSwitchLabel.textColor = KKCTextLightMode
         self.dimOffSwitch.backgroundColor = KKCBackgroundLightMode
         self.dimOffSwitchCell.backgroundColor = KKCBackgroundLightMode
+        self.fontCell.backgroundColor = KKCBackgroundLightMode
+        self.fontName.backgroundColor = KKCBackgroundLightMode
+        self.fontName.textColor = KKCTextLightMode
         //self.FullScreenLabel.textColor = UIColor.black
     }
 }

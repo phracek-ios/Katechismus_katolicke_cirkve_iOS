@@ -38,6 +38,7 @@
 		017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F2105211A3AD0006B448C /* CatechismDataService.swift */; };
 		017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F210A211A3B53006B448C /* CatechismStructure.swift */; };
 		017F210E211A3C32006B448C /* catechism.json in Resources */ = {isa = PBXBuildFile; fileRef = 017F210D211A3C32006B448C /* catechism.json */; };
+		017FF90D22898A15003E6562 /* FontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017FF90C22898A15003E6562 /* FontViewController.swift */; };
 		018E43A5211D8C1F00E0237B /* SectionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */; };
 		018E43A7211D8C3700E0237B /* SectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */; };
 		019048FB211C25B500C17A95 /* ChaptersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */; };
@@ -110,6 +111,7 @@
 		017F2105211A3AD0006B448C /* CatechismDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismDataService.swift; sourceTree = "<group>"; };
 		017F210A211A3B53006B448C /* CatechismStructure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatechismStructure.swift; sourceTree = "<group>"; };
 		017F210D211A3C32006B448C /* catechism.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = catechism.json; sourceTree = "<group>"; };
+		017FF90C22898A15003E6562 /* FontViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontViewController.swift; sourceTree = "<group>"; };
 		018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewCell.swift; sourceTree = "<group>"; };
 		018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewController.swift; sourceTree = "<group>"; };
 		019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChaptersTableViewCell.swift; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
 				018E43A6211D8C3700E0237B /* SectionsTableViewController.swift */,
 				017F20FC211A3A28006B448C /* Settings.storyboard */,
+				017FF90C22898A15003E6562 /* FontViewController.swift */,
 				017F20FE211A3A43006B448C /* SettingsTableViewController.swift */,
 			);
 			path = Controllers;
@@ -466,7 +469,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BonMot/BonMot.framework",
 				"${BUILT_PRODUCTS_DIR}/NewPopMenu/PopMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/TTTAttributedLabel/TTTAttributedLabel.framework",
@@ -481,7 +484,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KatechismusKatolickeCirkve/Pods-KatechismusKatolickeCirkve-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -500,6 +503,7 @@
 				017F2106211A3AD0006B448C /* CatechismDataService.swift in Sources */,
 				0140F1DD211B8F950021058A /* ChaptersTableViewController.swift in Sources */,
 				019048FD211C2A0E00C17A95 /* Chapter.swift in Sources */,
+				017FF90D22898A15003E6562 /* FontViewController.swift in Sources */,
 				014753C8222EA5F900967B64 /* IndexStructure.swift in Sources */,
 				01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */,
 				017F210B211A3B53006B448C /* CatechismStructure.swift in Sources */,
@@ -696,7 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32253C46P7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -718,7 +722,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 32253C46P7;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
