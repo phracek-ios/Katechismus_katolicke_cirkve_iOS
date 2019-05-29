@@ -64,7 +64,7 @@ class FontViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         let fontStr = pickerData[1][pickerView.selectedRow(inComponent: 1)]
         guard let n = NumberFormatter().number(from: fontStr) else { return }
         let fontSize = CGFloat(truncating: n)
-        fontTextLabel.attributedText = generateByCustomFont(text: example_text, font_name: fontName, size: fontSize)
+        fontTextLabel.attributedText = generateContent(text: example_text, font_name: fontName, size: fontSize)
         userDefaults.set(fontStr, forKey: "FontSize")
         userDefaults.set(fontName, forKey: "FontName")
     }

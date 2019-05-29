@@ -22,6 +22,8 @@ class ParagraphRefsTableViewController: BaseTableViewController {
     fileprivate var paragraphStructure: ParagraphStructure?
     var userDefaults = UserDefaults.standard
     var refsInt = [Int]()
+    var font_name: String = "Helvetica"
+    var font_size: CGFloat = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,17 @@ class ParagraphRefsTableViewController: BaseTableViewController {
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         let refArr = refs.components(separatedBy: ",")
         self.refsInt = refArr.map { Int($0)! }
+        self.font_name = userDefaults.string(forKey: "FontName")!
+        let fontSize = userDefaults.string(forKey: "FontSize")!
+        guard let n = NumberFormatter().number(from: fontSize) else { return }
+        self.font_size = CGFloat(truncating: n)
+        
+        if self.font_name == "" {
+            self.font_name = "Helvetica"
+        }
+        if self.font_size == 0 {
+            self.font_size = 16
+        }
         loadRefs()
         self.tableView.tableFooterView = UIView()
         if self.darkMode {
@@ -89,7 +102,8 @@ class ParagraphRefsTableViewController: BaseTableViewController {
         
         for par in paragraphStructure.paragraph {
             if refsInt.contains(par.id) {
-                refsRowData.append(RefsRowData(html: get_html_text(par: par, kindOfSource: 0, parentID: 0),
+                let html = get_html_text(par: par, kindOfSource: 0, parentID: 0)
+                refsRowData.append(RefsRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
                                                id: par.id, recap: par.recap))
             }
         }

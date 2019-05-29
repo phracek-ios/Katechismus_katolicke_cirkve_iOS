@@ -18,6 +18,7 @@ class SettingsTableViewController: BaseTableViewController {
     @IBOutlet weak var dimOffSwitchCell: UITableViewCell!
     @IBOutlet weak var fontCell: UITableViewCell!
     @IBOutlet weak var fontName: UILabel!
+    @IBOutlet weak var fontCaptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,16 +93,16 @@ class SettingsTableViewController: BaseTableViewController {
     
     private func set_font_text() {
         let userDefaults = UserDefaults.standard
-        var fontName = userDefaults.string(forKey: "FontName")
-        var fontSize = userDefaults.string(forKey: "FontSize")
+        var font_name = userDefaults.string(forKey: "FontName")
+        var font_size = userDefaults.string(forKey: "FontSize")
         
-        if fontName == nil {
-            fontName = "Helvetica"
+        if font_name == nil {
+            font_name = "Helvetica"
         }
-        if fontSize == nil {
-            fontSize = "14"
+        if font_size == nil {
+            font_size = "16"
         }
-        self.fontName.text = "\(String(fontName!)), \(String(fontSize!))px"
+        self.fontName.text = "\(String(font_name!)), \(String(font_size!))px"
     }
     func enabledDark() {
         self.view.backgroundColor = KKCBackgroundNightMode
@@ -112,6 +113,8 @@ class SettingsTableViewController: BaseTableViewController {
         self.dimOffSwitch.backgroundColor = KKCBackgroundNightMode
         self.dimOffSwitchCell.backgroundColor = KKCBackgroundNightMode
         self.fontCell.backgroundColor = KKCBackgroundNightMode
+        self.fontCaptionLabel.textColor = KKCTextNightMode
+        self.fontCaptionLabel.backgroundColor = KKCBackgroundNightMode
         self.fontName.backgroundColor = KKCBackgroundNightMode
         self.fontName.textColor = KKCTextNightMode
         //self.FullScreenLabel.textColor = UIColor.white
@@ -126,6 +129,8 @@ class SettingsTableViewController: BaseTableViewController {
         self.dimOffSwitch.backgroundColor = KKCBackgroundLightMode
         self.dimOffSwitchCell.backgroundColor = KKCBackgroundLightMode
         self.fontCell.backgroundColor = KKCBackgroundLightMode
+        self.fontCaptionLabel.backgroundColor = KKCBackgroundLightMode
+        self.fontCaptionLabel.textColor = KKCTextLightMode
         self.fontName.backgroundColor = KKCBackgroundLightMode
         self.fontName.textColor = KKCTextLightMode
         //self.FullScreenLabel.textColor = UIColor.black

@@ -129,6 +129,7 @@
                         <outlet property="dimOffSwitch" destination="Hya-rt-tzp" id="mS8-kD-HeW"/>
                         <outlet property="dimOffSwitchCell" destination="x76-K0-6mn" id="45f-ca-jMy"/>
                         <outlet property="dimOffSwitchLabel" destination="NCW-sS-cNW" id="yrq-Ug-VcW"/>
+                        <outlet property="fontCaptionLabel" destination="aTO-ER-v9L" id="gUn-H9-ehk"/>
                         <outlet property="fontCell" destination="qD3-ds-bVU" id="Ahv-x3-vFd"/>
                         <outlet property="fontName" destination="C3c-Ae-Kup" id="bED-uF-cg4"/>
                         <outlet property="nightSwitch" destination="Azi-3t-V2p" id="8Ce-Wv-Ma1"/>

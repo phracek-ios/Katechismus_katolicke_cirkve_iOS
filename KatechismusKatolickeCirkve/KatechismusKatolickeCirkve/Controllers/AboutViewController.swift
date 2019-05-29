@@ -8,61 +8,52 @@
 
 import UIKit
 import Foundation
-import WebKit
+import BonMot
 
-class AboutViewController: BaseViewController, UITextViewDelegate {
+class AboutViewController: BaseViewController {
 
     //MARK: Properties
-    fileprivate var catechismStructure: CatechismStructure?
-    @IBOutlet weak var aboutMainWebView: WKWebView!
+
+    @IBOutlet weak var labelAppl1: UILabel!
+    @IBOutlet weak var labelAppl2: UILabel!
+    @IBOutlet weak var contentView: UIView!
     
     var darkMode: Bool = false
     var text_dark: String = ""
     var text_light: String = ""
+    var font_name: String = "Helvetica"
+    var font_size: CGFloat = 16
+    
+    let text_appl1 = "Katechismus katolické církve.<br>Offline mobilní verze pro iOS.<br><br>Autor aplikace: Petr Hráček<br>Autorská práva byla poskytnuta Karmelitánským nakladatelstvím.<br><br>Tato aplikace vznikla se souhlasem a za podpory České biskupské konference a byla finančně podpořena společností"
+    let text_appl2 = "Na vývoji se stále pracuje.<br><br>Přepis textů spolu s autorem zajišťovali Pavel Souček a Josef Řídký.<br><br>Případné chyby, připomínky, nápady či postřehy prosím začlete na adresu: phracek@gmail.com"
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "O aplikaci"
-        catechismStructure = CatechismDataService.shared.catechismStructure
-        // Do any additional setup after loading the view.
-        guard let catechismStructure = catechismStructure else { return }
-        
-        let htmlStringPart1 = catechismStructure.about_appl_1 + "\n"
-        var htmlImage: String = ""
-        if let image = UIImage(named: "delpsys"),
-            let data = UIImagePNGRepresentation(image) {
-                let base64 = data.base64EncodedString(options: [])
-                let url = "data:application/png;base64," + base64
-            htmlImage = "<img style=\"width: 100%\" src='\(url)'>"
-        }
-        
-        let htmlStringPart2 = catechismStructure.about_appl_2 +
-        "<a href=\"phracek@gmail.com\">phracek@gmail.com</a>"// +
-        //    catechismStructure.about_appl_2a + "<a href=\"https://github.com/phracek/Katechismus_katolicke_cirkve_iOS/issues\">zde.</a>"
-        let text = htmlStringPart1 + "<br><br>" + htmlImage + htmlStringPart2
-        self.text_dark = "<div style=\"color:#ffffff\"><font size=20>" + text + "</font></div></body></html>"
-        self.text_light = "<div style=\"color:#000000\"><font size=20>" + text + "</font></div></body></html>"
-        let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        self.aboutMainWebView.isOpaque = false
-        let html = "<html><body style='margin: 40px'>"
-        if self.darkMode {
-            self.view.backgroundColor = KKCBackgroundNightMode
-            aboutMainWebView.backgroundColor = KKCBackgroundNightMode
-            aboutMainWebView.tintColor = KKCTextNightMode
-            
-            aboutMainWebView.loadHTMLString(html + self.text_dark, baseURL: nil)
-        } else {
-            self.view.backgroundColor = KKCBackgroundLightMode
-            aboutMainWebView.backgroundColor = KKCBackgroundLightMode
-            aboutMainWebView.tintColor = KKCTextLightMode
-            
-            aboutMainWebView.loadHTMLString(html + self.text_light, baseURL: nil)
-        }
-        
-        navigationController?.navigationBar.barStyle = UIBarStyle.black;
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
 
+        let userDefaults = UserDefaults.standard
+        if let saveFontName = userDefaults.string(forKey: "FontName") {
+            self.font_name = saveFontName
+        } else {
+            userDefaults.set("Helvetica", forKey: "FontName")
+        }
+        if let saveFontSize = userDefaults.string(forKey: "FontSize") {
+            guard let n = NumberFormatter().number(from: saveFontSize) else { return }
+            self.font_size = CGFloat(truncating: n)
+        } else {
+            userDefaults.set(16, forKey: "FontSize")
+            self.font_size = 16
+        }
+        labelAppl1.attributedText = generateContent(text: text_appl1, font_name: self.font_name, size: self.font_size)
+        labelAppl2.attributedText = generateContent(text: text_appl2, font_name: self.font_name, size: self.font_size)
+        labelAppl1.numberOfLines = 0
+        labelAppl2.numberOfLines = 0
+        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        if self.darkMode {
+            darkModeEnabled()
+        } else {
+            darkModeDisabled()
+        }
+        navigationController?.navigationBar.barStyle = UIBarStyle.black;
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
@@ -73,22 +64,23 @@ class AboutViewController: BaseViewController, UITextViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
-        UIApplication.shared.open(URL, options: [:], completionHandler: nil)
-        return false
-    }
-    @objc private func darkModeEnabled(_ notification: Notification) {
+
+    func darkModeEnabled() {
         self.darkMode = true
         self.view.backgroundColor = KKCBackgroundNightMode
-        self.aboutMainWebView.backgroundColor = KKCBackgroundNightMode
-        aboutMainWebView.loadHTMLString("<html><body>" + self.text_dark, baseURL: nil)
-    }
+        self.contentView.backgroundColor = KKCBackgroundNightMode
+        self.labelAppl1.backgroundColor = KKCBackgroundNightMode
+        self.labelAppl1.textColor = KKCTextNightMode
+        self.labelAppl2.backgroundColor = KKCBackgroundNightMode
+        self.labelAppl2.textColor = KKCTextNightMode    }
     
-    @objc private func darkModeDisabled(_ notification: Notification) {
+    func darkModeDisabled() {
         self.darkMode = false
         self.view.backgroundColor = KKCBackgroundLightMode
-        self.aboutMainWebView.backgroundColor = KKCBackgroundLightMode
-        aboutMainWebView.loadHTMLString("<html><body>" + self.text_light, baseURL: nil)
-    }
+        self.contentView.backgroundColor = KKCBackgroundLightMode
+        self.labelAppl1.backgroundColor = KKCBackgroundLightMode
+        self.labelAppl1.textColor = KKCTextLightMode
+        self.labelAppl2.backgroundColor = KKCBackgroundLightMode
+        self.labelAppl2.textColor = KKCTextLightMode    }
 }
 

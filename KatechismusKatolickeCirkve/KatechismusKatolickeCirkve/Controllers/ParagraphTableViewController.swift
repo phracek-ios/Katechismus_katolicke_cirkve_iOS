@@ -44,6 +44,8 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
     let star_off_img = UIImage(named: "star_off")
     var userDefaults = UserDefaults.standard
     var refsInt = [Int]()
+    var font_name: String = "Helvetica"
+    var font_size: CGFloat = 16
     
     override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
         return .slide
@@ -60,6 +62,19 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
+        if let saveFontName = userDefaults.string(forKey: "FontName") {
+            self.font_name = saveFontName
+        } else {
+            userDefaults.set("Helvetica", forKey: "FontName")
+        }
+        if let saveFontSize = userDefaults.string(forKey: "FontSize") {
+            guard let n = NumberFormatter().number(from: saveFontSize) else { return }
+            self.font_size = CGFloat(truncating: n)
+        } else {
+            userDefaults.set(16, forKey: "FontSize")
+            self.font_size = 16
+        }
+
         loadParagraphs()
         self.tableView.tableFooterView = UIView()
         if self.darkMode {
@@ -224,69 +239,66 @@ class ParagraphTableViewController: BaseTableViewController, PopMenuViewControll
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
         
-        if kindOfSource == 1 {
-            for par in paragraphStructure.paragraph {
+        for par in paragraphStructure.paragraph {
+            if kindOfSource == 1 {
                 if par.id >= parentID && par.id <= rangeID {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID),
+                    let html = get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID)
+                    paragraphRowData.append(ParagraphRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
                                                              recap: par.recap,
                                                              paragraphs: par.refs,
                                                              id: par.id,
                                                              fav: get_favorites(id: par.id)))
                 }
             }
-        }
-        else if kindOfSource == 0 {
-            for par in paragraphStructure.paragraph {
+            else if kindOfSource == 0 {
                 if par.chapter == parentID {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID),
+                    let html = get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID)
+                    paragraphRowData.append(ParagraphRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
                                                              recap: par.recap,
                                                              paragraphs: par.refs,
                                                              id: par.id,
                                                              fav: get_favorites(id: par.id)))
                 }
             }
-        }
-        else if kindOfSource == 2 {
-            for par in paragraphStructure.paragraph {
+            else if kindOfSource == 2 {
                 if findData.contains(par.id) {
                     var new_par = par
                     new_par.text = new_par.text.replacingOccurrences(of: self.findString, with: "<red>\(self.findString)</red>")
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: new_par, kindOfSource: kindOfSource, parentID: parentID),
+                    let html = get_html_text(par: new_par, kindOfSource: kindOfSource, parentID: parentID)
+                    paragraphRowData.append(ParagraphRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
                                                              recap: new_par.recap,
                                                              paragraphs: par.refs,
                                                              id: par.id,
                                                              fav: get_favorites(id: par.id)))
                 }
             }
-        }
-        else if kindOfSource == 3 {
-            for par in paragraphStructure.paragraph {
+                
+            else if kindOfSource == 3 {
                 if findData.contains(par.id) {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID),
+                    let html = get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID)
+                    paragraphRowData.append(ParagraphRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
                                                              recap: par.recap,
                                                              paragraphs: par.refs,
                                                              id: par.id,
                                                              fav: get_favorites(id: par.id)))
                 }
             }
-        }
-        else if kindOfSource == 4 {
-            for par in paragraphStructure.paragraph {
+            else if kindOfSource == 4 {
                 if favorites.contains(par.id) {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID),
-                    recap: par.recap,
-                    paragraphs: par.refs,
-                    id: par.id,
-                    fav: get_favorites(id: par.id)))
+                    let html = get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID)
+                    paragraphRowData.append(ParagraphRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
+                                                             recap: par.recap,
+                                                             paragraphs: par.refs,
+                                                             id: par.id,
+                                                             fav: get_favorites(id: par.id)))
                 }
             }
-        }
-        else if kindOfSource == 5 {
-            let refArr = indexes.components(separatedBy: ",")
-            self.refsInt = refArr.map { Int($0)! }
-            for par in paragraphStructure.paragraph {
+            else if kindOfSource == 5 {
+                let refArr = indexes.components(separatedBy: ",")
+                self.refsInt = refArr.map { Int($0)! }
                 if refsInt.contains(par.id) {
-                    paragraphRowData.append(ParagraphRowData(html: get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID),
+                    let html = get_html_text(par: par, kindOfSource: kindOfSource, parentID: parentID)
+                    paragraphRowData.append(ParagraphRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
                                                              recap: par.recap,
                                                              paragraphs: par.refs,
                                                              id: par.id,
