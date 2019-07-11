@@ -14,10 +14,12 @@ class SectionsTableViewController: BaseTableViewController {
         var main_section: Bool
         var id: Int
         var name: String
+        var exist_paragraph: Bool
     }
     
     fileprivate var sectionsRowData = [SectionsRowData]()
     fileprivate var chaptersStructure: ChaptersStructure?
+    fileprivate var paragraphStructure: ParagraphStructure?
 
     var parentID: Int = 0
     var darkMode: Bool = false
@@ -25,7 +27,8 @@ class SectionsTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chaptersStructure = ChaptersDataService.shared.chaptersStructure
-        self.tableView.rowHeight = 80
+        paragraphStructure = ParagraphDataService.shared.paragraphStructure
+       self.tableView.rowHeight = 80
         loadSections()
         self.tableView.tableFooterView = UIView()
         let userDefaults = UserDefaults.standard
@@ -63,15 +66,18 @@ class SectionsTableViewController: BaseTableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? SectionsTableViewCell else { return UITableViewCell()
         }
         cell.sectionLabel?.text = sectionsRowData[indexPath.row].name
+        cell.accessoryType = .none
+        cell.isUserInteractionEnabled = false
+        if sectionsRowData[indexPath.row].exist_paragraph == true {
+            cell.isUserInteractionEnabled = true
+            cell.accessoryType = .disclosureIndicator
+        }
         if sectionsRowData[indexPath.row].main_section == true {
             cell.backgroundColor = KKCMainColor
             cell.sectionLabel.backgroundColor = KKCMainColor
             cell.sectionLabel?.textColor = KKCTextNightMode
-            cell.accessoryType = .none
-            cell.isUserInteractionEnabled = false
+
         } else {
-            cell.isUserInteractionEnabled = true
-            cell.accessoryType = .disclosureIndicator
             if self.darkMode == true {
                 cell.backgroundColor = KKCBackgroundNightMode
                 cell.sectionLabel.backgroundColor = KKCBackgroundNightMode
@@ -110,10 +116,10 @@ class SectionsTableViewController: BaseTableViewController {
         performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
     }
 
-    private func loadSubSections(section: Int) {
+    private func loadSubSections(section: Int, exist_paragraph: Bool) {
         for chap in (chaptersStructure?.chapters)! {
             if chap.parent == section {
-                sectionsRowData.append(SectionsRowData(main_section: false, id: chap.id, name: chap.name))
+                sectionsRowData.append(SectionsRowData(main_section: false, id: chap.id, name: chap.name, exist_paragraph: chap.exist_paragraph))
             }
         }
     }
@@ -121,11 +127,22 @@ class SectionsTableViewController: BaseTableViewController {
         guard let chaptersStructure = chaptersStructure else { return }
         for chap in chaptersStructure.chapters {
             if chap.parent == parentID {
-                sectionsRowData.append(SectionsRowData(main_section: true, id: chap.id, name: chap.name))
-                loadSubSections(section: chap.id)
+                sectionsRowData.append(SectionsRowData(main_section: true, id: chap.id, name: chap.name, exist_paragraph: chap.exist_paragraph))
+                loadSubSections(section: chap.id, exist_paragraph: chap.exist_paragraph)
             }
         }
     }
+    private func checkParagraph(section: Int) -> Bool {
+        guard let paragraphStructure = paragraphStructure else { return false }
+        
+        for par in paragraphStructure.paragraph {
+            if par.chapter == section {
+                return true
+            }
+        }
+        return false
+    }
+        
     @objc private func darkModeEnabled(_ notification: Notification) {
         self.darkMode = true
         self.tableView.backgroundColor = KKCBackgroundNightMode

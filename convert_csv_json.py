@@ -7,15 +7,24 @@ import json
 class Convert2Json(object):
     recap = False
     chapter = 0
+    csv_dict = {}
+
     #Get Command Line Arguments
     def run(self):
-        self.read_csv("part.csv", "part.json", 0)
         self.read_csv("database.csv", "database.json", 1)
+        self.read_csv("part.csv", "part.json", 0)
         self.read_csv("index.csv", "index.json", 2)
 
     def parse_part(self, row):
         fields = row.split("::")
-        return {'id': int(fields[0]), 'parent': int(fields[1]), 'name': fields[2]}
+        exists_paragraph = False
+        paragraphs = [p['id'] for p in self.csv_dict['paragraph'] if p['chapter'] == int(fields[0])]
+        if paragraphs:
+            exists_paragraph = True
+        return {'id': int(fields[0]),
+                'parent': int(fields[1]),
+                'name': fields[2],
+                'exist_paragraph': exists_paragraph}
 
     def parse_index(self, row):
         fields = row.split("::")
@@ -53,7 +62,11 @@ class Convert2Json(object):
             self.recap = True
             self.chapter = int(fields[3])
         else:
-            if self.chapter != int(fields[3]) or fields[2] != "":
+            try:
+                if self.chapter != int(fields[3]) or fields[2] != "":
+                    self.recap = False
+            except ValueError:
+                fields[3] = 0
                 self.recap = False
         refs = self.parse_refs(fields[4])
         return {'id': int(fields[0]),
@@ -68,27 +81,29 @@ class Convert2Json(object):
 
     #Read CSV File
     def read_csv(self, input_file, output_file, fnc):
-        csv_dict = {}
+        csv_content = []
         if fnc == 0:
-            csv_dict['chapters'] = []
+            name = "chapters"
         elif fnc == 1:
-            csv_dict['paragraph'] = []
+            name = "paragraph"
         else:
-            csv_dict['index'] = []
+            name = "index"
         with open(input_file, 'r') as csvfile:
             for row in csvfile.readlines():
                 if fnc == 0:
-                    csv_dict['chapters'].append(self.parse_part(row))
+                    csv_content.append(self.parse_part(row))
                 elif fnc == 1:
-                    csv_dict['paragraph'].append(self.parse_database(row))
+                    csv_content.append(self.parse_database(row))
                 else:
-                    csv_dict['index'].append(self.parse_index(row))
-            self.write_json(csv_dict, output_file)
+                    csv_content.append(self.parse_index(row))
+            self.write_json(csv_content, name, output_file)
 
     #Convert csv data into json and write it
-    def write_json(self, data, json_file):
+    def write_json(self, data, name, json_file):
+        data_to_write = {name: data}
+        self.csv_dict[name] = data
         with open(json_file, "w") as f:
-            json.dump(data, f, indent=4, ensure_ascii=False)
+            json.dump(data_to_write, f, indent=4, ensure_ascii=False)
 
 
 if __name__ == "__main__":

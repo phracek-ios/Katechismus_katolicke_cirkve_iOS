@@ -12,4 +12,5 @@ struct Chapter: Decodable {
     var id: Int
     var parent: Int
     var name: String
+    var exist_paragraph: Bool
 }

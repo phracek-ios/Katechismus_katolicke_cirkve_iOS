@@ -1,214 +1,256 @@
 {
     "chapters": [
         {
-            "id": 1, 
-            "parent": 0, 
-            "name": "Apoštolský list \"LAETAMUR MAGNOPERE\"\n"
-        }, 
+            "id": 1,
+            "parent": 0,
+            "name": "Apoštolský list \"LAETAMUR MAGNOPERE\"\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 2, 
-            "parent": 0, 
-            "name": "Apoštolská konstituce >>FIDEI DEPOSITUM<<\n"
-        }, 
+            "id": 2,
+            "parent": 0,
+            "name": "Apoštolská konstituce >>FIDEI DEPOSITUM<<\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 3, 
-            "parent": 0, 
-            "name": "Předmluva\n"
-        }, 
+            "id": 3,
+            "parent": 0,
+            "name": "Předmluva\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 4, 
-            "parent": 0, 
-            "name": "I. část - Vyznání víry\n"
-        }, 
+            "id": 4,
+            "parent": 0,
+            "name": "I. část - Vyznání víry\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 5, 
-            "parent": 4, 
-            "name": "I. oddíl - \"Věřím\" - \"Věříme\"\n"
-        }, 
+            "id": 5,
+            "parent": 4,
+            "name": "I. oddíl - \"Věřím\" - \"Věříme\"\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 6, 
-            "parent": 5, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 6,
+            "parent": 5,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 7, 
-            "parent": 5, 
-            "name": "I. kapitola - Člověk je schopen spojení s Bohem\n"
-        }, 
+            "id": 7,
+            "parent": 5,
+            "name": "I. kapitola - Člověk je schopen spojení s Bohem\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 8, 
-            "parent": 5, 
-            "name": "II. kapitola - Bůh přichází vstříc člověku\n"
-        }, 
+            "id": 8,
+            "parent": 5,
+            "name": "II. kapitola - Bůh přichází vstříc člověku\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 9, 
-            "parent": 5, 
-            "name": "III. kapitola - Člověk odpovídá Bohu\n"
-        }, 
+            "id": 9,
+            "parent": 5,
+            "name": "III. kapitola - Člověk odpovídá Bohu\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 10, 
-            "parent": 4, 
-            "name": "II. oddíl - Vyznání křesťanské víry, Symboly víry\n"
-        }, 
+            "id": 10,
+            "parent": 4,
+            "name": "II. oddíl - Vyznání křesťanské víry, Symboly víry\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 11, 
-            "parent": 10, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 11,
+            "parent": 10,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 12, 
-            "parent": 10, 
-            "name": "I. kapitola - Věřím v Boha Otce\n"
-        }, 
+            "id": 12,
+            "parent": 10,
+            "name": "I. kapitola - Věřím v Boha Otce\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 13, 
-            "parent": 10, 
-            "name": "II. kapitola - Věřím v Ježíše Krista\n"
-        }, 
+            "id": 13,
+            "parent": 10,
+            "name": "II. kapitola - Věřím v Ježíše Krista\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 14, 
-            "parent": 10, 
-            "name": "III. kapitola - Věřím v Ducha Svatého\n"
-        }, 
+            "id": 14,
+            "parent": 10,
+            "name": "III. kapitola - Věřím v Ducha Svatého\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 15, 
-            "parent": 0, 
-            "name": "II. část - Slavení křesťanského tajemství\n"
-        }, 
+            "id": 15,
+            "parent": 0,
+            "name": "II. část - Slavení křesťanského tajemství\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 16, 
-            "parent": 15, 
-            "name": "I. oddíl - Svátostná ekonomie\n"
-        }, 
+            "id": 16,
+            "parent": 15,
+            "name": "I. oddíl - Svátostná ekonomie\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 17, 
-            "parent": 16, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 17,
+            "parent": 16,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 18, 
-            "parent": 16, 
-            "name": "I. kapitola - Velikonoční tajemství v čase církve\n"
-        }, 
+            "id": 18,
+            "parent": 16,
+            "name": "I. kapitola - Velikonoční tajemství v čase církve\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 19, 
-            "parent": 16, 
-            "name": "II. kapitola - Svátostné slavení velikonočního tajemství\n"
-        }, 
+            "id": 19,
+            "parent": 16,
+            "name": "II. kapitola - Svátostné slavení velikonočního tajemství\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 20, 
-            "parent": 15, 
-            "name": "II. oddíl - Sedm svátostí církve\n"
-        }, 
+            "id": 20,
+            "parent": 15,
+            "name": "II. oddíl - Sedm svátostí církve\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 21, 
-            "parent": 20, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 21,
+            "parent": 20,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 22, 
-            "parent": 20, 
-            "name": "I. kapitola - Svátosti uvedení do křesťanského života\n"
-        }, 
+            "id": 22,
+            "parent": 20,
+            "name": "I. kapitola - Svátosti uvedení do křesťanského života\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 23, 
-            "parent": 20, 
-            "name": "II. kapitola - Svátosti uzdravování\n"
-        }, 
+            "id": 23,
+            "parent": 20,
+            "name": "II. kapitola - Svátosti uzdravování\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 24, 
-            "parent": 20, 
-            "name": "III. kapitola - Svátosti ke službě společenství\n"
-        }, 
+            "id": 24,
+            "parent": 20,
+            "name": "III. kapitola - Svátosti ke službě společenství\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 25, 
-            "parent": 20, 
-            "name": "IV. kapitola - Jiné liturgické slavnosti\n"
-        }, 
+            "id": 25,
+            "parent": 20,
+            "name": "IV. kapitola - Jiné liturgické slavnosti\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 26, 
-            "parent": 0, 
-            "name": "III. část - Život v Kristu\n"
-        }, 
+            "id": 26,
+            "parent": 0,
+            "name": "III. část - Život v Kristu\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 27, 
-            "parent": 26, 
-            "name": "I. oddíl - Povolání člověka: Život v duchu\n"
-        }, 
+            "id": 27,
+            "parent": 26,
+            "name": "I. oddíl - Povolání člověka: Život v duchu\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 28, 
-            "parent": 27, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 28,
+            "parent": 27,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 29, 
-            "parent": 27, 
-            "name": "I. kapitola - Důstojnost člověka\n"
-        }, 
+            "id": 29,
+            "parent": 27,
+            "name": "I. kapitola - Důstojnost člověka\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 30, 
-            "parent": 27, 
-            "name": "II. kapitola - Lidské společenství\n"
-        }, 
+            "id": 30,
+            "parent": 27,
+            "name": "II. kapitola - Lidské společenství\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 31, 
-            "parent": 27, 
-            "name": "III. kapitola - Boží spása: Zákon a milost\n"
-        }, 
+            "id": 31,
+            "parent": 27,
+            "name": "III. kapitola - Boží spása: Zákon a milost\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 32, 
-            "parent": 26, 
-            "name": "II. oddíl - Desatero Božích přikázání\n"
-        }, 
+            "id": 32,
+            "parent": 26,
+            "name": "II. oddíl - Desatero Božích přikázání\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 33, 
-            "parent": 32, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 33,
+            "parent": 32,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 34, 
-            "parent": 32, 
-            "name": "I. kapitola - Miluj Pána, svého Boha, celým svým srdcem, celou svou duší a celou svou myslí\n"
-        }, 
+            "id": 34,
+            "parent": 32,
+            "name": "I. kapitola - Miluj Pána, svého Boha, celým svým srdcem, celou svou duší a celou svou myslí\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 35, 
-            "parent": 32, 
-            "name": "II. kapitola - Miluj svého bližního jako sám sebe\n"
-        }, 
+            "id": 35,
+            "parent": 32,
+            "name": "II. kapitola - Miluj svého bližního jako sám sebe\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 36, 
-            "parent": 0, 
-            "name": "IV. část - Křesťanská modlitba\n"
-        }, 
+            "id": 36,
+            "parent": 0,
+            "name": "IV. část - Křesťanská modlitba\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 37, 
-            "parent": 36, 
-            "name": "I. oddíl - Modlitba v životě křesťana\n"
-        }, 
+            "id": 37,
+            "parent": 36,
+            "name": "I. oddíl - Modlitba v životě křesťana\n",
+            "exist_paragraph": false
+        },
         {
-            "id": 38, 
-            "parent": 37, 
-            "name": "Uvedení\n"
-        }, 
+            "id": 38,
+            "parent": 37,
+            "name": "Uvedení\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 39, 
-            "parent": 37, 
-            "name": "I. kapitola - Zjevení modlitby, Všeobecné povolání k modlitbě\n"
-        }, 
+            "id": 39,
+            "parent": 37,
+            "name": "I. kapitola - Zjevení modlitby, Všeobecné povolání k modlitbě\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 40, 
-            "parent": 37, 
-            "name": "II. kapitola - Tradice modlitby\n"
-        }, 
+            "id": 40,
+            "parent": 37,
+            "name": "II. kapitola - Tradice modlitby\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 41, 
-            "parent": 37, 
-            "name": "III. kapitola - Život modlitby\n"
-        }, 
+            "id": 41,
+            "parent": 37,
+            "name": "III. kapitola - Život modlitby\n",
+            "exist_paragraph": true
+        },
         {
-            "id": 42, 
-            "parent": 36, 
-            "name": "II. oddíl - Modlitba Páně \"Otče náš\"\n"
+            "id": 42,
+            "parent": 36,
+            "name": "II. oddíl - Modlitba Páně \"Otče náš\"",
+            "exist_paragraph": true
         }
     ]
 }
