@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: BaseTableViewController {
+class SettingsTableViewController: UITableViewController {
 
     @IBOutlet weak var nightSwitch: UISwitch!
     @IBOutlet weak var nightSwitchLabel: UILabel!

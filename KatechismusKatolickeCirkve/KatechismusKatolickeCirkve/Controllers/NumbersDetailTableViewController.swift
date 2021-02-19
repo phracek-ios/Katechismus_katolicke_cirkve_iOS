@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NumbersDetailTableViewController: BaseTableViewController {
+class NumbersDetailTableViewController: UITableViewController {
 
     var beginNumber = 1
     var endNumber = 500
@@ -80,7 +80,7 @@ class NumbersDetailTableViewController: BaseTableViewController {
         switch(segue.identifier ?? "") {
             
         case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
+            guard let pcvc = segue.destination as? ParagraphTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
             guard let indexPath = sender as? IndexPath else {
@@ -90,9 +90,9 @@ class NumbersDetailTableViewController: BaseTableViewController {
             if parentNumber == 0 {
                 parentNumber = 1
             }
-            paragraphTableViewController.kindOfSource = 1
-            paragraphTableViewController.parentID = parentNumber
-            paragraphTableViewController.rangeID = numbersDetailRowData[indexPath.row].number_final
+            pcvc.kindOfSource = 1
+            pcvc.parentID = parentNumber
+            pcvc.rangeID = numbersDetailRowData[indexPath.row].number_final
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

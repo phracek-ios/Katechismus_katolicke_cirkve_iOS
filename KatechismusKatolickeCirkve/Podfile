@@ -5,8 +5,6 @@ target 'KatechismusKatolickeCirkve' do
 	use_frameworks!
 
 	pod 'BonMot'
-    pod 'Fabric'
-    pod 'Crashlytics'
-    pod 'TTTAttributedLabel'
-    pod 'NewPopMenu', '~> 2.0'
+  pod 'Firebase/Analytics'
+  pod 'NewPopMenu', '~> 2.0'
 end

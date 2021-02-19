@@ -8,13 +8,8 @@
 
 import UIKit
 
-class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDelegate {
+class IndexTableViewController: UITableViewController, UIGestureRecognizerDelegate {
     
-    struct IndexRowData {
-        var refs = String()
-        var name = NSAttributedString()
-        var see = String()
-    }
     fileprivate var full_index = [String: [IndexRowData]]()
     fileprivate var indexStructure: IndexStructure?
     var darkMode: Bool = false
@@ -28,7 +23,9 @@ class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDele
         for alpha in indexSectionAlphabet {
             self.full_index[alpha] = [IndexRowData]()
         }
+        
         loadIndex()
+        setupSettingsTable()
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: "NightSwitch")
         self.tableView.tableFooterView = UIView()
@@ -68,78 +65,10 @@ class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDele
             }
         }
     }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.indexSectionAlphabet.count
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let alphabet_section = self.indexSectionAlphabet[section]
-        let sectionIndexes = self.full_index[alphabet_section]
-        return sectionIndexes?.count ?? 0
-
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "IndexTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? IndexTableViewCell else {
-            fatalError("The dequeue cell is not an entrance of IndexTableViewCell")
-        }
-        let sectionTitle = self.indexSectionAlphabet[indexPath.section]
-        let row = self.full_index[sectionTitle]?[indexPath.row]
-        let name = row?.name
-        let refs = row?.refs
-        cell.indexLabel?.numberOfLines = 0
-        cell.indexLabel?.attributedText = name
-        if refs == "" {
-            cell.accessoryType = .none
-            cell.isUserInteractionEnabled = false
-        }
-        else {
-            cell.isUserInteractionEnabled = true
-            cell.accessoryType = .disclosureIndicator
-        }
-        if self.darkMode == true {
-            cell.backgroundColor = KKCBackgroundNightMode
-            cell.indexLabel.textColor = KKCTextNightMode
-        }
-        else {
-            cell.backgroundColor = KKCBackgroundLightMode
-            cell.indexLabel.textColor = KKCTextLightMode
-        }
-        return cell
-
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        switch(segue.identifier ?? "") {
-            
-        case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            guard let indexPath = sender as? IndexPath else {
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            let sectionTitle = self.indexSectionAlphabet[indexPath.section]
-            let refs = self.full_index[sectionTitle]?[indexPath.row].refs
-            paragraphTableViewController.kindOfSource = 5
-            paragraphTableViewController.indexes = refs ?? ""
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
-    }
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return self.indexSectionAlphabet
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.indexSectionAlphabet[section]
+        
+    func setupSettingsTable() {
+        tableView.register(IndexTableViewCell.self, forCellReuseIdentifier: IndexTableViewCell.cellId)
+        //tableView.contentInset = UIEdgeInsets(top:12, left: 12, bottom: 12, right: 12)
     }
     
     @objc private func darkModeEnabled(_ notification: Notification) {
@@ -184,5 +113,51 @@ class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDele
             }
         }
         
+    }
+}
+
+extension IndexTableViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.indexSectionAlphabet.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let alphabet_section = self.indexSectionAlphabet[section]
+        let sectionIndexes = self.full_index[alphabet_section]
+        return sectionIndexes?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: IndexTableViewCell.cellId, for: indexPath) as! IndexTableViewCell
+
+        cell.isUserInteractionEnabled = false
+        let sectionTitle = self.indexSectionAlphabet[indexPath.section]
+        let row = self.full_index[sectionTitle]?[indexPath.row]
+        let name = (row?.name)!
+        let refs = row?.refs
+        cell.configureCell(name: name, refs: refs!)
+
+        return cell
+
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pcvc = ParagraphTableViewController()
+
+        let sectionTitle = self.indexSectionAlphabet[indexPath.section]
+        let refs = self.full_index[sectionTitle]?[indexPath.row].refs
+        pcvc.kindOfSource = 5
+        pcvc.indexes = refs ?? ""
+        navigationController?.pushViewController(pcvc, animated: true)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.indexSectionAlphabet
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.indexSectionAlphabet[section]
     }
 }

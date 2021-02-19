@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import BonMot
 
-class AboutViewController: BaseViewController {
+class AboutViewController: UIViewController {
 
     //MARK: Properties
 

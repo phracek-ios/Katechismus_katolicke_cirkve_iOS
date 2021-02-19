@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ParagraphRefsTableViewController: BaseTableViewController {
+class ParagraphRefsTableViewController: UITableViewController {
 
     struct RefsRowData {
         var html: NSAttributedString
