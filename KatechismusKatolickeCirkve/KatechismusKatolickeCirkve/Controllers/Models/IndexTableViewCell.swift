@@ -36,7 +36,7 @@ class IndexTableViewCell: UITableViewCell {
         print("configureCell")
         let userDefaults = UserDefaults.standard
         let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
-        if darkMode {
+        if darkMode == true {
             indexLabel.textColor = KKCTextNightMode
             indexLabel.backgroundColor = KKCBackgroundNightMode
         }
@@ -64,8 +64,6 @@ class IndexTableViewCell: UITableViewCell {
         indexLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10).isActive = true
         indexLabel.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: -20).isActive = true
         indexLabel.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: 20).isActive = true
-        //stackView.addConstraintsWithFormat(format: "V:|-5-[v0]-10-|", views: indexLabel)
-        //stackView.addConstraintsWithFormat(format: "H:|-5-[v0]-10-|", views: indexLabel)
         layoutIfNeeded()
     }
     

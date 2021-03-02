@@ -10,16 +10,37 @@ import UIKit
 
 class NumbersTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numberLabel: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //numberLabel.layer.cornerRadius = numberLabel.frame.height / 4
-    }
+    //MARK: Properties
+    
+    static let cellId = "NumbersTableViewCell"
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    lazy var numberLabel: UILabel = {
+        let l = UILabel()
+        l.lineBreakMode = .byWordWrapping
+        l.numberOfLines = 0
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }()
+    
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
+    
 
-        // Configure the view for the selected state
+    func configureCell(number: String) {
+        let userDefaults = UserDefaults.standard
+        let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        if darkMode {
+            numberLabel.textColor = KKCTextNightMode
+            numberLabel.backgroundColor = KKCBackgroundNightMode
+        }
+        else {
+            numberLabel.textColor = KKCTextLightMode
+            numberLabel.backgroundColor = KKCBackgroundLightMode
+        }
+        self.addSubview(numberLabel)
+        numberLabel.text = number
+        numberLabel.textAlignment = .left
+        addConstraintsWithFormat(format: "V:|[v0]|", views: numberLabel)
+        addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: numberLabel)
     }
 
 }

@@ -10,15 +10,42 @@ import UIKit
 
 class AboutProjectViewController: UIViewController {
 
+    lazy var labelAppl1: UILabel = {
+        let l = UILabel()
+        l.lineBreakMode = .byWordWrapping
+        l.numberOfLines = 0
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }()
+
+    lazy var scrollView: UIScrollView = {
+       let sv = UIScrollView()
+        sv.showsHorizontalScrollIndicator = false
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
+    
+    
+    lazy var stackView: UIStackView = {
+        let sv = UIStackView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        return sv
+    }()
+    
     fileprivate var catechismStructure: CatechismStructure?
-    //@IBOutlet weak var contentLabel: TTTAttributedLabel!
     var darkMode: Bool = true
     var text_dark: String = ""
     var text_light: String = ""
+    var about_project: Bool = false // true for project
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "O projektu"
+        if about_project {
+            title = "O projektu"
+        }
+        else {
+            title = "O aplikaci"
+        }
 
         catechismStructure = CatechismDataService.shared.catechismStructure
         // Do any additional setup after loading the view.

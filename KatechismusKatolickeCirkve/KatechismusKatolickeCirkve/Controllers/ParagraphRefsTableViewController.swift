@@ -24,17 +24,18 @@ class ParagraphRefsTableViewController: UITableViewController {
     var refsInt = [Int]()
     var font_name: String = "Helvetica"
     var font_size: CGFloat = 16
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         let refArr = refs.components(separatedBy: ",")
         self.refsInt = refArr.map { Int($0)! }
-        self.font_name = userDefaults.string(forKey: "FontName")!
-        let fontSize = userDefaults.string(forKey: "FontSize")!
+        self.font_name = userDefaults.string(forKey: keys.fontName)!
+        let fontSize = userDefaults.string(forKey: keys.fontSize)!
         guard let n = NumberFormatter().number(from: fontSize) else { return }
         self.font_size = CGFloat(truncating: n)
         
@@ -72,27 +73,11 @@ class ParagraphRefsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ParagraphRefsTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? ParagraphRefsTableViewCell else {
-            fatalError("The dequeue cell is not an entrance of ParagraphTableViewCell")
-        }
-        let data = refsRowData[indexPath.row]
         
-        cell.labelParagraph?.numberOfLines = 0
-        cell.labelParagraph?.attributedText = data.html
-        cell.labelParagraph.textColor = KKCTextNightMode
-        if data.recap == 1 {
-            cell.backgroundColor = KKCMainColor
-        }
-        else {
-            if self.darkMode == true {
-                cell.backgroundColor = KKCBackgroundNightMode
-            }
-            else {
-                cell.backgroundColor = KKCBackgroundLightMode
-                cell.labelParagraph.textColor = KKCTextLightMode
-            }
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: ParagraphRefsTableViewCell.cellId, for: indexPath) as! ParagraphRefsTableViewCell
+
+        let data = refsRowData[indexPath.row]
+        cell.configureCell(html: data.html, image_name: "star_off", recap: data.recap)
         return cell
     }
 

@@ -36,6 +36,8 @@ class ParagraphTableViewController: UITableViewController, PopMenuViewController
     var findString: String = ""
     var darkMode: Bool = false
     var favorites = [Int]()
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
+    
     var isStatusBarHidden = false {
         didSet {
             UIView.animate(withDuration: 0.25) { () -> Void in
@@ -66,22 +68,21 @@ class ParagraphTableViewController: UITableViewController, PopMenuViewController
         Analytics.logEvent(AnalyticsEventScreenView,
                            parameters:[AnalyticsParameterScreenName: "Catechishm collection view viewDidLoad",
                                        AnalyticsParameterScreenClass: className])
-        //self.tableView.rowHeight = UITableViewAutomaticDimension
-        //self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         self.tableView.estimatedRowHeight = 100
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        self.favorites = userDefaults.array(forKey: "Favorites") as? [Int] ?? [Int]()
-        if let saveFontName = userDefaults.string(forKey: "FontName") {
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        self.favorites = userDefaults.array(forKey: keys.Favourites) as? [Int] ?? [Int]()
+        if let saveFontName = userDefaults.string(forKey: keys.fontName) {
             self.font_name = saveFontName
         } else {
-            userDefaults.set("Helvetica", forKey: "FontName")
+            userDefaults.set("Helvetica", forKey: keys.fontName)
         }
-        if let saveFontSize = userDefaults.string(forKey: "FontSize") {
+        if let saveFontSize = userDefaults.string(forKey: keys.fontSize) {
             guard let n = NumberFormatter().number(from: saveFontSize) else { return }
             self.font_size = CGFloat(truncating: n)
         } else {
-            userDefaults.set(16, forKey: "FontSize")
+            userDefaults.set(16, forKey: keys.fontSize)
             self.font_size = 16
         }
 
@@ -105,7 +106,7 @@ class ParagraphTableViewController: UITableViewController, PopMenuViewController
     // MARK: - Table view data source
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if self.darkMode {
+        if self.darkMode == true {
             self.tableView!.backgroundColor = KKCBackgroundNightMode
         } else {
             self.tableView!.backgroundColor = KKCBackgroundLightMode
@@ -125,29 +126,6 @@ class ParagraphTableViewController: UITableViewController, PopMenuViewController
         
     }
 
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        switch(segue.identifier ?? "") {
-            
-        case "ShowParagraphRefs":
-            guard let refsTableViewController = segue.destination as? ParagraphRefsTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            guard let indexPath = sender as? IndexPath else {
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            let data = rowData[indexPath.row]
-            if data.paragraphs != "" {
-                refsTableViewController.refs = data.paragraphs
-                refsTableViewController.navigationItem.title = "Odkazované paragrafy"
-            }
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-    }
-    
 
     private func loadParagraphs() {
         guard let paragraphStructure = paragraphStructure else { return }
@@ -268,13 +246,6 @@ extension ParagraphTableViewController {
         else {
             cell.configureCell(name: data.html, image_name: "star_on")
         }
-        cell.isUserInteractionEnabled = false
-//        cell.layer.borderColor = KKCMainColor.cgColor
-//        cell.layer.borderWidth = 1
-//        cell.layer.cornerRadius = 8
-//        cell.clipsToBounds = true
-
-   
         return cell
     }
     
@@ -299,13 +270,15 @@ extension ParagraphTableViewController {
                     self.favorites.remove(at: index)
                 }
             }
-            self.userDefaults.set(self.favorites, forKey: "Favorites")
+            self.userDefaults.set(self.favorites, forKey: self.keys.Favourites)
             self.tableView!.reloadData()
             }))
         alert.addAction(UIAlertAction(title: "Zobrazit odkazované paragrafy", style: .default, handler: { (action) in
             let refs = self.rowData[indexPath.row].paragraphs
             if refs != "" {
-                self.performSegue(withIdentifier: "ShowParagraphRefs", sender: indexPath)
+                let paragraphRefs = ParagraphRefsTableViewController()
+                paragraphRefs.refs = refs
+                self.navigationController?.pushViewController(paragraphRefs, animated: true)
             }
             else {
                 let noRefsAlert = UIAlertController(title: "Neobsahuje žádné odkazy", message: nil, preferredStyle: .alert)

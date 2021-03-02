@@ -18,6 +18,7 @@ class ChaptersTableViewController: UITableViewController {
 
     fileprivate var rowData = [ChapterRowData]()
     fileprivate var chaptersStructure: ChaptersStructure?
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
     var darkMode: Bool = false
 
 
@@ -28,13 +29,13 @@ class ChaptersTableViewController: UITableViewController {
         self.navigationItem.title = "Procházet kapitoly"
         loadChapters()
         let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
-        self.tableView.tableFooterView = UIView()
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
             self.tableView.backgroundColor = KKCBackgroundLightMode
         }
+        self.tableView.tableFooterView = UIView()
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
         NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
@@ -91,6 +92,17 @@ extension ChaptersTableViewController {
         //let cell = tableView.dequeueReusableCell(withIdentifier: ChaptersTableViewCell.cellId, for: indexPath) as! ChaptersTableViewCell
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
         //cell.configureCell(name: rowData[indexPath.row].name, description: "")
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        if self.darkMode {
+            cell.backgroundColor = KKCBackgroundNightMode
+            cell.textLabel?.backgroundColor = KKCBackgroundNightMode
+            cell.textLabel?.textColor = KKCTextNightMode
+        } else {
+            cell.backgroundColor = KKCBackgroundLightMode
+            cell.textLabel?.backgroundColor = KKCBackgroundLightMode
+            cell.textLabel?.textColor = KKCTextLightMode
+        }
         cell.textLabel?.text = rowData[indexPath.row].name
         cell.detailTextLabel?.text = rowData[indexPath.row].sub_name
         cell.accessoryType = .disclosureIndicator

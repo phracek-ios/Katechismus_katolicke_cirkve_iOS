@@ -14,6 +14,7 @@ class IndexTableViewController: UITableViewController, UIGestureRecognizerDelega
     fileprivate var indexStructure: IndexStructure?
     var darkMode: Bool = false
     let indexSectionAlphabet = ["A", "B", "C", "Č", "D", "E", "F", "G", "H", "CH", "I", "J", "K", "L", "M", "N", "O", "P", "R", "Ř", "S", "Š", "T", "U", "V", "Z", "Ž"]
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,13 @@ class IndexTableViewController: UITableViewController, UIGestureRecognizerDelega
         loadIndex()
         setupSettingsTable()
         let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         self.tableView.tableFooterView = UIView()
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
         longPressGesture.minimumPressDuration = 0.5 // 0.5 second press
         longPressGesture.delegate = self
         self.tableView.addGestureRecognizer(longPressGesture)
+        self.tableView.estimatedRowHeight = 60
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
@@ -131,13 +133,19 @@ extension IndexTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: IndexTableViewCell.cellId, for: indexPath) as! IndexTableViewCell
-
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         cell.isUserInteractionEnabled = false
         let sectionTitle = self.indexSectionAlphabet[indexPath.section]
         let row = self.full_index[sectionTitle]?[indexPath.row]
         let name = (row?.name)!
         let refs = row?.refs
         cell.configureCell(name: name, refs: refs!)
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+        } else {
+            cell.backgroundColor = KKCBackgroundLightMode
+        }
 
         return cell
 
@@ -159,5 +167,23 @@ extension IndexTableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return self.indexSectionAlphabet[section]
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))
+        let userDefaults = UserDefaults.standard
+        let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        let label = UILabel(frame: CGRect(x: 10, y: 7, width: view.frame.size.width, height: 25))
+        label.text = self.indexSectionAlphabet[section]
+        if darkMode == true {
+            returnedView.backgroundColor = KKCMainColor
+            label.backgroundColor = KKCMainColor
+            label.textColor = KKCTextNightMode
+        } else {
+            returnedView.backgroundColor = KKCMainColor
+            label.backgroundColor = KKCMainColor
+            label.textColor = KKCTextLightMode
+        }
+        returnedView.addSubview(label)
+        return returnedView
     }
 }

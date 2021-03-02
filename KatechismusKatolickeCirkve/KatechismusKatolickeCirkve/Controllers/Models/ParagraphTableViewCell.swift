@@ -38,24 +38,24 @@ class ParagraphTableViewCell: UITableViewCell {
     
     let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
-    func configureCell(name: NSAttributedString, image_name: String){
-        print("configureCell")
+    func configureCell(name: NSAttributedString, image_name: String) {
         let userDefaults = UserDefaults.standard
         let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
-        if darkMode {
+        print(darkMode)
+        if darkMode == true {
             labelParagraph.textColor = KKCTextNightMode
             labelParagraph.backgroundColor = KKCBackgroundNightMode
+            self.backgroundColor = KKCBackgroundNightMode
         }
         else {
             labelParagraph.textColor = KKCTextLightMode
             labelParagraph.backgroundColor = KKCBackgroundLightMode
+            self.backgroundColor = KKCBackgroundLightMode
         }
-        print(image_name)
         let img = UIImage(named: image_name)
         let img_width: Int = 20
         starImage.image = img
         starImage.contentMode = .scaleAspectFit
-        //starImage.clipsToBounds = true
         labelParagraph.attributedText = name
         contentView.addSubview(stackView)
         stackView.addSubview(starImage)

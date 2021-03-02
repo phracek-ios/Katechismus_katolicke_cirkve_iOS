@@ -23,19 +23,21 @@ class NumbersDetailTableViewController: UITableViewController {
     fileprivate var diff = 30
     var darkMode: Bool = false
     let lastSection: Int = 2861
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initNumbers()
-        self.tableView.rowHeight = 80
+        self.tableView.rowHeight = 60
         self.tableView.tableFooterView = UIView()
         let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
             self.tableView.backgroundColor = KKCBackgroundLightMode
         }
+        tableView.register(NumbersDetailTableViewCell.self, forCellReuseIdentifier: NumbersDetailTableViewCell.cellId)
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
    }
     deinit {
@@ -48,59 +50,6 @@ class NumbersDetailTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numbersDetailRowData.count
-    }
-
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "NumbersDetailTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? NumbersDetailTableViewCell else { return UITableViewCell()
-        }
-        cell.numberDetails?.text = numbersDetailRowData[indexPath.row].text
-        if self.darkMode == true {
-            cell.backgroundColor = KKCBackgroundNightMode
-            cell.numberDetails.textColor = KKCTextNightMode
-        }
-        else {
-            cell.backgroundColor = KKCBackgroundLightMode
-            cell.numberDetails.textColor = KKCTextLightMode
-        }
-
-        return cell
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        switch(segue.identifier ?? "") {
-            
-        case "ShowParagraph":
-            guard let pcvc = segue.destination as? ParagraphTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            guard let indexPath = sender as? IndexPath else {
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            var parentNumber = numbersDetailRowData[indexPath.row].number
-            if parentNumber == 0 {
-                parentNumber = 1
-            }
-            pcvc.kindOfSource = 1
-            pcvc.parentID = parentNumber
-            pcvc.rangeID = numbersDetailRowData[indexPath.row].number_final
-            
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
-    }
     private func addRow() {
         var finalNumber: Int = 0
         if beginNumber + diff >= endNumber {
@@ -132,5 +81,44 @@ class NumbersDetailTableViewController: UITableViewController {
         self.darkMode = false
         self.tableView.backgroundColor = KKCBackgroundLightMode
         self.tableView.reloadData()
+    }
+}
+
+extension NumbersDetailTableViewController {
+    // MARK: - Table view data source
+
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numbersDetailRowData.count
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: NumbersDetailTableViewCell.cellId) as! NumbersDetailTableViewCell
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+        } else {
+            cell.backgroundColor = KKCBackgroundLightMode
+        }
+        cell.configureCell(number: numbersDetailRowData[indexPath.row].text)
+        cell.accessoryType = .disclosureIndicator
+
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pcvc = ParagraphTableViewController()
+        var parentNumber = numbersDetailRowData[indexPath.row].number
+        if parentNumber == 0 {
+            parentNumber = 1
+        }
+        pcvc.kindOfSource = 1
+        pcvc.parentID = parentNumber
+        pcvc.rangeID = numbersDetailRowData[indexPath.row].number_final
+        navigationController?.pushViewController(pcvc, animated: true)
     }
 }

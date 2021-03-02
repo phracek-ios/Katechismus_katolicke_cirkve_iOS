@@ -17,6 +17,7 @@ class SettingsBundleHelper {
         static let NightSwitch = "KKCAppSettingNightMode"
         static let serifEnabled = "KKCAppSettingSerifEnabled"
         static let fontSize = "KKCAppSettingFontSize"
+        static let fontName = "KKCAppSettingFontName"
         static let Favourites = "KKCFavourites"
         static let appGuid = "KKCAppGuid"
         static let appGuidVersion = "KKCAppGuidVersion"

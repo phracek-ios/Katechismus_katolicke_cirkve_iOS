@@ -38,11 +38,6 @@ class SectionsTableViewCell: UITableViewCell {
 
     let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     func configureCell(data: SectionsRowData) {
         let userDefaults = UserDefaults.standard
         let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
@@ -78,13 +73,13 @@ class SectionsTableViewCell: UITableViewCell {
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
         stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5).isActive = true
         stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5).isActive = true
-        stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: -10).isActive = true
         sectionLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 5).isActive = true
         sectionLabel.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: 5).isActive = true
         subsectionLabel.topAnchor.constraint(equalTo: sectionLabel.bottomAnchor, constant: 10).isActive = true
         subsectionLabel.leftAnchor.constraint(equalTo: stackView.leftAnchor, constant: 5).isActive = true
         subsectionLabel.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -5).isActive = true
-        subsectionLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor).isActive = true
+        subsectionLabel.widthAnchor.constraint(equalTo: stackView.widthAnchor, constant: -10).isActive = true
         stackView.addConstraintsWithFormat(format: "V:|-5-[v0]-10-[v1]-5-|", views: sectionLabel, subsectionLabel)
         
         stackView.addConstraintsWithFormat(format: "H:|-5-[v0]-5-|", views: sectionLabel)

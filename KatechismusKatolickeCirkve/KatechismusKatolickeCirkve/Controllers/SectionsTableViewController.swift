@@ -16,6 +16,7 @@ class SectionsTableViewController: UITableViewController {
 
     var parentID: Int = 0
     var darkMode: Bool = false
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +24,8 @@ class SectionsTableViewController: UITableViewController {
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         self.tableView.rowHeight = 80
         loadSections()
-        self.tableView.tableFooterView = UIView()
         let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
@@ -33,7 +33,10 @@ class SectionsTableViewController: UITableViewController {
         }
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
         tableView.register(SectionsTableViewCell.self, forCellReuseIdentifier: SectionsTableViewCell.cellId)
-        tableView.contentInset = UIEdgeInsets(top:12, left: 12, bottom: 12, right: 12)
+        tableView.contentInset = UIEdgeInsets(top:0, left: 0, bottom: 0, right: 0)
+        self.tableView.alwaysBounceHorizontal = false
+        self.tableView.tableFooterView = UIView()
+
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)

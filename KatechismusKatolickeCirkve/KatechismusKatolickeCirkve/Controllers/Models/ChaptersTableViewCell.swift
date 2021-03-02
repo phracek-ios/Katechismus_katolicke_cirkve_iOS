@@ -41,7 +41,7 @@ class ChaptersTableViewCell: UITableViewCell {
         self.addSubview(chaptersLabel)
         chaptersLabel.text = name
         chaptersLabel.textAlignment = .left
-        addConstraintsWithFormat(format: "V:|[v0]|", views: chaptersLabel)
+        addConstraintsWithFormat(format: "V:|-10-[v0]-10-|", views: chaptersLabel)
         addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: chaptersLabel)
     }
 

@@ -34,7 +34,8 @@ class CatechismCollectionViewCell: UICollectionViewCell {
     func configureCell(name: String) {
         let userDefaults = UserDefaults.standard
         let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
-        if darkMode {
+        print("Catechism \(darkMode) and \(name)")
+        if darkMode == true {
             catechismLabel.textColor = KKCTextNightMode
             catechismLabel.backgroundColor = KKCBackgroundNightMode
         }

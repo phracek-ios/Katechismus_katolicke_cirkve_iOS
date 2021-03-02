@@ -60,12 +60,14 @@ class CatechismCollectionViewController: UICollectionViewController, UICollectio
                                        AnalyticsParameterScreenClass: className])
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
-        if self.darkMode {
+        if self.darkMode == true {
             self.collectionView!.backgroundColor = KKCBackgroundNightMode
         } else {
             self.collectionView!.backgroundColor = KKCBackgroundLightMode
         }
+        self.collectionView?.reloadData()
     }
+    
     deinit {
         NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
         NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
@@ -171,8 +173,9 @@ extension CatechismCollectionViewController {
             let indexViewController = IndexTableViewController()
             navigationController?.pushViewController(indexViewController, animated: true)
         case .project:
-            let aboutProjectViewController = AboutProjectViewController()
-            navigationController?.pushViewController(aboutProjectViewController, animated: true)
+            let aboutViewController = AboutViewController()
+            aboutViewController.about_project = true
+            navigationController?.pushViewController(aboutViewController, animated: true)
         case .favorites:
             if self.favorites.count != 0 {
                 let favoritesViewController = ParagraphTableViewController()
@@ -190,6 +193,7 @@ extension CatechismCollectionViewController {
             navigationController?.pushViewController(settingsTableViewController, animated: true)
         case .about:
             let aboutViewController = AboutViewController()
+            aboutViewController.about_project = false
             navigationController?.pushViewController(aboutViewController, animated: true)
         }
     }

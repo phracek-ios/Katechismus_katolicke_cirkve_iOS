@@ -10,16 +10,37 @@ import UIKit
 
 class NumbersDetailTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var numberDetails: UILabel!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        //numberDetails.layer.cornerRadius = numberDetails.frame.height / 5
-    }
+    //MARK: Properties
+    
+    static let cellId = "NumbersTableViewCell"
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    lazy var numberDetails: UILabel = {
+        let l = UILabel()
+        l.lineBreakMode = .byWordWrapping
+        l.numberOfLines = 0
+        l.translatesAutoresizingMaskIntoConstraints = false
+        return l
+    }()
+    
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
+    
 
-        // Configure the view for the selected state
+    func configureCell(number: String) {
+        let userDefaults = UserDefaults.standard
+        let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        if darkMode {
+            numberDetails.textColor = KKCTextNightMode
+            numberDetails.backgroundColor = KKCBackgroundNightMode
+        }
+        else {
+            numberDetails.textColor = KKCTextLightMode
+            numberDetails.backgroundColor = KKCBackgroundLightMode
+        }
+        self.addSubview(numberDetails)
+        numberDetails.text = number
+        numberDetails.textAlignment = .left
+        addConstraintsWithFormat(format: "V:|[v0]|", views: numberDetails)
+        addConstraintsWithFormat(format: "H:|-10-[v0]-10-|", views: numberDetails)
     }
 
 }

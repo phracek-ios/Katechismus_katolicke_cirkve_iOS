@@ -18,7 +18,8 @@ class FindViewController: UIViewController, UITextFieldDelegate {
     var word_number_find: Bool = false // true for number find
     
     fileprivate var paragraphStructure: ParagraphStructure?
-
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
+    
     lazy var staticLabel: UILabel = {
         let l = UILabel()
         l.lineBreakMode = .byWordWrapping
@@ -69,7 +70,7 @@ class FindViewController: UIViewController, UITextFieldDelegate {
         paragraphStructure = ParagraphDataService.shared.paragraphStructure
         findTextField.delegate = self
         let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
         setupView()
         if self.darkMode {
