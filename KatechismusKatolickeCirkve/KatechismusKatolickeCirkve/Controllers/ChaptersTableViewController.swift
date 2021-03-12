@@ -36,24 +36,15 @@ class ChaptersTableViewController: UITableViewController {
             self.tableView.backgroundColor = KKCBackgroundLightMode
         }
         self.tableView.tableFooterView = UIView()
+        navigationItem.backBarButtonItem?.title = "Zpět"
+        navigationController?.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Zpět", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeEnabled(_:)), name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(darkModeDisabled(_:)), name: .darkModeDisabled, object: nil)
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-    }
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     private func loadChapters() {
@@ -64,17 +55,7 @@ class ChaptersTableViewController: UITableViewController {
             }
         }
     }
-    @objc private func darkModeEnabled(_ notification: Notification) {
-        self.darkMode = true
-        self.tableView.backgroundColor = KKCBackgroundNightMode
-        self.tableView.reloadData()
-    }
-    
-    @objc private func darkModeDisabled(_ notification: Notification) {
-        self.darkMode = false
-        self.tableView.backgroundColor = KKCBackgroundLightMode
-        self.tableView.reloadData()
-    }
+
 }
 
 extension ChaptersTableViewController {
@@ -91,7 +72,6 @@ extension ChaptersTableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = tableView.dequeueReusableCell(withIdentifier: ChaptersTableViewCell.cellId, for: indexPath) as! ChaptersTableViewCell
         let cell = UITableViewCell(style: UITableViewCellStyle.default, reuseIdentifier: "cell")
-        //cell.configureCell(name: rowData[indexPath.row].name, description: "")
         let userDefaults = UserDefaults.standard
         self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         if self.darkMode {
@@ -106,7 +86,7 @@ extension ChaptersTableViewController {
         cell.textLabel?.text = rowData[indexPath.row].name
         cell.detailTextLabel?.text = rowData[indexPath.row].sub_name
         cell.accessoryType = .disclosureIndicator
-
+        cell.selectionStyle = .none
         return cell
     }
 

@@ -41,8 +41,7 @@ class SectionsTableViewCell: UITableViewCell {
     func configureCell(data: SectionsRowData) {
         let userDefaults = UserDefaults.standard
         let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
-        
-        sectionLabel.attributedText = generateContent(text: data.name)
+        sectionLabel.text = data.name
         subsectionLabel.attributedText = generateContent(text: data.sub_sections, size: CGFloat(12))
         self.accessoryType = .none
         self.isUserInteractionEnabled = false
@@ -53,7 +52,7 @@ class SectionsTableViewCell: UITableViewCell {
         if data.main_section == true {
             self.backgroundColor = KKCMainColor
             self.sectionLabel.textColor = KKCTextNightMode
-
+            self.sectionLabel.backgroundColor = KKCMainColor
         } else {
             if darkMode == true {
                 self.backgroundColor = KKCBackgroundNightMode

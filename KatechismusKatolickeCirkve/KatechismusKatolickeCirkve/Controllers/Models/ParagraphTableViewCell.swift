@@ -48,7 +48,7 @@ class ParagraphTableViewCell: UITableViewCell {
             self.backgroundColor = KKCBackgroundNightMode
         }
         else {
-            labelParagraph.textColor = KKCTextLightMode
+            labelParagraph.textColor = UIColor.white
             labelParagraph.backgroundColor = KKCBackgroundLightMode
             self.backgroundColor = KKCBackgroundLightMode
         }
@@ -64,7 +64,7 @@ class ParagraphTableViewCell: UITableViewCell {
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -5).isActive = true
         stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 5).isActive = true
         stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -5).isActive = true
-        stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor).isActive = true
+        stackView.widthAnchor.constraint(equalTo: contentView.widthAnchor, constant: -10).isActive = true
         labelParagraph.topAnchor.constraint(equalTo: stackView.topAnchor).isActive = true
         labelParagraph.bottomAnchor.constraint(equalTo: stackView.bottomAnchor, constant: -10).isActive = true
         labelParagraph.rightAnchor.constraint(equalTo: stackView.rightAnchor, constant: -20).isActive = true

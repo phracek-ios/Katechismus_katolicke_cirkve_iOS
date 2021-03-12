@@ -106,6 +106,7 @@ extension NumbersDetailTableViewController {
         }
         cell.configureCell(number: numbersDetailRowData[indexPath.row].text)
         cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
 
         return cell
     }

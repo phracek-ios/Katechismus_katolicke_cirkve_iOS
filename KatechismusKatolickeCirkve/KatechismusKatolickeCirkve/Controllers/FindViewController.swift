@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import BonMot
 
 class FindViewController: UIViewController, UITextFieldDelegate {
     var findData = [Int]()
@@ -183,27 +182,51 @@ extension FindViewController {
         guard let paragraphStructure = paragraphStructure else { return false }
         self.findString = findTextField.text!
         print(findString)
-        for par in paragraphStructure.paragraph {
-            if par.text_no_html.range(of: findString) != nil {
-                findData.append(par.id)
+        if word_number_find == true {
+            for par in paragraphStructure.paragraph {
+                if String(par.id).range(of: self.findString) != nil {
+                    findData.append(par.id)
+                }
             }
-            if par.caption_no_html.range(of: findString) != nil {
-                findData.append(par.id)
+            if findData.count != 0 {
+                labelForNoneResults.text = ""
+                labelForNoneResults.isEnabled = false
+                let pcvc = ParagraphTableViewController()
+                pcvc.kindOfSource = 3
+                pcvc.findString = self.findString
+                pcvc.findData = findData
+                navigationController?.pushViewController(pcvc, animated: true)
+                findTextField.resignFirstResponder()
             }
-        }
-        if findData.count != 0 {
-            print(findData.count)
-            let pcvc = ParagraphTableViewController()
-            pcvc.kindOfSource = 2
-            pcvc.findString = self.findString
-            pcvc.findData = findData
-            navigationController?.pushViewController(pcvc, animated: true)
-            findTextField.resignFirstResponder()
+            else {
+                labelForNoneResults.isEnabled = true
+                labelForNoneResults.text = "Hledaný paragraph nebyl nalezen"
+            }
         }
         else {
-            labelForNoneResults.isEnabled = true
-            labelForNoneResults.text = "Hledaný výraz nebyl nalezen"
+            for par in paragraphStructure.paragraph {
+                if par.text_no_html.range(of: findString) != nil {
+                    findData.append(par.id)
+                }
+                if par.caption_no_html.range(of: findString) != nil {
+                    findData.append(par.id)
+                }
+            }
+            if findData.count != 0 {
+                print(findData.count)
+                let pcvc = ParagraphTableViewController()
+                pcvc.kindOfSource = 2
+                pcvc.findString = self.findString
+                pcvc.findData = findData
+                navigationController?.pushViewController(pcvc, animated: true)
+                findTextField.resignFirstResponder()
+            }
+            else {
+                labelForNoneResults.isEnabled = true
+                labelForNoneResults.text = "Hledaný výraz nebyl nalezen"
+            }
         }
+    
         return true
     }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import BonMot
 import PopMenu
 import FirebaseAnalytics
 
@@ -246,6 +245,8 @@ extension ParagraphTableViewController {
         else {
             cell.configureCell(name: data.html, image_name: "star_on")
         }
+        cell.selectionStyle = .none
+        
         return cell
     }
     

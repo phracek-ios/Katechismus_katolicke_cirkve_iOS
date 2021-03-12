@@ -38,10 +38,6 @@ class SectionsTableViewController: UITableViewController {
         self.tableView.tableFooterView = UIView()
 
     }
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,33 +56,10 @@ class SectionsTableViewController: UITableViewController {
         guard let chaptersStructure = chaptersStructure else { return }
         for chap in chaptersStructure.chapters {
             if chap.parent == parentID {
-                loadSubSections(section: chap.id, exist_paragraph: chap.exist_paragraph)
                 sectionsRowData.append(SectionsRowData(main_section: true, id: chap.id, name: chap.name, exist_paragraph: chap.exist_paragraph, sub_sections: chap.sub_sections))
+                loadSubSections(section: chap.id, exist_paragraph: chap.exist_paragraph)
             }
         }
-        print(sectionsRowData)
-    }
-    private func checkParagraph(section: Int) -> Bool {
-        guard let paragraphStructure = paragraphStructure else { return false }
-        
-        for par in paragraphStructure.paragraph {
-            if par.chapter == section {
-                return true
-            }
-        }
-        return false
-    }
-        
-    @objc private func darkModeEnabled(_ notification: Notification) {
-        self.darkMode = true
-        self.tableView.backgroundColor = KKCBackgroundNightMode
-        self.tableView.reloadData()
-    }
-    
-    @objc private func darkModeDisabled(_ notification: Notification) {
-        self.darkMode = false
-        self.tableView.backgroundColor = KKCBackgroundLightMode
-        self.tableView.reloadData()
     }
 }
 
@@ -110,8 +83,8 @@ extension SectionsTableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: SectionsTableViewCell.cellId, for: indexPath) as! SectionsTableViewCell
 
         let data = sectionsRowData[indexPath.row]
-        print(data)
         cell.configureCell(data: data)
+        cell.selectionStyle = .none
         return cell
     }
     

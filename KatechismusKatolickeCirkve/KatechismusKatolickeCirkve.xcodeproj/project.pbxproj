@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		01020D4625D187A800D2F933 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01020D4525D187A800D2F933 /* Extensions.swift */; };
-		01020D5C25D191BF00D2F933 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01020D5B25D191BF00D2F933 /* BonMot.framework */; };
 		013273FF217F0E86008411EC /* NotificationsName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013273FE217F0E86008411EC /* NotificationsName.swift */; };
 		01399CBD25D147780045C5CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01399CBC25D147780045C5CF /* GoogleService-Info.plist */; };
 		01399CD725D14DC30045C5CF /* SettingsBundleHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01399CD625D14DC30045C5CF /* SettingsBundleHelper.swift */; };
 		013BD2692119BC8600554086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD2682119BC8600554086 /* AppDelegate.swift */; };
 		013BD26B2119BC8600554086 /* IndexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD26A2119BC8600554086 /* IndexTableViewController.swift */; };
-		013BD26E2119BC8600554086 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013BD26C2119BC8600554086 /* Main.storyboard */; };
 		013BD2702119BC8700554086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013BD26F2119BC8700554086 /* Assets.xcassets */; };
-		013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013BD2712119BC8700554086 /* LaunchScreen.storyboard */; };
 		013BD27E2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD27D2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift */; };
 		013BD2892119BCD200554086 /* CatechismCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD2882119BCD200554086 /* CatechismCollectionViewCell.swift */; };
 		013BD28B2119BD3A00554086 /* CatechismCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013BD28A2119BD3A00554086 /* CatechismCollectionViewController.swift */; };
@@ -37,6 +34,7 @@
 		015430FF211B21700029105A /* SearchForMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 015430FE211B21700029105A /* SearchForMenu.swift */; };
 		0161FBC2213FBF7200A4959A /* NumbersDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161FBC1213FBF7200A4959A /* NumbersDetailTableViewController.swift */; };
 		0161FBC4213FBFA400A4959A /* NumbersDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */; };
+		01753A3C2600FC4A006A7337 /* BonMot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01020D5B25D191BF00D2F933 /* BonMot.framework */; };
 		017F20F4211A2902006B448C /* CatechismMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20F3211A2902006B448C /* CatechismMenu.swift */; };
 		017F20F9211A3A03006B448C /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20F8211A3A03006B448C /* AboutViewController.swift */; };
 		017F20FF211A3A43006B448C /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017F20FE211A3A43006B448C /* SettingsTableViewController.swift */; };
@@ -61,6 +59,7 @@
 		01B7520321874189007081D1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B7520221874189007081D1 /* Constants.swift */; };
 		01DF46DD211C7052006442CD /* NumbersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DC211C7052006442CD /* NumbersTableViewController.swift */; };
 		01DF46DF211C706F006442CD /* NumbersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */; };
+		01E34B8525FE1FD70047EEAF /* SettingsTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E34B8425FE1FD70047EEAF /* SettingsTextTableViewCell.swift */; };
 		01EE3458223FD15000982CE9 /* index.json in Resources */ = {isa = PBXBuildFile; fileRef = 01EE3457223FD15000982CE9 /* index.json */; };
 		01F73D4321920CD10023FF18 /* ParagraphRefsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */; };
 		01F73D4521920D040023FF18 /* ParagraphRefsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */; };
@@ -100,9 +99,7 @@
 		013BD2652119BC8600554086 /* KatechismusKatolickeCirkve.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KatechismusKatolickeCirkve.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		013BD2682119BC8600554086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		013BD26A2119BC8600554086 /* IndexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTableViewController.swift; sourceTree = "<group>"; };
-		013BD26D2119BC8600554086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		013BD26F2119BC8700554086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		013BD2722119BC8700554086 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		013BD2742119BC8700554086 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		013BD2792119BC8700554086 /* KatechismusKatolickeCirkveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KatechismusKatolickeCirkveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		013BD27D2119BC8700554086 /* KatechismusKatolickeCirkveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KatechismusKatolickeCirkveTests.swift; sourceTree = "<group>"; };
@@ -148,6 +145,7 @@
 		01B7520221874189007081D1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		01DF46DC211C7052006442CD /* NumbersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewController.swift; sourceTree = "<group>"; };
 		01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersTableViewCell.swift; sourceTree = "<group>"; };
+		01E34B8425FE1FD70047EEAF /* SettingsTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTextTableViewCell.swift; sourceTree = "<group>"; };
 		01EE3457223FD15000982CE9 /* index.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = index.json; sourceTree = "<group>"; };
 		01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphRefsTableViewCell.swift; sourceTree = "<group>"; };
 		01F73D4421920D040023FF18 /* ParagraphRefsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParagraphRefsTableViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014A93E925D1A99D008870EA /* Pods_KatechismusKatolickeCirkve.framework in Frameworks */,
-				01020D5C25D191BF00D2F933 /* BonMot.framework in Frameworks */,
+				01753A3C2600FC4A006A7337 /* BonMot.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +178,9 @@
 		01399CD525D14D940045C5CF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				01433A5325F119160033E672 /* FontPickerTableViewCell.swift */,
+				01433A4D25F114FB0033E672 /* SettingsItem.swift */,
+				01E34B8425FE1FD70047EEAF /* SettingsTextTableViewCell.swift */,
 				01399CD625D14DC30045C5CF /* SettingsBundleHelper.swift */,
 			);
 			path = Settings;
@@ -190,14 +191,12 @@
 			children = (
 				013BD2882119BCD200554086 /* CatechismCollectionViewCell.swift */,
 				019048FA211C25B500C17A95 /* ChaptersTableViewCell.swift */,
-				01433A5325F119160033E672 /* FontPickerTableViewCell.swift */,
 				01A1BEDC2232B45D00D36165 /* IndexTableViewCell.swift */,
 				01DF46DE211C706F006442CD /* NumbersTableViewCell.swift */,
 				0161FBC3213FBFA400A4959A /* NumbersDetailTableViewCell.swift */,
 				0194620F2122208A0056EC7B /* ParagraphTableViewCell.swift */,
 				01F73D4221920CD10023FF18 /* ParagraphRefsTableViewCell.swift */,
 				018E43A4211D8C1F00E0237B /* SectionsTableViewCell.swift */,
-				01433A4D25F114FB0033E672 /* SettingsItem.swift */,
 				01B31F2325E3CC4500945D4F /* StructuresRowData.swift */,
 			);
 			path = Models;
@@ -228,14 +227,12 @@
 			children = (
 				01399CBC25D147780045C5CF /* GoogleService-Info.plist */,
 				0152223621518A3400CA5933 /* Utilities */,
-				017F210C211A3BC6006B448C /* Supporting Files */,
+				017F210C211A3BC6006B448C /* SupportingFiles */,
 				017F2107211A3B09006B448C /* Model */,
 				017F2104211A3A91006B448C /* Services */,
 				017F20F7211A39E0006B448C /* Controllers */,
 				013BD2682119BC8600554086 /* AppDelegate.swift */,
-				013BD26C2119BC8600554086 /* Main.storyboard */,
 				013BD26F2119BC8700554086 /* Assets.xcassets */,
-				013BD2712119BC8700554086 /* LaunchScreen.storyboard */,
 				013BD2742119BC8700554086 /* Info.plist */,
 				017F20F3211A2902006B448C /* CatechismMenu.swift */,
 				015430FE211B21700029105A /* SearchForMenu.swift */,
@@ -313,7 +310,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		017F210C211A3BC6006B448C /* Supporting Files */ = {
+		017F210C211A3BC6006B448C /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
 				01EE3457223FD15000982CE9 /* index.json */,
@@ -321,7 +318,7 @@
 				014BEE78212432C900B9E9D2 /* database.json */,
 				017F210D211A3C32006B448C /* catechism.json */,
 			);
-			path = "Supporting Files";
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 		0FD3D968F8588F243FC81564 /* Pods */ = {
@@ -428,12 +425,10 @@
 			files = (
 				01EE3458223FD15000982CE9 /* index.json in Resources */,
 				014BEE7B212433B200B9E9D2 /* part.json in Resources */,
-				013BD2732119BC8700554086 /* LaunchScreen.storyboard in Resources */,
 				013BD2702119BC8700554086 /* Assets.xcassets in Resources */,
 				017F210E211A3C32006B448C /* catechism.json in Resources */,
 				014BEE79212432C900B9E9D2 /* database.json in Resources */,
 				01399CBD25D147780045C5CF /* GoogleService-Info.plist in Resources */,
-				013BD26E2119BC8600554086 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,6 +527,7 @@
 				01F73D4721920EB70023FF18 /* GeneratorText.swift in Sources */,
 				01B7520321874189007081D1 /* Constants.swift in Sources */,
 				01946212212220A20056EC7B /* ParagraphTableViewController.swift in Sources */,
+				01E34B8525FE1FD70047EEAF /* SettingsTextTableViewCell.swift in Sources */,
 				019048FB211C25B500C17A95 /* ChaptersTableViewCell.swift in Sources */,
 				013BD2692119BC8600554086 /* AppDelegate.swift in Sources */,
 				015430FF211B21700029105A /* SearchForMenu.swift in Sources */,
@@ -559,25 +555,6 @@
 			targetProxy = 013BD27A2119BC8700554086 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		013BD26C2119BC8600554086 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				013BD26D2119BC8600554086 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		013BD2712119BC8700554086 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				013BD2722119BC8700554086 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		013BD2802119BC8700554086 /* Debug */ = {
@@ -708,9 +685,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatolickeCirkve;
+				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatolickeCirkveDevelopmentProfile;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -721,8 +700,8 @@
 			baseConfigurationReference = F84647BA4C8225E88A61E912 /* Pods-KatechismusKatolickeCirkve.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Petr Hracek (32253C46P7)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 32253C46P7;
 				INFOPLIST_FILE = KatechismusKatolickeCirkve/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -730,9 +709,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACH_O_TYPE = mh_execute;
+				MARKETING_VERSION = 1.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = org.phracek.KatechismusKatolickeCirkve;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = KatechismusKatolickeCirkveDistribution;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -46,6 +46,7 @@ class ParagraphRefsTableViewController: UITableViewController {
             self.font_size = 16
         }
         loadRefs()
+        setupSettingsTable()
         self.tableView.tableFooterView = UIView()
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
@@ -54,12 +55,27 @@ class ParagraphRefsTableViewController: UITableViewController {
         }
         navigationController?.navigationBar.barStyle = UIBarStyle.black;
     }
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
-        NotificationCenter.default.removeObserver(self, name: .darkModeDisabled, object: nil)
+
+    func setupSettingsTable() {
+        tableView.register(ParagraphRefsTableViewCell.self, forCellReuseIdentifier: ParagraphRefsTableViewCell.cellId)
+        tableView.contentInset = UIEdgeInsets(top:0, left: 0, bottom: 0, right: 0)
+        
     }
+    
+    func loadRefs() {
+        guard let paragraphStructure = paragraphStructure else { return }
+        
+        for par in paragraphStructure.paragraph {
+            if refsInt.contains(par.id) {
+                let html = get_html_text(par: par, kindOfSource: 0, parentID: 0)
+                refsRowData.append(RefsRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
+                                               id: par.id, recap: par.recap))
+            }
+        }
+    }
+}
 
-
+extension ParagraphRefsTableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,18 +95,5 @@ class ParagraphRefsTableViewController: UITableViewController {
         let data = refsRowData[indexPath.row]
         cell.configureCell(html: data.html, image_name: "star_off", recap: data.recap)
         return cell
-    }
-
-
-    func loadRefs() {
-        guard let paragraphStructure = paragraphStructure else { return }
-        
-        for par in paragraphStructure.paragraph {
-            if refsInt.contains(par.id) {
-                let html = get_html_text(par: par, kindOfSource: 0, parentID: 0)
-                refsRowData.append(RefsRowData(html: generateContent(text: html, font_name: self.font_name, size: self.font_size),
-                                               id: par.id, recap: par.recap))
-            }
-        }
     }
 }

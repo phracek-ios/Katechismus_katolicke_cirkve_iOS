@@ -62,7 +62,7 @@ class IndexTableViewController: UITableViewController, UIGestureRecognizerDelega
                 self.full_index[ind.key]?.append(IndexRowData(refs: ind.refs, name: generateContent(text: ind.name), see: ind.see))
             }
             else {
-                let text = ind.name + " ... <em>viz též</em>"
+                let text = ind.name + " ... <em>viz též</em> " + ind.see
                 self.full_index[ind.key]?.append(IndexRowData(refs: ind.refs, name: generateContent(text: text), see: ind.see))
             }
         }

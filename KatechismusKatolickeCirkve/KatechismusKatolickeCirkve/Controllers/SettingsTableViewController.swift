@@ -85,6 +85,7 @@ class SettingsTableViewController: UITableViewController {
     }
     
     func setupSettingsTable() {
+        tableView.register(SettingsTextTableViewCell.self, forCellReuseIdentifier: SettingsTextTableViewCell.cellId)
         tableView.register(FontPickerTableViewCell.self, forCellReuseIdentifier: FontPickerTableViewCell.cellId)
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
     }
@@ -108,6 +109,11 @@ class SettingsTableViewController: UITableViewController {
                                      prefsString: keys.fontSize,
                                      defValue: false,
                                      eventHandler: nil))
+        settings.append(SettingsItem(type: SettingsItemType.text,
+                                     title: "Zpětná vazba",
+                                     description: "",
+                                     prefsString: "",
+                                     eventHandler: feedBack))
     }
     
     @objc func nightTarget(_ sender: UISwitch) {
@@ -157,6 +163,18 @@ class SettingsTableViewController: UITableViewController {
         self.view.backgroundColor = self.back
     }
     
+    func feedBack(_ sender: Any?) {
+        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfHpqeAzGzRvVttcbNiaVuQ1lu_ZLJjpnxZBSlJ5UwniVcAzw/viewform") {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            else
+            {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
+    }
 }
 
 extension SettingsTableViewController {
@@ -182,7 +200,12 @@ extension SettingsTableViewController {
             cell.configureCell()
             cell.backgroundColor = self.back
             return cell
-
+        case .text:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTextTableViewCell.cellId, for: indexPath) as! SettingsTextTableViewCell
+            cell.configureCell(settingsItem: settings[indexPath.row], cellWidth: tableView.frame.width)
+            cell.accessoryType = .disclosureIndicator
+            cell.backgroundColor = self.back
+            return cell
         default:
             let set = settings[indexPath.row]
             let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
@@ -214,6 +237,11 @@ extension SettingsTableViewController {
            let fpViewController = FontViewController()
             navigationController?.pushViewController(fpViewController, animated: true)
         }
+        let data = settings[indexPath.row]
+        if let f = data.eventHandler {
+            f(nil)
+        }
+        
     }
 
 }

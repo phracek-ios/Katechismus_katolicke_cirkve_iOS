@@ -48,6 +48,8 @@ class CatechismCollectionViewController: UICollectionViewController, UICollectio
                                        AnalyticsParameterScreenClass: className])
         loadCatechism()
         setupCollectionView()
+        navigationItem.backBarButtonItem?.title = "Zpět"
+        navigationController?.navigationBar.backItem?.backBarButtonItem = UIBarButtonItem(title: "Zpět", style: .plain, target: nil, action: nil)
         navigationController?.navigationBar.barTintColor = KKCMainColor
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: KKCMainTextColor]
         navigationController?.navigationBar.barStyle = UIBarStyle.black;

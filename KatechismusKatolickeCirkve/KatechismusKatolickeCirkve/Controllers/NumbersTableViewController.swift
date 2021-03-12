@@ -110,6 +110,7 @@ extension NumbersTableViewController {
         }
         cell.configureCell(number: numbersRowData[indexPath.row].text)
         cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
         return cell
 
     }
