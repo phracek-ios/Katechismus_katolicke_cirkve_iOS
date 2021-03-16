@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class FindWordViewController: BaseViewController, UITextFieldDelegate {
+class FindWordViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var wordTextField: UITextField!
     @IBOutlet weak var staticLabel: UILabel!
@@ -48,45 +48,7 @@ class FindWordViewController: BaseViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        switch(segue.identifier ?? "") {
-            
-        case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            paragraphTableViewController.kindOfSource = 2
-            paragraphTableViewController.findString = self.findString
-            paragraphTableViewController.findData = findData
-            
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        guard let paragraphStructure = paragraphStructure else { return false }
-        self.findString = wordTextField.text!
-        for par in paragraphStructure.paragraph {
-            if par.text_no_html.range(of: findString) != nil {
-                findData.append(par.id)
-            }
-            if par.caption_no_html.range(of: findString) != nil {
-                findData.append(par.id)
-            }
-        }
-        if findData.count != 0 {
-            performSegue(withIdentifier: "ShowParagraph", sender: self)
-            wordTextField.resignFirstResponder()
-        }
-        else {
-            labelForNoneResults.isEnabled = true
-            labelForNoneResults.text = "Hledaný výraz nebyl nalezen"
-        }
-        return true
-    }
+
     func darkModeEnable() {
         self.view.backgroundColor = KKCBackgroundNightMode
         self.labelForNoneResults.backgroundColor = KKCBackgroundNightMode
