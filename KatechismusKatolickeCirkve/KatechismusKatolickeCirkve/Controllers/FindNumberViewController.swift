@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class FindNumberViewController: BaseViewController, UITextFieldDelegate {
+class FindNumberViewController: UIViewController, UITextFieldDelegate {
 
     fileprivate var paragraphStructure: ParagraphStructure?
     var darkMode: Bool = false
@@ -57,12 +57,12 @@ class FindNumberViewController: BaseViewController, UITextFieldDelegate {
         switch(segue.identifier ?? "") {
             
         case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
+            guard let paragraphCollectionViewController = segue.destination as? ParagraphTableViewController else {
                 fatalError("Unexpected destination: \(segue.destination)")
             }
-            paragraphTableViewController.kindOfSource = 3
-            paragraphTableViewController.findString = self.findString
-            paragraphTableViewController.findData = findData
+            paragraphCollectionViewController.kindOfSource = 3
+            paragraphCollectionViewController.findString = self.findString
+            paragraphCollectionViewController.findData = findData
             
         default:
             fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")

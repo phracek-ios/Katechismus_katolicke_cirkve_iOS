@@ -8,17 +8,13 @@
 
 import UIKit
 
-class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDelegate {
+class IndexTableViewController: UITableViewController, UIGestureRecognizerDelegate {
     
-    struct IndexRowData {
-        var refs = String()
-        var name = NSAttributedString()
-        var see = String()
-    }
     fileprivate var full_index = [String: [IndexRowData]]()
     fileprivate var indexStructure: IndexStructure?
     var darkMode: Bool = false
     let indexSectionAlphabet = ["A", "B", "C", "Č", "D", "E", "F", "G", "H", "CH", "I", "J", "K", "L", "M", "N", "O", "P", "R", "Ř", "S", "Š", "T", "U", "V", "Z", "Ž"]
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +24,17 @@ class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDele
         for alpha in indexSectionAlphabet {
             self.full_index[alpha] = [IndexRowData]()
         }
+        
         loadIndex()
+        setupSettingsTable()
         let userDefaults = UserDefaults.standard
-        self.darkMode = userDefaults.bool(forKey: "NightSwitch")
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         self.tableView.tableFooterView = UIView()
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
         longPressGesture.minimumPressDuration = 0.5 // 0.5 second press
         longPressGesture.delegate = self
         self.tableView.addGestureRecognizer(longPressGesture)
+        self.tableView.estimatedRowHeight = 60
         if self.darkMode {
             self.tableView.backgroundColor = KKCBackgroundNightMode
         } else {
@@ -63,83 +62,15 @@ class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDele
                 self.full_index[ind.key]?.append(IndexRowData(refs: ind.refs, name: generateContent(text: ind.name), see: ind.see))
             }
             else {
-                let text = ind.name + " ... <em>viz též</em>"
+                let text = ind.name + " ... <em>viz též</em> " + ind.see
                 self.full_index[ind.key]?.append(IndexRowData(refs: ind.refs, name: generateContent(text: text), see: ind.see))
             }
         }
     }
-    
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.indexSectionAlphabet.count
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let alphabet_section = self.indexSectionAlphabet[section]
-        let sectionIndexes = self.full_index[alphabet_section]
-        return sectionIndexes?.count ?? 0
-
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "IndexTableViewCell"
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? IndexTableViewCell else {
-            fatalError("The dequeue cell is not an entrance of IndexTableViewCell")
-        }
-        let sectionTitle = self.indexSectionAlphabet[indexPath.section]
-        let row = self.full_index[sectionTitle]?[indexPath.row]
-        let name = row?.name
-        let refs = row?.refs
-        cell.indexLabel?.numberOfLines = 0
-        cell.indexLabel?.attributedText = name
-        if refs == "" {
-            cell.accessoryType = .none
-            cell.isUserInteractionEnabled = false
-        }
-        else {
-            cell.isUserInteractionEnabled = true
-            cell.accessoryType = .disclosureIndicator
-        }
-        if self.darkMode == true {
-            cell.backgroundColor = KKCBackgroundNightMode
-            cell.indexLabel.textColor = KKCTextNightMode
-        }
-        else {
-            cell.backgroundColor = KKCBackgroundLightMode
-            cell.indexLabel.textColor = KKCTextLightMode
-        }
-        return cell
-
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        switch(segue.identifier ?? "") {
-            
-        case "ShowParagraph":
-            guard let paragraphTableViewController = segue.destination as? ParagraphTableViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            guard let indexPath = sender as? IndexPath else {
-                fatalError("The selected cell is not being displayed by the table")
-            }
-            let sectionTitle = self.indexSectionAlphabet[indexPath.section]
-            let refs = self.full_index[sectionTitle]?[indexPath.row].refs
-            paragraphTableViewController.kindOfSource = 5
-            paragraphTableViewController.indexes = refs ?? ""
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-
-    }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowParagraph", sender: indexPath)
-    }
-    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return self.indexSectionAlphabet
-    }
-    
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return self.indexSectionAlphabet[section]
+        
+    func setupSettingsTable() {
+        tableView.register(IndexTableViewCell.self, forCellReuseIdentifier: IndexTableViewCell.cellId)
+        //tableView.contentInset = UIEdgeInsets(top:12, left: 12, bottom: 12, right: 12)
     }
     
     @objc private func darkModeEnabled(_ notification: Notification) {
@@ -184,5 +115,75 @@ class IndexTableViewController: BaseTableViewController, UIGestureRecognizerDele
             }
         }
         
+    }
+}
+
+extension IndexTableViewController {
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return self.indexSectionAlphabet.count
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let alphabet_section = self.indexSectionAlphabet[section]
+        let sectionIndexes = self.full_index[alphabet_section]
+        return sectionIndexes?.count ?? 0
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: IndexTableViewCell.cellId, for: indexPath) as! IndexTableViewCell
+        let userDefaults = UserDefaults.standard
+        self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        cell.isUserInteractionEnabled = false
+        let sectionTitle = self.indexSectionAlphabet[indexPath.section]
+        let row = self.full_index[sectionTitle]?[indexPath.row]
+        let name = (row?.name)!
+        let refs = row?.refs
+        cell.configureCell(name: name, refs: refs!)
+        if self.darkMode == true {
+            cell.backgroundColor = KKCBackgroundNightMode
+        } else {
+            cell.backgroundColor = KKCBackgroundLightMode
+        }
+
+        return cell
+
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let pcvc = ParagraphTableViewController()
+
+        let sectionTitle = self.indexSectionAlphabet[indexPath.section]
+        let refs = self.full_index[sectionTitle]?[indexPath.row].refs
+        pcvc.kindOfSource = 5
+        pcvc.indexes = refs ?? ""
+        navigationController?.pushViewController(pcvc, animated: true)
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return self.indexSectionAlphabet
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.indexSectionAlphabet[section]
+    }
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let returnedView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 25))
+        let userDefaults = UserDefaults.standard
+        let darkMode = userDefaults.bool(forKey: keys.NightSwitch)
+        let label = UILabel(frame: CGRect(x: 10, y: 7, width: view.frame.size.width, height: 25))
+        label.text = self.indexSectionAlphabet[section]
+        if darkMode == true {
+            returnedView.backgroundColor = KKCMainColor
+            label.backgroundColor = KKCMainColor
+            label.textColor = KKCTextNightMode
+        } else {
+            returnedView.backgroundColor = KKCMainColor
+            label.backgroundColor = KKCMainColor
+            label.textColor = KKCTextLightMode
+        }
+        returnedView.addSubview(label)
+        return returnedView
     }
 }

@@ -8,33 +8,41 @@
 
 import UIKit
 
-class SettingsTableViewController: BaseTableViewController {
-
-    @IBOutlet weak var nightSwitch: UISwitch!
-    @IBOutlet weak var nightSwitchLabel: UILabel!
-    @IBOutlet weak var dimOffSwitchLabel: UILabel!
-    @IBOutlet weak var dimOffSwitch: UISwitch!
-    @IBOutlet weak var nightSwitchCell: UITableViewCell!
-    @IBOutlet weak var dimOffSwitchCell: UITableViewCell!
-    @IBOutlet weak var fontCell: UITableViewCell!
-    @IBOutlet weak var fontName: UILabel!
-    @IBOutlet weak var fontCaptionLabel: UILabel!
+class SettingsTableViewController: UITableViewController {
+    
+    var DarkModeOn = Bool()
+    var DimmOff = Bool()
+    let keys = SettingsBundleHelper.SettingsBundleKeys.self
+    
+    var className: String {
+        return String(describing: self)
+    }
+    var settings = [SettingsItem]()
+    var back = KKCBackgroundNightMode
+    var text = KKCTextNightMode
+    var fontName: String = "Helvetica"
+    var fontSize: String = "16"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Nastavení   "
+        title = "Nastavení"
 
+        loadSettings()
+        setupSettingsTable()
         let userDefaults = UserDefaults.standard
-        nightSwitch.isOn = userDefaults.bool(forKey: "NightSwitch")
-        if nightSwitch.isOn == true {
+        self.DarkModeOn = userDefaults.bool(forKey: keys.NightSwitch)
+        print(self.DarkModeOn)
+        if self.DarkModeOn == true {
             enabledDark()
         }
         else {
             disabledDark()
         }
-        dimOffSwitch.isOn = userDefaults.bool(forKey: "DimmScreen")
-        set_font_text()
-        navigationController?.navigationBar.barStyle = UIBarStyle.black;
+        self.DimmOff = userDefaults.bool(forKey: keys.idleTimer)
+        navigationController?.navigationBar.barStyle = UIBarStyle.black
+        tableView.alwaysBounceHorizontal = false
+        tableView.tableFooterView = UIView()
+
     }
     deinit {
         NotificationCenter.default.removeObserver(self, name: .darkModeEnabled, object: nil)
@@ -43,96 +51,197 @@ class SettingsTableViewController: BaseTableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        set_font_text()
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
-        switch(segue.identifier ?? "") {
-            
-        case "FontSettings":
-            guard let fontController = segue.destination as? FontViewController else {
-                fatalError("Unexpected destination: \(segue.destination)")
-            }
-            fontController.navigationItem.title = "Nastavení písma pro paragrafy"
-        default:
-            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
-        }
-        
-    }
-    
-    @IBAction func funcNightMode(_ sender: Any) {
+    func funcNightMode(_ sender: Any) {
         let userDefaults = UserDefaults.standard
-        if nightSwitch.isOn == true {
-            userDefaults.set(true, forKey: "NightSwitch")
+        if self.DarkModeOn == true {
+            userDefaults.set(true, forKey: keys.NightSwitch)
             enabledDark()
             NotificationCenter.default.post(name: .darkModeEnabled, object:nil)
         }
         else {
-            userDefaults.set(false, forKey: "NightSwitch")
+            userDefaults.set(false, forKey: keys.NightSwitch)
             disabledDark()
             NotificationCenter.default.post(name: .darkModeDisabled, object: nil)
         }
     }
-    @IBAction func funcDisableDisplay(_ sender: Any) {
+    
+    func funcDisableDisplay(_ sender: Any) {
         let userDefaults = UserDefaults.standard
-        if dimOffSwitch.isOn == true {
+        if self.DimmOff == true {
             UIApplication.shared.isIdleTimerDisabled = true
-            userDefaults.set(true, forKey: "DimmScreen")
+            userDefaults.set(true, forKey: keys.idleTimer)
         }
         else {
             UIApplication.shared.isIdleTimerDisabled = false
-            userDefaults.set(false, forKey: "DimmScreen")
+            userDefaults.set(false, forKey: keys.idleTimer)
         }
     }
     
-    private func set_font_text() {
-        let userDefaults = UserDefaults.standard
-        var font_name = userDefaults.string(forKey: "FontName")
-        var font_size = userDefaults.string(forKey: "FontSize")
-        
-        if font_name == nil {
-            font_name = "Helvetica"
-        }
-        if font_size == nil {
-            font_size = "16"
-        }
-        self.fontName.text = "\(String(font_name!)), \(String(font_size!))px"
+    func setupSettingsTable() {
+        tableView.register(SettingsTextTableViewCell.self, forCellReuseIdentifier: SettingsTextTableViewCell.cellId)
+        tableView.register(FontPickerTableViewCell.self, forCellReuseIdentifier: FontPickerTableViewCell.cellId)
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
     }
+    
+    func loadSettings() {
+        settings.append(SettingsItem(type: SettingsItemType.onOffSwitch,
+                                     title: "Noční režim",
+                                     description: "",
+                                     prefsString: keys.NightSwitch,
+                                     defValue: false,
+                                     eventHandler: nil))
+        settings.append(SettingsItem(type: SettingsItemType.onOffSwitch,
+                                     title: "Zabránit vypínání obrazovky",
+                                     description: "",
+                                     prefsString: keys.idleTimer,
+                                     defValue: false,
+                                     eventHandler: nil))
+        settings.append(SettingsItem(type: SettingsItemType.fontPicker,
+                                     title: "Písmo",
+                                     description: "",
+                                     prefsString: keys.fontSize,
+                                     defValue: false,
+                                     eventHandler: nil))
+        settings.append(SettingsItem(type: SettingsItemType.text,
+                                     title: "Zpětná vazba",
+                                     description: "",
+                                     prefsString: "",
+                                     eventHandler: feedBack))
+    }
+    
+    @objc func nightTarget(_ sender: UISwitch) {
+        
+        print("Switch Target Night \(sender.isOn)")
+        Global.vibrate()
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(sender.isOn, forKey: keys.NightSwitch)
+        self.DarkModeOn = sender.isOn
+        if sender.isOn == true {
+            self.back = KKCBackgroundNightMode
+            self.text = KKCTextNightMode
+            NotificationCenter.default.post(name: .darkModeEnabled, object:nil)
+        }
+        else {
+            self.back = KKCBackgroundLightMode
+            self.text = KKCTextLightMode
+            NotificationCenter.default.post(name: .darkModeDisabled, object: nil)
+        }
+        setupUI()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @objc func idleTarget(_ sender: UISwitch!) {
+        
+        print("Idle Target Night \(sender.isOn)")
+        Global.vibrate()
+        let userDefaults = UserDefaults.standard
+        userDefaults.set(sender.isOn, forKey: keys.idleTimer)
+    }
+    
     func enabledDark() {
         self.view.backgroundColor = KKCBackgroundNightMode
-        self.nightSwitch.backgroundColor = KKCBackgroundNightMode
-        self.nightSwitchLabel.textColor = KKCTextNightMode
-        self.nightSwitchCell.backgroundColor = KKCBackgroundNightMode
-        self.dimOffSwitchLabel.textColor = KKCTextNightMode
-        self.dimOffSwitch.backgroundColor = KKCBackgroundNightMode
-        self.dimOffSwitchCell.backgroundColor = KKCBackgroundNightMode
-        self.fontCell.backgroundColor = KKCBackgroundNightMode
-        self.fontCaptionLabel.textColor = KKCTextNightMode
-        self.fontCaptionLabel.backgroundColor = KKCBackgroundNightMode
-        self.fontName.backgroundColor = KKCBackgroundNightMode
-        self.fontName.textColor = KKCTextNightMode
-        //self.FullScreenLabel.textColor = UIColor.white
+        self.back = KKCBackgroundNightMode
+        self.text = KKCTextNightMode
     }
     
     func disabledDark() {
         self.view.backgroundColor = KKCBackgroundLightMode
-        self.nightSwitch.backgroundColor = KKCBackgroundLightMode
-        self.nightSwitchLabel.textColor = KKCTextLightMode
-        self.nightSwitchCell.backgroundColor = KKCBackgroundLightMode
-        self.dimOffSwitchLabel.textColor = KKCTextLightMode
-        self.dimOffSwitch.backgroundColor = KKCBackgroundLightMode
-        self.dimOffSwitchCell.backgroundColor = KKCBackgroundLightMode
-        self.fontCell.backgroundColor = KKCBackgroundLightMode
-        self.fontCaptionLabel.backgroundColor = KKCBackgroundLightMode
-        self.fontCaptionLabel.textColor = KKCTextLightMode
-        self.fontName.backgroundColor = KKCBackgroundLightMode
-        self.fontName.textColor = KKCTextLightMode
-        //self.FullScreenLabel.textColor = UIColor.black
+        self.back = KKCBackgroundLightMode
+        self.text = KKCTextLightMode
     }
+    
+    func setupUI() {
+        self.view.backgroundColor = self.back
+    }
+    
+    func feedBack(_ sender: Any?) {
+        if let url = URL(string: "https://docs.google.com/forms/d/e/1FAIpQLSfHpqeAzGzRvVttcbNiaVuQ1lu_ZLJjpnxZBSlJ5UwniVcAzw/viewform") {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            else
+            {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
+    }
+}
+
+extension SettingsTableViewController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return settings.count
+    }
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let userDefaults = UserDefaults.standard
+        switch settings[indexPath.row].type {
+        case .fontPicker:
+            let cell = tableView.dequeueReusableCell(withIdentifier: FontPickerTableViewCell.cellId, for: indexPath) as! FontPickerTableViewCell
+            cell.font_name = fontName
+            cell.font_size = fontSize
+            cell.configureCell()
+            cell.backgroundColor = self.back
+            return cell
+        case .text:
+            let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTextTableViewCell.cellId, for: indexPath) as! SettingsTextTableViewCell
+            cell.configureCell(settingsItem: settings[indexPath.row], cellWidth: tableView.frame.width)
+            cell.accessoryType = .disclosureIndicator
+            cell.backgroundColor = self.back
+            return cell
+        default:
+            let set = settings[indexPath.row]
+            let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
+            let sw = UISwitch()
+            sw.isOn = userDefaults.bool(forKey: set.prefsString)
+            if set.prefsString == keys.NightSwitch {
+                sw.addTarget(self, action: #selector(self.nightTarget(_:)), for: .valueChanged)
+            }
+            else if set.prefsString == keys.idleTimer {
+                sw.addTarget(self, action: #selector(self.idleTarget(_:)), for: .valueChanged)
+            }
+            cell.textLabel?.text = settings[indexPath.row].title
+            cell.detailTextLabel?.text = settings[indexPath.row].detail
+
+            cell.backgroundColor = self.back
+            cell.textLabel?.backgroundColor = self.back
+            cell.textLabel?.textColor = self.text
+            cell.detailTextLabel?.backgroundColor = self.back
+            cell.detailTextLabel?.textColor = self.text
+
+            cell.accessoryView = sw
+            cell.accessoryType = .none
+            return cell
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if settings[indexPath.row].type == SettingsItemType.fontPicker {
+           let fpViewController = FontViewController()
+            navigationController?.pushViewController(fpViewController, animated: true)
+        }
+        let data = settings[indexPath.row]
+        if let f = data.eventHandler {
+            f(nil)
+        }
+        
+    }
+
 }
