@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "delpsys-logo-transparent.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "delpsys-logo-transparent.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

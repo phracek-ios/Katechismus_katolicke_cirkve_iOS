@@ -36,7 +36,8 @@ class AboutViewController: UIViewController, UITextViewDelegate {
     fileprivate var catechismStructure: CatechismStructure?
     let keys = SettingsBundleHelper.SettingsBundleKeys.self
     
-    let text = "Katechismus katolické církve.<br>Offline mobilní verze pro iOS.<br><br>Autor aplikace: Petr Hráček<br>Autorská práva byla poskytnuta Karmelitánským nakladatelstvím.<br><br>Tato aplikace vznikla se souhlasem a za podpory České biskupské konference a byla finančně podpořena společností.<br><br>Na vývoji se stále pracuje.<br><br>Přepis textů spolu s autorem zajišťovali Pavel Souček a Josef Řídký.<br><br>Případné chyby, připomínky, nápady či postřehy prosím začlete na adresu: phracek@gmail.com"
+    let text1 = "Katechismus katolické církve.<br>Offline mobilní verze pro iOS.<br><br>Autor aplikace: Petr Hráček<br>Autorská práva byla poskytnuta Karmelitánským nakladatelstvím.<br><br>Tato aplikace vznikla se souhlasem a za podpory České biskupské konference a byla finančně podpořena společností.<br>"
+    let text2 = "<br><br>Na vývoji se stále pracuje.<br><br>Přepis textů spolu s autorem zajišťovali Pavel Souček a Josef Řídký.<br><br>Případné chyby, připomínky, nápady či postřehy prosím začlete na adresu: phracek@gmail.com"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -104,7 +105,12 @@ class AboutViewController: UIViewController, UITextViewDelegate {
 
         }
         else {
-            textView.attributedText = generateContent(text: text)
+            let textAttachment = NSTextAttachment()
+            let attributedText = NSMutableAttributedString(attributedString: generateContent(text: text1))
+            textAttachment.image = UIImage(named: "delpsys")
+            attributedText.append(NSAttributedString(attachment: textAttachment))
+            attributedText.append(NSMutableAttributedString(attributedString: generateContent(text: text2)))
+            textView.attributedText = attributedText
         }
         self.darkMode = userDefaults.bool(forKey: keys.NightSwitch)
         if self.darkMode {
